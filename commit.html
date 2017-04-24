@@ -30,10 +30,21 @@
 		
 			<div id="main" >
 
-<h2>Intro</h2>
+<h2>Commit</h2>
 <article>
 
-This is my GitHub main page. I'll put stuff here that I find useful and that others might also find useful.
+I use this script to rapidly commit code to the master branch of my git repositories.
+The commit name is passed as a command line parameter.
+<div class="codebox">
+#!/bin/bash
+git add --all
+git commit -m "$1"
+git push -u origin master
+</div>
+Use case:
+<div class="codebox">
+./commit.sh "Commit Name"
+</div>
 
 <article/>
 					

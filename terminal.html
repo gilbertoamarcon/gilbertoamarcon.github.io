@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang='pt'>
+
+	<head>
+		<meta charset='utf-8'>
+		<title>Gilberto A Marcon</title>
+		<link rel='stylesheet' href='sty.css'>
+	</head>	
+	
+	<body>
+		
+		<div id='content' >
+
+			<div id='side_bar' >
+
+				<header id="header">
+					<h1>Gilberto's Source </h1>
+				</header>
+				
+				<div id="menu">
+					<ul>
+						<li> <a href="index.html" 				class="menu_button">Main						</a> </li>
+						<li> <a href="commit.html" 				class="menu_button">Commit						</a> </li>
+						<li> <a href="raspi_sd_backup.html" 	class="menu_button">Raspberry Pi Backup			</a> </li>
+						<li> <a href="terminal.html" 			class="menu_button">Terminal Commands			</a> </li>
+					</ul>
+				</div>
+
+			</div>
+		
+			<div id="main" >
+
+<h2>Terminal Commands	</h2>
+<article>
+
+Here are some basic terminal commands that save me up a lot of time.
+
+<br/>
+<br/>
+Write content to file
+<div class="codebox">
+printf "when there will be old man old now old.\n" >> filename
+</div>
+
+<br/>
+Overwrite content to file
+<div class="codebox">
+printf "when there will be old man old now old.\n" > filename
+</div>
+
+<br/>
+Duplicate file
+<div class="codebox">
+< filename tee filename{01..20}
+</div>
+
+<br/>
+Search and replace in file (single file)
+<div class="codebox">
+sed -i 's/old/new/g' filename
+</div>
+
+<br/>
+Search and replace in file (multiple files)
+<div class="codebox">
+sed -i 's/old/new/g' filename*
+</div>
+
+<br/>
+Recursively search and replace in multiple files
+<div class="codebox">
+find . -type f -print0 | xargs -0 sed -i 's/old/new/g'
+</div>
+
+<br/>
+Show content of multiple files
+<div class="codebox">
+cat filename*
+</div>
+
+<br/>
+Remove multiple files
+<div class="codebox">
+rm filename*
+</div>
+
+<br/>
+Show command history
+<div class="codebox">
+history
+</div>
+
+<br/>
+Execute previous command from history
+<div class="codebox">
+!3
+</div>
+
+<article/>
+					
+			</div>
+
+		</div>
+
+
+	</body>
+	
+</html>
+
