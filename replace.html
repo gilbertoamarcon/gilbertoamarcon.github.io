@@ -36,65 +36,49 @@
 		
 			<div id="main" >
 
-<h2>Terminal Commands</h2>
+<h2>Search and Replace</h2>
 <article>
 
 <br/>
 Here are some basic terminal commands that save me up a lot of time. 
 
 <br/>
-<h2> File writing </h2>
+<h2> Basic Search and Replace</h2>
 
 <br/>
-Write to file
+Search and replace in file (single file)
 <div class="codebox">
-printf "when there will be old man old now old.\n" >> filename
+sed -i 's/old/new/g' filename
 </div>
 
 <br/>
-Overwrite to file
+Search and replace in file (multiple files)
 <div class="codebox">
-printf "when there will be old man old now old.\n" > filename
+sed -i 's/old/new/g' filename*
 </div>
 
 <br/>
-Duplicate file
+Recursively search and replace in multiple files
 <div class="codebox">
-< filename tee filename{01..20}
+find . -type f -print0 | xargs -0 sed -i 's/old/new/g'
 </div>
 
 <br/>
-Show content of multiple files
+<h2> Regex Search and Replace</h2>
+
+<br/>
+Search and replace using regex
 <div class="codebox">
-cat filename*
+printf "Not here. Over there though.\n" | perl -pe 's/(here)/!\1!/g'
 </div>
 
 <br/>
-Remove multiple files
+Search and replace using regex with \n
 <div class="codebox">
-rm filename*
+printf "Not here.\n\n\nOver there though.\n\n" | perl -0 -pe 's/(\n+)/\n/g'
 </div>
 
-<br/>
-Downloading file to specific location 
-<div class="codebox">
-wget https://raw.githubusercontent.com/gilbertoamarcon/tools/master/terminal.sh -P ~/Downloads/
-</div>
 
-<br/>
-<h2> History</h2>
-
-<br/>
-Show command history
-<div class="codebox">
-history
-</div>
-
-<br/>
-Execute previous command from history
-<div class="codebox">
-!3
-</div>
 
 <article/>
 					

@@ -36,65 +36,77 @@
 		
 			<div id="main" >
 
-<h2>Terminal Commands</h2>
-<article>
+<br/>
+<h2> Turtlebot</h2>
 
 <br/>
-Here are some basic terminal commands that save me up a lot of time. 
+This guide covers launching basic operations for turtlebot in ROS Indigo.
+
 
 <br/>
-<h2> File writing </h2>
+<h2> Navigation</h2>
+
 
 <br/>
-Write to file
+Launch turtlebot world in Gazebo
 <div class="codebox">
-printf "when there will be old man old now old.\n" >> filename
+roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find testbed)/worlds/arena.world
 </div>
 
 <br/>
-Overwrite to file
+Launch map navigation
 <div class="codebox">
-printf "when there will be old man old now old.\n" > filename
+roslaunch turtlebot_gazebo amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml
 </div>
 
 <br/>
-Duplicate file
+Rviz
 <div class="codebox">
-< filename tee filename{01..20}
+roslaunch turtlebot_rviz_launchers view_navigation.launch
 </div>
 
 <br/>
-Show content of multiple files
+Alvar
 <div class="codebox">
-cat filename*
+roslaunch testbed alvar.launch
+</div>
+
+
+<br/>
+<h2> Mapping</h2>
+
+
+<br/>
+Launch turtlebot world in Gazebo
+<div class="codebox">
+roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find testbed)/worlds/arena.world
 </div>
 
 <br/>
-Remove multiple files
+Launch maping
 <div class="codebox">
-rm filename*
+roslaunch turtlebot_gazebo gmapping_demo.launch
 </div>
 
 <br/>
-Downloading file to specific location 
+Rviz
 <div class="codebox">
-wget https://raw.githubusercontent.com/gilbertoamarcon/tools/master/terminal.sh -P ~/Downloads/
+roslaunch turtlebot_rviz_launchers view_navigation.launch
 </div>
 
 <br/>
-<h2> History</h2>
-
-<br/>
-Show command history
+Teleop
 <div class="codebox">
-history
+roslaunch turtlebot_teleop ps3_teleop.launch
 </div>
 
 <br/>
-Execute previous command from history
+Saving map
 <div class="codebox">
-!3
+rosrun map_server map_saver -f ~/Documents/map
 </div>
+
+
 
 <article/>
 					

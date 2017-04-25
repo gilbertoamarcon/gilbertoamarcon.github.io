@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang='pt'>
+
+	<head>
+		<meta charset='utf-8'>
+		<title>Gilberto A Marcon</title>
+		<link rel='stylesheet' href='sty.css'>
+	</head>	
+	
+	<body>
+		
+		<div id='content' >
+
+			<div id='side_bar' >
+
+				<header id="header">
+					<h1>Gilberto's Source </h1>
+				</header>
+				
+				<div id="menu">
+					<ul>
+						<li> <a href="index.html" 				class="menu_button">Main						</a> </li>
+						<li> <a href="commit.html" 				class="menu_button">Commit						</a> </li>
+						<li> <a href="rasp_backup.html" 		class="menu_button">Raspberry Pi Backup			</a> </li>
+						<li> <a href="terminal.html" 			class="menu_button">Terminal Commands			</a> </li>
+						<li> <a href="ssh.html" 				class="menu_button">SSH Commands				</a> </li>
+						<li> <a href="replace.html" 			class="menu_button">Search and Replace			</a> </li>
+						<li> <a href="desktop.html" 			class="menu_button">Basic Ubuntu Config			</a> </li>
+						<li> <a href="ros-indigo.html" 			class="menu_button">ROS Indigo					</a> </li>
+						<li> <a href="repos.html" 				class="menu_button">Planning Repos				</a> </li>
+						<li> <a href="turtlebot.html" 			class="menu_button">Turtlebot					</a> </li>
+					</ul>
+				</div>
+
+			</div>
+		
+			<div id="main" >
+
+<h2>Basic Ubuntu Config	</h2>
+<article>
+
+<br/>
+This script sets up all the apps and basic configs for my Desktop.
+
+<br/>
+Backing up present working directory
+<div class="codebox">
+hdir=$(pwd)
+</div>
+
+<br/>
+Updates/Upgrades
+<div class="codebox">
+sudo apt-get --yes update
+</div>
+
+<br/>
+Utils
+<div class="codebox">
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer  -y
+sudo apt-get --yes update
+sudo apt-get --yes install grub-customizer
+sudo apt-get --yes install tree
+sudo apt-get --yes install sshfs
+sudo apt-get --yes install nautilus-open-terminal
+sudo apt-get --yes install default-jre
+sudo apt-get --yes install default-jdk
+sudo apt-get --yes install virtualbox 
+sudo apt-get --yes install git
+sudo apt-get --yes install nautilus-dropbox
+sudo apt-get --yes install inkscape
+sudo apt-get --yes install python-pip
+sudo apt-get --yes install python-sklearn
+sudo apt-get --yes install python3-pip
+sudo apt-get --yes install youtube-dl
+</div>
+
+<br/>
+Terminator
+<div class="codebox">
+sudo apt-get --yes install terminator
+sudo cp -Rf terminator ~/.config/
+sudo chmod +x ~/.config/terminator/
+</div>
+
+<br/>
+Sublime
+<div class="codebox">
+wget -P ~/Downloads/ https://download.sublimetext.com/sublime-text_build-3126_amd64.deb
+sudo dpkg -i ~/Downloads/sublime-text_build-3126_amd64.deb
+rm ~/Downloads/sublime-text_build-3126_amd64.deb
+subl
+pkill sublime_text
+cp sublime-text-3/* ~/.config/sublime-text-3/Packages/User/
+cp mimeapps.list ~/.local/share/applications/
+</div>
+
+<br/>
+Chrome
+<div class="codebox">
+wget -P ~/Downloads/ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i ~/Downloads/google-chrome-stable_current_amd64.deb
+rm ~/Downloads/google-chrome-stable_current_amd64.deb
+</div>
+
+<br/>
+Color Terminal
+<div class="codebox">
+sed -i '/force_color_prompt=yes/s/^<br/>
+//g' ~/.bashrc
+</div>
+
+<br/>
+Calc
+<div class="codebox">
+mkdir -p ~/dev/
+git clone https://github.com/gilbertoamarcon/calc.git ~/dev/calc/
+cd ~/dev/calc/
+./build.sh
+sudo ./install.sh
+cd $hdir
+rm -Rf ~/dev/calc/
+</div>
+
+<br/>
+Cleaning up
+<div class="codebox">
+sudo apt-get --yes autoremove
+</div>
+
+<br/>
+Removing Examples folder
+<div class="codebox">
+rm -Rf ~/examples.desktop
+</div>
+
+<br/>
+Restarting the machine
+<div class="codebox">
+sudo reboot
+</div>
+
+<br/>
+Manual stuff:
+<br/>
+Config power sleep and screen
+<br/>
+Config files icon list view
+<br/>
+Config grub
+<br/>
+Config proprietary video drivers
+<br/>
+Install and config matlab
+
+<br/>
+<br/>
+<a href='https://raw.githubusercontent.com/gilbertoamarcon/tools/master/deskhp/deskhp_config.sh' target='_blank'>Follow this link for the entire script.</a>
+
+
+
+<article/>
+					
+			</div>
+
+		</div>
+
+
+	</body>
+	
+</html>
+
