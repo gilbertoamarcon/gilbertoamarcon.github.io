@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang='en'>
+
+	<head>
+		<meta charset='utf-8'>
+		<title>Gilbertos Source</title>
+		<link rel='stylesheet' href='sty.css'>
+	</head>
+
+	<body>
+
+		<div id='content' >
+
+			<div id='side_bar' >
+
+				<header id="header">
+					<h1>Gilberto's Source </h1>
+				</header>
+
+				<div id="menu">
+					<ul>
+
+						<li><a href=commit.html class=menu_button>Commit						</a></li>
+						<li><a href=create-model-box.html class=menu_button>Create a Gazebo Box						</a></li>
+						<li><a href=create-model-flat.html class=menu_button>Create Bazebo Flat						</a></li>
+						<li><a href=create-package.html class=menu_button>Create a ROS Package						</a></li>
+						<li><a href=create-ws.html class=menu_button>Create a ROS Workspace						</a></li>
+						<li><a href=deskhp.html class=menu_button>Basic Desktop Setup						</a></li>
+						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
+						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
+						<li><a href=nvidia-fix.html class=menu_button>Nvidia Drivers Fix						</a></li>
+						<li><a href=pdf-chop.html class=menu_button>PDF Chop						</a></li>
+						<li><a href=pi-backup.html class=menu_button>Raspberry Pi Backup						</a></li>
+						<li><a href=pi-cam-client.html class=menu_button>Rasp Cam Client						</a></li>
+						<li><a href=pi-cam-server.html class=menu_button>Rasp Cam Server						</a></li>
+						<li><a href=pi-cam-server-setup.html class=menu_button>Rasp Cam Server Setup						</a></li>
+						<li><a href=purge-model.html class=menu_button>Purge a gazebo model						</a></li>
+						<li><a href=replace.html class=menu_button>Search and Replace						</a></li>
+						<li><a href=repos-setup.html class=menu_button>Repos Setup						</a></li>
+						<li><a href=repos-test.html class=menu_button>Repos Test						</a></li>
+						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
+						<li><a href=ros-jackal.html class=menu_button>ROS Jackal 						</a></li>
+						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
+						<li><a href=ros-turtlebot.html class=menu_button>ROS Turtlebot						</a></li>
+						<li><a href=ssh.html class=menu_button>SSH Login						</a></li>
+						<li><a href=terminal.html class=menu_button>Basic Bash 						</a></li>
+						<li><a href=website.html class=menu_button>Website Maker 						</a></li>
+					
+					</ul>
+				</div>
+
+			</div>
+
+			<div id="main" >
+
+				<article>
+
+
+
+<h2> Rasp Cam Server Setup</h2>
+
+<br/>
+ This Script will setup the Raspberry Pi Camera Server
+
+<br/>
+
+
+
+<div class="codebox">
+curl http://www.linux-projects.org/listing/uv4l_repo/lrkey.asc | sudo apt-key add -
+sudo nano /etc/apt/sources.list
+deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/ jessie main
+sudo apt-get update
+sudo apt-get install uv4l uv4l-raspicam
+sudo apt-get install uv4l-raspicam-extras
+sudo service uv4l_raspicam restart
+sudo raspi-config
+sudo rpi-update
+uv4l --help --driver raspicam --driver-help
+uv4l --driver raspicam --auto-video_nr --width 640 --height 480 --encoding jpeg
+dd if=/dev/video0 of=snapshot.jpeg bs=11M count=1
+sudo apt-get install uv4l-server uv4l-uvc uv4l-xscreen uv4l-mjpegstream uv4l-dummy uv4l-raspidisp
+sudo apt-get install uv4l-webrtc
+</div>
+
+sudo apt-get install cmake
+sudo apt-get install liblivemedia-dev liblog4cpp5-dev
+wget http://www.live555.com/liveMedia/public/live555-latest.tar.gz -O - | tar xvzf -
+cd live
+./genMakefiles linux
+sudo make CPPFLAGS=-DALLOW_RTSP_SERVER_PORT_REUSE=1 install
+git clone https://github.com/mpromonet/v4l2rtspserver.git
+cd v4l2rtspserver
+cmake . && make
+cd ~/v4l2rtspserver
+./v4l2rtspserver -W 320 -H 240 -F 5 -P 8554 /dev/video0
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/pi-cam-server-setup.sh target=_blank>Follow this link for the raw script.</a>
+
+				<article/>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+

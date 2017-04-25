@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang='en'>
+
+	<head>
+		<meta charset='utf-8'>
+		<title>Gilbertos Source</title>
+		<link rel='stylesheet' href='sty.css'>
+	</head>
+
+	<body>
+
+		<div id='content' >
+
+			<div id='side_bar' >
+
+				<header id="header">
+					<h1>Gilberto's Source </h1>
+				</header>
+
+				<div id="menu">
+					<ul>
+
+						<li><a href=commit.html class=menu_button>Commit						</a></li>
+						<li><a href=create-model-box.html class=menu_button>Create a Gazebo Box						</a></li>
+						<li><a href=create-model-flat.html class=menu_button>Create Bazebo Flat						</a></li>
+						<li><a href=create-package.html class=menu_button>Create a ROS Package						</a></li>
+						<li><a href=create-ws.html class=menu_button>Create a ROS Workspace						</a></li>
+						<li><a href=deskhp.html class=menu_button>Basic Desktop Setup						</a></li>
+						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
+						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
+						<li><a href=nvidia-fix.html class=menu_button>Nvidia Drivers Fix						</a></li>
+						<li><a href=pdf-chop.html class=menu_button>PDF Chop						</a></li>
+						<li><a href=pi-backup.html class=menu_button>Raspberry Pi Backup						</a></li>
+						<li><a href=pi-cam-client.html class=menu_button>Rasp Cam Client						</a></li>
+						<li><a href=pi-cam-server.html class=menu_button>Rasp Cam Server						</a></li>
+						<li><a href=pi-cam-server-setup.html class=menu_button>Rasp Cam Server Setup						</a></li>
+						<li><a href=purge-model.html class=menu_button>Purge a gazebo model						</a></li>
+						<li><a href=replace.html class=menu_button>Search and Replace						</a></li>
+						<li><a href=repos-setup.html class=menu_button>Repos Setup						</a></li>
+						<li><a href=repos-test.html class=menu_button>Repos Test						</a></li>
+						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
+						<li><a href=ros-jackal.html class=menu_button>ROS Jackal 						</a></li>
+						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
+						<li><a href=ros-turtlebot.html class=menu_button>ROS Turtlebot						</a></li>
+						<li><a href=ssh.html class=menu_button>SSH Login						</a></li>
+						<li><a href=terminal.html class=menu_button>Basic Bash 						</a></li>
+						<li><a href=website.html class=menu_button>Website Maker 						</a></li>
+					
+					</ul>
+				</div>
+
+			</div>
+
+			<div id="main" >
+
+				<article>
+
+
+<h2> Basic Desktop Setup</h2>
+
+<br/>
+ This script sets up all the apps and basic configs for my Desktop.
+
+<br/>
+
+
+
+<br/>
+ Backing up present working directory
+
+<div class="codebox">
+hdir=$(pwd)
+</div>
+
+<br/>
+ Updates/Upgrades
+
+<div class="codebox">
+sudo apt-get --yes update
+</div>
+
+<br/>
+ Utils
+
+<div class="codebox">
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer  -y
+sudo apt-get --yes update
+sudo apt-get --yes install grub-customizer
+sudo apt-get --yes install tree
+sudo apt-get --yes install sshfs
+sudo apt-get --yes install nautilus-open-terminal
+sudo apt-get --yes install default-jre
+sudo apt-get --yes install default-jdk
+sudo apt-get --yes install virtualbox 
+sudo apt-get --yes install git
+sudo apt-get --yes install nautilus-dropbox
+sudo apt-get --yes install inkscape
+sudo apt-get --yes install python-pip
+sudo apt-get --yes install python-sklearn
+sudo apt-get --yes install python3-pip
+sudo apt-get --yes install youtube-dl
+</div>
+
+<br/>
+ Terminator
+
+<div class="codebox">
+sudo apt-get --yes install terminator
+sudo cp -Rf terminator ~/.config/
+sudo chmod +x ~/.config/terminator/
+</div>
+
+<br/>
+ Sublime
+
+<div class="codebox">
+wget -P ~/Downloads/ https://download.sublimetext.com/sublime-text_build-3126_amd64.deb
+sudo dpkg -i ~/Downloads/sublime-text_build-3126_amd64.deb
+rm ~/Downloads/sublime-text_build-3126_amd64.deb
+subl
+pkill sublime_text
+cp sublime-text-3/* ~/.config/sublime-text-3/Packages/User/
+cp mimeapps.list ~/.local/share/applications/
+</div>
+
+<br/>
+ Chrome
+
+<div class="codebox">
+wget -P ~/Downloads/ https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i ~/Downloads/google-chrome-stable_current_amd64.deb
+rm ~/Downloads/google-chrome-stable_current_amd64.deb
+</div>
+
+<br/>
+ Color Terminal
+
+<div class="codebox">
+sed -i '/force_color_prompt=yes/s/^#//g' ~/.bashrc
+</div>
+
+<br/>
+ Calc
+
+<div class="codebox">
+mkdir -p ~/dev/
+git clone https://github.com/gilbertoamarcon/calc.git ~/dev/calc/
+cd ~/dev/calc/
+./build.sh
+sudo ./install.sh
+cd $hdir
+rm -Rf ~/dev/calc/
+</div>
+
+<br/>
+ Cleaning up
+
+<div class="codebox">
+sudo apt-get --yes autoremove
+</div>
+
+<br/>
+ Removing Examples folder
+
+<div class="codebox">
+rm -Rf ~/examples.desktop
+</div>
+
+<br/>
+ Restarting the machine
+
+<div class="codebox">
+sudo reboot
+</div>
+
+<br/>
+ Manual stuff:
+
+<br/>
+ Config power sleep and screen
+
+<br/>
+ Config files icon list view
+
+<br/>
+ Config grub
+
+<br/>
+ Config proprietary video drivers
+
+<br/>
+ Install and config matlab
+
+
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/deskhp.sh target=_blank>Follow this link for the raw script.</a>
+
+				<article/>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+

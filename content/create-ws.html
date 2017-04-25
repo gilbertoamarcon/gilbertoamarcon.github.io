@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang='en'>
+
+	<head>
+		<meta charset='utf-8'>
+		<title>Gilbertos Source</title>
+		<link rel='stylesheet' href='sty.css'>
+	</head>
+
+	<body>
+
+		<div id='content' >
+
+			<div id='side_bar' >
+
+				<header id="header">
+					<h1>Gilberto's Source </h1>
+				</header>
+
+				<div id="menu">
+					<ul>
+
+						<li><a href=commit.html class=menu_button>Commit						</a></li>
+						<li><a href=create-model-box.html class=menu_button>Create a Gazebo Box						</a></li>
+						<li><a href=create-model-flat.html class=menu_button>Create Bazebo Flat						</a></li>
+						<li><a href=create-package.html class=menu_button>Create a ROS Package						</a></li>
+						<li><a href=create-ws.html class=menu_button>Create a ROS Workspace						</a></li>
+						<li><a href=deskhp.html class=menu_button>Basic Desktop Setup						</a></li>
+						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
+						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
+						<li><a href=nvidia-fix.html class=menu_button>Nvidia Drivers Fix						</a></li>
+						<li><a href=pdf-chop.html class=menu_button>PDF Chop						</a></li>
+						<li><a href=pi-backup.html class=menu_button>Raspberry Pi Backup						</a></li>
+						<li><a href=pi-cam-client.html class=menu_button>Rasp Cam Client						</a></li>
+						<li><a href=pi-cam-server.html class=menu_button>Rasp Cam Server						</a></li>
+						<li><a href=pi-cam-server-setup.html class=menu_button>Rasp Cam Server Setup						</a></li>
+						<li><a href=purge-model.html class=menu_button>Purge a gazebo model						</a></li>
+						<li><a href=replace.html class=menu_button>Search and Replace						</a></li>
+						<li><a href=repos-setup.html class=menu_button>Repos Setup						</a></li>
+						<li><a href=repos-test.html class=menu_button>Repos Test						</a></li>
+						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
+						<li><a href=ros-jackal.html class=menu_button>ROS Jackal 						</a></li>
+						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
+						<li><a href=ros-turtlebot.html class=menu_button>ROS Turtlebot						</a></li>
+						<li><a href=ssh.html class=menu_button>SSH Login						</a></li>
+						<li><a href=terminal.html class=menu_button>Basic Bash 						</a></li>
+						<li><a href=website.html class=menu_button>Website Maker 						</a></li>
+					
+					</ul>
+				</div>
+
+			</div>
+
+			<div id="main" >
+
+				<article>
+
+
+
+<h2> Create a ROS Workspace</h2>
+
+<br/>
+ Usage:
+
+<br/>
+ ./create-ws.sh workspace-name
+
+<br/>
+
+
+
+<br/>
+ Backing up present working directory
+
+<div class="codebox">
+hdir=$(pwd)
+</div>
+
+printf "Creating workspace at: \\n$HOME/ros-ws/$1/\\n"
+<div class="codebox">
+mkdir -p ~/ros-ws/$1/src
+cd ~/ros-ws/$1/src
+catkin_init_workspace
+cd ~/ros-ws/$1/
+catkin_make
+source ~/ros-ws/$1/devel/setup.bash
+printf "\n# $1 ROS workspace:\nsource $HOME/ros-ws/$1/devel/setup.bash\n" >> ~/.bashrc
+</div>
+
+<br/>
+ Back to original working directory
+
+<div class="codebox">
+cd $hdir
+</div>
+
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-ws.sh target=_blank>Follow this link for the raw script.</a>
+
+				<article/>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+

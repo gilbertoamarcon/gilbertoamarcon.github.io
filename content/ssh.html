@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang='en'>
+
+	<head>
+		<meta charset='utf-8'>
+		<title>Gilbertos Source</title>
+		<link rel='stylesheet' href='sty.css'>
+	</head>
+
+	<body>
+
+		<div id='content' >
+
+			<div id='side_bar' >
+
+				<header id="header">
+					<h1>Gilberto's Source </h1>
+				</header>
+
+				<div id="menu">
+					<ul>
+
+						<li><a href=commit.html class=menu_button>Commit						</a></li>
+						<li><a href=create-model-box.html class=menu_button>Create a Gazebo Box						</a></li>
+						<li><a href=create-model-flat.html class=menu_button>Create Bazebo Flat						</a></li>
+						<li><a href=create-package.html class=menu_button>Create a ROS Package						</a></li>
+						<li><a href=create-ws.html class=menu_button>Create a ROS Workspace						</a></li>
+						<li><a href=deskhp.html class=menu_button>Basic Desktop Setup						</a></li>
+						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
+						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
+						<li><a href=nvidia-fix.html class=menu_button>Nvidia Drivers Fix						</a></li>
+						<li><a href=pdf-chop.html class=menu_button>PDF Chop						</a></li>
+						<li><a href=pi-backup.html class=menu_button>Raspberry Pi Backup						</a></li>
+						<li><a href=pi-cam-client.html class=menu_button>Rasp Cam Client						</a></li>
+						<li><a href=pi-cam-server.html class=menu_button>Rasp Cam Server						</a></li>
+						<li><a href=pi-cam-server-setup.html class=menu_button>Rasp Cam Server Setup						</a></li>
+						<li><a href=purge-model.html class=menu_button>Purge a gazebo model						</a></li>
+						<li><a href=replace.html class=menu_button>Search and Replace						</a></li>
+						<li><a href=repos-setup.html class=menu_button>Repos Setup						</a></li>
+						<li><a href=repos-test.html class=menu_button>Repos Test						</a></li>
+						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
+						<li><a href=ros-jackal.html class=menu_button>ROS Jackal 						</a></li>
+						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
+						<li><a href=ros-turtlebot.html class=menu_button>ROS Turtlebot						</a></li>
+						<li><a href=ssh.html class=menu_button>SSH Login						</a></li>
+						<li><a href=terminal.html class=menu_button>Basic Bash 						</a></li>
+						<li><a href=website.html class=menu_button>Website Maker 						</a></li>
+					
+					</ul>
+				</div>
+
+			</div>
+
+			<div id="main" >
+
+				<article>
+
+
+
+<h2> SSH Login</h2>
+
+<br/>
+ Here are some basic SSH commands that save me up a lot of time.
+
+<br/>
+
+
+
+<br/>
+ SSH login to remote server
+
+<div class="codebox">
+ssh -l marcondg shell.onid.oregonstate.edu
+ssh -l marcondg access.engr.oregonstate.edu
+</div>
+
+<br/>
+ SSH login to remote server with graphics
+
+<div class="codebox">
+ssh -X -l marcondg access.engr.oregonstate.edu
+</div>
+
+
+<h2> File Copy</h2>
+
+<br/>
+ Copying a file from local to host
+
+<div class="codebox">
+scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@shell.onid.oregonstate.edu:public_html/
+scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@access.engr.oregonstate.edu:public_html/
+</div>
+
+<br/>
+ Copying a file from host to local
+
+<div class="codebox">
+scp marcondg@access.engr.oregonstate.edu:public_html/index.html ~/Dropbox/Apps/Pancake.io/ 
+</div>
+
+<br/>
+ Copying an entire folder
+
+<div class="codebox">
+scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@shell.onid.oregonstate.edu:public_html/
+scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@accermss.engr.oregonstate.edu:public_html/
+</div>
+
+<br/>
+ Set up execute and read permissions on all files on all folders recursivelly
+
+<div class="codebox">
+chmod -R +xr *
+</div>
+
+
+<h2> Remote folder Mount</h2>
+
+<br/>
+ Remote server
+
+<div class="codebox">
+mkdir ~/eng/
+sshfs marcondg@access.engr.oregonstate.edu: ~/eng/
+</div>
+
+<br/>
+ Raspberry Pi
+
+<div class="codebox">
+mkdir ~/pi/
+sshfs pi@rasp: ~/pi/
+</div>
+
+
+<h2> SSH login without password</h2>
+
+<br/>
+ Use this to create your key. Hit ENTER for every prompt.
+
+<div class="codebox">
+ssh-keygen -t rsa
+</div>
+
+<br/>
+ Create a .ssh directory on the remote server user home folder
+
+<div class="codebox">
+ssh marcondg@shell.onid.oregonstate.edu mkdir -p .ssh
+</div>
+
+<br/>
+ Copy your key to the remote server .ssh folder
+
+<div class="codebox">
+cat .ssh/id_rsa.pub | ssh marcondg@shell.onid.oregonstate.edu 'cat >> .ssh/authorized_keys'
+</div>
+
+<br/>
+ Now you can SSH login without typing the password.
+
+
+
+<h2> TEACH class path</h2>
+<div class="codebox">
+/nfs/farm/classes/eecs/winter2017/cs325-400/handin
+</div>
+
+<br/>
+ Sending terminal commands over SSH withough actual login examples:
+
+<div class="codebox">
+ssh pi@rasp '~/mobile/bin/driver'
+ssh pi@rasp '~/mobile/cam_server.sh'
+ssh pi@rasp '~/mobile/teleop.sh'
+</div>
+
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ssh.sh target=_blank>Follow this link for the raw script.</a>
+
+				<article/>
+
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
+
