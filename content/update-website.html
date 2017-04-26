@@ -58,30 +58,57 @@
 
 
 
-<h2> Desktop Links</h2>
+<h2> Update repo website</h2>
 
 <br/>
- Links to hot directories.
+ Usage:
+
+<br/>
+ ./update-website.sh version-name
 
 <br/>
 
 
+
+<br/>
+ Backing up present working directory
 
 <div class="codebox">
-ln -s ~/Dropbox/Docs/tools/ ~/Desktop/
-ln -s ~/Dropbox/OSU/Classes/ ~/Desktop/
-ln -s ~/Dropbox/OSU/research/ ~/Desktop/
+hdir=$(pwd)
 </div>
 
 <br/>
- Tools env var
+ Compiling website
 
 <div class="codebox">
-printf "\n# TOOLS:\nexport TOOLS=${HOME}/Desktop/tools/\n" >> ~/.bashrc
+cd $TOOLS
+./website.sh
 </div>
 
 <br/>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/links.sh target=_blank>Follow this link for the raw script.</a>
+ Committing repos
+
+<div class="codebox">
+./commit.sh $1
+</div>
+
+<br/>
+ Committing website
+
+<div class="codebox">
+cd ~/dev/gilbertoamarcon.github.io/
+./commit.sh $1
+</div>
+
+<br/>
+ Back to original working directory
+
+<div class="codebox">
+cd $hdir
+</div>
+
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/update-website.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 
