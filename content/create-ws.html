@@ -76,8 +76,11 @@
 hdir=$(pwd)
 </div>
 
-printf "Creating workspace at: \\n$HOME/ros-ws/$1/\\n"
+<br/>
+ Workspace creation
+
 <div class="codebox">
+printf "Creating workspace at: \\n$HOME/ros-ws/$1/\\n"
 mkdir -p ~/ros-ws/$1/src
 cd ~/ros-ws/$1/src
 catkin_init_workspace

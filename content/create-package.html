@@ -76,8 +76,11 @@
 hdir=$(pwd)
 </div>
 
-printf "Creating package at: \\n$HOME/ros-ws/$1/src/\\n"
+<br/>
+ Package creation
+
 <div class="codebox">
+printf "Creating package at: \\n$HOME/ros-ws/$1/src/\\n"
 cd ~/ros-ws/$1/src/
 catkin_create_pkg $2 rospy
 source ~/ros-ws/$1/devel/setup.bash
