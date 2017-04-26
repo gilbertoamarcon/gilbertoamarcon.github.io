@@ -37,6 +37,7 @@
 						<li><a href=pi-cam-server-setup.html class=menu_button>Rasp Cam Server Setup						</a></li>
 						<li><a href=purge-model.html class=menu_button>Purge a gazebo model						</a></li>
 						<li><a href=replace.html class=menu_button>Search and Replace						</a></li>
+						<li><a href=repos-dep.html class=menu_button>Repos Dependencies						</a></li>
 						<li><a href=repos-setup.html class=menu_button>Repos Setup						</a></li>
 						<li><a href=repos-test.html class=menu_button>Repos Test						</a></li>
 						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
@@ -61,121 +62,20 @@
 <h2> Repos Setup</h2>
 
 <br/>
- This script will install and configure all repos and all their dependencies.
+ This script will install and configure all repos.
 
 <br/>
 
 
-
-
-<h2> General dependencies</h2>
-
-<br/>
- Repos folder
-
-<div class="codebox">
-sudo apt-get --yes install git
-mkdir -p ~/dev/
-</div>
-
-<br/>
- cmake install/upgrade (3.5.1):
-
-<div class="codebox">
-sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
-sudo apt-get --yes update
-sudo apt-get --yes install cmake
-sudo apt-get --yes upgrade cmake
-wget -P ~/Downloads/ http://www.cmake.org/files/v3.5/cmake-3.5.1.tar.gz
-tar -xvzf ~/Downloads/cmake-3.5.1.tar.gz -C ~/Downloads/
-cd ~/Downloads/cmake-3.5.1
-./configure
-make
-sudo make install
-sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 --force
-cmake --version
-</div>
-
-<br/>
- Upgrade to gcc/g++ 5.4.0 (5.4.0):
-
-<div class="codebox">
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-sudo apt-get --yes update
-sudo apt-get --yes install gcc-5 g++-5
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
-</div>
-
-<br/>
- Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
-
-<div class="codebox">
-sudo apt-get --yes install gcc-4.8 g++-4.8
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
-</div>
-
-<br/>
- Proto
-
-<div class="codebox">
-sudo apt-get --yes install autoconf automake libtool curl make g++ unzip
-wget -P ~/Downloads/ https://github.com/google/protobuf/releases/download/v3.0.0/protobuf-cpp-3.0.0.tar.gz
-tar -xvzf ~/Downloads/protobuf-cpp-3.0.0.tar.gz -C ~/Downloads/
-cd ~/Downloads/protobuf-3.0.0/
-./autogen.sh
-./configure
-make
-make check
-sudo make install
-sudo ldconfig # refresh shared library cache.
-</div>
-
-<br/>
- GDSL (for yahsp2)
-
-<div class="codebox">
-wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
-tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
-cd ~/Downloads/gdsl-1.8/
-./configure
-make
-make check
-sudo make install
-make clean
-make distclean
-</div>
-
-<br/>
- Java 8
-
-<div class="codebox">
-sudo add-apt-repository ppa:webupd8team/java -y
-sudo apt-get --yes update
-sudo apt-get --yes install oracle-java8-installer
-sudo apt-get --yes install oracle-java8-set-default
-</div>
 
 
 <h2> i-CiFHaR</h2>
 
 <br/>
- Installing dependencies
-
-<div class="codebox">
-sudo apt-get --yes install qt5-default
-</div>
-
-<br/>
- Clonning repository
+ Cloning and building
 
 <div class="codebox">
 git clone https://gilbertoamarcon@bitbucket.org/aldukeman/icifhar.git ~/dev/icifhar/
-</div>
-
-<br/>
- Building
-
-<div class="codebox">
 cd ~/dev/icifhar/
 qmake
 make
@@ -191,75 +91,15 @@ printf "\n# i-CiFHaR:\nexport LD_LIBRARY_PATH=~/dev/icifhar/lib\n" >> ~/.bashrc
 
 <h2> MACPDDL</h2>
 
-<br/>
- Installing dependencies
-
-<div class="codebox">
-sudo apt-get --yes install default-jre
-sudo apt-get --yes install default-jdk
-sudo apt-get --yes install ant
-</div>
-
-<br/>
- Get ANTLR from antlr.org
-
-<div class="codebox">
-wget -P ~/Downloads/ http://www.antlr.org/download/antlr-4.5.3-complete.jar
-sudo mv ~/Downloads/antlr-4.5.3-complete.jar /usr/local/lib/antlr-4.5.3-complete.jar
-</div>
-
-<br/>
- Clonning repository
-
 <div class="codebox">
 git clone https://gilbertoamarcon@bitbucket.org/aldukeman/macpddl.git ~/dev/macpddl/
-</div>
-
-
-<h2> COLIN2</h2>
-
-<br/>
- Installing dependencies
-
-<div class="codebox">
-sudo apt-get --yes install texlive-full
-sudo apt-get --yes install doxygen
-sudo apt-get --yes install perl
-sudo apt-get --yes install bison
-sudo apt-get --yes install coinor-*
-sudo apt-get --yes install libbz2-dev
-sudo apt-get --yes install realpath
-</div>
-
-<br/>
- Flex 2.5.39
-
-<div class="codebox">
-wget -P ~/Downloads/ https://sourceforge.net/projects/flex/files/flex-2.5.39.tar.bz2
-tar -xvjf ~/Downloads/flex-2.5.39.tar.bz2 -C ~/Downloads/
-cd ~/Downloads/flex-2.5.39/
-./configure
-make
-make check
-sudo make install
-flex --version
-</div>
-
-<br/>
- Clonning repository
-
-<div class="codebox">
-git clone https://github.com/aldukeman/colin2.git ~/dev/colin2/
-cd ~/dev/colin2/
-./run-cmake-release
-./build-release
 </div>
 
 
 <h2> i-MAPC</h2>
 
 <br/>
- Download and build imapc
+ Cloning and building
 
 <div class="codebox">
 git clone https://gilbertoamarcon@bitbucket.org/aldukeman/imapc.git ~/dev/imapc/
@@ -267,66 +107,6 @@ cd ~/dev/imapc/
 git submodule init
 git submodule update
 cmake .
-make
-</div>
-
-
-<h2> RDDL</h2>
-<div class="codebox">
-git clone https://github.com/ssanner/rddlsim.git ~/dev/rddlsim/
-cd ~/dev/rddlsim/
-sudo chmod +x compile
-./compile
-</div>
-
-<br/>
- graphviz
-
-<div class="codebox">
-wget -P ~/Downloads/ http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.28.0.tar.gz
-tar -xvzf ~/Downloads/graphviz-2.28.0.tar.gz -C ~/Downloads/
-cd ~/Downloads/graphviz-2.28.0/
-./configure
-make
-sudo make install 
-rm -Rf ~/Downloads/graphviz*
-</div>
-
-
-<h2> Sample domains</h2>
-<div class="codebox">
-git clone https://github.com/gilbertoamarcon/domains.git ~/dev/domains/
-</div>
-
-
-<h2> Planning Domains</h2>
-<div class="codebox">
-git clone https://github.com/aldukeman/planning-domains.git ~/dev/planning-domains/
-</div>
-
-
-<h2> PROST</h2>
-
-<br/>
- Install and config
-
-<div class="codebox">
-sudo apt-get --yes install mercurial g++ make bison flex libbdd-dev
-hg clone https://gilbertoamarcon@bitbucket.org/tkeller/prost ~/dev/prost/
-cd ~/dev/prost/src/search
-make
-cd ~/dev/prost/src/rddl_parser
-make
-ln -s ~/dev/rddlsim/ ~/dev/prost/testbed/rddlsim
-</div>
-
-
-<h2> APPL</h2>
-<div class="codebox">
-wget -P ~/Downloads/ http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/uploads/Main/appl-0.96.tar.gz 
-tar -xvzf ~/Downloads/appl-0.96.tar.gz -C ~/dev/
-rm ~/Downloads/appl-0.96.tar.gz
-cd ~/dev/appl-0.96/src/
 make
 </div>
 
