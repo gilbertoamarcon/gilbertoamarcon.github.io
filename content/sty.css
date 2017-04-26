@@ -1,7 +1,7 @@
 *{
 	margin:					0px;
 	padding:				0px;
-	font-family: 			"Comic Sans MS", cursive, sans-serif;
+	font-family: 			Tahoma, Geneva, sans-serif;
 	font-size: 				14px;
 	color: 					rgb(25,95,127);
 	text-decoration: 		none; 
@@ -91,7 +91,7 @@ div.centeredContent{
 }
 
 .codebox{
-	font-family: 			"Courier New";
+	font-family: 			"Lucida Console", Monaco, monospace;
 	background-color: 		rgb(255,255,255);
 	margin-top:				5px;
 	margin-bottom:			5px;
