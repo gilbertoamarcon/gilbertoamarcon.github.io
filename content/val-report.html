@@ -39,13 +39,13 @@
 						<li><a href=replace.html class=menu_button>Search and Replace						</a></li>
 						<li><a href=repos-dep.html class=menu_button>Repos Dependencies						</a></li>
 						<li><a href=repos-setup.html class=menu_button>Repos Setup						</a></li>
-						<li><a href=repos-test.html class=menu_button>Repos Test						</a></li>
 						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
 						<li><a href=ros-jackal.html class=menu_button>ROS Jackal 						</a></li>
 						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
 						<li><a href=ros-turtlebot.html class=menu_button>ROS Turtlebot						</a></li>
 						<li><a href=ssh.html class=menu_button>SSH Login						</a></li>
 						<li><a href=update-website.html class=menu_button>Update Repo Website						</a></li>
+						<li><a href=val-report.html class=menu_button>VAL PDF						</a></li>
 						<li><a href=website.html class=menu_button>Website Maker 						</a></li>
 					
 					</ul>
@@ -59,72 +59,85 @@
 
 
 
-<h2> Repos Test</h2>
+<h2> VAL PDF</h2>
 
 <br/>
- This script will test all repos and all their dependencies.
-
-
-
-<h2> i-CiFHaR</h2>
-
-<div class="codebox">
-~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR10T1.xml
-~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR20T2.xml
-~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR20T2.xml -o /home/gil/Downloads suf
-</div>
-
-
-<h2> i-MAPC</h2>
-
-<div class="codebox">
-cd ~/dev/imapc/
-./scripts/rp_cf_plan.sh resources/testing/blocksworld_p10_c1
-</div>
-
-
-<h2> RDDL</h2>
-
-<div class="codebox">
-cd ~/dev/rddlsim/
-./run rddl.viz.RDDL2Graph ~/dev/rddlsim/files/rddl/examples/dbn_prop.rddl inst_dbn
-./run rddl.viz.RDDL2Graph ~/dev/domains/rddl/complete.rddl inst_dbn
-</div>
-
-
-<h2> PROST</h2>
+ Generate plan PDF report.
 
 <br/>
- Testing 1
+
+
+
+<br/>
+ Usage:
+
+<br/>
+ ./val-report.sh ~/dev/domains/macpddl/simple/
+
+<br/>
+
+
+
+<br/>
+ Backing up present working directory
 
 <div class="codebox">
-cd ~/dev/prost/testbed/
-./run-server benchmarks/ippc2011
-cd ~/dev/prost/testbed/
-./plan.py benchmarks/ippc-all/rddl/elevators_mdp.rddl benchmarks/ippc-all/rddl/elevators_inst_mdp__1.rddl "IPPC2014"
+hdir=$(pwd)
 </div>
 
 <br/>
- Testing 2
+ Go the the problem directory
 
 <div class="codebox">
-cd ~/dev/prost/testbed/
-./run-server ~/dev/domains/rddl
-cd ~/dev/prost/testbed/
-./plan.py ~/dev/domains/rddl/rddl/game.rddl ~/dev/domains/rddl/rddl/game_ins.rddl "IPPC2014"
-</div>
-
-
-<h2> APPL</h2>
-
-<div class="codebox">
-./pomdpsol ~/dev/domains/pomdpx/simple_xdp.pomdpx
-./pomdpsol ~/dev/domains/pomdpx/simple_mdp.pomdpx
-./pomdpsol ~/dev/domains/pomdpx/simple_pomdp.pomdpx
+cd $1
 </div>
 
 <br/>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-test.sh target=_blank>Follow this link for the raw script.</a>
+ Cleanup
+
+<div class="codebox">
+rm report* > /dev/null 2>&1
+</div>
+
+<br/>
+ Generate the report
+
+<div class="codebox">
+~/dev/val/validate -f report -l *domain.pddl *problem.pddl solution
+</div>
+
+<br/>
+ PDF Generation
+
+<div class="codebox">
+pdflatex report.tex > /dev/null 2>&1
+</div>
+
+<br/>
+ Opening PDF
+
+<div class="codebox">
+evince report.pdf
+</div>
+
+<br/>
+ Cleanup
+
+<div class="codebox">
+rm report.aux
+rm report.log
+rm report.tex
+</div>
+
+<br/>
+ Back to original working directory
+
+<div class="codebox">
+cd $hdir
+</div>
+
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/val-report.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 
