@@ -209,7 +209,6 @@ cd ~/Downloads/graphviz-2.28.0/
 ./configure
 make
 sudo make install 
-rm -Rf ~/Downloads/graphviz*
 </div>
 
 <br/>
@@ -232,17 +231,6 @@ git clone https://github.com/aldukeman/colin2.git ~/dev/colin2/
 cd ~/dev/colin2/
 ./run-cmake-release
 ./build-release
-</div>
-
-<br/>
- APPL
-
-<div class="codebox">
-wget -P ~/Downloads/ http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/uploads/Main/appl-0.96.tar.gz 
-tar -xvzf ~/Downloads/appl-0.96.tar.gz -C ~/dev/
-rm ~/Downloads/appl-0.96.tar.gz
-cd ~/dev/appl-0.96/src/
-make
 </div>
 
 <br/>
@@ -273,7 +261,7 @@ git clone https://github.com/aldukeman/planning-domains.git ~/dev/planning-domai
  Cleaning up and rebooting
 
 <div class="codebox">
-rm -Rf ~/Downloads/
+rm -Rf ~/Downloads/*
 sudo apt-get autoremove
 sudo reboot
 </div>
