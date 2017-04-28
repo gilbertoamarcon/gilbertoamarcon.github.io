@@ -74,7 +74,27 @@
  Planning alone
 
 <div class="codebox">
-./scripts/plan.sh ~/dev/domains/macpddl/simple
+rm ~/dev/domains/macpddl/blocks/!(*macpddl) > /dev/null 2>&1
+cd ~/dev/imapc/
+./scripts/plan.sh ~/dev/domains/macpddl/blocks
+</div>
+
+<br/>
+ Coalition formation then planning
+
+<div class="codebox">
+rm ~/dev/domains/macpddl/blocks/!(*macpddl) > /dev/null 2>&1
+cd ~/dev/imapc/
+./scripts/cf_then_plan.sh ~/dev/domains/macpddl/blocks
+</div>
+
+<br/>
+ Temporal planinng using Colin 2
+
+<div class="codebox">
+~/dev/colin2/plan ~/dev/domains/pddl/box_pushing/domain.pddl ~/dev/domains/pddl/box_pushing/problem.pddl ~/dev/domains/pddl/box_pushing/solution ~/dev/domains/pddl/box_pushing/timming
+~/dev/colin2/plan ~/dev/domains/pddl/blocks/domain.pddl ~/dev/domains/pddl/blocks/problem.pddl ~/dev/domains/pddl/blocks/solution ~/dev/domains/pddl/blocks/timming
+~/dev/colin2/plan ~/dev/domains/pddl/temporal-blocks/domain.pddl ~/dev/domains/pddl/temporal-blocks/problem.pddl ~/dev/domains/pddl/temporal-blocks/solution ~/dev/domains/pddl/temporal-blocks/timming
 </div>
 
 <br/>
