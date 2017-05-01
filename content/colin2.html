@@ -61,48 +61,60 @@
 				<article>
 
 
-<h2> Raspberry Pi Backup</h2>
+
+<h2> COLIN2 Wrapper</h2>
 
 <br/>
- Here are some commands to backup a Raspberry Pi SD card.
-
-<br/>
- This assumes the SD card is plugged to a linux computer at /dev/sdb.
+ Wrapper for COLIN2 Planning.
 
 <br/>
 
 
 
 <br/>
- Backup:
+ Usage: ./colin2.sh problem-dir
+
+<br/>
+
+
+
+<br/>
+ Generating problem file
 
 <div class="codebox">
-sudo dd bs=4M if=/dev/sdb of=raspbian.img
+python gen-problem.py $1
 </div>
 
 <br/>
- Restore:
+ Planning
 
 <div class="codebox">
-sudo dd bs=4M if=raspbian.img of=/dev/sdb
+~/dev/colin2/plan $1/domain.pddl $1/problem.pddl $1/solution $1/timing
 </div>
 
 <br/>
- Backup using Gzip to save up space:
+ VAL PDF
 
 <div class="codebox">
-sudo dd bs=4M if=/dev/sdb | gzip > rasbian.img.gz
+${TOOLS}val-report.sh $1
 </div>
 
 <br/>
- Restore using Gzip:
+ Generating Graphics
 
 <div class="codebox">
-gunzip --stdout rasbian.img.gz | sudo dd bs=4M of=/dev/sdb
+python plot-plan.py $1
 </div>
 
 <br/>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/pi-backup.sh target=_blank>Follow this link for the raw script.</a>
+ Viewing Graphics
+
+<div class="codebox">
+evince $1/graphics.eps &
+</div>
+
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/colin2.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

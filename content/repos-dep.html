@@ -21,6 +21,7 @@
 					<ul>
 
 						<li><a href=bash.html class=menu_button>Basic Bash 						</a></li>
+						<li><a href=colin2.html class=menu_button>COLIN2 Wrapper						</a></li>
 						<li><a href=commit.html class=menu_button>Commit						</a></li>
 						<li><a href=create-model-box.html class=menu_button>Create a Gazebo Box						</a></li>
 						<li><a href=create-model-flat.html class=menu_button>Create Bazebo Flat						</a></li>
@@ -84,38 +85,57 @@ sudo apt-get --yes update
  Apt-get installs
 
 <div class="codebox">
-sudo apt-get install cmake python
-sudo apt-get --yes install texlive-full
-sudo apt-get --yes install doxygen
-sudo apt-get --yes install perl
-sudo apt-get --yes install bison
-sudo apt-get --yes install coinor-*
-sudo apt-get --yes install libbz2-dev
-sudo apt-get --yes install realpath
-sudo apt-get --yes install default-jre
-sudo apt-get --yes install default-jdk
 sudo apt-get --yes install ant
-sudo apt-get --yes install git
-sudo apt-get --yes install mercurial
-sudo apt-get --yes install make
-sudo apt-get --yes install bison
-sudo apt-get --yes install flex
-sudo apt-get --yes install libbdd-dev
-sudo apt-get --yes install g++
-sudo apt-get --yes install gcc-5
-sudo apt-get --yes install g++-5
-sudo apt-get --yes install gcc-4.8
-sudo apt-get --yes install g++-4.8
-sudo apt-get --yes install g++-multilib
 sudo apt-get --yes install autoconf
 sudo apt-get --yes install automake
-sudo apt-get --yes install libtool
+sudo apt-get --yes install autotools-dev
+sudo apt-get --yes install bison
+sudo apt-get --yes install build-essential
+sudo apt-get --yes install bzip2
+sudo apt-get --yes install cmake
+sudo apt-get --yes install coinor-*
 sudo apt-get --yes install curl
-sudo apt-get --yes install unzip
+sudo apt-get --yes install default-jdk
+sudo apt-get --yes install default-jre
+sudo apt-get --yes install doxygen
+sudo apt-get --yes install flex
+sudo apt-get --yes install g++
+sudo apt-get --yes install g++-multilib
+sudo apt-get --yes install g++-4.8
+sudo apt-get --yes install g++-4.8-multilib
+sudo apt-get --yes install g++-5
+sudo apt-get --yes install g++-5-multilib
+sudo apt-get --yes install g++-6
+sudo apt-get --yes install g++-6-multilib
+sudo apt-get --yes install gcc
+sudo apt-get --yes install gcc-multilib
+sudo apt-get --yes install gcc-4.8
+sudo apt-get --yes install gcc-4.8-multilib
+sudo apt-get --yes install gcc-5
+sudo apt-get --yes install gcc-5-multilib
+sudo apt-get --yes install gcc-6
+sudo apt-get --yes install gcc-6-multilib
+sudo apt-get --yes install git
+sudo apt-get --yes install libbdd-dev
+sudo apt-get --yes install libbz2-*
+sudo apt-get --yes install libc6
+sudo apt-get --yes install libc6-dev
+sudo apt-get --yes install libc6-dbg
+sudo apt-get --yes install libgmp*
+sudo apt-get --yes install libicu*
+sudo apt-get --yes install libmpfr*
+sudo apt-get --yes install libtool
+sudo apt-get --yes install make
+sudo apt-get --yes install mercurial
 sudo apt-get --yes install oracle-java8-installer
 sudo apt-get --yes install oracle-java8-set-default
+sudo apt-get --yes install perl
+sudo apt-get --yes install python
+sudo apt-get --yes install python-dev
 sudo apt-get --yes install qt5-default
-sudo apt-get --yes install cmake
+sudo apt-get --yes install realpath
+sudo apt-get --yes install texlive-full
+sudo apt-get --yes install unzip
 sudo apt-get --yes upgrade cmake
 </div>
 
@@ -127,12 +147,12 @@ mkdir -p ~/dev/
 </div>
 
 <br/>
- Cmake install/upgrade (3.5.1):
+ Cmake install/upgrade (3.8.0):
 
 <div class="codebox">
-wget -P ~/Downloads/ http://www.cmake.org/files/v3.5/cmake-3.5.1.tar.gz
-tar -xvzf ~/Downloads/cmake-3.5.1.tar.gz -C ~/Downloads/
-cd ~/Downloads/cmake-3.5.1
+wget -P ~/Downloads/ http://www.cmake.org/files/v3.8/cmake-3.8.0.tar.gz
+tar -xvzf ~/Downloads/cmake-3.8.0.tar.gz -C ~/Downloads/
+cd ~/Downloads/cmake-3.8.0
 ./configure
 make
 sudo make install
@@ -152,6 +172,19 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /u
 
 <div class="codebox">
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+</div>
+
+<br/>
+ Boost 1.64
+
+<div class="codebox">
+wget -P ~/Downloads/ http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz
+tar -xzvf ~/Downloads/boost_1_64_0.tar.gz -C ~/Downloads/
+cd ~/Downloads/boost_1_64_0/
+./bootstrap.sh --prefix=/usr
+sudo ./b2 install
+cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
 </div>
 
 <br/>
@@ -236,6 +269,85 @@ cd ~/dev/colin2/
 ./run-cmake-release
 ./build-release
 </div>
+
+<br/>
+ POPF2
+
+<div class="codebox">
+git clone https://github.com/aldukeman/popf2.git ~/dev/popf2/
+cd ~/dev/popf2/
+./build
+</div>
+
+<br/>
+ ITSAT
+
+<div class="codebox">
+git clone https://github.com/aldukeman/itsat.git ~/dev/itsat/
+cd ~/dev/itsat/
+./build
+</div>
+
+<br/>
+ TFD
+
+<div class="codebox">
+git clone https://github.com/aldukeman/tfd.git ~/dev/tfd/
+cd ~/dev/tfd/
+./build
+</div>
+
+<br/>
+ Z3
+
+<div class="codebox">
+git clone https://github.com/Z3Prover/z3 ~/dev/z3/
+cd ~/dev/z3/
+python scripts/mk_make.py
+cd build
+make
+sudo make install
+</div>
+
+<br/>
+ Piranha
+
+<div class="codebox">
+git clone https://github.com/bluescarni/piranha ~/dev/piranha/
+mkdir ~/dev/piranha/build/
+cd ~/dev/piranha/build/
+cmake ../
+sudo make install
+</div>
+
+<br/>
+ SMTPlan+
+
+<div class="codebox">
+git clone https://github.com/KCL-Planning/SMTPlan.git ~/dev/SMTPlan/
+sed -i '15i\set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wno-deprecated-declarations")' ~/dev/SMTPlan/SMTPlan/CMakeLists.txt
+cd ~/dev/SMTPlan/SMTPlan/
+mkdir build
+cd build
+cmake ..
+make
+</div>
+
+<br/>
+ YAHSP2
+
+<br/>
+ NOT WORKING: fatal error: gmp.h: No such file or directory
+
+<br/>
+ git clone https://github.com/aldukeman/yahsp2.git ~/dev/yahsp2/
+
+<br/>
+ cd ~/dev/yahsp2/
+
+<br/>
+ ./build
+
 
 <br/>
  RDDL

@@ -21,6 +21,7 @@
 					<ul>
 
 						<li><a href=bash.html class=menu_button>Basic Bash 						</a></li>
+						<li><a href=colin2.html class=menu_button>COLIN2 Wrapper						</a></li>
 						<li><a href=commit.html class=menu_button>Commit						</a></li>
 						<li><a href=create-model-box.html class=menu_button>Create a Gazebo Box						</a></li>
 						<li><a href=create-model-flat.html class=menu_button>Create Bazebo Flat						</a></li>
@@ -184,11 +185,15 @@ sudo apt-get --yes install python-empy
 <br/>
  Summit xl 
 
-<div class="codebox">
-sudo apt-get --yes install ros-indigo-summit-xl-common
-sudo apt-get --yes install ros-indigo-summit-xl-sim
-sudo sed -ie 's/pad_teleop/summit_xl_control/g' /opt/ros/indigo/share/summit_xl_pad/launch/summit_xl_pad.launch
-</div>
+<br/>
+ sudo apt-get --yes install ros-indigo-summit-xl-common
+
+<br/>
+ sudo apt-get --yes install ros-indigo-summit-xl-sim
+
+<br/>
+ sudo sed -ie 's/pad_teleop/summit_xl_control/g' /opt/ros/indigo/share/summit_xl_pad/launch/summit_xl_pad.launch
+
 
 <br/>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-indigo.sh target=_blank>Follow this link for the raw script.</a>

@@ -21,6 +21,7 @@
 					<ul>
 
 						<li><a href=bash.html class=menu_button>Basic Bash 						</a></li>
+						<li><a href=colin2.html class=menu_button>COLIN2 Wrapper						</a></li>
 						<li><a href=commit.html class=menu_button>Commit						</a></li>
 						<li><a href=create-model-box.html class=menu_button>Create a Gazebo Box						</a></li>
 						<li><a href=create-model-flat.html class=menu_button>Create Bazebo Flat						</a></li>
@@ -89,12 +90,66 @@ cd ~/dev/imapc/
 </div>
 
 <br/>
- Temporal planinng using Colin 2
+ Temporal planinng using TFD
+
+<div class="codebox">
+~/dev/tfd/downward/plan ~/dev/domains/pddl/box_pushing/domain.pddl ~/dev/domains/pddl/box_pushing/problem.pddl ~/dev/domains/pddl/box_pushing/solution ~/dev/domains/pddl/box_pushing/timming
+~/dev/tfd/downward/plan ~/dev/domains/pddl/blocks/domain.pddl ~/dev/domains/pddl/blocks/problem.pddl ~/dev/domains/pddl/blocks/solution ~/dev/domains/pddl/blocks/timming
+~/dev/tfd/downward/plan ~/dev/domains/pddl/temporal-blocks/domain.pddl ~/dev/domains/pddl/temporal-blocks/problem.pddl ~/dev/domains/pddl/temporal-blocks/solution ~/dev/domains/pddl/temporal-blocks/timming
+</div>
+
+<br/>
+ Temporal planinng using ITSAT
+
+<div class="codebox">
+~/dev/itsat/plan ~/dev/domains/pddl/box_pushing/domain.pddl ~/dev/domains/pddl/box_pushing/problem.pddl ~/dev/domains/pddl/box_pushing/solution ~/dev/domains/pddl/box_pushing/timming
+~/dev/itsat/plan ~/dev/domains/pddl/blocks/domain.pddl ~/dev/domains/pddl/blocks/problem.pddl ~/dev/domains/pddl/blocks/solution ~/dev/domains/pddl/blocks/timming
+~/dev/itsat/plan ~/dev/domains/pddl/temporal-blocks/domain.pddl ~/dev/domains/pddl/temporal-blocks/problem.pddl ~/dev/domains/pddl/temporal-blocks/solution ~/dev/domains/pddl/temporal-blocks/timming
+</div>
+
+<br/>
+ Temporal planinng using SMTPlan - gen
+
+<div class="codebox">
+~/dev/SMTPlan/SMTPlan/build/SMTPlan ~/dev/domains/pddl/gen/domain.pddl ~/dev/domains/pddl/gen/problem.pddl > ~/dev/domains/pddl/gen/solution
+sed -ie 's/|\((.\+)\).\+|/\1/g' ~/dev/domains/pddl/gen/solution
+${TOOLS}val-report.sh ~/dev/domains/pddl/gen/
+</div>
+
+<br/>
+ Temporal planinng using SMTPlan - lin
+
+<div class="codebox">
+~/dev/SMTPlan/SMTPlan/build/SMTPlan ~/dev/domains/pddl/lin/domain.pddl ~/dev/domains/pddl/lin/problem.pddl > ~/dev/domains/pddl/lin/solution
+sed -ie 's/|\((.\+)\).\+|/\1/g' ~/dev/domains/pddl/lin/solution
+${TOOLS}val-report.sh ~/dev/domains/pddl/lin/
+</div>
+
+<br/>
+ Temporal planinng using SMTPlan - path
+
+<div class="codebox">
+~/dev/SMTPlan/SMTPlan/build/SMTPlan ~/dev/domains/pddl/path/domain.pddl ~/dev/domains/pddl/path/problem.pddl > ~/dev/domains/pddl/path/solution
+sed -ie 's/|\((.\+)\).\+|/\1/g' ~/dev/domains/pddl/path/solution
+${TOOLS}val-report.sh ~/dev/domains/pddl/path/
+</div>
+
+<br/>
+ Temporal planinng using COLIN2
 
 <div class="codebox">
 ~/dev/colin2/plan ~/dev/domains/pddl/box_pushing/domain.pddl ~/dev/domains/pddl/box_pushing/problem.pddl ~/dev/domains/pddl/box_pushing/solution ~/dev/domains/pddl/box_pushing/timming
 ~/dev/colin2/plan ~/dev/domains/pddl/blocks/domain.pddl ~/dev/domains/pddl/blocks/problem.pddl ~/dev/domains/pddl/blocks/solution ~/dev/domains/pddl/blocks/timming
 ~/dev/colin2/plan ~/dev/domains/pddl/temporal-blocks/domain.pddl ~/dev/domains/pddl/temporal-blocks/problem.pddl ~/dev/domains/pddl/temporal-blocks/solution ~/dev/domains/pddl/temporal-blocks/timming
+</div>
+
+<br/>
+ Temporal planinng using POPF2
+
+<div class="codebox">
+~/dev/popf2/plan ~/dev/domains/pddl/box_pushing/domain.pddl ~/dev/domains/pddl/box_pushing/problem.pddl ~/dev/domains/pddl/box_pushing/solution ~/dev/domains/pddl/box_pushing/timming
+~/dev/popf2/plan ~/dev/domains/pddl/blocks/domain.pddl ~/dev/domains/pddl/blocks/problem.pddl ~/dev/domains/pddl/blocks/solution ~/dev/domains/pddl/blocks/timming
+~/dev/popf2/plan ~/dev/domains/pddl/temporal-blocks/domain.pddl ~/dev/domains/pddl/temporal-blocks/problem.pddl ~/dev/domains/pddl/temporal-blocks/solution ~/dev/domains/pddl/temporal-blocks/timming
 </div>
 
 <br/>
