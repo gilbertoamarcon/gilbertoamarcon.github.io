@@ -61,34 +61,33 @@
 				<article>
 
 
-<h2> PDF Chop</h2>
+
+<h2> Real Robot</h2>
 
 <br/>
- This script extracts a subset of a PDF documents pages
-
-<br/>
-
-
-
-<br/>
- Usage:
-
-<br/>
- ./pdf_chop.sh first-page last-page input output
+ Sets an external robot running ros
 
 <br/>
 
 
 
-<div class="codebox">
-pdfseparate -f $1 -l $2 $3 temp_split%d.pdf
-pdfunite $(eval echo temp_split{$1..$2}.pdf) temp_merge.pdf
-gs -sDEVICE=pdfwrite -sPAPERSIZE=letter -dFIXEDMEDIA -dPDFFitPage -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$4 temp_merge.pdf
-rm $(eval echo temp_split{$1..$2}.pdf) temp_merge.pdf
-</div>
+<br/>
+ Usage: ./real-robot.sh robot-ip
 
 <br/>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/pdf-chop.sh target=_blank>Follow this link for the raw script.</a>
+ Ex: ./real-robot.sh 10.214.152.39
+
+
+<br/>
+ Environment vars setup
+
+printf "\n# ROS:\n" >> ~/.bashrc
+printf "export ROS_MASTER_URI=http://$1:11311/\n" >> ~/.bashrc
+printf "export ROS_HOSTNAME=$(hostname -I)\n" >> ~/.bashrc
+printf "export ROS_IP=$(hostname -I)\n" >> ~/.bashrc
+source ~/.bashrc
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/real-robot.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 
