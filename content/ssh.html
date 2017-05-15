@@ -42,6 +42,7 @@
 						<li><a href=repos-dep.html class=menu_button>Repos Dependencies						</a></li>
 						<li><a href=repos-setup.html class=menu_button>Repos Setup						</a></li>
 						<li><a href=repos-test.html class=menu_button>Repos Test						</a></li>
+						<li><a href=ros-erratic.html class=menu_button>ROS Erratic						</a></li>
 						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
 						<li><a href=ros-jackal.html class=menu_button>ROS Jackal 						</a></li>
 						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
@@ -152,14 +153,14 @@ ssh-keygen -t rsa
  Create a .ssh directory on the remote server user home folder
 
 <div class="codebox">
-ssh marcondg@shell.onid.oregonstate.edu mkdir -p .ssh
+ssh marcondg@shell.onid.oregonstate.edu mkdir -p ~/.ssh
 </div>
 
 <br/>
  Copy your key to the remote server .ssh folder
 
 <div class="codebox">
-cat ~/.ssh/id_rsa.pub | ssh marcondg@shell.onid.oregonstate.edu 'cat >> .ssh/authorized_keys'
+cat ~/.ssh/id_rsa.pub | ssh marcondg@shell.onid.oregonstate.edu 'cat >> ~/.ssh/authorized_keys'
 </div>
 
 <br/>

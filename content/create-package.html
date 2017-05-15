@@ -42,6 +42,7 @@
 						<li><a href=repos-dep.html class=menu_button>Repos Dependencies						</a></li>
 						<li><a href=repos-setup.html class=menu_button>Repos Setup						</a></li>
 						<li><a href=repos-test.html class=menu_button>Repos Test						</a></li>
+						<li><a href=ros-erratic.html class=menu_button>ROS Erratic						</a></li>
 						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
 						<li><a href=ros-jackal.html class=menu_button>ROS Jackal 						</a></li>
 						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
@@ -74,6 +75,13 @@
 
 
 
+<div class="codebox">
+wsname=$1
+paname=$2
+shift
+shift
+</div>
+
 <br/>
  Backing up present working directory
 
@@ -85,10 +93,11 @@ hdir=$(pwd)
  Package creation
 
 <div class="codebox">
-printf "Creating package at: \\n$HOME/ros-ws/$1/src/\\n"
-cd ~/ros-ws/$1/src/
-catkin_create_pkg $2 rospy
-source ~/ros-ws/$1/devel/setup.bash
+printf "Creating package at: \\n$HOME/ros-ws/$wsname/src/\\n"
+cd ~/ros-ws/$wsname/src/
+echo catkin_create_pkg $paname rospy "$@"
+catkin_create_pkg $paname rospy "$@"
+source ~/ros-ws/$wsname/devel/setup.bash
 source ~/.bashrc
 </div>
 

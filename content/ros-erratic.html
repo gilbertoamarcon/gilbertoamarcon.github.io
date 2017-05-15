@@ -63,45 +63,80 @@
 
 
 
-<h2> Rasp Cam Server Setup</h2>
+<h2> ROS Erratic</h2>
 
 <br/>
- This Script will setup the Raspberry Pi Camera Server
+ This scrip covers launching basic operations for erratic in ROS Indigo.
 
 <br/>
 
 
+
+
+<h2> Real Erratic</h2>
+
+<br/>
+ SSH into the erratic (password: robotics2017):
 
 <div class="codebox">
-curl http://www.linux-projects.org/listing/uv4l_repo/lrkey.asc | sudo apt-key add -
-sudo nano /etc/apt/sources.list
-deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/ jessie main
-sudo apt-get update
-sudo apt-get install uv4l uv4l-raspicam
-sudo apt-get install uv4l-raspicam-extras
-sudo service uv4l_raspicam restart
-sudo raspi-config
-sudo rpi-update
-uv4l --help --driver raspicam --driver-help
-uv4l --driver raspicam --auto-video_nr --width 640 --height 480 --encoding jpeg
-dd if=/dev/video0 of=snapshot.jpeg bs=11M count=1
-sudo apt-get install uv4l-server uv4l-uvc uv4l-xscreen uv4l-mjpegstream uv4l-dummy uv4l-raspidisp
-sudo apt-get install uv4l-webrtc
+ssh tank@tank.engr.oregonstate.edu
 </div>
 
-sudo apt-get install cmake
-sudo apt-get install liblivemedia-dev liblog4cpp5-dev
-wget http://www.live555.com/liveMedia/public/live555-latest.tar.gz -O - | tar xvzf -
-cd live
-./genMakefiles linux
-sudo make CPPFLAGS=-DALLOW_RTSP_SERVER_PORT_REUSE=1 install
-git clone https://github.com/mpromonet/v4l2rtspserver.git
-cd v4l2rtspserver
-cmake . && make
-cd ~/v4l2rtspserver
-./v4l2rtspserver -W 320 -H 240 -F 5 -P 8554 /dev/video0
 <br/>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/pi-cam-server-setup.sh target=_blank>Follow this link for the raw script.</a>
+ Launch these on the erratic:
+
+<div class="codebox">
+roslaunch erratic_player erratic_base.launch
+roslaunch hokuyo_node hokuyo_test.launch
+rosrun hokuyo_node hokuyo_node
+</div>
+
+<br/>
+ Record scan and odom:
+
+<div class="codebox">
+rosbag record -j scan odom tf
+</div>
+
+<br/>
+ Run roscore
+
+<div class="codebox">
+roscore
+</div>
+
+<br/>
+ Set the sim time param
+
+<div class="codebox">
+rosparam set use_sim_time true
+</div>
+
+<br/>
+ Start gmapping:
+
+<div class="codebox">
+rosrun gmapping slam_gmapping base_frame:=base_footprint
+</div>
+
+<br/>
+ Play the bag:
+
+<div class="codebox">
+rosbag play --clock -l 2017-05-10-19-03-41.bag
+</div>
+
+<br/>
+ Save the map:
+
+<div class="codebox">
+rosrun map_server map_saver -f map.pgm
+</div>
+
+
+
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-erratic.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 
