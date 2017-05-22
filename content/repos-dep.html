@@ -251,18 +251,6 @@ sudo make install
 </div>
 
 <br/>
- PROST Install and Config
-
-<div class="codebox">
-hg clone https://gilbertoamarcon@bitbucket.org/tkeller/prost ~/dev/prost/
-cd ~/dev/prost/src/search
-make
-cd ~/dev/prost/src/rddl_parser
-make
-ln -s ~/dev/rddlsim/ ~/dev/prost/testbed/rddlsim
-</div>
-
-<br/>
  COLIN2
 
 <div class="codebox">
@@ -353,6 +341,18 @@ make
 
 
 <br/>
+ APPL
+
+<div class="codebox">
+wget -P ~/Downloads/ http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/uploads/Main/appl-0.96.tar.gz
+tar -xvzf ~/Downloads/appl-0.96.tar.gz -C ~/dev/
+rm -f ~/Downloads/appl-0.96.tar.gz
+mv -f ~/dev/appl-0.96 ~/dev/appl
+cd ~/dev/appl/src/
+make
+</div>
+
+<br/>
  RDDL
 
 <div class="codebox">
@@ -360,6 +360,18 @@ git clone https://github.com/ssanner/rddlsim.git ~/dev/rddlsim/
 cd ~/dev/rddlsim/
 sudo chmod +x compile
 ./compile
+</div>
+
+<br/>
+ PROST Install and Config
+
+<div class="codebox">
+hg clone https://gilbertoamarcon@bitbucket.org/tkeller/prost ~/dev/prost/
+cd ~/dev/prost/src/search
+make
+cd ~/dev/prost/src/rddl_parser
+make
+ln -s ~/dev/rddlsim/ ~/dev/prost/testbed/rddlsim
 </div>
 
 <br/>

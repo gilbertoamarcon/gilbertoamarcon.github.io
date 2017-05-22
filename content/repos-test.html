@@ -87,12 +87,62 @@ cd ~/dev/imapc/
 </div>
 
 
+<h2> APPL</h2>
+
+<br/>
+ Try solving an example problem. Type the command:
+
+<div class="codebox">
+./pomdpsol ../examples/POMDPX/Tiger.pomdpx
+</div>
+
+The generated policy is written to "out.policy" by default.
+
+<br/>
+ Try simulating a policy. Type the command:
+
+<div class="codebox">
+./pomdpsim --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
+</div>
+
+The simulation results are written to the console.
+
+<br/>
+ Try evaluating a policy. Type the command:
+
+<div class="codebox">
+./pomdpeval --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
+</div>
+
+The evaluation results are written to the console.
+
+<br/>
+ Try generating a graphical representation of a policy . Type the command:
+
+<div class="codebox">
+./polgraph --policy-file out.policy --policy-graph tiger.dot ../examples/POMDPX/Tiger.pomdpx
+</div>
+
+The generated graph is written to "tiger.dot". You can view the output "tiger.dot" using Graphviz (http://www.graphviz.org/).  A pdf file generated from "tiger.dot" is in "../examples/POMDPX/tiger.pdf".
+
+<br/>
+ Try converting a POMDP file to POMDPX file format:
+
+<div class="codebox">
+./pomdpconvert ../examples/POMDP/Tiger.pomdp
+</div>
+
+<br/>
+ The generated POMDPX file is in the same directory as the POMDP model file.
+
+
+
 <h2> RDDL</h2>
 
 <div class="codebox">
 cd ~/dev/rddlsim/
-./run rddl.viz.RDDL2Graph ~/dev/rddlsim/files/rddl/examples/dbn_prop.rddl inst_dbn
-./run rddl.viz.RDDL2Graph ~/dev/domains/rddl/complete.rddl inst_dbn
+cat ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl > ~/dev/domains/rddl/simple.rddl
+./run rddl.viz.RDDL2Graph ~/dev/domains/rddl/simple.rddl simple_ins
 </div>
 
 
@@ -115,7 +165,7 @@ cd ~/dev/prost/testbed/
 cd ~/dev/prost/testbed/
 ./run-server ~/dev/domains/rddl
 cd ~/dev/prost/testbed/
-./plan.py ~/dev/domains/rddl/rddl/game.rddl ~/dev/domains/rddl/rddl/game_ins.rddl "IPPC2014"
+./plan.py ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl "IPPC2014"
 </div>
 
 
