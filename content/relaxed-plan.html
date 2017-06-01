@@ -97,9 +97,8 @@
  CoalitionStructure.cpp was expanded to read relaxed plans using two structures.
 
 <br/>
- The first structure is called rplan:
+ The first structure is called rplan.
 
-map<int,string> rplan
 <br/>
  rplan is just a list of each line from the plan file, numbered on reading order:
 
@@ -113,9 +112,8 @@ map<int,string> rplan
 </div>
 
 <br/>
- The second structure is called rplan_timed:
+ The second structure is called rplan_timed.
 
-map<double,set<string>> rplan_timed
 <br/>
  rplan_timed maps double time stamps to sets of strings: sets of actions at each time stamp:
 
