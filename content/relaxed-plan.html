@@ -62,19 +62,82 @@
 
 				<article>
 
-<h2>Intro</h2>
-<article>
 
-This is my GitHub main page, where I am posting tutorials and scripts related to my latest research activities. 
-Most of the content is meant as a repository for my use later, but some colleagues might also find it useful. 
-To know more about me, you can the links bellow:
-					
-<br /> <br />
-<a target="_blank" href="http://people.oregonstate.edu/~marcondg/"><img alt='Image unavailable' title='OSU' src='icons\osu.png'></a>
-<a target="_blank" href="https://scholar.google.com/citations?user=0KNskkoAAAAJ"><img alt='Image unavailable' title='Scholar' src='icons\scholar.png'></a>
-<a target="_blank" href="https://www.linkedin.com/in/gilbertoamarcon?locale=en_US">	<img alt='Image unavailable' title='LinedInProfile' 	src='icons\in.png'></a>
-<a target="_blank" href="https://github.com/gilbertoamarcon"><img alt='Image unavailable' title='GitHubPage' src='icons\git.png'></a>
-<a target="_blank" href="https://bitbucket.org/gilbertoamarcon"><img alt='Image unavailable' title='BitBucketPage' src='icons\bit.png'></a>
+
+<h2> Relaxed Plan Structures</h2>
+
+<br/>
+ Relaxed Plan Structures for CFP
+
+<br/>
+
+
+
+<br/>
+ A temporal relaxed plan from colin2 looks like this:
+
+1
+<div class="codebox">
+(move r2 p_01_16 p_02_16)
+2.001
+(move r2 p_02_16 p_02_15)
+(move r2 p_02_16 p_02_17)
+(push r2 c p_02_16 p_03_16 p_04_16)
+3.002
+(move r2 p_02_15 p_02_14)
+(move r2 p_02_15 p_03_15)
+(move r2 p_02_17 p_03_17)
+4.003
+(move r2 p_02_14 p_02_13)
+(move r2 p_02_14 p_03_14)
+(push r2 c p_03_17 p_03_16 p_03_15)
+</div>
+
+<br/>
+ CoalitionStructure.cpp was expanded to read relaxed plans using two structures.
+
+<br/>
+ The first structure is called rplan:
+
+map<int,string> rplan
+<br/>
+ rplan is just a list of each line from the plan file, numbered on reading order:
+
+<div class="codebox">
+0: 1
+1: (move r2 p_01_16 p_02_16)
+2: 2.001
+3: (move r2 p_02_16 p_02_15)
+4: (move r2 p_02_16 p_02_17)
+...
+</div>
+
+<br/>
+ The second structure is called rplan_timed:
+
+map<double,set<string>> rplan_timed
+<br/>
+ rplan_timed maps double time stamps to sets of strings: sets of actions at each time stamp:
+
+<div class="codebox">
+[1]:
+	(move r2 p_01_16 p_02_16)
+[2.001]:
+	(move r2 p_02_16 p_02_15)
+	(move r2 p_02_16 p_02_17)
+	(push r2 c p_02_16 p_03_16 p_04_16)
+[3.002]:
+	(move r2 p_02_15 p_02_14)
+	(move r2 p_02_15 p_03_15)
+	(move r2 p_02_17 p_03_17)
+[4.003]:
+	(move r2 p_02_14 p_02_13)
+	(move r2 p_02_14 p_03_14)
+	(push r2 c p_03_17 p_03_16 p_03_15)
+</div>
+
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/relaxed-plan.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 
