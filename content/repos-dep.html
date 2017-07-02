@@ -26,6 +26,7 @@
 						<li><a href=create-model-flat.html class=menu_button>Create Bazebo Flat						</a></li>
 						<li><a href=create-package.html class=menu_button>Create a ROS Package						</a></li>
 						<li><a href=create-ws.html class=menu_button>Create a ROS Workspace						</a></li>
+						<li><a href=customize-turtlebot-nav.sh.html class=menu_button>Customize Turtlebot Nav						</a></li>
 						<li><a href=deskhp.html class=menu_button>Basic Desktop Setup						</a></li>
 						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
 						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
@@ -46,6 +47,7 @@
 						<li><a href=ros-erratic.html class=menu_button>ROS Erratic						</a></li>
 						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
 						<li><a href=ros-jackal.html class=menu_button>ROS Jackal 						</a></li>
+						<li><a href=ros-pioneer-setup.html class=menu_button>Setup Pioneers						</a></li>
 						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
 						<li><a href=ros-turtlebot.html class=menu_button>ROS Turtlebot						</a></li>
 						<li><a href=ssh.html class=menu_button>SSH Login						</a></li>
@@ -216,16 +218,30 @@ sudo ldconfig # refresh shared library cache.
 <br/>
  GDSL (for yahsp2)
 
-<div class="codebox">
-wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
-tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
-cd ~/Downloads/gdsl-1.8/
-./configure
-make
-sudo make install
-make clean
-make distclean
-</div>
+<br/>
+ wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
+
+<br/>
+ tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
+
+<br/>
+ cd ~/Downloads/gdsl-1.8/
+
+<br/>
+ ./configure
+
+<br/>
+ make
+
+<br/>
+ sudo make install
+
+<br/>
+ make clean
+
+<br/>
+ make distclean
+
 
 <br/>
  Flex 2.5.39
@@ -293,11 +309,15 @@ cd ~/dev/tfd/
 <br/>
  YAHSP2
 
-<div class="codebox">
-git clone https://github.com/aldukeman/yahsp2.git ~/dev/yahsp2/
-cd ~/dev/yahsp2/
-./build
-</div>
+<br/>
+ git clone https://github.com/aldukeman/yahsp2.git ~/dev/yahsp2/
+
+<br/>
+ cd ~/dev/yahsp2/
+
+<br/>
+ ./build
+
 
 <br/>
  CPT
@@ -308,12 +328,6 @@ tar -xvzf ~/Downloads/cpt-1.0.tar.gz -C ~/Downloads/
 rm -Rf ~/Downloads/cpt-1.0.tar.gz
 cd ~/Downloads/cpt-1.0/
 ./build fast
-</div>
-
-git clone https://github.com/aldukeman/yahsp2.git ~/dev/yahsp2/
-<div class="codebox">
-cd ~/dev/yahsp2/
-./build
 </div>
 
 <br/>

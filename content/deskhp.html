@@ -26,6 +26,7 @@
 						<li><a href=create-model-flat.html class=menu_button>Create Bazebo Flat						</a></li>
 						<li><a href=create-package.html class=menu_button>Create a ROS Package						</a></li>
 						<li><a href=create-ws.html class=menu_button>Create a ROS Workspace						</a></li>
+						<li><a href=customize-turtlebot-nav.sh.html class=menu_button>Customize Turtlebot Nav						</a></li>
 						<li><a href=deskhp.html class=menu_button>Basic Desktop Setup						</a></li>
 						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
 						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
@@ -46,6 +47,7 @@
 						<li><a href=ros-erratic.html class=menu_button>ROS Erratic						</a></li>
 						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
 						<li><a href=ros-jackal.html class=menu_button>ROS Jackal 						</a></li>
+						<li><a href=ros-pioneer-setup.html class=menu_button>Setup Pioneers						</a></li>
 						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
 						<li><a href=ros-turtlebot.html class=menu_button>ROS Turtlebot						</a></li>
 						<li><a href=ssh.html class=menu_button>SSH Login						</a></li>
@@ -90,9 +92,12 @@ sudo apt-get --yes update
  Utils
 
 <div class="codebox">
+sudo apt-add-repository ppa:thopiekar/mt7601
 sudo apt-add-repository ppa:mc3man/trusty-media
 sudo add-apt-repository ppa:danielrichter2007/grub-customizer  -y
 sudo apt-get --yes update
+sudo apt-get --yes install linux-headers-generic
+sudo apt-get --yes install build-essential
 sudo apt-get --yes install grub-customizer
 sudo apt-get --yes install tree
 sudo apt-get --yes install sshfs
@@ -115,8 +120,13 @@ sudo apt-get --yes install vlc
 sudo apt-get --yes install gimp
 sudo apt-get --yes install csvtool
 sudo apt-get --yes install exiv2
+sudo apt-get --yes install python-avahi
+sudo apt-get --yes install avahi-daemon
+sudo apt-get --yes install openssh-server
+sudo apt-get --yes install mt7601-sta-dkms
 sudo pip install svgwrite
 sudo pip install Pillow
+sudo pip install Image
 </div>
 
 <br/>
@@ -176,6 +186,16 @@ cd ~/dev/calc/
 sudo ./install.sh
 cd $hdir
 rm -Rf ~/dev/calc/
+</div>
+
+<br/>
+ Laptop wifi
+
+<div class="codebox">
+git clone http://github.com/lwfinger/rtlwifi_new.git ~/dev/rtlwifi_new
+cd ~/dev/rtlwifi_new
+make
+sudo make install
 </div>
 
 <br/>

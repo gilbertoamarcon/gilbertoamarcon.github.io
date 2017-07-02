@@ -26,6 +26,7 @@
 						<li><a href=create-model-flat.html class=menu_button>Create Bazebo Flat						</a></li>
 						<li><a href=create-package.html class=menu_button>Create a ROS Package						</a></li>
 						<li><a href=create-ws.html class=menu_button>Create a ROS Workspace						</a></li>
+						<li><a href=customize-turtlebot-nav.sh.html class=menu_button>Customize Turtlebot Nav						</a></li>
 						<li><a href=deskhp.html class=menu_button>Basic Desktop Setup						</a></li>
 						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
 						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
@@ -46,6 +47,7 @@
 						<li><a href=ros-erratic.html class=menu_button>ROS Erratic						</a></li>
 						<li><a href=ros-indigo.html class=menu_button>ROS Indigo						</a></li>
 						<li><a href=ros-jackal.html class=menu_button>ROS Jackal 						</a></li>
+						<li><a href=ros-pioneer-setup.html class=menu_button>Setup Pioneers						</a></li>
 						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
 						<li><a href=ros-turtlebot.html class=menu_button>ROS Turtlebot						</a></li>
 						<li><a href=ssh.html class=menu_button>SSH Login						</a></li>
@@ -83,8 +85,25 @@
 <br/>
  Environment vars setup
 
+<br/>
+ printf "\n# ROS:\n" >> ~/.bashrc
+
+<br/>
+ printf "export ROS_MASTER_URI=http://$1:11311/\n" >> ~/.bashrc
+
+<br/>
+ printf "export ROS_HOSTNAME=$(hostname -I)\n" >> ~/.bashrc
+
+<br/>
+ printf "export ROS_IP=$(hostname -I)\n" >> ~/.bashrc
+
+<br/>
+ source ~/.bashrc
+
+
 <div class="codebox">
-printf "\n# ROS:\n" >> ~/.bashrc
+grep -vwE "(ROS_MASTER_URI|ROS_HOSTNAME|ROS_IP)" ~/.bashrc > aux
+mv aux ~/.bashrc
 printf "export ROS_MASTER_URI=http://$1:11311/\n" >> ~/.bashrc
 printf "export ROS_HOSTNAME=$(hostname -I)\n" >> ~/.bashrc
 printf "export ROS_IP=$(hostname -I)\n" >> ~/.bashrc
