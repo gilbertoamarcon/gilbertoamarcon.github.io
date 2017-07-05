@@ -67,21 +67,38 @@
 
 
 
-<h2> Customize Turtlebot Nav</h2>
+<h2> Disabling Devices</h2>
 
 <br/>
- Usage:
+ To disable faulty hardware, such as a bad integrated network controller. 
 
 <br/>
- ./customize-turtlebot-nav.sh -custom
+
+
 
 <br/>
- ./customize-turtlebot-nav.sh -default
+ Determine the name of the modules associated with the device:
 
+<div class="codebox">
+lsmod
+</div>
 
-sudo cp nav$1/* /opt/ros/indigo/share/turtlebot_navigation/param/
 <br/>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/customize-turtlebot-nav.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/customize-turtlebot-nav.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/customize-turtlebot-nav.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/customize-turtlebot-nav.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/customize-turtlebot-nav.sh target=_blank>Follow this link for the raw script.</a>
+ Blacklist the modules wirtting
+
+<div class="codebox">
+blacklist rtlwifi
+</div>
+
+<br/>
+ Onto the file:
+
+<div class="codebox">
+sudo nano /etc/modprobe.d/blacklist.conf
+</div>
+
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/disable-devices.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

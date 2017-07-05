@@ -28,6 +28,7 @@
 						<li><a href=create-ws.html class=menu_button>Create a ROS Workspace						</a></li>
 						<li><a href=customize-turtlebot-nav.sh.html class=menu_button>Customize Turtlebot Nav						</a></li>
 						<li><a href=deskhp.html class=menu_button>Basic Desktop Setup						</a></li>
+						<li><a href=disable-devices.html class=menu_button>Disabling Devices						</a></li>
 						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
 						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
 						<li><a href=nvidia-fix.html class=menu_button>Nvidia Drivers Fix						</a></li>
@@ -148,6 +149,13 @@ sudo apt-get --yes install ros-indigo-teleop-twist-keyboard
 </div>
 
 <br/>
+ Rocon
+
+<div class="codebox">
+sudo apt-get --yes install ros-indigo-rocon*
+</div>
+
+<br/>
  Turtlebot
 
 <div class="codebox">
@@ -165,25 +173,39 @@ sudo apt-get --yes install ros-indigo-jackal-simulator ros-indigo-jackal-desktop
 </div>
 
 <br/>
- ROSPlan
-
-<div class="codebox">
-sudo apt-get --yes install flex ros-indigo-mongodb-store ros-indigo-tf2-bullet freeglut3-dev
-mkdir -p ~/ros-ws/mobile/src/
-git clone https://github.com/clearpathrobotics/occupancy_grid_utils ~/ros-ws/mobile/src/occupancy_grid_utils
-git clone https://github.com/KCL-Planning/rosplan ~/ros-ws/mobile/src/rosplan
-git clone https://github.com/KCL-Planning/rosplan_interface_turtlebot2 ~/ros-ws/mobile/src/rosplan_interface_turtlebot2
-source ~/.bashrc
-cd ~/ros-ws/mobile/
-catkin_make
-</div>
+ # ROSPlan
 
 <br/>
- multimaster_fkie
+ sudo apt-get --yes install flex ros-indigo-mongodb-store ros-indigo-tf2-bullet freeglut3-dev
 
-<div class="codebox">
-sudo apt-get --yes install ros-indigo-multimaster-fkie
-</div>
+<br/>
+ mkdir -p ~/ros-ws/mobile/src/
+
+<br/>
+ git clone https://github.com/clearpathrobotics/occupancy_grid_utils ~/ros-ws/mobile/src/occupancy_grid_utils
+
+<br/>
+ git clone https://github.com/KCL-Planning/rosplan ~/ros-ws/mobile/src/rosplan
+
+<br/>
+ git clone https://github.com/KCL-Planning/rosplan_interface_turtlebot2 ~/ros-ws/mobile/src/rosplan_interface_turtlebot2
+
+<br/>
+ source ~/.bashrc
+
+<br/>
+ cd ~/ros-ws/mobile/
+
+<br/>
+ catkin_make
+
+
+<br/>
+ # multimaster_fkie
+
+<br/>
+ sudo apt-get --yes install ros-indigo-multimaster-fkie
+
 
 <br/>
  ALVAR fiducial marker tool

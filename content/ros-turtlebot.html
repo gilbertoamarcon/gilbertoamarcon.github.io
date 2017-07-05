@@ -28,6 +28,7 @@
 						<li><a href=create-ws.html class=menu_button>Create a ROS Workspace						</a></li>
 						<li><a href=customize-turtlebot-nav.sh.html class=menu_button>Customize Turtlebot Nav						</a></li>
 						<li><a href=deskhp.html class=menu_button>Basic Desktop Setup						</a></li>
+						<li><a href=disable-devices.html class=menu_button>Disabling Devices						</a></li>
 						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
 						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
 						<li><a href=nvidia-fix.html class=menu_button>Nvidia Drivers Fix						</a></li>
@@ -151,8 +152,9 @@ rosrun map_server map_saver -f ~/Documents/map
  Launch these on the turtle:
 
 <div class="codebox">
-roslaunch turtlebot_bringup 3dsensor.launch
 roslaunch turtlebot_bringup minimal.launch
+roslaunch turtlebot_navigation amcl_demo.launch map_file:=/home/blood/box_maps/empty/map.yaml
+roslaunch turtlebot_bringup 3dsensor.launch
 </div>
 
 
