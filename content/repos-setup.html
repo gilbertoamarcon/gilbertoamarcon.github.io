@@ -85,6 +85,7 @@
  Cloning and building
 
 <div class="codebox">
+rm -Rf ~/dev/icifhar > /dev/null 2>&1
 git clone https://gilbertoamarcon@bitbucket.org/aldukeman/icifhar.git ~/dev/icifhar/
 cd ~/dev/icifhar/
 qmake
@@ -102,6 +103,7 @@ printf "\n# i-CiFHaR:\nexport LD_LIBRARY_PATH=~/dev/icifhar/lib\n" >> ~/.bashrc
 <h2> MACPDDL</h2>
 
 <div class="codebox">
+rm -Rf ~/dev/macpddl > /dev/null 2>&1
 git clone https://gilbertoamarcon@bitbucket.org/aldukeman/macpddl.git ~/dev/macpddl/
 cd ~/dev/macpddl/
 ant
@@ -114,6 +116,7 @@ ant
  Cloning and building
 
 <div class="codebox">
+rm -Rf ~/dev/imapc > /dev/null 2>&1
 git clone git@bitbucket.org:gilbertoamarcon/imapc.git ~/dev/imapc/
 cd ~/dev/imapc/
 touch variables.cmake
@@ -122,8 +125,32 @@ make
 </div>
 
 <br/>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-setup.sh target=_blank>Follow this link for the raw script.</a>
+ Cloning and building
 
+<br/>
+ git clone https://gitlab.com/human-machine-teaming/planning/imapc ~/dev/imapc/
+
+<br/>
+ cd ~/dev/imapc/
+
+<br/>
+ git submodule init
+
+<br/>
+ git submodule update
+
+<br/>
+ cmake .
+
+<br/>
+ make
+
+
+
+<h2> Anton's Planning Problems</h2>
+
+rm -Rf ~/dev/planning-problems > /dev/null 2>&1
+git clone git@gitlab.com:human-machine-teaming/planning/planning-problems.git ~/dev/planning-problems/#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-setup.sh target=_blank>Follow this link for the raw script.</a>
 				<article/>
 
 			</div>

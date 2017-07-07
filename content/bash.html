@@ -129,6 +129,21 @@ rm filename*
 wget https://raw.githubusercontent.com/gilbertoamarcon/tools/master/terminal.sh -P ~/Downloads/
 </div>
 
+<br/>
+ Create/Update all links in directory to point to a specific file
+
+<div class="codebox">
+find . -type l -exec ln -sf ../../domain.macpddl {} ';'
+find . -type f -name 'domain.macpddl' -exec ln -sf ../../domain.macpddl {} ';'
+</div>
+
+<br/>
+ Rename with regex
+
+<div class="codebox">
+rename 's/^p(\d+)_s1_c(\d+)/P$1C$2/s' *
+</div>
+
 
 <h2> History</h2>
 
