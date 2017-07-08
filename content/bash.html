@@ -142,9 +142,9 @@ find . -type f -name 'domain.macpddl' -exec ln -sf ../../domain.macpddl {} ';'
 
 <div class="codebox">
 rename -n 's/^p(\d+)_s1_c(\d+)/P$1C$2/s' *
-rename -n 's/^P(\d)C(\d)$/P0$1C0$2/s' *
-rename -n 's/^P(\d\d)C(\d)$/P$1C0$2/s' *
-rename -n 's/^P(\d)C(\d\d)$/P0$1C$2/s' *
+rename 's/^p(\d)_c(\d)$/P0$1C0$2/s' *
+rename 's/^p(\d\d)_c(\d)$/P$1C0$2/s' *
+rename 's/^p(\d)_c(\d\d)$/P0$1C$2/s' *
 </div>
 
 
