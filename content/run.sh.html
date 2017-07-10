@@ -68,20 +68,24 @@
 
 				<article>
 
-<h2>Intro</h2>
-<article>
+run_main(){
+	echo "Start"
+	./main s
+	echo "End"
+}
+rm main
+gcc main.c -o main -O0
+<br/>
+ ulimit -v 1024
 
-This is my GitHub main page, where I am posting tutorials and scripts related to my latest research activities. 
-Most of the content is meant as a repository for my use later, but some colleagues might also find it useful. 
-To know more about me, you can use the links bellow:
-					
-<br /> <br />
-<a target="_blank" href="http://people.oregonstate.edu/~marcondg/"><img alt='Image unavailable' title='OSU' src='icons\osu.png'></a>
-<a target="_blank" href="https://scholar.google.com/citations?user=0KNskkoAAAAJ"><img alt='Image unavailable' title='Scholar' src='icons\scholar.png'></a>
-<a target="_blank" href="https://www.linkedin.com/in/gilbertoamarcon?locale=en_US">	<img alt='Image unavailable' title='LinedInProfile' 	src='icons\in.png'></a>
-<a target="_blank" href="https://github.com/gilbertoamarcon"><img alt='Image unavailable' title='GitHubPage' src='icons\git.png'></a>
-<a target="_blank" href="https://bitbucket.org/gilbertoamarcon"><img alt='Image unavailable' title='BitBucketPage' src='icons\bit.png'></a>
+<br/>
+ ulimit -v 10485760
 
+ulimit -t 3
+run_main
+echo ${PIPESTATUS[0]}
+proccess=$SECONDS
+echo "Exit: $proccess s"#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>
 				<article/>
 
 			</div>

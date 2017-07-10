@@ -37,6 +37,7 @@
 						<li><a href=pi-cam-client.html class=menu_button>Rasp Cam Client						</a></li>
 						<li><a href=pi-cam-server.html class=menu_button>Rasp Cam Server						</a></li>
 						<li><a href=pi-cam-server-setup.html class=menu_button>Rasp Cam Server Setup						</a></li>
+						<li><a href=printer-graf.html class=menu_button>Printer Graf 						</a></li>
 						<li><a href=purge-model.html class=menu_button>Purge a gazebo model						</a></li>
 						<li><a href=real-robot.html class=menu_button>Real Robot						</a></li>
 						<li><a href=relaxed-plan.html class=menu_button>Relaxed Plan Structures						</a></li>
@@ -51,6 +52,7 @@
 						<li><a href=ros-pioneer-setup.html class=menu_button>Setup Pioneers						</a></li>
 						<li><a href=ros-summit.html class=menu_button>ROS Summit 						</a></li>
 						<li><a href=ros-turtlebot.html class=menu_button>ROS Turtlebot						</a></li>
+						<li><a href=run.sh.html class=menu_button>						</a></li>
 						<li><a href=ssh.html class=menu_button>SSH Login						</a></li>
 						<li><a href=update-hosts.html class=menu_button>Update Hosts						</a></li>
 						<li><a href=update-website.html class=menu_button>Update Repo Website						</a></li>
@@ -86,7 +88,7 @@
 
 <div class="codebox">
 rm -Rf ~/dev/icifhar > /dev/null 2>&1
-git clone https://gilbertoamarcon@bitbucket.org/aldukeman/icifhar.git ~/dev/icifhar/
+git clone git@gitlab.com:human-machine-teaming/planning/icifhar.git ~/dev/icifhar/
 cd ~/dev/icifhar/
 qmake
 make
@@ -104,7 +106,7 @@ printf "\n# i-CiFHaR:\nexport LD_LIBRARY_PATH=~/dev/icifhar/lib\n" >> ~/.bashrc
 
 <div class="codebox">
 rm -Rf ~/dev/macpddl > /dev/null 2>&1
-git clone https://gilbertoamarcon@bitbucket.org/aldukeman/macpddl.git ~/dev/macpddl/
+git clone git@gitlab.com:human-machine-teaming/planning/macpddl.git ~/dev/macpddl/
 cd ~/dev/macpddl/
 ant
 </div>
@@ -117,34 +119,12 @@ ant
 
 <div class="codebox">
 rm -Rf ~/dev/imapc > /dev/null 2>&1
-git clone git@bitbucket.org:gilbertoamarcon/imapc.git ~/dev/imapc/
+git clone git@gitlab.com:human-machine-teaming/planning/imapc.git ~/dev/imapc/
 cd ~/dev/imapc/
-touch variables.cmake
+unzip submodules.zip
 cmake .
 make
 </div>
-
-<br/>
- Cloning and building
-
-<br/>
- git clone https://gitlab.com/human-machine-teaming/planning/imapc ~/dev/imapc/
-
-<br/>
- cd ~/dev/imapc/
-
-<br/>
- git submodule init
-
-<br/>
- git submodule update
-
-<br/>
- cmake .
-
-<br/>
- make
-
 
 
 <h2> Anton's Planning Problems</h2>
