@@ -73,26 +73,68 @@
 				<article>
 
 
-<h2> Commit</h2>
+
+<h2> Repos Dependencies</h2>
 
 <br/>
- I use this script to rapidly commit code to the master branch of my git repositories.
-
-<br/>
- The commit name is passed as a command line parameter.
+ This script will install and configure all repos dependencies.
 
 <br/>
 
 
+
+<br/>
+ COLIN2
 
 <div class="codebox">
-git add --all
-git commit -m "$1"
-git push -u origin master
+rm -Rf ~/dev/colin2
+git clone git@gitlab.com:human-machine-teaming/planning/colin2.git ~/dev/colin2/
+cd ~/dev/colin2/
+./run-cmake-release
+./build-release
 </div>
 
 <br/>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/commit.sh target=_blank>Follow this link for the raw script.</a>
+ POPF2
+
+<div class="codebox">
+rm -Rf ~/dev/popf2
+git clone git@gitlab.com:human-machine-teaming/planning/popf2.git ~/dev/popf2/
+cd ~/dev/popf2/
+./build
+sed -i 's\, "-b"\\g' ~/dev/popf2/plan
+</div>
+
+<br/>
+ ITSAT
+
+<div class="codebox">
+rm -Rf ~/dev/itsat
+git clone git@gitlab.com:human-machine-teaming/planning/itsat.git ~/dev/itsat/
+cd ~/dev/itsat/
+./build
+</div>
+
+<br/>
+ TFD
+
+<div class="codebox">
+rm -Rf ~/dev/tfd
+git clone git@gitlab.com:human-machine-teaming/planning/tfd.git ~/dev/tfd/
+cd ~/dev/tfd/
+./build
+</div>
+
+<br/>
+ Val
+
+rm -Rf ~/dev/val
+git clone git@gitlab.com:human-machine-teaming/planning/val.git ~/dev/val/
+cd ~/dev/val/
+cmake .
+make
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep-basic-planners.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

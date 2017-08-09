@@ -43,7 +43,11 @@
 						<li><a href=relaxed-plan.html class=menu_button>Relaxed Plan Structures						</a></li>
 						<li><a href=remote-video.html class=menu_button>PiCam Remote Video 						</a></li>
 						<li><a href=replace.html class=menu_button>Search and Replace						</a></li>
+						<li><a href=repos-dep-apt-get.html class=menu_button>Repos Dependencies						</a></li>
+						<li><a href=repos-dep-basic-planners.html class=menu_button>Repos Dependencies						</a></li>
+						<li><a href=repos-dep-extra-planners.html class=menu_button>Repos Dependencies						</a></li>
 						<li><a href=repos-dep.html class=menu_button>Repos Dependencies						</a></li>
+						<li><a href=repos-dep-lib.html class=menu_button>Repos Dependencies						</a></li>
 						<li><a href=repos-setup.html class=menu_button>Repos Setup						</a></li>
 						<li><a href=repos-test.html class=menu_button>Repos Test						</a></li>
 						<li><a href=ros-erratic.html class=menu_button>ROS Erratic						</a></li>
@@ -80,30 +84,14 @@
 
 
 <br/>
- Usage: ./real-robot.sh robot-ip
+ Usage: . real-robot.sh robot-ip
 
 <br/>
- Ex: ./real-robot.sh 10.214.152.39
+ Ex: . real-robot.sh aadi1
 
 
 <br/>
  Environment vars setup
-
-<br/>
- printf "\n# ROS:\n" >> ~/.bashrc
-
-<br/>
- printf "export ROS_MASTER_URI=http://$1:11311/\n" >> ~/.bashrc
-
-<br/>
- printf "export ROS_HOSTNAME=$(hostname -I)\n" >> ~/.bashrc
-
-<br/>
- printf "export ROS_IP=$(hostname -I)\n" >> ~/.bashrc
-
-<br/>
- source ~/.bashrc
-
 
 <div class="codebox">
 grep -vwE "(ROS_MASTER_URI|ROS_HOSTNAME|ROS_IP)" ~/.bashrc > aux

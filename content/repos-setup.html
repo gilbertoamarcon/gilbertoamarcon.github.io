@@ -43,7 +43,11 @@
 						<li><a href=relaxed-plan.html class=menu_button>Relaxed Plan Structures						</a></li>
 						<li><a href=remote-video.html class=menu_button>PiCam Remote Video 						</a></li>
 						<li><a href=replace.html class=menu_button>Search and Replace						</a></li>
+						<li><a href=repos-dep-apt-get.html class=menu_button>Repos Dependencies						</a></li>
+						<li><a href=repos-dep-basic-planners.html class=menu_button>Repos Dependencies						</a></li>
+						<li><a href=repos-dep-extra-planners.html class=menu_button>Repos Dependencies						</a></li>
 						<li><a href=repos-dep.html class=menu_button>Repos Dependencies						</a></li>
+						<li><a href=repos-dep-lib.html class=menu_button>Repos Dependencies						</a></li>
 						<li><a href=repos-setup.html class=menu_button>Repos Setup						</a></li>
 						<li><a href=repos-test.html class=menu_button>Repos Test						</a></li>
 						<li><a href=ros-erratic.html class=menu_button>ROS Erratic						</a></li>
@@ -119,19 +123,44 @@ ant
 
 <div class="codebox">
 rm -Rf ~/dev/imapc > /dev/null 2>&1
-git clone git@gitlab.com:human-machine-teaming/planning/imapc.git ~/dev/imapc/
+git clone --recursive git@gitlab.com:human-machine-teaming/planning/imapc.git ~/dev/imapc/
 cd ~/dev/imapc/
-unzip submodules.zip
 cmake .
 make
 </div>
 
 
-<h2> Anton's Planning Problems</h2>
+<h2> Test Set</h2>
 
 <div class="codebox">
-rm -Rf ~/dev/planning-problems > /dev/null 2>&1
-git clone git@gitlab.com:human-machine-teaming/planning/planning-problems.git ~/dev/planning-problems/
+rm -Rf ~/dev/test-set > /dev/null 2>&1
+git clone git@gitlab.com:human-machine-teaming/planning/test-set.git ~/dev/test-set/
+</div>
+
+
+<h2> Test Results</h2>
+
+<div class="codebox">
+rm -Rf ~/dev/test-results > /dev/null 2>&1
+git clone git@gitlab.com:human-machine-teaming/planning/test-results.git ~/dev/test-results/
+</div>
+
+
+
+<h2> First Response Domain</h2>
+
+<div class="codebox">
+rm -Rf ~/dev/first_response > /dev/null 2>&1
+git clone git@gitlab.com:human-machine-teaming/planning/first_response.git ~/dev/first_response/
+</div>
+
+
+
+<h2> Box Domain</h2>
+
+<div class="codebox">
+rm -Rf ~/dev/box-domain > /dev/null 2>&1
+git clone git@gitlab.com:human-machine-teaming/planning/box-domain.git ~/dev/box-domain/
 </div>
 
 

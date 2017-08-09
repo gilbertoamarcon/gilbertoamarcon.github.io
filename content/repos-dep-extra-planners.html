@@ -73,26 +73,139 @@
 				<article>
 
 
-<h2> Commit</h2>
+
+<h2> Repos Dependencies</h2>
 
 <br/>
- I use this script to rapidly commit code to the master branch of my git repositories.
-
-<br/>
- The commit name is passed as a command line parameter.
+ This script will install and configure all repos dependencies.
 
 <br/>
 
 
+
+<br/>
+ YAHSP2
+
+<br/>
+ git clone https://github.com/aldukeman/yahsp2.git ~/dev/yahsp2/
+
+<br/>
+ cd ~/dev/yahsp2/
+
+<br/>
+ ./build
+
+
+<br/>
+ CPT
 
 <div class="codebox">
-git add --all
-git commit -m "$1"
-git push -u origin master
+wget -P ~/Downloads/ http://www.cril.univ-artois.fr/~vidal/cpt/cpt-1.0.tar.gz
+tar -xvzf ~/Downloads/cpt-1.0.tar.gz -C ~/Downloads/
+rm -Rf ~/Downloads/cpt-1.0.tar.gz
+cd ~/Downloads/cpt-1.0/
+./build fast
 </div>
 
 <br/>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/commit.sh target=_blank>Follow this link for the raw script.</a>
+ Z3
+
+<div class="codebox">
+git clone https://github.com/Z3Prover/z3 ~/dev/z3/
+cd ~/dev/z3/
+python scripts/mk_make.py
+cd build
+make
+sudo make install
+</div>
+
+<br/>
+ Piranha
+
+<div class="codebox">
+git clone https://github.com/bluescarni/piranha ~/dev/piranha/
+mkdir ~/dev/piranha/build/
+cd ~/dev/piranha/build/
+cmake ../
+sudo make install
+</div>
+
+<br/>
+ SMTPlan+
+
+<div class="codebox">
+git clone https://github.com/KCL-Planning/SMTPlan.git ~/dev/SMTPlan/
+sed -i '15i\set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wno-deprecated-declarations")' ~/dev/SMTPlan/SMTPlan/CMakeLists.txt
+cd ~/dev/SMTPlan/SMTPlan/
+mkdir build
+cd build
+cmake ..
+make
+</div>
+
+<br/>
+ APPL
+
+<div class="codebox">
+wget -P ~/Downloads/ http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/uploads/Main/appl-0.96.tar.gz
+tar -xvzf ~/Downloads/appl-0.96.tar.gz -C ~/dev/
+rm -f ~/Downloads/appl-0.96.tar.gz
+mv -f ~/dev/appl-0.96 ~/dev/appl
+cd ~/dev/appl/src/
+make
+</div>
+
+<br/>
+ RDDL
+
+<div class="codebox">
+git clone https://github.com/ssanner/rddlsim.git ~/dev/rddlsim/
+cd ~/dev/rddlsim/
+sudo chmod +x compile
+./compile
+</div>
+
+<br/>
+ PROST Install and Config
+
+<div class="codebox">
+hg clone https://gilbertoamarcon@bitbucket.org/tkeller/prost ~/dev/prost/
+cd ~/dev/prost/src/search
+make
+cd ~/dev/prost/src/rddl_parser
+make
+ln -s ~/dev/rddlsim/ ~/dev/prost/testbed/rddlsim
+</div>
+
+<br/>
+ Fast Forward
+
+<div class="codebox">
+wget -P ~/Downloads/ https://fai.cs.uni-saarland.de/hoffmann/ff/FF-v2.3.tgz
+tar -xvzf ~/Downloads/FF-v2.3.tgz -C ~/Downloads/
+cd ~/Downloads/FF-v2.3
+make
+</div>
+
+<br/>
+ Fast Downward
+
+<div class="codebox">
+hg clone http://hg.fast-downward.org ~/dev/fd/
+cd ~/dev/fd/
+./build.py
+cp ${TOOLS}plan ~/dev/fd/
+</div>
+
+<br/>
+ Cleanup
+
+<div class="codebox">
+rm -Rf ~/Downloads/*
+</div>
+
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep-extra-planners.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 
