@@ -118,15 +118,12 @@
 
 <h2> Repos Dependencies</h2>
 
+<br/> This script will install and configure all repos dependencies.
 
- This script will install and configure all repos dependencies.
-
-
-
+<br/>
 
 
-
- Cmake install/upgrade (3.8.0):
+<br/> Cmake install/upgrade (3.8.0):
 
 <div class="codebox">
 wget -P ~/Downloads/ http://www.cmake.org/files/v3.8/cmake-3.8.0.tar.gz
@@ -139,38 +136,33 @@ sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 -
 cmake --version
 </div>
 
-
- Upgrade to gcc/g++ 5.4.0 (5.4.0):
+<br/> Upgrade to gcc/g++ 5.4.0 (5.4.0):
 
 <div class="codebox">
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
 </div>
 
-
- Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
+<br/> Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
 
 <div class="codebox">
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 </div>
 
-
- Boost 1.64
+<br/> Boost 1.64
 
 <div class="codebox">
 ./boost.sh
 </div>
 
-
- ANTLR
+<br/> ANTLR
 
 <div class="codebox">
 wget -P ~/Downloads/ http://www.antlr.org/download/antlr-4.5.3-complete.jar
 sudo mv ~/Downloads/antlr-4.5.3-complete.jar /usr/local/lib/antlr-4.5.3-complete.jar
 </div>
 
-
- Proto
+<br/> Proto
 
 <div class="codebox">
 wget -P ~/Downloads/ https://github.com/google/protobuf/releases/download/v3.0.0/protobuf-cpp-3.0.0.tar.gz
@@ -183,36 +175,26 @@ sudo make install
 sudo ldconfig # refresh shared library cache.
 </div>
 
+<br/> GDSL (for yahsp2)
 
- GDSL (for yahsp2)
+<br/> wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
 
+<br/> tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
 
- wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
+<br/> cd ~/Downloads/gdsl-1.8/
 
+<br/> ./configure
 
- tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
+<br/> make
 
+<br/> sudo make install
 
- cd ~/Downloads/gdsl-1.8/
+<br/> make clean
 
-
- ./configure
-
-
- make
-
-
- sudo make install
+<br/> make distclean
 
 
- make clean
-
-
- make distclean
-
-
-
- Flex 2.5.39
+<br/> Flex 2.5.39
 
 <div class="codebox">
 wget -P ~/Downloads/ https://sourceforge.net/projects/flex/files/flex-2.5.39.tar.bz2
@@ -224,8 +206,7 @@ sudo make install
 flex --version
 </div>
 
-
- Graphviz
+<br/> Graphviz
 
 <div class="codebox">
 wget -P ~/Downloads/ http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.28.0.tar.gz
@@ -236,12 +217,10 @@ make
 sudo make install 
 </div>
 
-
- Cleanup
+<br/> Cleanup
 
 rm -Rf ~/Downloads/*
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep-lib.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep-lib.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

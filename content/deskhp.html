@@ -117,37 +117,31 @@
 
 <h2> Basic Desktop Setup</h2>
 
+<br/> This script sets up all the apps and basic configs for my Desktop.
 
- This script sets up all the apps and basic configs for my Desktop.
-
-
-
+<br/>
 
 
-
- Backing up present working directory
+<br/> Backing up present working directory
 
 <div class="codebox">
 hdir=$(pwd)
 </div>
 
-
- Updates/Upgrades
+<br/> Updates/Upgrades
 
 <div class="codebox">
 ./apt-gets.sh
 </div>
 
-
- Git config
+<br/> Git config
 
 <div class="codebox">
 git config --global user.email "gilbertoamarcon@gmail.com"
 git config --global user.name "Gilberto Marcon"	
 </div>
 
-
- Terminator
+<br/> Terminator
 
 <div class="codebox">
 sudo apt-get --yes install terminator
@@ -155,115 +149,93 @@ sudo cp -Rf terminator ~/.config/
 sudo chmod +x ~/.config/terminator/
 </div>
 
-
- Sublime
+<br/> Sublime
 
 <div class="codebox">
 ./sublime.sh
 </div>
 
-
- Atom
+<br/> Atom
 
 <div class="codebox">
 ./atom.sh
 </div>
 
-
- Mendeley
+<br/> Mendeley
 
 <div class="codebox">
 ./mendeley.sh
 </div>
 
+<br/> # Chrome
 
- # Chrome
-
-
- ./chrome.sh
+<br/> ./chrome.sh
 
 
-
- Color Terminal
+<br/> Color Terminal
 
 <div class="codebox">
 sed -i '/force_color_prompt=yes/s/^#//g' ~/.bashrc
 </div>
 
-
- Calc
+<br/> Calc
 
 <div class="codebox">
 ./calc.sh
 </div>
 
+<br/> # Eclipse
 
- # Eclipse
-
-
- sudo ./eclipse.sh
+<br/> sudo ./eclipse.sh
 
 
+<br/> Website
 
- Website
-
-
- git clone git@github.com:gilbertoamarcon/gilbertoamarcon.github.io.git ~/dev/gilbertoamarcon.github.io
+<br/> git clone git@github.com:gilbertoamarcon/gilbertoamarcon.github.io.git ~/dev/gilbertoamarcon.github.io
 
 
-
- Cleaning up
+<br/> Cleaning up
 
 <div class="codebox">
 sudo apt-get --yes autoremove
 </div>
 
-
- Removing Examples folder
+<br/> Removing Examples folder
 
 <div class="codebox">
 rm -Rf ~/examples.desktop
 </div>
 
-
- Move sidebar to the bottom
+<br/> Move sidebar to the bottom
 
 <div class="codebox">
 gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 </div>
 
-
- SSH to robots
+<br/> SSH to robots
 
 <div class="codebox">
 sudo ufw allow 22
 </div>
 
-
- Restarting the machine
+<br/> Restarting the machine
 
 <div class="codebox">
 sudo reboot
 </div>
 
+<br/> Manual stuff:
 
- Manual stuff:
+<br/> Config power sleep and screen
 
+<br/> Config files icon list view
 
- Config power sleep and screen
+<br/> Config grub
 
-
- Config files icon list view
-
-
- Config grub
+<br/> Config proprietary video drivers
 
 
- Config proprietary video drivers
-
-
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/deskhp.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/deskhp.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

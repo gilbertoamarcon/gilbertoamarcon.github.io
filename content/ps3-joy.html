@@ -123,36 +123,28 @@ sudo apt-get --yes install sixad
 sudo systemctl disable sixad
 </div>
 
+<br/> Connect with USB, then run:
 
- Connect with USB, then run:
-
-
- sudo sixpair
+<br/> sudo sixpair
 
 
+<br/> Disconnect sixaxis from USB, then run:
 
- Disconnect sixaxis from USB, then run:
+<br/> sudo sixad -s
 
-
- sudo sixad -s
-
-
- Then press PS button to connect over bluetooth
+<br/> Then press PS button to connect over bluetooth
 
 
-
- Button config:
+<br/> Button config:
 
 <div class="codebox">
 echo 'ATTRS{name}=="PLAYSTATION*", ENV{DEVNAME}=="/dev/input/event*", ENV{ID_MODEL}="PS3Controller", SYMLINK+="input/dualshock3"'
 </div>
 
-
- Start at system boot:
+<br/> Start at system boot:
 
 sudo sixad --boot-yes
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ps3-joy.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ps3-joy.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

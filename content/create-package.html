@@ -118,14 +118,11 @@
 
 <h2> Create a ROS Package</h2>
 
+<br/> Usage:
 
- Usage:
+<br/> ./create-package.sh workspace-name package-name
 
-
- ./create-package.sh workspace-name package-name
-
-
-
+<br/>
 
 
 <div class="codebox">
@@ -135,15 +132,13 @@ shift
 shift
 </div>
 
-
- Backing up present working directory
+<br/> Backing up present working directory
 
 <div class="codebox">
 hdir=$(pwd)
 </div>
 
-
- Package creation
+<br/> Package creation
 
 <div class="codebox">
 printf "Creating package at: \\n$HOME/ros-ws/$wsname/src/\\n"
@@ -154,15 +149,13 @@ source ~/ros-ws/$wsname/devel/setup.bash
 source ~/.bashrc
 </div>
 
-
- Back to original working directory
+<br/> Back to original working directory
 
 <div class="codebox">
 cd $hdir
 </div>
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-package.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-package.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

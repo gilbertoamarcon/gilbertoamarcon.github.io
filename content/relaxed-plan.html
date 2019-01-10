@@ -118,15 +118,12 @@
 
 <h2> Relaxed Plan Structures</h2>
 
+<br/> Relaxed Plan Structures for CFP
 
- Relaxed Plan Structures for CFP
-
-
-
+<br/>
 
 
-
- A temporal relaxed plan from colin2 looks like this:
+<br/> A temporal relaxed plan from colin2 looks like this:
 
 1
 <div class="codebox">
@@ -145,14 +142,11 @@
 (push r2 c p_03_17 p_03_16 p_03_15)
 </div>
 
+<br/> CoalitionStructure.cpp was expanded to read relaxed plans using two structures.
 
- CoalitionStructure.cpp was expanded to read relaxed plans using two structures.
+<br/> The first structure is called rplan.
 
-
- The first structure is called rplan.
-
-
- rplan is just a list of each line from the plan file, numbered on reading order:
+<br/> rplan is just a list of each line from the plan file, numbered on reading order:
 
 <div class="codebox">
 0: 1
@@ -163,11 +157,9 @@
 ...
 </div>
 
+<br/> The second structure is called rplan_timed.
 
- The second structure is called rplan_timed.
-
-
- rplan_timed maps double time stamps to sets of strings: sets of actions at each time stamp:
+<br/> rplan_timed maps double time stamps to sets of strings: sets of actions at each time stamp:
 
 <div class="codebox">
 [1]:
@@ -186,8 +178,7 @@
 	(push r2 c p_03_17 p_03_16 p_03_15)
 </div>
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/relaxed-plan.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/relaxed-plan.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

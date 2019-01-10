@@ -118,30 +118,25 @@
 
 <h2> Website Maker </h2>
 
+<br/> This script will transform all my scripts into this website. 
 
- This script will transform all my scripts into this website. 
-
-
-
+<br/>
 
 
-
- Cleaning up
+<br/> Cleaning up
 
 <div class="codebox">
 rm ~/dev/gilbertoamarcon.github.io/content/*.html
 rm *.html > /dev/null 2>&1
 </div>
 
-
- Adding raw link
+<br/> Adding raw link
 
 <div class="codebox">
 find . -name "*.sh" -type f -exec bash -c 'printf "#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/$(basename {}) target=_blank>Follow this link for the raw script.</a>" >> {}' \;
 </div>
 
-
- Copying sh scripts
+<br/> Copying sh scripts
 
 <div class="codebox">
 find . -name "*.sh" -type f -exec chmod +x {} \;
@@ -149,22 +144,19 @@ chmod +x *.sh
 find . -name "*.sh" -type f -exec cp {} {}.html \;
 </div>
 
-
- Removing link line
+<br/> Removing link line
 
 <div class="codebox">
 sed -i '/^\#<a href=https/d' *.sh
 </div>
 
-
- Renaming bash to HTML
+<br/> Renaming bash to HTML
 
 <div class="codebox">
 rename 's/(.*).sh.html/$1.html/' *.sh.html
 </div>
 
-
- Building menu
+<br/> Building menu
 
 <div class="codebox">
 echo "" > website/_menu
@@ -173,61 +165,52 @@ sort -db website/_menu > aux
 mv aux website/_menu
 </div>
 
-
- Removing !/bin/bash
+<br/> Removing !/bin/bash
 
 <div class="codebox">
 find . -name "*.html" -type f -print0 | xargs -0 perl -0 -pi -e 's/\#\!\/bin\/bash\n//g'
 </div>
 
-
- Removing find . -name "*.html" -type f -print0 | xargs -0 perl -0 -pi -e 's/#\s*=+\n//g'
-
+<br/> Removing find . -name "*.html" -type f -print0 | xargs -0 perl -0 -pi -e 's/#\s*=+\n//g'
 
 
- Inserting code divs
+<br/> Inserting code divs
 
 <div class="codebox">
 find . -name "*.html" -type f -print0 | xargs -0  perl -0 -pi -e 's/((\n[^#\n].+)+\n)\n/\n<div class=\"codebox\">\1<\/div>\n\n/g'
 </div>
 
-
- Replacing ##
+<br/> Replacing ##
 
 <div class="codebox">
 find . -name "*.html" -type f -print0 | xargs -0 sed -i 's/^##\(.\+\)/\n<h2>\1<\/h2>/g'
 </div>
 
-
- Replacing #
+<br/> Replacing #
 
 <div class="codebox">
-find . -name "*.html" -type f -print0 | xargs -0 sed -i 's/^#\(.*\)/\n\1\n/g'
+find . -name "*.html" -type f -print0 | xargs -0 sed -i 's/^#\(.*\)/<br\/>\1\n/g'
 </div>
 
-
- Concat and moving
+<br/> Concat and moving
 
 <div class="codebox">
 find . -name "*.html" -type f -exec bash -c 'cat website/_prefix website/_menu website/_midfix {} website/_suffix > ~/dev/gilbertoamarcon.github.io/content/$(basename {})' \;
 </div>
 
-
- Main page
+<br/> Main page
 
 <div class="codebox">
 cat website/_prefix website/_menu website/_midfix website/_main website/_suffix > ~/dev/gilbertoamarcon.github.io/content/index.html
 </div>
 
-
- Cleaning up
+<br/> Cleaning up
 
 <div class="codebox">
 find . -name "*.html" -exec rm {} \;
 </div>
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/website.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/website.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

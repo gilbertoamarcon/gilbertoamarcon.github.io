@@ -118,36 +118,30 @@
 
 <h2> Disabling Devices</h2>
 
+<br/> To disable faulty hardware, such as a bad integrated network controller. 
 
- To disable faulty hardware, such as a bad integrated network controller. 
-
-
-
+<br/>
 
 
-
- Determine the name of the modules associated with the device:
+<br/> Determine the name of the modules associated with the device:
 
 <div class="codebox">
 lsmod
 </div>
 
-
- Blacklist the modules wirtting
+<br/> Blacklist the modules wirtting
 
 <div class="codebox">
 blacklist rtlwifi
 </div>
 
-
- Onto the file:
+<br/> Onto the file:
 
 <div class="codebox">
 sudo nano /etc/modprobe.d/blacklist.conf
 </div>
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/disable-devices.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/disable-devices.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

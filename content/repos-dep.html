@@ -118,15 +118,12 @@
 
 <h2> Repos Dependencies</h2>
 
+<br/> This script will install and configure all repos dependencies.
 
- This script will install and configure all repos dependencies.
-
-
-
+<br/>
 
 
-
- Add-apt-repositories
+<br/> Add-apt-repositories
 
 <div class="codebox">
 sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
@@ -135,8 +132,7 @@ sudo add-apt-repository ppa:webupd8team/java -y
 sudo apt-get --yes update
 </div>
 
-
- Apt-get installs
+<br/> Apt-get installs
 
 <div class="codebox">
 sudo apt-get --yes install ant
@@ -195,15 +191,12 @@ sudo apt-get --yes upgrade cmake
 sudo pip install svgwrite
 </div>
 
+<br/> # Repos folder
 
- # Repos folder
-
-
- mkdir -p ~/dev/
+<br/> mkdir -p ~/dev/
 
 
-
- Cmake install/upgrade (3.8.0):
+<br/> Cmake install/upgrade (3.8.0):
 
 <div class="codebox">
 wget -P ~/Downloads/ http://www.cmake.org/files/v3.8/cmake-3.8.0.tar.gz
@@ -216,23 +209,20 @@ sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 -
 cmake --version
 </div>
 
-
- Upgrade to gcc/g++ 5.4.0 (5.4.0):
+<br/> Upgrade to gcc/g++ 5.4.0 (5.4.0):
 
 <div class="codebox">
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
 </div>
 
-
- Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
+<br/> Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
 
 <div class="codebox">
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 </div>
 
-
- Boost 1.64
+<br/> Boost 1.64
 
 <div class="codebox">
 wget -P ~/Downloads/ http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz
@@ -243,16 +233,14 @@ sudo ./b2 install
 cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
 </div>
 
-
- ANTLR
+<br/> ANTLR
 
 <div class="codebox">
 wget -P ~/Downloads/ http://www.antlr.org/download/antlr-4.5.3-complete.jar
 sudo mv ~/Downloads/antlr-4.5.3-complete.jar /usr/local/lib/antlr-4.5.3-complete.jar
 </div>
 
-
- Proto
+<br/> Proto
 
 <div class="codebox">
 wget -P ~/Downloads/ https://github.com/google/protobuf/releases/download/v3.0.0/protobuf-cpp-3.0.0.tar.gz
@@ -265,36 +253,26 @@ sudo make install
 sudo ldconfig # refresh shared library cache.
 </div>
 
+<br/> GDSL (for yahsp2)
 
- GDSL (for yahsp2)
+<br/> wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
 
+<br/> tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
 
- wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
+<br/> cd ~/Downloads/gdsl-1.8/
 
+<br/> ./configure
 
- tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
+<br/> make
 
+<br/> sudo make install
 
- cd ~/Downloads/gdsl-1.8/
+<br/> make clean
 
-
- ./configure
-
-
- make
-
-
- sudo make install
+<br/> make distclean
 
 
- make clean
-
-
- make distclean
-
-
-
- Flex 2.5.39
+<br/> Flex 2.5.39
 
 <div class="codebox">
 wget -P ~/Downloads/ https://sourceforge.net/projects/flex/files/flex-2.5.39.tar.bz2
@@ -306,8 +284,7 @@ sudo make install
 flex --version
 </div>
 
-
- Graphviz
+<br/> Graphviz
 
 <div class="codebox">
 wget -P ~/Downloads/ http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.28.0.tar.gz
@@ -318,8 +295,7 @@ make
 sudo make install 
 </div>
 
-
- COLIN2
+<br/> COLIN2
 
 <div class="codebox">
 git clone git@gitlab.com:human-machine-teaming/planning/colin2.git ~/dev/colin2/
@@ -328,8 +304,7 @@ cd ~/dev/colin2/
 ./build-release
 </div>
 
-
- POPF2
+<br/> POPF2
 
 <div class="codebox">
 git clone https://github.com/aldukeman/popf2.git ~/dev/popf2/
@@ -338,8 +313,7 @@ cd ~/dev/popf2/
 sed -i 's\, "-b"\\g' ~/dev/popf2/plan
 </div>
 
-
- ITSAT
+<br/> ITSAT
 
 <div class="codebox">
 git clone git@gitlab.com:human-machine-teaming/planning/itsat.git ~/dev/itsat/
@@ -347,8 +321,7 @@ cd ~/dev/itsat/
 ./build
 </div>
 
-
- TFD
+<br/> TFD
 
 <div class="codebox">
 git clone git@gitlab.com:human-machine-teaming/planning/tfd.git ~/dev/tfd/
@@ -356,21 +329,16 @@ cd ~/dev/tfd/
 ./build
 </div>
 
+<br/> YAHSP2
 
- YAHSP2
+<br/> git clone https://github.com/aldukeman/yahsp2.git ~/dev/yahsp2/
 
+<br/> cd ~/dev/yahsp2/
 
- git clone https://github.com/aldukeman/yahsp2.git ~/dev/yahsp2/
-
-
- cd ~/dev/yahsp2/
-
-
- ./build
+<br/> ./build
 
 
-
- CPT
+<br/> CPT
 
 <div class="codebox">
 wget -P ~/Downloads/ http://www.cril.univ-artois.fr/~vidal/cpt/cpt-1.0.tar.gz
@@ -380,8 +348,7 @@ cd ~/Downloads/cpt-1.0/
 ./build fast
 </div>
 
-
- Z3
+<br/> Z3
 
 <div class="codebox">
 git clone https://github.com/Z3Prover/z3 ~/dev/z3/
@@ -392,8 +359,7 @@ make
 sudo make install
 </div>
 
-
- Piranha
+<br/> Piranha
 
 <div class="codebox">
 git clone https://github.com/bluescarni/piranha ~/dev/piranha/
@@ -403,8 +369,7 @@ cmake ../
 sudo make install
 </div>
 
-
- SMTPlan+
+<br/> SMTPlan+
 
 <div class="codebox">
 git clone https://github.com/KCL-Planning/SMTPlan.git ~/dev/SMTPlan/
@@ -416,8 +381,7 @@ cmake ..
 make
 </div>
 
-
- APPL
+<br/> APPL
 
 <div class="codebox">
 wget -P ~/Downloads/ http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/uploads/Main/appl-0.96.tar.gz
@@ -428,8 +392,7 @@ cd ~/dev/appl/src/
 make
 </div>
 
-
- RDDL
+<br/> RDDL
 
 <div class="codebox">
 git clone https://github.com/ssanner/rddlsim.git ~/dev/rddlsim/
@@ -438,8 +401,7 @@ sudo chmod +x compile
 ./compile
 </div>
 
-
- PROST Install and Config
+<br/> PROST Install and Config
 
 <div class="codebox">
 hg clone https://gilbertoamarcon@bitbucket.org/tkeller/prost ~/dev/prost/
@@ -450,22 +412,19 @@ make
 ln -s ~/dev/rddlsim/ ~/dev/prost/testbed/rddlsim
 </div>
 
-
- Sample domains
+<br/> Sample domains
 
 <div class="codebox">
 git clone https://github.com/gilbertoamarcon/domains.git ~/dev/domains/
 </div>
 
-
- Planning Domains
+<br/> Planning Domains
 
 <div class="codebox">
 git clone https://github.com/aldukeman/planning-domains.git ~/dev/planning-domains/
 </div>
 
-
- Val
+<br/> Val
 
 <div class="codebox">
 git clone https://antondukeman.com/gitlab/aldukeman/val.git ~/dev/val/
@@ -474,8 +433,7 @@ cmake .
 make
 </div>
 
-
- Fast Forward
+<br/> Fast Forward
 
 <div class="codebox">
 wget -P ~/Downloads/ https://fai.cs.uni-saarland.de/hoffmann/ff/FF-v2.3.tgz
@@ -484,8 +442,7 @@ cd ~/Downloads/FF-v2.3
 make
 </div>
 
-
- Fast Downward
+<br/> Fast Downward
 
 <div class="codebox">
 hg clone http://hg.fast-downward.org ~/dev/fd/
@@ -494,8 +451,7 @@ cd ~/dev/fd/
 cp ${TOOLS}plan ~/dev/fd/
 </div>
 
-
- Cleaning up and rebooting
+<br/> Cleaning up and rebooting
 
 <div class="codebox">
 rm -Rf ~/Downloads/*
@@ -503,8 +459,7 @@ sudo apt-get --yes autoremove
 sudo reboot
 </div>
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

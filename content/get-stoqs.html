@@ -117,15 +117,12 @@
 
 <h2> STOQS Setup</h2>
 
+<br/> This script sets up the Spatial Temporal Oceanographic Query System (STOQS).
 
- This script sets up the Spatial Temporal Oceanographic Query System (STOQS).
-
-
-
+<br/>
 
 
-
- Backing up present working directory
+<br/> Backing up present working directory
 
 <div class="codebox">
 hdir=$(pwd)
@@ -133,16 +130,14 @@ hdir=$(pwd)
 
 sdir=~/Vagrants/stoqsvm
 
-
- Vagrant
+<br/> Vagrant
 
 <div class="codebox">
 wget -P ~/Downloads/ https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
 sudo dpkg -i ~/Downloads/vagrant_2.0.1_x86_64.deb
 </div>
 
-
- Install takes about an hour
+<br/> Install takes about an hour
 
 <div class="codebox">
 mkdir -p $sdir
@@ -155,8 +150,7 @@ cd $hdir
 exit 0
 </div>
 
-
- Login to test
+<br/> Login to test
 
 <div class="codebox">
 cd ~/Vagrants/stoqsvm/
@@ -166,8 +160,7 @@ export DATABASE_URL=postgis://stoqsadm:CHANGEME@127.0.0.1:5432/stoqs
 ./test.sh CHANGEME
 </div>
 
-
- Start development server
+<br/> Start development server
 
 <div class="codebox">
 cd ~/Vagrants/stoqsvm/
@@ -177,7 +170,7 @@ export DATABASE_URL=postgis://stoqsadm:CHANGEME@127.0.0.1:5432/stoqs
 stoqs/manage.py runserver 0.0.0.0:8000 --settings=config.settings.local
 </div>
 
-http://localhost:8000#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>
+http://localhost:8000#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>
 				<article/>
 
 			</div>

@@ -118,25 +118,20 @@
 
 <h2> Create a ROS Workspace</h2>
 
+<br/> Usage:
 
- Usage:
+<br/> ./create-ws.sh workspace-name
 
-
- ./create-ws.sh workspace-name
-
-
+<br/>
 
 
-
-
- Backing up present working directory
+<br/> Backing up present working directory
 
 <div class="codebox">
 hdir=$(pwd)
 </div>
 
-
- Workspace creation
+<br/> Workspace creation
 
 <div class="codebox">
 printf "Creating workspace at: \\n$HOME/ros-ws/$1/\\n"
@@ -149,15 +144,13 @@ source ~/ros-ws/$1/devel/setup.bash
 printf "\n# $1 ROS workspace:\nsource $HOME/ros-ws/$1/devel/setup.bash\n" >> ~/.bashrc
 </div>
 
-
- Back to original working directory
+<br/> Back to original working directory
 
 <div class="codebox">
 cd $hdir
 </div>
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-ws.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-ws.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

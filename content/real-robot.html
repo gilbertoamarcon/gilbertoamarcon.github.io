@@ -118,22 +118,17 @@
 
 <h2> Real Robot</h2>
 
+<br/> Sets an external robot running ros
 
- Sets an external robot running ros
-
-
-
+<br/>
 
 
+<br/> Usage: . real-robot.sh robot-ip
 
- Usage: . real-robot.sh robot-ip
-
-
- Ex: . real-robot.sh aadi1
+<br/> Ex: . real-robot.sh aadi1
 
 
-
- Environment vars setup
+<br/> Environment vars setup
 
 <div class="codebox">
 grep -vwE "(ROS_MASTER_URI|ROS_HOSTNAME|ROS_IP)" ~/.bashrc > aux
@@ -144,8 +139,7 @@ printf "export ROS_IP=$(hostname -I)\n" >> ~/.bashrc
 source ~/.bashrc
 </div>
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/real-robot.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/real-robot.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

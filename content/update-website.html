@@ -118,55 +118,46 @@
 
 <h2> Update Repo Website</h2>
 
+<br/> Usage:
 
- Usage:
+<br/> ./update-website.sh version-name
 
-
- ./update-website.sh version-name
-
-
+<br/>
 
 
-
-
- Backing up present working directory
+<br/> Backing up present working directory
 
 <div class="codebox">
 hdir=$(pwd)
 </div>
 
-
- Compiling website
+<br/> Compiling website
 
 <div class="codebox">
 cd $TOOLS
 ./website.sh
 </div>
 
-
- Committing repos
+<br/> Committing repos
 
 <div class="codebox">
 ./commit.sh "$1"
 </div>
 
-
- Committing website
+<br/> Committing website
 
 <div class="codebox">
 cd ~/dev/gilbertoamarcon.github.io/
 ./commit.sh "$1"
 </div>
 
-
- Back to original working directory
+<br/> Back to original working directory
 
 <div class="codebox">
 cd $hdir
 </div>
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/update-website.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/update-website.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

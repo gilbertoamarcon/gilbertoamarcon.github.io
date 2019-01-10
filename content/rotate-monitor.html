@@ -117,43 +117,35 @@
 
 <h2> View Overleaf Paper Offline</h2>
 
+<br/> Provide the link to the Overleaf project as a command line argument:
 
- Provide the link to the Overleaf project as a command line argument:
+<br/> ./rotate-monitor.sh 0 normal
 
-
- ./rotate-monitor.sh 0 normal
-
-
+<br/>
 
 
-
-
- Monitor ID
+<br/> Monitor ID
 
 <div class="codebox">
 m=$1
 </div>
 
-
- Orientation: left right inverted normal
+<br/> Orientation: left right inverted normal
 
 <div class="codebox">
 o=$2
 </div>
 
-
- Getting Monitor List
+<br/> Getting Monitor List
 
 <div class="codebox">
 monitors=($(xrandr -q | grep '\bconnected\b' | while read -r l; do echo "$l" | awk '{print $1;}'; done))
 </div>
 
-
- Applying Rotation
+<br/> Applying Rotation
 
 xrandr --output ${monitors[$m]} --rotate $o
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/rotate-monitor.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/rotate-monitor.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

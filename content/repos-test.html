@@ -118,8 +118,7 @@
 
 <h2> Repos Test</h2>
 
-
- This script will test all repos and all their dependencies.
+<br/> This script will test all repos and all their dependencies.
 
 
 
@@ -142,59 +141,49 @@ cd ~/dev/imapc/
 
 <h2> APPL</h2>
 
-
- Try solving an example problem. Type the command:
+<br/> Try solving an example problem. Type the command:
 
 <div class="codebox">
 ./pomdpsol ../examples/POMDPX/Tiger.pomdpx
 </div>
 
-
- The generated policy is written to "out.policy" by default.
-
+<br/> The generated policy is written to "out.policy" by default.
 
 
- Try simulating a policy. Type the command:
+<br/> Try simulating a policy. Type the command:
 
 <div class="codebox">
 ./pomdpsim --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
 </div>
 
-
- The simulation results are written to the console.
-
+<br/> The simulation results are written to the console.
 
 
- Try evaluating a policy. Type the command:
+<br/> Try evaluating a policy. Type the command:
 
 <div class="codebox">
 ./pomdpeval --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
 </div>
 
-
- The evaluation results are written to the console.
-
+<br/> The evaluation results are written to the console.
 
 
- Try generating a graphical representation of a policy . Type the command:
+<br/> Try generating a graphical representation of a policy . Type the command:
 
 <div class="codebox">
 ./polgraph --policy-file out.policy --policy-graph tiger.dot ../examples/POMDPX/Tiger.pomdpx
 </div>
 
-
- The generated graph is written to "tiger.dot". You can view the output "tiger.dot" using Graphviz (http://www.graphviz.org/).  A pdf file generated from "tiger.dot" is in "../examples/POMDPX/tiger.pdf".
-
+<br/> The generated graph is written to "tiger.dot". You can view the output "tiger.dot" using Graphviz (http://www.graphviz.org/).  A pdf file generated from "tiger.dot" is in "../examples/POMDPX/tiger.pdf".
 
 
- Try converting a POMDP file to POMDPX file format:
+<br/> Try converting a POMDP file to POMDPX file format:
 
 <div class="codebox">
 ./pomdpconvert ../examples/POMDP/Tiger.pomdp
 </div>
 
-
- The generated POMDPX file is in the same directory as the POMDP model file.
+<br/> The generated POMDPX file is in the same directory as the POMDP model file.
 
 
 
@@ -209,8 +198,7 @@ cat ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl 
 
 <h2> PROST</h2>
 
-
- Testing 1
+<br/> Testing 1
 
 <div class="codebox">
 cd ~/dev/prost/testbed/
@@ -219,8 +207,7 @@ cd ~/dev/prost/testbed/
 ./plan.py benchmarks/ippc-all/rddl/elevators_mdp.rddl benchmarks/ippc-all/rddl/elevators_inst_mdp__1.rddl "IPPC2014"
 </div>
 
-
- Testing 2
+<br/> Testing 2
 
 <div class="codebox">
 cd ~/dev/prost/testbed/
@@ -238,8 +225,7 @@ cd ~/dev/prost/testbed/
 ./pomdpsol ~/dev/domains/pomdpx/simple_pomdp.pomdpx
 </div>
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-test.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-test.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

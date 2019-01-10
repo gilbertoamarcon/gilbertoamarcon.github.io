@@ -117,18 +117,14 @@
 
 <h2> View Overleaf Paper Offline</h2>
 
+<br/> Provide the link to the Overleaf project as a command line argument:
 
- Provide the link to the Overleaf project as a command line argument:
+<br/> ./view-paper.sh https://www.overleaf.com/11526189qqdhvsmwyytc#/43580908/
 
-
- ./view-paper.sh https://www.overleaf.com/11526189qqdhvsmwyytc#/43580908/
-
-
+<br/>
 
 
-
-
- Parsing input: Project URL to get Project ID
+<br/> Parsing input: Project URL to get Project ID
 
 <div class="codebox">
 url=$1
@@ -136,64 +132,55 @@ IFS='/#' read -ra tokens <<< "$url"
 projid=${tokens[3]}
 </div>
 
-
- Local repository directory
+<br/> Local repository directory
 
 <div class="codebox">
 lrepo=${HOME}/over/$projid
 </div>
 
-
- Remote BIB URL
+<br/> Remote BIB URL
 
 <div class="codebox">
 rbib='http://www.citeulike.org/bibtex/user/marcondg?do_username_prefix=0&key_type=4&incl_amazon=1&clean_urls=1&smart_wrap=1&q=&fieldmap=abstract:'
 </div>
 
-
- Aux bib
+<br/> Aux bib
 
 <div class="codebox">
 abib=/tmp/bib.bib
 </div>
 
-
- Local bib
+<br/> Local bib
 
 <div class="codebox">
 lbib=$lrepo/bib.bib
 </div>
 
-
- Remote PDF URL
+<br/> Remote PDF URL
 
 <div class="codebox">
 rpdf=https://v1.overleaf.com/docs/$projid/pdf.pdf
 </div>
 
-
- Aux PDF
+<br/> Aux PDF
 
 <div class="codebox">
 apdf=/tmp/pdf_.pdf
 </div>
 
-
- Local PDF
+<br/> Local PDF
 
 <div class="codebox">
 lpdf=/tmp/pdf.pdf
 </div>
 
-
- Getting firefox up
+<br/> Getting firefox up
 
 <div class="codebox">
 firefox $url > /dev/null 2>&1 &
 </div>
 
-
- Getting Local PDF
+<br/> Getting Local PDF
 
 <div class="codebox">
 echo 'Fetching PDF...'
@@ -205,8 +192,7 @@ done
 echo 'PDF fetched.'
 </div>
 
-
- Go to repo, pull
+<br/> Go to repo, pull
 
 <div class="codebox">
 mkdir -p ${HOME}/over > /dev/null 2>&1
@@ -214,23 +200,20 @@ rm -Rf $lrepo > /dev/null 2>&1
 git clone https://git.overleaf.com/$projid $lrepo/ > /dev/null 2>&1
 </div>
 
-
- Getting sublime up
+<br/> Getting sublime up
 
 <div class="codebox">
 subl $lrepo/*.tex
 subl $lbib
 </div>
 
-
- Getting evince up
+<br/> Getting evince up
 
 <div class="codebox">
 evince $lpdf > /dev/null 2>&1 &
 </div>
 
-
-  Infinite loop
+<br/>  Infinite loop
 
 <div class="codebox">
 while true; do
@@ -285,7 +268,7 @@ while true; do
 	sleep 1
 </div>
 
-done#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>
+done#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>
 				<article/>
 
 			</div>

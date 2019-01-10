@@ -118,19 +118,16 @@
 
 <h2> Repos Setup</h2>
 
+<br/> This script will install and configure all repos.
 
- This script will install and configure all repos.
-
-
-
+<br/>
 
 
 
 
 <h2> i-CiFHaR</h2>
 
-
- Cloning and building
+<br/> Cloning and building
 
 <div class="codebox">
 rm -Rf ~/dev/icifhar > /dev/null 2>&1
@@ -140,8 +137,7 @@ qmake
 make
 </div>
 
-
- Adding the lib folder to $LD_LIBRARY_PATH:
+<br/> Adding the lib folder to $LD_LIBRARY_PATH:
 
 <div class="codebox">
 printf "\n# i-CiFHaR:\nexport LD_LIBRARY_PATH=~/dev/icifhar/lib\n" >> ~/.bashrc
@@ -160,8 +156,7 @@ ant
 
 <h2> i-MAPC</h2>
 
-
- Cloning and building
+<br/> Cloning and building
 
 <div class="codebox">
 rm -Rf ~/dev/imapc > /dev/null 2>&1
@@ -182,11 +177,9 @@ git clone git@gitlab.com:human-machine-teaming/planning/test-set.git ~/dev/test-
 
 <h2> Test Results</h2>
 
+<br/> rm -Rf ~/dev/test-results > /dev/null 2>&1
 
- rm -Rf ~/dev/test-results > /dev/null 2>&1
-
-
- git clone git@gitlab.com:human-machine-teaming/planning/test-results.git ~/dev/test-results/
+<br/> git clone git@gitlab.com:human-machine-teaming/planning/test-results.git ~/dev/test-results/
 
 
 
@@ -209,8 +202,7 @@ git clone git@gitlab.com:human-machine-teaming/planning/box-domain.git ~/dev/box
 
 
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-setup.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-setup.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

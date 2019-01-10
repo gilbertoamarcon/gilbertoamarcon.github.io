@@ -117,29 +117,24 @@
 
 
 <h2> Search and Replace</h2>
+<br/> Here are some basic terminal commands that save me up a lot of time. 
 
- Here are some basic terminal commands that save me up a lot of time. 
-
-
-
+<br/>
 
 
-
- Search and replace in file (single file)
+<br/> Search and replace in file (single file)
 
 <div class="codebox">
 sed -i 's/old/new/g' filename
 </div>
 
-
- Search and replace in file (multiple files)
+<br/> Search and replace in file (multiple files)
 
 <div class="codebox">
 sed -i 's/old/new/g' filename*
 </div>
 
-
- Recursively search and replace in multiple files
+<br/> Recursively search and replace in multiple files
 
 <div class="codebox">
 find . -type f -print0 | xargs -0 sed -i 's/old/new/g'
@@ -148,22 +143,19 @@ find . -type f -print0 | xargs -0 sed -i 's/old/new/g'
 
 <h2> Regex Search and Replace</h2>
 
-
- Search and replace using regex
+<br/> Search and replace using regex
 
 <div class="codebox">
 printf "Not here. Over there though.\n" | perl -pe 's/(here)/ BEGIN \1 END/g'
 </div>
 
-
- Search and replace using regex with \n
+<br/> Search and replace using regex with \n
 
 <div class="codebox">
 printf "Not here.\n\n\nOver there though.\n\n" | perl -0 -pe 's/(\n+)/\n/g'
 </div>
 
-
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/replace.sh target=_blank>Follow this link for the raw script.</a>
+<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/replace.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 
