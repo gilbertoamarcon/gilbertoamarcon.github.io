@@ -115,8 +115,10 @@
 				<article>
 
 
+<br/>#
 
-<h2> Repos Setup</h2>
+<div class="codebox"> Repos Setup
+</div>
 
 <br/> This script will install and configure all repos.
 
@@ -124,80 +126,96 @@
 
 
 
+<br/>#
 
-<h2> i-CiFHaR</h2>
+<div class="codebox"> i-CiFHaR
+</div>
 
 <br/> Cloning and building
 
-<div class="codebox">
 rm -Rf ~/dev/icifhar > /dev/null 2>&1
 git clone git@gitlab.com:human-machine-teaming/planning/icifhar.git ~/dev/icifhar/
 cd ~/dev/icifhar/
 qmake
-make
+
+<div class="codebox">make
 </div>
 
 <br/> Adding the lib folder to $LD_LIBRARY_PATH:
 
-<div class="codebox">
-printf "\n# i-CiFHaR:\nexport LD_LIBRARY_PATH=~/dev/icifhar/lib\n" >> ~/.bashrc
+
+<div class="codebox">printf "\n# i-CiFHaR:\nexport LD_LIBRARY_PATH=~/dev/icifhar/lib\n" >> ~/.bashrc
 </div>
 
+<br/>#
 
-<h2> MACPDDL</h2>
+<div class="codebox"> MACPDDL
+</div>
 
-<div class="codebox">
 rm -Rf ~/dev/macpddl > /dev/null 2>&1
 git clone git@gitlab.com:human-machine-teaming/planning/macpddl.git ~/dev/macpddl/
 cd ~/dev/macpddl/
-ant
+
+<div class="codebox">ant
 </div>
 
+<br/>#
 
-<h2> i-MAPC</h2>
+<div class="codebox"> i-MAPC
+</div>
 
 <br/> Cloning and building
 
-<div class="codebox">
 rm -Rf ~/dev/imapc > /dev/null 2>&1
 git clone --recursive git@gitlab.com:human-machine-teaming/planning/imapc.git ~/dev/imapc/
 cd ~/dev/imapc/
 cmake .
-make
+
+<div class="codebox">make
 </div>
 
+<br/>#
 
-<h2> Test Set</h2>
+<div class="codebox"> Test Set
+</div>
 
-<div class="codebox">
 rm -Rf ~/dev/test-set > /dev/null 2>&1
-git clone git@gitlab.com:human-machine-teaming/planning/test-set.git ~/dev/test-set/
+
+<div class="codebox">git clone git@gitlab.com:human-machine-teaming/planning/test-set.git ~/dev/test-set/
 </div>
 
+<br/>#
 
-<h2> Test Results</h2>
+<div class="codebox"> Test Results
+</div>
 
 <br/> rm -Rf ~/dev/test-results > /dev/null 2>&1
 
-<br/> git clone git@gitlab.com:human-machine-teaming/planning/test-results.git ~/dev/test-results/
+<br/>
 
-
-
-
-<h2> First Response Domain</h2>
-
-<div class="codebox">
-rm -Rf ~/dev/first_response > /dev/null 2>&1
-git clone git@gitlab.com:human-machine-teaming/planning/first_response.git ~/dev/first_response/
+<div class="codebox"> git clone git@gitlab.com:human-machine-teaming/planning/test-results.git ~/dev/test-results/
 </div>
 
 
+<br/>#
 
-<h2> Box Domain</h2>
+<div class="codebox"> First Response Domain
+</div>
 
-<div class="codebox">
+rm -Rf ~/dev/first_response > /dev/null 2>&1
+
+<div class="codebox">git clone git@gitlab.com:human-machine-teaming/planning/first_response.git ~/dev/first_response/
+</div>
+
+
+<br/>#
+
+<div class="codebox"> Box Domain
+</div>
+
 rm -Rf ~/dev/box-domain > /dev/null 2>&1
-git clone git@gitlab.com:human-machine-teaming/planning/box-domain.git ~/dev/box-domain/
+
+<div class="codebox">git clone git@gitlab.com:human-machine-teaming/planning/box-domain.git ~/dev/box-domain/
 </div>
 
 

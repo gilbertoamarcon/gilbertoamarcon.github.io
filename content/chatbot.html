@@ -115,21 +115,20 @@
 				<article>
 
 
-<div class="codebox">
 dev=${HOME}/dev/ChatScript
 dest=$dev/RAWDATA/
-bots=${HOME}/Dropbox/OSU/Classes/ROB599/chatbot
+
+<div class="codebox">bots=${HOME}/Dropbox/OSU/Classes/ROB599/chatbot
 </div>
 
 rm -Rf $dev
-<div class="codebox">
 git clone https://github.com/bwilcox-1234/ChatScript.git $dev/
-chmod a+x $dev/BINARIES/LinuxChatScript64
+
+<div class="codebox">chmod a+x $dev/BINARIES/LinuxChatScript64
 </div>
 
 <br/> Copying bots
 
-<div class="codebox">
 ln -s $bots/WALDO $dest
 ln -s $bots/THERAPIST $dest
 ln -s $bots/FRIDGE $dest
@@ -137,12 +136,13 @@ ln -s $bots/CARE $dest
 ln -s $bots/filesWaldo.txt $dest
 ln -s $bots/filesTherapist.txt $dest
 ln -s $bots/filesFridge.txt $dest
-ln -s $bots/filesCare.txt $dest
+
+<div class="codebox">ln -s $bots/filesCare.txt $dest
 </div>
 
 cd $dev/BINARIES
-<div class="codebox">
-./LinuxChatScript64
+
+<div class="codebox">./LinuxChatScript64
 </div>
 
 <br/> :build Waldo

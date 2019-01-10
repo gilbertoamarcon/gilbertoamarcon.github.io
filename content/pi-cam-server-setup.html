@@ -115,15 +115,16 @@
 				<article>
 
 
+<br/>#
 
-<h2> Rasp Cam Server Setup</h2>
+<div class="codebox"> Rasp Cam Server Setup
+</div>
 
 <br/> This Script will setup the Raspberry Pi Camera Server
 
 <br/>
 
 
-<div class="codebox">
 curl http://www.linux-projects.org/listing/uv4l_repo/lrkey.asc | sudo apt-key add -
 sudo nano /etc/apt/sources.list
 deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/ jessie main
@@ -137,7 +138,8 @@ uv4l --help --driver raspicam --driver-help
 uv4l --driver raspicam --auto-video_nr --width 640 --height 480 --encoding jpeg
 dd if=/dev/video0 of=snapshot.jpeg bs=11M count=1
 sudo apt-get install uv4l-server uv4l-uvc uv4l-xscreen uv4l-mjpegstream uv4l-dummy uv4l-raspidisp
-sudo apt-get install uv4l-webrtc
+
+<div class="codebox">sudo apt-get install uv4l-webrtc
 </div>
 
 sudo apt-get install cmake

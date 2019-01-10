@@ -115,8 +115,10 @@
 				<article>
 
 
+<br/>#
 
-<h2> Repos Dependencies</h2>
+<div class="codebox"> Repos Dependencies
+</div>
 
 <br/> This script will install and configure all repos dependencies.
 
@@ -125,39 +127,41 @@
 
 <br/> Apt-gets
 
-<div class="codebox">
-./repos-dep-apt-get.sh
+
+<div class="codebox">./repos-dep-apt-get.sh
 </div>
 
 <br/> # Repos folder
 
-<br/> mkdir -p ~/dev/
+<br/>
 
+<div class="codebox"> mkdir -p ~/dev/
+</div>
 
 <br/> Libraries
 
-<div class="codebox">
-./repos-dep-lib.sh
+
+<div class="codebox">./repos-dep-lib.sh
 </div>
 
 <br/> Basic Planners
 
-<div class="codebox">
-./repos-dep-basic-planners.sh
+
+<div class="codebox">./repos-dep-basic-planners.sh
 </div>
 
 <br/> Repos
 
-<div class="codebox">
-./repos-setup.sh
+
+<div class="codebox">./repos-setup.sh
 </div>
 
 <br/> Cleaning up and rebooting
 
-<div class="codebox">
 rm -Rf ~/Downloads/*
 sudo apt-get --yes autoremove
-sudo reboot
+
+<div class="codebox">sudo reboot
 </div>
 
 <br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos.sh target=_blank>Follow this link for the raw script.</a>

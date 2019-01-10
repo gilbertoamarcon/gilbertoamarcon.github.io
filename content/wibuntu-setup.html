@@ -117,13 +117,12 @@
 	
 <br/> Updates/Upgrades
 
-<div class="codebox">
-sudo apt-get -y update
+
+<div class="codebox">sudo apt-get -y update
 </div>
 
 <br/> Utils
 
-<div class="codebox">
 sudo apt-get -y install tree
 sudo apt-get -y install sshfs
 sudo apt-get -y install htop
@@ -131,21 +130,26 @@ sudo apt-get -y install git
 sudo apt-get -y install python 
 sudo apt-get -y install python-pip
 sudo pip install --upgrade pip
-sudo pip install pyyaml
+
+<div class="codebox">sudo pip install pyyaml
 </div>
 
 git config --global user.email "gilbertoamarcon@gmail.com"
-<div class="codebox">
-git config --global user.name "Gilberto Marcon"
+
+<div class="codebox">git config --global user.name "Gilberto Marcon"
 </div>
 
-printf "\n# TOOLS:\nexport TOOLS='/mnt/c/Users/Gilberto\ Antonio/Dropbox/Docs/tools/'\n" >> ${HOME}/.bashrc
 
-<div class="codebox">
-cp sublime-text-3/* /mnt/c/Users/Gilberto\ Antonio/AppData/Roaming/Sublime\ Text\ 3/Packages/User/
+<div class="codebox">printf "\n# TOOLS:\nexport TOOLS='/mnt/c/Users/Gilberto\ Antonio/Dropbox/Docs/tools/'\n" >> ${HOME}/.bashrc
 </div>
 
-printf "\n# Sublime:\nalias subl=subl.exe\n" >> ${HOME}/.bashrc
+
+<div class="codebox">cp sublime-text-3/* /mnt/c/Users/Gilberto\ Antonio/AppData/Roaming/Sublime\ Text\ 3/Packages/User/
+</div>
+
+
+<div class="codebox">printf "\n# Sublime:\nalias subl=subl.exe\n" >> ${HOME}/.bashrc
+</div>
 
 sudo ln -s /mnt/c/Program\ Files/Sublime\ Text\ 3/subl.exe /usr/bin/
  
@@ -155,8 +159,10 @@ ln -s /mnt/c/Users/Gilberto\ Antonio/Documents/ ${HOME}/
 ln -s /mnt/c/Users/Gilberto\ Antonio/Downloads/ ${HOME}/
 <br/> ln -s /mnt/c/Users/gilbe/Dropbox/OSU/research/sea/unity ${HOME}/
 
-<br/> ln -s /mnt/c/Users/Gilberto\ Antonio/Dropbox/OSU/research/sea/unity ${HOME}/
+<br/>
 
+<div class="codebox"> ln -s /mnt/c/Users/Gilberto\ Antonio/Dropbox/OSU/research/sea/unity ${HOME}/
+</div>
 
 <br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/wibuntu-setup.sh target=_blank>Follow this link for the raw script.</a>
 

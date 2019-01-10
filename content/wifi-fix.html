@@ -114,8 +114,10 @@
 
 				<article>
 
+<br/>#
 
-<h2> Wifi Fix</h2>
+<div class="codebox"> Wifi Fix
+</div>
 
 <br/> Old Method - didnt work last time
 
@@ -123,12 +125,14 @@
 
 <br/> sudo update-initramfs -u
 
-<br/> sudo reboot
+<br/>
 
+<div class="codebox"> sudo reboot
+</div>
 
-<div class="codebox">
 printf "\n\n# Internal wireless adapter fix\niface wlp1s0 inet manual\n" | sudo tee --append /etc/network/interfaces > /dev/null
-sudo service network-manager restart
+
+<div class="codebox">sudo service network-manager restart
 </div>
 
 

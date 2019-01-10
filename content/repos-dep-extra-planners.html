@@ -115,8 +115,10 @@
 				<article>
 
 
+<br/>#
 
-<h2> Repos Dependencies</h2>
+<div class="codebox"> Repos Dependencies
+</div>
 
 <br/> This script will install and configure all repos dependencies.
 
@@ -129,83 +131,84 @@
 
 <br/> cd ${HOME}/dev/yahsp2/
 
-<br/> ./build
+<br/>
 
+<div class="codebox"> ./build
+</div>
 
 <br/> CPT
 
-<div class="codebox">
 wget -P ${HOME}/Downloads/ http://www.cril.univ-artois.fr/${HOME}vidal/cpt/cpt-1.0.tar.gz
 tar -xvzf ${HOME}/Downloads/cpt-1.0.tar.gz -C ${HOME}/Downloads/
 rm -Rf ${HOME}/Downloads/cpt-1.0.tar.gz
 cd ${HOME}/Downloads/cpt-1.0/
-./build fast
+
+<div class="codebox">./build fast
 </div>
 
 <br/> Z3
 
-<div class="codebox">
 git clone https://github.com/Z3Prover/z3 ${HOME}/dev/z3/
 cd ${HOME}/dev/z3/
 python scripts/mk_make.py
 cd build
 make
-sudo make install
+
+<div class="codebox">sudo make install
 </div>
 
 <br/> Piranha
 
-<div class="codebox">
 git clone https://github.com/bluescarni/piranha ${HOME}/dev/piranha/
 mkdir ${HOME}/dev/piranha/build/
 cd ${HOME}/dev/piranha/build/
 cmake ../
-sudo make install
+
+<div class="codebox">sudo make install
 </div>
 
 <br/> SMTPlan+
 
-<div class="codebox">
 git clone https://github.com/KCL-Planning/SMTPlan.git ${HOME}/dev/SMTPlan/
 sed -i '15i\set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wno-deprecated-declarations")' ${HOME}/dev/SMTPlan/SMTPlan/CMakeLists.txt
 cd ${HOME}/dev/SMTPlan/SMTPlan/
 mkdir build
 cd build
 cmake ..
-make
+
+<div class="codebox">make
 </div>
 
 <br/> APPL
 
-<div class="codebox">
 wget -P ${HOME}/Downloads/ http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/uploads/Main/appl-0.96.tar.gz
 tar -xvzf ${HOME}/Downloads/appl-0.96.tar.gz -C ${HOME}/dev/
 rm -f ${HOME}/Downloads/appl-0.96.tar.gz
 mv -f ${HOME}/dev/appl-0.96 ${HOME}/dev/appl
 cd ${HOME}/dev/appl/src/
-make
+
+<div class="codebox">make
 </div>
 
 <br/> SPUDD
 
-<div class="codebox">
 git clone git@gitlab.com:human-machine-teaming/spudd.git ${HOME}/dev/spudd/
 cd ${HOME}/dev/spudd/
-./build.sh
+
+<div class="codebox">./build.sh
 </div>
 
 <br/> RDDL
 
-<div class="codebox">
 git clone https://github.com/ssanner/rddlsim.git ${HOME}/dev/rddlsim/
 cd ${HOME}/dev/rddlsim/
 sudo chmod +x compile
-./compile
+
+<div class="codebox">./compile
 </div>
 
 <br/> Buddy
 
-<div class="codebox">
 wget -P ${HOME}/Downloads/ https://downloads.sourceforge.net/project/buddy/buddy/BuDDy%202.4/buddy-2.4.tar.gz
 tar -xvzf ${HOME}/Downloads/buddy-2.4.tar.gz -C ${HOME}/Downloads/
 cd ${HOME}/Downloads/buddy-2.4/
@@ -213,45 +216,46 @@ cd ${HOME}/Downloads/buddy-2.4/
 make
 sudo make install
 cd ${HOME}
-rm -Rf ${HOME}/Downloads/buddy-2.4*
+
+<div class="codebox">rm -Rf ${HOME}/Downloads/buddy-2.4*
 </div>
 
 <br/> PROST Install and Config
 
-<div class="codebox">
-./prost.sh
+
+<div class="codebox">./prost.sh
 </div>
 
 <br/> Glutton
 
-<div class="codebox">
 git clone git@gitlab.com:human-machine-teaming/g-pack.git ${HOME}/dev/g-pack/
 cd ${HOME}/dev/g-pack/
-make
+
+<div class="codebox">make
 </div>
 
 <br/> Fast Forward
 
-<div class="codebox">
 wget -P ${HOME}/Downloads/ https://fai.cs.uni-saarland.de/hoffmann/ff/FF-v2.3.tgz
 tar -xvzf ${HOME}/Downloads/FF-v2.3.tgz -C ${HOME}/Downloads/
 cd ${HOME}/Downloads/FF-v2.3
-make
+
+<div class="codebox">make
 </div>
 
 <br/> Fast Downward
 
-<div class="codebox">
 hg clone http://hg.fast-downward.org ${HOME}/dev/fd/
 cd ${HOME}/dev/fd/
 ./build.py
-cp ${TOOLS}plan ${HOME}/dev/fd/
+
+<div class="codebox">cp ${TOOLS}plan ${HOME}/dev/fd/
 </div>
 
 <br/> Cleanup
 
-<div class="codebox">
-rm -Rf ${HOME}/Downloads/*
+
+<div class="codebox">rm -Rf ${HOME}/Downloads/*
 </div>
 
 <br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep-extra-planners.sh target=_blank>Follow this link for the raw script.</a>

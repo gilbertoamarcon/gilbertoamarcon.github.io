@@ -114,57 +114,59 @@
 
 				<article>
 
+<br/>#
 
-<h2> MADP Setup</h2>
+<div class="codebox"> MADP Setup
+</div>
 
 <br/> This script sets up MADP.
 
 <br/>
 
 
-<div class="codebox">
 sudo apt-get --yes install doxygen
 sudo apt-get --yes install liblpsolve55-dev
 sudo apt-get --yes install libxml2-dev
 sudo apt-get --yes install libgmp3-dev
-sudo pip install graphviz 
+
+<div class="codebox">sudo pip install graphviz 
 </div>
 
 <br/> Backing up present working directory
 
-<div class="codebox">
-hdir=$(pwd)
+
+<div class="codebox">hdir=$(pwd)
 </div>
 
 <br/> Install
 
-<div class="codebox">
 git clone https://github.com/MADPToolbox/MADP.git ~/dev/madp/
 cd ~/dev/madp/
 sh autogen.sh
 ./configure
 make
-make install
+
+<div class="codebox">make install
 </div>
 
 <br/> Local dir
 
-<div class="codebox">
 mkdir ~/.madp
 cd ~/.madp
 ln -s ~/dev/madp/problems
-ln -s ~/dev/madp/results
+
+<div class="codebox">ln -s ~/dev/madp/results
 </div>
 
 <br/> Returning to present working directory
 
-<div class="codebox">
-cd $hdir
+
+<div class="codebox">cd $hdir
 </div>
 
 <br/> Restarting the machine
 
-sudo reboot#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>
+sudo reboot#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-madp.sh target=_blank>Follow this link for the raw script.</a>
 				<article/>
 
 			</div>

@@ -115,8 +115,10 @@
 				<article>
 
 
+<br/>#
 
-<h2> VAL PDF</h2>
+<div class="codebox"> VAL PDF
+</div>
 
 <br/> Generate plan PDF report.
 
@@ -134,68 +136,72 @@
 
 <br/> Parameters
 
-<div class="codebox">
-FONT_SIZE=10
+
+<div class="codebox">FONT_SIZE=10
 </div>
 
 <br/> Input Argument Renaming
 
-<div class="codebox">
 pdir=$1
-obj=$2
+
+<div class="codebox">obj=$2
 </div>
 
 <br/> Backing up present working directory
 
-<div class="codebox">
-hdir=$(pwd)
+
+<div class="codebox">hdir=$(pwd)
 </div>
 
 <br/> Go the the problem directory
 
-<div class="codebox">
-cd $pdir
+
+<div class="codebox">cd $pdir
 </div>
 
-if [ -e domain.pddl ] && [ -e problem.pddl ] && [ -e solution ] && [ $(cat solution | wc -l) -gt 0 ]; then
 
-<div class="codebox">
+<div class="codebox">if [ -e domain.pddl ] && [ -e problem.pddl ] && [ -e solution ] && [ $(cat solution | wc -l) -gt 0 ]; then
+</div>
+
 	# Cleanup
 	rm report* > /dev/null 2>&1
-	rm empty_prob.pddl > /dev/null 2>&1
+
+<div class="codebox">	rm empty_prob.pddl > /dev/null 2>&1
 </div>
 
 	# Generate the report
-<div class="codebox">
 	${HOME}/dev/val/validate -o $obj -o -f report -l domain.pddl problem.pddl solution
 	sed -i '/\\\documentclass/a \\\usepackage[maxfloats=100]{morefloats}' report.tex
 	sed -i 's/\\documentclass\[a4paper,[0-9]*pt\]/\\documentclass[a4paper,'$FONT_SIZE'pt]/g' report.tex
-	sed -i 's/[0-9]\+\.*[0-9]*e-[0-9]\+/0/g' report.tex
+
+<div class="codebox">	sed -i 's/[0-9]\+\.*[0-9]*e-[0-9]\+/0/g' report.tex
 </div>
 
 	# PDF Generation
-<div class="codebox">
-	pdflatex report.tex > /dev/null 2>&1
+
+<div class="codebox">	pdflatex report.tex > /dev/null 2>&1
 </div>
 
 	# Opening PDF
-<div class="codebox">
-	# evince report.pdf > /dev/null 2>&1 &
+
+<div class="codebox">	# evince report.pdf > /dev/null 2>&1 &
 </div>
 
 	# Cleanup
-<div class="codebox">
 	rm report.aux
 	rm report.log
-	rm report.tex
+
+<div class="codebox">	rm report.tex
 </div>
 
-fi
+
+<div class="codebox">fi
+</div>
 
 <br/> Back to original working directory
 
-<div class="codebox">
-cd $hdir
+
+<div class="codebox">cd $hdir
 </div>
 
 <br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/val-report.sh target=_blank>Follow this link for the raw script.</a>

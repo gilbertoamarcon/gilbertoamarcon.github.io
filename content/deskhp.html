@@ -114,8 +114,10 @@
 
 				<article>
 
+<br/>#
 
-<h2> Basic Desktop Setup</h2>
+<div class="codebox"> Basic Desktop Setup
+</div>
 
 <br/> This script sets up all the apps and basic configs for my Desktop.
 
@@ -124,104 +126,110 @@
 
 <br/> Backing up present working directory
 
-<div class="codebox">
-hdir=$(pwd)
+
+<div class="codebox">hdir=$(pwd)
 </div>
 
 <br/> Updates/Upgrades
 
-<div class="codebox">
-./apt-gets.sh
+
+<div class="codebox">./apt-gets.sh
 </div>
 
 <br/> Git config
 
-<div class="codebox">
 git config --global user.email "gilbertoamarcon@gmail.com"
-git config --global user.name "Gilberto Marcon"	
+
+<div class="codebox">git config --global user.name "Gilberto Marcon"	
 </div>
 
 <br/> Terminator
 
-<div class="codebox">
 sudo apt-get --yes install terminator
 sudo cp -Rf terminator ~/.config/
-sudo chmod +x ~/.config/terminator/
+
+<div class="codebox">sudo chmod +x ~/.config/terminator/
 </div>
 
 <br/> Sublime
 
-<div class="codebox">
-./sublime.sh
+
+<div class="codebox">./sublime.sh
 </div>
 
 <br/> Atom
 
-<div class="codebox">
-./atom.sh
+
+<div class="codebox">./atom.sh
 </div>
 
 <br/> Mendeley
 
-<div class="codebox">
-./mendeley.sh
+
+<div class="codebox">./mendeley.sh
 </div>
 
 <br/> # Chrome
 
-<br/> ./chrome.sh
+<br/>
 
+<div class="codebox"> ./chrome.sh
+</div>
 
 <br/> Color Terminal
 
-<div class="codebox">
-sed -i '/force_color_prompt=yes/s/^#//g' ~/.bashrc
+
+<div class="codebox">sed -i '/force_color_prompt=yes/s/^#//g' ~/.bashrc
 </div>
 
 <br/> Calc
 
-<div class="codebox">
-./calc.sh
+
+<div class="codebox">./calc.sh
 </div>
 
 <br/> # Eclipse
 
-<br/> sudo ./eclipse.sh
+<br/>
 
+<div class="codebox"> sudo ./eclipse.sh
+</div>
 
 <br/> Website
 
-<br/> git clone git@github.com:gilbertoamarcon/gilbertoamarcon.github.io.git ~/dev/gilbertoamarcon.github.io
+<br/>
 
+<div class="codebox"> git clone git@github.com:gilbertoamarcon/gilbertoamarcon.github.io.git ~/dev/gilbertoamarcon.github.io
+</div>
 
 <br/> Cleaning up
 
-<div class="codebox">
-sudo apt-get --yes autoremove
+
+<div class="codebox">sudo apt-get --yes autoremove
 </div>
 
 <br/> Removing Examples folder
 
-<div class="codebox">
-rm -Rf ~/examples.desktop
+
+<div class="codebox">rm -Rf ~/examples.desktop
 </div>
 
 <br/> Move sidebar to the bottom
 
-<div class="codebox">
-gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+
+<div class="codebox">gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 </div>
 
 <br/> SSH to robots
 
-<div class="codebox">
-sudo ufw allow 22
+
+<div class="codebox">sudo ufw allow 22
 </div>
 
 <br/> Restarting the machine
 
-<div class="codebox">
-sudo reboot
+
+<div class="codebox">sudo reboot
 </div>
 
 <br/> Manual stuff:
@@ -232,8 +240,10 @@ sudo reboot
 
 <br/> Config grub
 
-<br/> Config proprietary video drivers
+<br/>
 
+<div class="codebox"> Config proprietary video drivers
+</div>
 
 <br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/deskhp.sh target=_blank>Follow this link for the raw script.</a>
 

@@ -115,8 +115,10 @@
 				<article>
 
 
+<br/>#
 
-<h2> ROS Indigo</h2>
+<div class="codebox"> ROS Indigo
+</div>
 
 <br/> This script will setup ROS Indigo and a few packages that I use on a fresh Ubuntu 14.04.
 
@@ -125,90 +127,92 @@
 
 <br/> Setup your sources.lis
 
-<div class="codebox">
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+<div class="codebox">sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 </div>
 
 <br/> Set up your keys
 
-<div class="codebox">
-sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+<div class="codebox">sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
 </div>
 
 <br/> Key
 
-<div class="codebox">
-wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+
+<div class="codebox">wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 </div>
 
 <br/> First, make sure your Debian package index is up-to-date:
 
-<div class="codebox">
-sudo apt-get --yes update
+
+<div class="codebox">sudo apt-get --yes update
 </div>
 
 <br/> Desktop-Full Install: (Recommended)
 
-<div class="codebox">
-sudo apt-get --yes install ros-indigo-desktop-full
+
+<div class="codebox">sudo apt-get --yes install ros-indigo-desktop-full
 </div>
 
 <br/> Initialize rosdep
 
-<div class="codebox">
 sudo rosdep init
-rosdep update
+
+<div class="codebox">rosdep update
 </div>
 
 <br/> Environment setup
 
-<div class="codebox">
 printf "\n# ROS:\nsource /opt/ros/indigo/setup.bash\n" >> ~/.bashrc
-source ~/.bashrc
+
+<div class="codebox">source ~/.bashrc
 </div>
 
 <br/> Getting rosinstall
 
-<div class="codebox">
-sudo apt-get --yes install python-rosinstall
+
+<div class="codebox">sudo apt-get --yes install python-rosinstall
 </div>
 
 <br/> Changing ROS ownership
 
-<div class="codebox">
-sudo chown -R $USER ~/.ros
+
+<div class="codebox">sudo chown -R $USER ~/.ros
 </div>
 
 <br/> geographic-msgs
 
-<div class="codebox">
-sudo apt-get --yes install ros-indigo-geographic-msgs
+
+<div class="codebox">sudo apt-get --yes install ros-indigo-geographic-msgs
 </div>
 
 <br/> Keyboard twist
 
-<div class="codebox">
-sudo apt-get --yes install ros-indigo-teleop-twist-keyboard
+
+<div class="codebox">sudo apt-get --yes install ros-indigo-teleop-twist-keyboard
 </div>
 
 <br/> Rocon
 
-<br/> sudo apt-get --yes install ros-indigo-rocon*
+<br/>
 
+<div class="codebox"> sudo apt-get --yes install ros-indigo-rocon*
+</div>
 
 <br/> Turtlebot
 
-<div class="codebox">
 sudo apt-get --yes install ros-indigo-turtlebot-*
 sudo sed -ie 's/amcl.launch.xml/amcl\/amcl.launch.xml/g' /opt/ros/indigo/share/turtlebot_stage/launch/turtlebot_in_stage.launch
 sudo sed -ie 's/amcl.launch.xml/amcl\/amcl.launch.xml/g' /opt/ros/indigo/share/turtlebot_gazebo/launch/amcl_demo.launch
-sudo sed -ie 's/gmapping.launch.xml/gmapping\/gmapping.launch.xml/g' /opt/ros/indigo/share/turtlebot_gazebo/launch/gmapping_demo.launch
+
+<div class="codebox">sudo sed -ie 's/gmapping.launch.xml/gmapping\/gmapping.launch.xml/g' /opt/ros/indigo/share/turtlebot_gazebo/launch/gmapping_demo.launch
 </div>
 
 <br/> JACKAL
 
-<div class="codebox">
-sudo apt-get --yes install ros-indigo-jackal-simulator ros-indigo-jackal-desktop ros-indigo-jackal-navigation
+
+<div class="codebox">sudo apt-get --yes install ros-indigo-jackal-simulator ros-indigo-jackal-desktop ros-indigo-jackal-navigation
 </div>
 
 <br/> # ROSPlan
@@ -227,19 +231,23 @@ sudo apt-get --yes install ros-indigo-jackal-simulator ros-indigo-jackal-desktop
 
 <br/> cd ~/ros-ws/mobile/
 
-<br/> catkin_make
+<br/>
 
+<div class="codebox"> catkin_make
+</div>
 
 <br/> # multimaster_fkie
 
-<br/> sudo apt-get --yes install ros-indigo-multimaster-fkie
+<br/>
 
+<div class="codebox"> sudo apt-get --yes install ros-indigo-multimaster-fkie
+</div>
 
 <br/> ALVAR fiducial marker tool
 
-<div class="codebox">
 sudo apt-get --yes install ros-indigo-ar-track-alvar* imagemagick
-sudo apt-get --yes install python-empy
+
+<div class="codebox">sudo apt-get --yes install python-empy
 </div>
 
 <br/> Summit xl 
@@ -248,8 +256,10 @@ sudo apt-get --yes install python-empy
 
 <br/> sudo apt-get --yes install ros-indigo-summit-xl-sim
 
-<br/> sudo sed -ie 's/pad_teleop/summit_xl_control/g' /opt/ros/indigo/share/summit_xl_pad/launch/summit_xl_pad.launch
+<br/>
 
+<div class="codebox"> sudo sed -ie 's/pad_teleop/summit_xl_control/g' /opt/ros/indigo/share/summit_xl_pad/launch/summit_xl_pad.launch
+</div>
 
 <br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-indigo.sh target=_blank>Follow this link for the raw script.</a>
 

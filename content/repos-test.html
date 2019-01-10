@@ -115,114 +115,140 @@
 				<article>
 
 
+<br/>#
 
-<h2> Repos Test</h2>
+<div class="codebox"> Repos Test
+</div>
 
-<br/> This script will test all repos and all their dependencies.
+<br/>
 
+<div class="codebox"> This script will test all repos and all their dependencies.
+</div>
 
+<br/>#
 
-<h2> i-CiFHaR</h2>
+<div class="codebox"> i-CiFHaR
+</div>
 
-<div class="codebox">
 ~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR10T1.xml
 ~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR20T2.xml
-~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR20T2.xml -o /home/gil/Downloads suf
+
+<div class="codebox">~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR20T2.xml -o /home/gil/Downloads suf
 </div>
 
+<br/>#
 
-<h2> i-MAPC</h2>
+<div class="codebox"> i-MAPC
+</div>
 
-<div class="codebox">
 cd ~/dev/imapc/
-./scripts/rp_cf_plan.sh resources/testing/blocksworld_p10_c1
+
+<div class="codebox">./scripts/rp_cf_plan.sh resources/testing/blocksworld_p10_c1
 </div>
 
+<br/>#
 
-<h2> APPL</h2>
+<div class="codebox"> APPL
+</div>
 
 <br/> Try solving an example problem. Type the command:
 
-<div class="codebox">
-./pomdpsol ../examples/POMDPX/Tiger.pomdpx
+
+<div class="codebox">./pomdpsol ../examples/POMDPX/Tiger.pomdpx
 </div>
 
-<br/> The generated policy is written to "out.policy" by default.
+<br/>
 
+<div class="codebox"> The generated policy is written to "out.policy" by default.
+</div>
 
 <br/> Try simulating a policy. Type the command:
 
-<div class="codebox">
-./pomdpsim --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
+
+<div class="codebox">./pomdpsim --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
 </div>
 
-<br/> The simulation results are written to the console.
+<br/>
 
+<div class="codebox"> The simulation results are written to the console.
+</div>
 
 <br/> Try evaluating a policy. Type the command:
 
-<div class="codebox">
-./pomdpeval --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
+
+<div class="codebox">./pomdpeval --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
 </div>
 
-<br/> The evaluation results are written to the console.
+<br/>
 
+<div class="codebox"> The evaluation results are written to the console.
+</div>
 
 <br/> Try generating a graphical representation of a policy . Type the command:
 
-<div class="codebox">
-./polgraph --policy-file out.policy --policy-graph tiger.dot ../examples/POMDPX/Tiger.pomdpx
+
+<div class="codebox">./polgraph --policy-file out.policy --policy-graph tiger.dot ../examples/POMDPX/Tiger.pomdpx
 </div>
 
-<br/> The generated graph is written to "tiger.dot". You can view the output "tiger.dot" using Graphviz (http://www.graphviz.org/).  A pdf file generated from "tiger.dot" is in "../examples/POMDPX/tiger.pdf".
+<br/>
 
+<div class="codebox"> The generated graph is written to "tiger.dot". You can view the output "tiger.dot" using Graphviz (http://www.graphviz.org/).  A pdf file generated from "tiger.dot" is in "../examples/POMDPX/tiger.pdf".
+</div>
 
 <br/> Try converting a POMDP file to POMDPX file format:
 
-<div class="codebox">
-./pomdpconvert ../examples/POMDP/Tiger.pomdp
+
+<div class="codebox">./pomdpconvert ../examples/POMDP/Tiger.pomdp
 </div>
 
-<br/> The generated POMDPX file is in the same directory as the POMDP model file.
+<br/>
 
+<div class="codebox"> The generated POMDPX file is in the same directory as the POMDP model file.
+</div>
 
+<br/>#
 
-<h2> RDDL</h2>
+<div class="codebox"> RDDL
+</div>
 
-<div class="codebox">
 cd ~/dev/rddlsim/
 cat ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl > ~/dev/domains/rddl/simple.rddl
-./run rddl.viz.RDDL2Graph ~/dev/domains/rddl/simple.rddl simple_ins
+
+<div class="codebox">./run rddl.viz.RDDL2Graph ~/dev/domains/rddl/simple.rddl simple_ins
 </div>
 
+<br/>#
 
-<h2> PROST</h2>
+<div class="codebox"> PROST
+</div>
 
 <br/> Testing 1
 
-<div class="codebox">
 cd ~/dev/prost/testbed/
 ./run-server benchmarks/ippc2011
 cd ~/dev/prost/testbed/
-./plan.py benchmarks/ippc-all/rddl/elevators_mdp.rddl benchmarks/ippc-all/rddl/elevators_inst_mdp__1.rddl "IPPC2014"
+
+<div class="codebox">./plan.py benchmarks/ippc-all/rddl/elevators_mdp.rddl benchmarks/ippc-all/rddl/elevators_inst_mdp__1.rddl "IPPC2014"
 </div>
 
 <br/> Testing 2
 
-<div class="codebox">
 cd ~/dev/prost/testbed/
 ./run-server ~/dev/domains/rddl
 cd ~/dev/prost/testbed/
-./plan.py ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl "IPPC2014"
+
+<div class="codebox">./plan.py ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl "IPPC2014"
 </div>
 
+<br/>#
 
-<h2> APPL</h2>
+<div class="codebox"> APPL
+</div>
 
-<div class="codebox">
 ./pomdpsol ~/dev/domains/pomdpx/simple_xdp.pomdpx
 ./pomdpsol ~/dev/domains/pomdpx/simple_mdp.pomdpx
-./pomdpsol ~/dev/domains/pomdpx/simple_pomdp.pomdpx
+
+<div class="codebox">./pomdpsol ~/dev/domains/pomdpx/simple_pomdp.pomdpx
 </div>
 
 <br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-test.sh target=_blank>Follow this link for the raw script.</a>

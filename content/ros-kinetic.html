@@ -115,8 +115,10 @@
 				<article>
 
 
+<br/>#
 
-<h2> ROS kinetic</h2>
+<div class="codebox"> ROS kinetic
+</div>
 
 <br/> This script will setup ROS kinetic and a few packages that I use on a fresh Ubuntu 16.04.
 
@@ -125,76 +127,76 @@
 
 <br/> Setup your sources.lis
 
-<div class="codebox">
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
+<div class="codebox">sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 </div>
 
 <br/> Set up your keys
 
-<div class="codebox">
-sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+
+<div class="codebox">sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
 </div>
 
 <br/> Key
 
-<div class="codebox">
-wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+
+<div class="codebox">wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 </div>
 
 <br/> First, make sure your Debian package index is up-to-date:
 
-<div class="codebox">
-sudo apt-get --yes update
+
+<div class="codebox">sudo apt-get --yes update
 </div>
 
 <br/> Desktop-Full Install: (Recommended)
 
-<div class="codebox">
-sudo apt-get --yes install ros-kinetic-desktop-full
+
+<div class="codebox">sudo apt-get --yes install ros-kinetic-desktop-full
 </div>
 
 <br/> Initialize rosdep
 
-<div class="codebox">
 sudo rosdep init
-rosdep update
+
+<div class="codebox">rosdep update
 </div>
 
 <br/> Environment setup
 
-<div class="codebox">
 printf "\n# ROS:\nsource /opt/ros/kinetic/setup.bash\n" >> ~/.bashrc
-source ~/.bashrc
+
+<div class="codebox">source ~/.bashrc
 </div>
 
 <br/> Getting rosinstall
 
-<div class="codebox">
-sudo apt-get --yes install python-rosinstall
+
+<div class="codebox">sudo apt-get --yes install python-rosinstall
 </div>
 
 <br/> Changing ROS ownership
 
-<div class="codebox">
-sudo chown -R $USER ~/.ros
+
+<div class="codebox">sudo chown -R $USER ~/.ros
 </div>
 
 <br/> geographic-msgs
 
-<div class="codebox">
-sudo apt-get --yes install ros-kinetic-geographic-msgs
+
+<div class="codebox">sudo apt-get --yes install ros-kinetic-geographic-msgs
 </div>
 
 <br/> Keyboard twist
 
-<div class="codebox">
-sudo apt-get --yes install ros-kinetic-teleop-twist-keyboard
+
+<div class="codebox">sudo apt-get --yes install ros-kinetic-teleop-twist-keyboard
 </div>
 
 <br/> Joystick Drivers
 
-<div class="codebox">
-sudo apt-get --yes install ros-kinetic-joy
+
+<div class="codebox">sudo apt-get --yes install ros-kinetic-joy
 </div>
 
 <br/> Summit xl 
@@ -202,7 +204,7 @@ sudo apt-get --yes install ros-kinetic-joy
 sudo apt-get --yes install ros-kinetic-summit-xl-common
 <br/> sudo apt-get --yes install ros-kinetic-summit-xl-sim
 
-<br/> sudo sed -ie 's/pad_teleop/summit_xl_control/g' /opt/ros/kinetic/share/summit_xl_pad/launch/summit_xl_pad.launch#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>
+<br/> sudo sed -ie 's/pad_teleop/summit_xl_control/g' /opt/ros/kinetic/share/summit_xl_pad/launch/summit_xl_pad.launch#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

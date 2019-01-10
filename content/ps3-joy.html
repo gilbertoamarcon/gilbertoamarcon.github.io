@@ -115,30 +115,34 @@
 				<article>
 
 sudo add-apt-repository --yes "deb http://ppa.launchpad.net/falk-t-j/qtsixa/ubuntu vivid main"
-<div class="codebox">
 sudo apt-key adv --yes --keyserver keyserver.ubuntu.com --recv-keys 736E4F0B
 sudo apt-get --yes update
 sudo apt-get --yes install qtsixa
 sudo apt-get --yes install sixad
-sudo systemctl disable sixad
+
+<div class="codebox">sudo systemctl disable sixad
 </div>
 
 <br/> Connect with USB, then run:
 
-<br/> sudo sixpair
+<br/>
 
+<div class="codebox"> sudo sixpair
+</div>
 
 <br/> Disconnect sixaxis from USB, then run:
 
 <br/> sudo sixad -s
 
-<br/> Then press PS button to connect over bluetooth
+<br/>
 
+<div class="codebox"> Then press PS button to connect over bluetooth
+</div>
 
 <br/> Button config:
 
-<div class="codebox">
-echo 'ATTRS{name}=="PLAYSTATION*", ENV{DEVNAME}=="/dev/input/event*", ENV{ID_MODEL}="PS3Controller", SYMLINK+="input/dualshock3"'
+
+<div class="codebox">echo 'ATTRS{name}=="PLAYSTATION*", ENV{DEVNAME}=="/dev/input/event*", ENV{ID_MODEL}="PS3Controller", SYMLINK+="input/dualshock3"'
 </div>
 
 <br/> Start at system boot:
