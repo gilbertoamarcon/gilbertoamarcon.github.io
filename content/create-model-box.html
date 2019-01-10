@@ -117,28 +117,35 @@
 
 
 <h2> Create a Gazebo Box</h2>
-<br/> Create a box gazebo model
+<br/>
+ Create a box gazebo model
 
 <br/>
 
 
-<br/> Usage:
-
-<br/> Place the texture on the same directory as the script, then:
-
-<br/> ./create-model-flat.sh model-name texture w l h static texture-scale-w texture-scale-l
 
 <br/>
+ Usage:
+
+<br/>
+ Place the texture on the same directory as the script, then:
+
+<br/>
+ ./create-model-flat.sh model-name texture w l h static texture-scale-w texture-scale-l
+
+<br/>
+
 
 
 mkdir ~/.gazebo/models/$1/
 mkdir ~/.gazebo/models/$1/materials/
 mkdir ~/.gazebo/models/$1/materials/scripts
-
-<div class="codebox">mkdir ~/.gazebo/models/$1/materials/textures
+<div class="codebox">
+mkdir ~/.gazebo/models/$1/materials/textures
 </div>
 
-<br/> model.config 
+<br/>
+ model.config 
 
 cat > ~/.gazebo/models/$1/model.config <<- EOM
 <?xml version="1.0"?>
@@ -147,11 +154,12 @@ cat > ~/.gazebo/models/$1/model.config <<- EOM
     <version>1.0</version>
     <sdf version="1.4">model.sdf</sdf>
 </model>
-
-<div class="codebox">EOM
+<div class="codebox">
+EOM
 </div>
 
-<br/> model.sdf
+<br/>
+ model.sdf
 
 cat > ~/.gazebo/models/$1/model.sdf <<- EOM
 <?xml version="1.0" ?>
@@ -192,11 +200,12 @@ cat > ~/.gazebo/models/$1/model.sdf <<- EOM
         </link>
     </model>
 </sdf>
-
-<div class="codebox">EOM
+<div class="codebox">
+EOM
 </div>
 
-<br/> script.material
+<br/>
+ script.material
 
 cat > ~/.gazebo/models/$1/materials/scripts/script.material <<- EOM
 material $1
@@ -216,17 +225,19 @@ material $1
                 }
         }
 }
-
-<div class="codebox">EOM
+<div class="codebox">
+EOM
 </div>
 
-<br/> Texture
+<br/>
+ Texture
 
-
-<div class="codebox">cp $2 ~/.gazebo/models/$1/materials/textures/
+<div class="codebox">
+cp $2 ~/.gazebo/models/$1/materials/textures/
 </div>
 
-<br/> script.material
+<br/>
+ script.material
 
 cat <<- EOM
 <model name='$1'>
@@ -235,11 +246,12 @@ cat <<- EOM
     </include>
     <pose>0 0 0 0 0 0</pose>
 </model>
-
-<div class="codebox">EOM
+<div class="codebox">
+EOM
 </div>
 
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-model-box.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-model-box.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

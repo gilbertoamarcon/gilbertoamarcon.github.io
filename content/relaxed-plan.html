@@ -115,17 +115,18 @@
 				<article>
 
 
-<br/>#
 
-<div class="codebox"> Relaxed Plan Structures
-</div>
+<h2> Relaxed Plan Structures</h2>
 
-<br/> Relaxed Plan Structures for CFP
+<br/>
+ Relaxed Plan Structures for CFP
 
 <br/>
 
 
-<br/> A temporal relaxed plan from colin2 looks like this:
+
+<br/>
+ A temporal relaxed plan from colin2 looks like this:
 
 1
 (move r2 p_01_16 p_02_16)
@@ -140,28 +141,33 @@
 4.003
 (move r2 p_02_14 p_02_13)
 (move r2 p_02_14 p_03_14)
-
-<div class="codebox">(push r2 c p_03_17 p_03_16 p_03_15)
+<div class="codebox">
+(push r2 c p_03_17 p_03_16 p_03_15)
 </div>
 
-<br/> CoalitionStructure.cpp was expanded to read relaxed plans using two structures.
+<br/>
+ CoalitionStructure.cpp was expanded to read relaxed plans using two structures.
 
-<br/> The first structure is called rplan.
+<br/>
+ The first structure is called rplan.
 
-<br/> rplan is just a list of each line from the plan file, numbered on reading order:
+<br/>
+ rplan is just a list of each line from the plan file, numbered on reading order:
 
 0: 1
 1: (move r2 p_01_16 p_02_16)
 2: 2.001
 3: (move r2 p_02_16 p_02_15)
 4: (move r2 p_02_16 p_02_17)
-
-<div class="codebox">...
+<div class="codebox">
+...
 </div>
 
-<br/> The second structure is called rplan_timed.
+<br/>
+ The second structure is called rplan_timed.
 
-<br/> rplan_timed maps double time stamps to sets of strings: sets of actions at each time stamp:
+<br/>
+ rplan_timed maps double time stamps to sets of strings: sets of actions at each time stamp:
 
 [1]:
 	(move r2 p_01_16 p_02_16)
@@ -176,11 +182,12 @@
 [4.003]:
 	(move r2 p_02_14 p_02_13)
 	(move r2 p_02_14 p_03_14)
-
-<div class="codebox">	(push r2 c p_03_17 p_03_16 p_03_15)
+<div class="codebox">
+	(push r2 c p_03_17 p_03_16 p_03_15)
 </div>
 
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/relaxed-plan.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/relaxed-plan.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

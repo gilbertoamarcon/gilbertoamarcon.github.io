@@ -114,88 +114,111 @@
 
 				<article>
 
-<br/> # 
-
-<br/> # Anaconda Setup 2.7
-
-<br/> file=Anaconda2-5.1.0-Linux-x86_64.sh
-
-<br/> wget -P ${HOME}/Downloads/ https://repo.anaconda.com/archive/$file
-
-<br/> cd ${HOME}/Downloads/
-
-<br/> chmod +x $file
-
-<br/> ./$file
-
-<br/> rm $file
+<br/>
+ # 
 
 <br/>
-
-<div class="codebox"> source ${HOME}/.bashrc
-</div>
-
-<br/> # # Anaconda Setup 3.6
-
-<br/> # file=Anaconda3-5.1.0-Linux-x86_64.sh
-
-<br/> # wget -P ${HOME}/Downloads/ https://repo.anaconda.com/archive/$file
-
-<br/> # cd ${HOME}/Downloads/
-
-<br/> # chmod +x $file
-
-<br/> # ./$file
-
-<br/> # rm $file
+ # Anaconda Setup 2.7
 
 <br/>
-
-<div class="codebox"> # source ${HOME}/.bashrc
-</div>
-
-
-<br/> # Update and dependencies
-
-<br/> conda update -y conda
-
-<br/> conda update -yn base conda
-
-<br/> conda install -y numba
-
-<br/> conda install -y yaml
-
-<br/> conda install -c anaconda yaml 
-
-<br/> conda install -c conda-forge deepdish 
+ file=Anaconda2-5.1.0-Linux-x86_64.sh
 
 <br/>
-
-<div class="codebox"> conda config -y --append channels conda-forge
-</div>
-
-
-<br/> # Creating and utilizing environments
-
-<br/> # conda create -y --name mdp python=3 pandas numpy yaml numba deepdish
-
-<br/> # conda remove --name mdp --all
-
-<br/> # source activate mdp
+ wget -P ${HOME}/Downloads/ https://repo.anaconda.com/archive/$file
 
 <br/>
+ cd ${HOME}/Downloads/
 
-<div class="codebox"> # source deactivate
-</div>
+<br/>
+ chmod +x $file
 
-<br/> Removing Anaconda
+<br/>
+ ./$file
+
+<br/>
+ rm $file
+
+<br/>
+ source ${HOME}/.bashrc
+
+
+<br/>
+ # # Anaconda Setup 3.6
+
+<br/>
+ # file=Anaconda3-5.1.0-Linux-x86_64.sh
+
+<br/>
+ # wget -P ${HOME}/Downloads/ https://repo.anaconda.com/archive/$file
+
+<br/>
+ # cd ${HOME}/Downloads/
+
+<br/>
+ # chmod +x $file
+
+<br/>
+ # ./$file
+
+<br/>
+ # rm $file
+
+<br/>
+ # source ${HOME}/.bashrc
+
+
+
+<br/>
+ # Update and dependencies
+
+<br/>
+ conda update -y conda
+
+<br/>
+ conda update -yn base conda
+
+<br/>
+ conda install -y numba
+
+<br/>
+ conda install -y yaml
+
+<br/>
+ conda install -c anaconda yaml 
+
+<br/>
+ conda install -c conda-forge deepdish 
+
+<br/>
+ conda config -y --append channels conda-forge
+
+
+
+<br/>
+ # Creating and utilizing environments
+
+<br/>
+ # conda create -y --name mdp python=3 pandas numpy yaml numba deepdish
+
+<br/>
+ # conda remove --name mdp --all
+
+<br/>
+ # source activate mdp
+
+<br/>
+ # source deactivate
+
+
+<br/>
+ Removing Anaconda
 
 rm -Rf ${HOME}/anaconda2
 rm -Rf ${HOME}/anaconda3
 rm -Rf ${HOME}/.anaconda/navigator
 rm -Rf ${HOME}/.condarc 
 rm -Rf ${HOME}/.conda
-rm -Rf ${HOME}/.continuum#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>
+rm -Rf ${HOME}/.continuum#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/conda.sh target=_blank>Follow this link for the raw script.</a>
 				<article/>
 
 			</div>

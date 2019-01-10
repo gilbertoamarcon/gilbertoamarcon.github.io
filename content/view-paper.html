@@ -114,75 +114,86 @@
 
 				<article>
 
-<br/>#
 
-<div class="codebox"> View Overleaf Paper Offline
-</div>
+<h2> View Overleaf Paper Offline</h2>
 
-<br/> Provide the link to the Overleaf project as a command line argument:
+<br/>
+ Provide the link to the Overleaf project as a command line argument:
 
-<br/> ./view-paper.sh https://www.overleaf.com/11526189qqdhvsmwyytc#/43580908/
+<br/>
+ ./view-paper.sh https://www.overleaf.com/11526189qqdhvsmwyytc#/43580908/
 
 <br/>
 
 
-<br/> Parsing input: Project URL to get Project ID
+
+<br/>
+ Parsing input: Project URL to get Project ID
 
 url=$1
 IFS='/#' read -ra tokens <<< "$url"
-
-<div class="codebox">projid=${tokens[3]}
+<div class="codebox">
+projid=${tokens[3]}
 </div>
 
-<br/> Local repository directory
+<br/>
+ Local repository directory
 
-
-<div class="codebox">lrepo=${HOME}/over/$projid
+<div class="codebox">
+lrepo=${HOME}/over/$projid
 </div>
 
-<br/> Remote BIB URL
+<br/>
+ Remote BIB URL
 
-
-<div class="codebox">rbib='http://www.citeulike.org/bibtex/user/marcondg?do_username_prefix=0&key_type=4&incl_amazon=1&clean_urls=1&smart_wrap=1&q=&fieldmap=abstract:'
+<div class="codebox">
+rbib='http://www.citeulike.org/bibtex/user/marcondg?do_username_prefix=0&key_type=4&incl_amazon=1&clean_urls=1&smart_wrap=1&q=&fieldmap=abstract:'
 </div>
 
-<br/> Aux bib
+<br/>
+ Aux bib
 
-
-<div class="codebox">abib=/tmp/bib.bib
+<div class="codebox">
+abib=/tmp/bib.bib
 </div>
 
-<br/> Local bib
+<br/>
+ Local bib
 
-
-<div class="codebox">lbib=$lrepo/bib.bib
+<div class="codebox">
+lbib=$lrepo/bib.bib
 </div>
 
-<br/> Remote PDF URL
+<br/>
+ Remote PDF URL
 
-
-<div class="codebox">rpdf=https://v1.overleaf.com/docs/$projid/pdf.pdf
+<div class="codebox">
+rpdf=https://v1.overleaf.com/docs/$projid/pdf.pdf
 </div>
 
-<br/> Aux PDF
+<br/>
+ Aux PDF
 
-
-<div class="codebox">apdf=/tmp/pdf_.pdf
+<div class="codebox">
+apdf=/tmp/pdf_.pdf
 </div>
 
-<br/> Local PDF
+<br/>
+ Local PDF
 
-
-<div class="codebox">lpdf=/tmp/pdf.pdf
+<div class="codebox">
+lpdf=/tmp/pdf.pdf
 </div>
 
-<br/> Getting firefox up
+<br/>
+ Getting firefox up
 
-
-<div class="codebox">firefox $url > /dev/null 2>&1 &
+<div class="codebox">
+firefox $url > /dev/null 2>&1 &
 </div>
 
-<br/> Getting Local PDF
+<br/>
+ Getting Local PDF
 
 echo 'Fetching PDF...'
 while true; do
@@ -190,67 +201,71 @@ while true; do
 		break
 	fi
 done
-
-<div class="codebox">echo 'PDF fetched.'
+<div class="codebox">
+echo 'PDF fetched.'
 </div>
 
-<br/> Go to repo, pull
+<br/>
+ Go to repo, pull
 
 mkdir -p ${HOME}/over > /dev/null 2>&1
 rm -Rf $lrepo > /dev/null 2>&1
-
-<div class="codebox">git clone https://git.overleaf.com/$projid $lrepo/ > /dev/null 2>&1
+<div class="codebox">
+git clone https://git.overleaf.com/$projid $lrepo/ > /dev/null 2>&1
 </div>
 
-<br/> Getting sublime up
+<br/>
+ Getting sublime up
 
 subl $lrepo/*.tex
-
-<div class="codebox">subl $lbib
+<div class="codebox">
+subl $lbib
 </div>
 
-<br/> Getting evince up
+<br/>
+ Getting evince up
 
-
-<div class="codebox">evince $lpdf > /dev/null 2>&1 &
+<div class="codebox">
+evince $lpdf > /dev/null 2>&1 &
 </div>
 
-<br/>  Infinite loop
+<br/>
+  Infinite loop
 
-
-<div class="codebox">while true; do
+<div class="codebox">
+while true; do
 </div>
 
 	# Download bib file
-
-<div class="codebox">	wget $rbib -O $abib -nv > /dev/null 2>&1
+<div class="codebox">
+	wget $rbib -O $abib -nv > /dev/null 2>&1
 </div>
 
 	# If aux bib != local bib, copy over local bib
-
-<div class="codebox">	cmp -s $lbib $abib || cp $abib $lbib
+<div class="codebox">
+	cmp -s $lbib $abib || cp $abib $lbib
 </div>
 
 	# Removing URL and DOI
 	sed -i -E '/    url = /d' $lbib
-
-<div class="codebox">	sed -i -E '/    doi = /d' $lbib
+<div class="codebox">
+	sed -i -E '/    doi = /d' $lbib
 </div>
 
 	# Download pdf file
-
-<div class="codebox">	wget $rpdf -O $apdf -nv > /dev/null 2>&1
+<div class="codebox">
+	wget $rpdf -O $apdf -nv > /dev/null 2>&1
 </div>
 
 	# If aux pdf != local pdf, copy over local pdf
-
-<div class="codebox">	cmp -s $lpdf $apdf || cp $apdf $lpdf
+<div class="codebox">
+	cmp -s $lpdf $apdf || cp $apdf $lpdf
 </div>
 
 	# Update table
 	# python ${HOME}/dev/tag-analysis/requirements.py $lrepo > /dev/null 2>&1 
-
-<div class="codebox">	python ${HOME}/dev/tag-analysis/read.py $lrepo > /dev/null 2>&1 
+<div class="codebox">
+	python ${HOME}/dev/tag-analysis/read.py $lrepo > /dev/null 2>&1 
 </div>
 
 	# Go to repo, commit
@@ -259,20 +274,18 @@ subl $lrepo/*.tex
 	git add --all
 	git commit -m "Changes"
 	git push -u origin master
-
-<div class="codebox">	cd $hdir
+<div class="codebox">
+	cd $hdir
 </div>
 
-
-<div class="codebox">	printf  "===========================\n\n"
-</div>
+	printf  "===========================\n\n"
 
 	# Wait 1 s
-
-<div class="codebox">	sleep 1
+<div class="codebox">
+	sleep 1
 </div>
 
-done#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>
+done#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>
 				<article/>
 
 			</div>

@@ -114,29 +114,30 @@
 
 				<article>
 
-<br/>#
 
-<div class="codebox"> Wifi Fix
-</div>
-
-<br/> Old Method - didnt work last time
-
-<br/> printf "\n\n# Internal wireless adapter fix\nblacklist wlp1s0\n" | sudo tee --append /etc/modprobe.d/blacklist.conf > /dev/null
-
-<br/> sudo update-initramfs -u
+<h2> Wifi Fix</h2>
 
 <br/>
+ Old Method - didnt work last time
 
-<div class="codebox"> sudo reboot
-</div>
+<br/>
+ printf "\n\n# Internal wireless adapter fix\nblacklist wlp1s0\n" | sudo tee --append /etc/modprobe.d/blacklist.conf > /dev/null
+
+<br/>
+ sudo update-initramfs -u
+
+<br/>
+ sudo reboot
+
 
 printf "\n\n# Internal wireless adapter fix\niface wlp1s0 inet manual\n" | sudo tee --append /etc/network/interfaces > /dev/null
-
-<div class="codebox">sudo service network-manager restart
+<div class="codebox">
+sudo service network-manager restart
 </div>
 
 
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/wifi-fix.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/wifi-fix.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

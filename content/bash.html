@@ -115,114 +115,122 @@
 				<article>
 
 
-<br/>#
 
-<div class="codebox"> Basic Bash 
-</div>
+<h2> Basic Bash </h2>
 
-<br/> Here are some basic terminal commands that save me up a lot of time. 
+<br/>
+ Here are some basic terminal commands that save me up a lot of time. 
 
 <br/>
 
 
-<br/>#
 
-<div class="codebox"> File management 
+
+<h2> File management </h2>
+
+<br/>
+ Remove all but macthing this
+
+<div class="codebox">
+rm !(*macpddl)
 </div>
 
-<br/> Remove all but macthing this
+<br/>
+ Write to file
 
-
-<div class="codebox">rm !(*macpddl)
+<div class="codebox">
+printf "when there will be old man old now old.\n" >> filename
 </div>
 
-<br/> Write to file
+<br/>
+ Overwrite to file
 
-
-<div class="codebox">printf "when there will be old man old now old.\n" >> filename
+<div class="codebox">
+printf "when there will be old man old now old.\n" > filename
 </div>
 
-<br/> Overwrite to file
+<br/>
+ Duplicate file
 
-
-<div class="codebox">printf "when there will be old man old now old.\n" > filename
+<div class="codebox">
+< filename tee filename{01..20}
 </div>
 
-<br/> Duplicate file
+<br/>
+ Show content of multiple files
 
-
-<div class="codebox">< filename tee filename{01..20}
+<div class="codebox">
+cat filename*
 </div>
 
-<br/> Show content of multiple files
+<br/>
+ Remove multiple files
 
-
-<div class="codebox">cat filename*
+<div class="codebox">
+rm filename*
 </div>
 
-<br/> Remove multiple files
+<br/>
+ Downloading file to specific location 
 
-
-<div class="codebox">rm filename*
+<div class="codebox">
+wget https://raw.githubusercontent.com/gilbertoamarcon/tools/master/terminal.sh -P ~/Downloads/
 </div>
 
-<br/> Downloading file to specific location 
-
-
-<div class="codebox">wget https://raw.githubusercontent.com/gilbertoamarcon/tools/master/terminal.sh -P ~/Downloads/
-</div>
-
-<br/> Create/Update all links in directory to point to a specific file
+<br/>
+ Create/Update all links in directory to point to a specific file
 
 find . -type l -exec ln -sf ../../domain.macpddl {} ';'
-
-<div class="codebox">find . -type f -name 'domain.macpddl' -exec ln -sf ../../domain.macpddl {} ';'
+<div class="codebox">
+find . -type f -name 'domain.macpddl' -exec ln -sf ../../domain.macpddl {} ';'
 </div>
 
-<br/> Rename with regex
+<br/>
+ Rename with regex
 
 rename -n 's/^p(\d+)_s2_c(\d+)/P$1C$2/s' *
 rename 's/^p(\d)_c(\d)$/P0$1C0$2/s' *
 rename 's/^p(\d\d)_c(\d)$/P$1C0$2/s' *
-
-<div class="codebox">rename 's/^p(\d)_c(\d\d)$/P0$1C$2/s' *
+<div class="codebox">
+rename 's/^p(\d)_c(\d\d)$/P0$1C$2/s' *
 </div>
 
-<br/>#
 
-<div class="codebox"> History
+<h2> History</h2>
+
+<br/>
+ Show command history
+
+<div class="codebox">
+history
 </div>
 
-<br/> Show command history
+<br/>
+ Execute previous command from history
 
-
-<div class="codebox">history
+<div class="codebox">
+!3
 </div>
 
-<br/> Execute previous command from history
 
+<h2> Tar Balls</h2>
 
-<div class="codebox">!3
+<br/>
+ Creating tar ball
+
+<div class="codebox">
+tar -cvzf tarball.tar.gz mobile/*
 </div>
 
-<br/>#
+<br/>
+ Extracting tar ball
 
-<div class="codebox"> Tar Balls
+<div class="codebox">
+tar -xvzf tarball.tar.gz
 </div>
 
-<br/> Creating tar ball
-
-
-<div class="codebox">tar -cvzf tarball.tar.gz mobile/*
-</div>
-
-<br/> Extracting tar ball
-
-
-<div class="codebox">tar -xvzf tarball.tar.gz
-</div>
-
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/bash.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/bash.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

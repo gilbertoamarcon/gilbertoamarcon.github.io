@@ -114,31 +114,35 @@
 
 				<article>
 
-<br/>#
 
-<div class="codebox"> PDF Chop
-</div>
+<h2> PDF Chop</h2>
 
-<br/> This script extracts a subset of a PDF documents pages
+<br/>
+ This script extracts a subset of a PDF documents pages
 
 <br/>
 
 
-<br/> Usage:
-
-<br/> ./pdf_chop.sh first-page last-page input output
 
 <br/>
+ Usage:
+
+<br/>
+ ./pdf_chop.sh first-page last-page input output
+
+<br/>
+
 
 
 pdfseparate -f $1 -l $2 $3 temp_split%d.pdf
 pdfunite $(eval echo temp_split{$1..$2}.pdf) temp_merge.pdf
 gs -sDEVICE=pdfwrite -sPAPERSIZE=letter -dFIXEDMEDIA -dPDFFitPage -dCompatibilityLevel=1.4 -dPDFSETTINGS=/screen -dNOPAUSE -dQUIET -dBATCH -sOutputFile=$4 temp_merge.pdf
-
-<div class="codebox">rm $(eval echo temp_split{$1..$2}.pdf) temp_merge.pdf
+<div class="codebox">
+rm $(eval echo temp_split{$1..$2}.pdf) temp_merge.pdf
 </div>
 
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/pdf-chop.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/pdf-chop.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

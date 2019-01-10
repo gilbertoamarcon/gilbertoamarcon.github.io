@@ -114,43 +114,49 @@
 
 				<article>
 
-<br/>#
 
-<div class="codebox"> Raspberry Pi Backup
-</div>
+<h2> Raspberry Pi Backup</h2>
 
-<br/> Here are some commands to backup a Raspberry Pi SD card.
+<br/>
+ Here are some commands to backup a Raspberry Pi SD card.
 
-<br/> This assumes the SD card is plugged to a linux computer at /dev/sdb.
+<br/>
+ This assumes the SD card is plugged to a linux computer at /dev/sdb.
 
 <br/>
 
 
-<br/> Backup:
 
+<br/>
+ Backup:
 
-<div class="codebox">sudo dd bs=4M if=/dev/sdb of=raspbian.img
+<div class="codebox">
+sudo dd bs=4M if=/dev/sdb of=raspbian.img
 </div>
 
-<br/> Restore:
+<br/>
+ Restore:
 
-
-<div class="codebox">sudo dd bs=4M if=raspbian.img of=/dev/sdb
+<div class="codebox">
+sudo dd bs=4M if=raspbian.img of=/dev/sdb
 </div>
 
-<br/> Backup using Gzip to save up space:
+<br/>
+ Backup using Gzip to save up space:
 
-
-<div class="codebox">sudo dd bs=4M if=/dev/sdb | gzip > rasbian.img.gz
+<div class="codebox">
+sudo dd bs=4M if=/dev/sdb | gzip > rasbian.img.gz
 </div>
 
-<br/> Restore using Gzip:
+<br/>
+ Restore using Gzip:
 
-
-<div class="codebox">gunzip --stdout rasbian.img.gz | sudo dd bs=4M of=/dev/sdb
+<div class="codebox">
+gunzip --stdout rasbian.img.gz | sudo dd bs=4M of=/dev/sdb
 </div>
 
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/pi-backup.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/pi-backup.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

@@ -117,17 +117,18 @@
 
 dev=${HOME}/dev/ChatScript
 dest=$dev/RAWDATA/
-
-<div class="codebox">bots=${HOME}/Dropbox/OSU/Classes/ROB599/chatbot
+<div class="codebox">
+bots=${HOME}/Dropbox/OSU/Classes/ROB599/chatbot
 </div>
 
 rm -Rf $dev
 git clone https://github.com/bwilcox-1234/ChatScript.git $dev/
-
-<div class="codebox">chmod a+x $dev/BINARIES/LinuxChatScript64
+<div class="codebox">
+chmod a+x $dev/BINARIES/LinuxChatScript64
 </div>
 
-<br/> Copying bots
+<br/>
+ Copying bots
 
 ln -s $bots/WALDO $dest
 ln -s $bots/THERAPIST $dest
@@ -136,38 +137,50 @@ ln -s $bots/CARE $dest
 ln -s $bots/filesWaldo.txt $dest
 ln -s $bots/filesTherapist.txt $dest
 ln -s $bots/filesFridge.txt $dest
-
-<div class="codebox">ln -s $bots/filesCare.txt $dest
+<div class="codebox">
+ln -s $bots/filesCare.txt $dest
 </div>
 
 cd $dev/BINARIES
-
-<div class="codebox">./LinuxChatScript64
+<div class="codebox">
+./LinuxChatScript64
 </div>
 
-<br/> :build Waldo
+<br/>
+ :build Waldo
 
-<br/> 
+<br/>
+ 
 
-<br/> :build Therapist
+<br/>
+ :build Therapist
 
-<br/> :build Fridge
+<br/>
+ :build Fridge
 
-<br/> :build Care
+<br/>
+ :build Care
 
-<br/> : > Had to do some preseentation and I have social anxiety.
+<br/>
+ : > Had to do some preseentation and I have social anxiety.
 
-<br/> Therapist:  I am sorry, I dont know the answer to this.
+<br/>
+ Therapist:  I am sorry, I dont know the answer to this.
 
-<br/> : > Hi I am trying to buy a fridge.
+<br/>
+ : > Hi I am trying to buy a fridge.
 
-<br/> FRIDGE:  Hello, how can I help you?
+<br/>
+ FRIDGE:  Hello, how can I help you?
 
-<br/> : > How are you doing today?
+<br/>
+ : > How are you doing today?
 
-<br/> CARE:  Hello. I am so glad to talk to you!
+<br/>
+ CARE:  Hello. I am so glad to talk to you!
 
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/chatbot.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/chatbot.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

@@ -115,17 +115,18 @@
 				<article>
 
 
-<br/>#
 
-<div class="codebox"> Repos Dependencies
-</div>
+<h2> Repos Dependencies</h2>
 
-<br/> This script will install and configure all repos dependencies.
+<br/>
+ This script will install and configure all repos dependencies.
 
 <br/>
 
 
-<br/> Cmake install/upgrade (3.8.0):
+
+<br/>
+ Cmake install/upgrade (3.8.0):
 
 wget -P ~/Downloads/ http://www.cmake.org/files/v3.8/cmake-3.8.0.tar.gz
 tar -xvzf ~/Downloads/cmake-3.8.0.tar.gz -C ~/Downloads/
@@ -134,37 +135,42 @@ cd ~/Downloads/cmake-3.8.0
 make
 sudo make install
 sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 --force
-
-<div class="codebox">cmake --version
+<div class="codebox">
+cmake --version
 </div>
 
-<br/> Upgrade to gcc/g++ 5.4.0 (5.4.0):
+<br/>
+ Upgrade to gcc/g++ 5.4.0 (5.4.0):
 
-
-<div class="codebox">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+<div class="codebox">
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
 </div>
 
-<br/> Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
+<br/>
+ Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
-
-<div class="codebox">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+<div class="codebox">
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 </div>
 
-<br/> Boost 1.64
+<br/>
+ Boost 1.64
 
-
-<div class="codebox">./boost.sh
+<div class="codebox">
+./boost.sh
 </div>
 
-<br/> ANTLR
+<br/>
+ ANTLR
 
 wget -P ~/Downloads/ http://www.antlr.org/download/antlr-4.5.3-complete.jar
-
-<div class="codebox">sudo mv ~/Downloads/antlr-4.5.3-complete.jar /usr/local/lib/antlr-4.5.3-complete.jar
+<div class="codebox">
+sudo mv ~/Downloads/antlr-4.5.3-complete.jar /usr/local/lib/antlr-4.5.3-complete.jar
 </div>
 
-<br/> Proto
+<br/>
+ Proto
 
 wget -P ~/Downloads/ https://github.com/google/protobuf/releases/download/v3.0.0/protobuf-cpp-3.0.0.tar.gz
 tar -xvzf ~/Downloads/protobuf-cpp-3.0.0.tar.gz -C ~/Downloads/
@@ -173,32 +179,40 @@ cd ~/Downloads/protobuf-3.0.0/
 ./configure
 make
 sudo make install
-
-<div class="codebox">sudo ldconfig # refresh shared library cache.
+<div class="codebox">
+sudo ldconfig # refresh shared library cache.
 </div>
-
-<br/> GDSL (for yahsp2)
-
-<br/> wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
-
-<br/> tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
-
-<br/> cd ~/Downloads/gdsl-1.8/
-
-<br/> ./configure
-
-<br/> make
-
-<br/> sudo make install
-
-<br/> make clean
 
 <br/>
+ GDSL (for yahsp2)
 
-<div class="codebox"> make distclean
-</div>
+<br/>
+ wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
 
-<br/> Flex 2.5.39
+<br/>
+ tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
+
+<br/>
+ cd ~/Downloads/gdsl-1.8/
+
+<br/>
+ ./configure
+
+<br/>
+ make
+
+<br/>
+ sudo make install
+
+<br/>
+ make clean
+
+<br/>
+ make distclean
+
+
+<br/>
+ Flex 2.5.39
 
 wget -P ~/Downloads/ https://sourceforge.net/projects/flex/files/flex-2.5.39.tar.bz2
 tar -xvjf ~/Downloads/flex-2.5.39.tar.bz2 -C ~/Downloads/
@@ -206,25 +220,28 @@ cd ~/Downloads/flex-2.5.39/
 ./configure
 make
 sudo make install
-
-<div class="codebox">flex --version
+<div class="codebox">
+flex --version
 </div>
 
-<br/> Graphviz
+<br/>
+ Graphviz
 
 wget -P ~/Downloads/ http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.28.0.tar.gz
 tar -xvzf ~/Downloads/graphviz-2.28.0.tar.gz -C ~/Downloads/
 cd ~/Downloads/graphviz-2.28.0/
 ./configure
 make
-
-<div class="codebox">sudo make install 
+<div class="codebox">
+sudo make install 
 </div>
 
-<br/> Cleanup
+<br/>
+ Cleanup
 
 rm -Rf ~/Downloads/*
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep-lib.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep-lib.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

@@ -117,21 +117,27 @@
 
 
 <h2> Setup Pioneers</h2>
-<br/> Get Packages and Setup Pioneer Robots in Gazebo.
-
 <br/>
-
-<br/> Usage:
-
-<br/> ./ros-pioneer-setup.sh
+ Get Packages and Setup Pioneer Robots in Gazebo.
 
 <br/>
 
 
-<br/> Backing up present working directory
+<br/>
+ Usage:
+
+<br/>
+ ./ros-pioneer-setup.sh
+
+<br/>
 
 
-<div class="codebox">hdir=$(pwd)
+
+<br/>
+ Backing up present working directory
+
+<div class="codebox">
+hdir=$(pwd)
 </div>
 
 git clone https://github.com/JenJenChung/pioneer_gazebo_ros.git ~/ros-ws/mobile/src/pioneer_gazebo_ros
@@ -142,17 +148,19 @@ git clone https://github.com/JenJenChung/rocon_flip.git ~/ros-ws/mobile/src/roco
 git clone https://github.com/JenJenChung/pioneer_test.git ~/ros-ws/mobile/src/pioneer_test
 git clone https://github.com/duchowpt/pioneer_networking.git ~/ros-ws/mobile/src/pioneer_networking
 cd ~/ros-ws/mobile/
-
-<div class="codebox">catkin_make
+<div class="codebox">
+catkin_make
 </div>
 
-<br/> Back to original working directory
+<br/>
+ Back to original working directory
 
-
-<div class="codebox">cd $hdir
+<div class="codebox">
+cd $hdir
 </div>
 
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-pioneer-setup.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-pioneer-setup.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

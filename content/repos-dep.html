@@ -115,26 +115,28 @@
 				<article>
 
 
-<br/>#
 
-<div class="codebox"> Repos Dependencies
-</div>
+<h2> Repos Dependencies</h2>
 
-<br/> This script will install and configure all repos dependencies.
+<br/>
+ This script will install and configure all repos dependencies.
 
 <br/>
 
 
-<br/> Add-apt-repositories
+
+<br/>
+ Add-apt-repositories
 
 sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 sudo add-apt-repository ppa:webupd8team/java -y
-
-<div class="codebox">sudo apt-get --yes update
+<div class="codebox">
+sudo apt-get --yes update
 </div>
 
-<br/> Apt-get installs
+<br/>
+ Apt-get installs
 
 sudo apt-get --yes install ant
 sudo apt-get --yes install autoconf
@@ -189,18 +191,19 @@ sudo apt-get --yes install texlive-full
 sudo apt-get --yes install unzip
 sudo apt-get --yes install linux-libc-dev
 sudo apt-get --yes upgrade cmake
-
-<div class="codebox">sudo pip install svgwrite
+<div class="codebox">
+sudo pip install svgwrite
 </div>
-
-<br/> # Repos folder
 
 <br/>
+ # Repos folder
 
-<div class="codebox"> mkdir -p ~/dev/
-</div>
+<br/>
+ mkdir -p ~/dev/
 
-<br/> Cmake install/upgrade (3.8.0):
+
+<br/>
+ Cmake install/upgrade (3.8.0):
 
 wget -P ~/Downloads/ http://www.cmake.org/files/v3.8/cmake-3.8.0.tar.gz
 tar -xvzf ~/Downloads/cmake-3.8.0.tar.gz -C ~/Downloads/
@@ -209,42 +212,47 @@ cd ~/Downloads/cmake-3.8.0
 make
 sudo make install
 sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 --force
-
-<div class="codebox">cmake --version
+<div class="codebox">
+cmake --version
 </div>
 
-<br/> Upgrade to gcc/g++ 5.4.0 (5.4.0):
+<br/>
+ Upgrade to gcc/g++ 5.4.0 (5.4.0):
 
-
-<div class="codebox">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+<div class="codebox">
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
 </div>
 
-<br/> Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
+<br/>
+ Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
-
-<div class="codebox">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+<div class="codebox">
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 </div>
 
-<br/> Boost 1.64
+<br/>
+ Boost 1.64
 
 wget -P ~/Downloads/ http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz
 tar -xzvf ~/Downloads/boost_1_64_0.tar.gz -C ~/Downloads/
 cd ~/Downloads/boost_1_64_0/
 ./bootstrap.sh --prefix=/usr
 sudo ./b2 install
-
-<div class="codebox">cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
+<div class="codebox">
+cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
 </div>
 
-<br/> ANTLR
+<br/>
+ ANTLR
 
 wget -P ~/Downloads/ http://www.antlr.org/download/antlr-4.5.3-complete.jar
-
-<div class="codebox">sudo mv ~/Downloads/antlr-4.5.3-complete.jar /usr/local/lib/antlr-4.5.3-complete.jar
+<div class="codebox">
+sudo mv ~/Downloads/antlr-4.5.3-complete.jar /usr/local/lib/antlr-4.5.3-complete.jar
 </div>
 
-<br/> Proto
+<br/>
+ Proto
 
 wget -P ~/Downloads/ https://github.com/google/protobuf/releases/download/v3.0.0/protobuf-cpp-3.0.0.tar.gz
 tar -xvzf ~/Downloads/protobuf-cpp-3.0.0.tar.gz -C ~/Downloads/
@@ -253,32 +261,40 @@ cd ~/Downloads/protobuf-3.0.0/
 ./configure
 make
 sudo make install
-
-<div class="codebox">sudo ldconfig # refresh shared library cache.
+<div class="codebox">
+sudo ldconfig # refresh shared library cache.
 </div>
-
-<br/> GDSL (for yahsp2)
-
-<br/> wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
-
-<br/> tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
-
-<br/> cd ~/Downloads/gdsl-1.8/
-
-<br/> ./configure
-
-<br/> make
-
-<br/> sudo make install
-
-<br/> make clean
 
 <br/>
+ GDSL (for yahsp2)
 
-<div class="codebox"> make distclean
-</div>
+<br/>
+ wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
 
-<br/> Flex 2.5.39
+<br/>
+ tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
+
+<br/>
+ cd ~/Downloads/gdsl-1.8/
+
+<br/>
+ ./configure
+
+<br/>
+ make
+
+<br/>
+ sudo make install
+
+<br/>
+ make clean
+
+<br/>
+ make distclean
+
+
+<br/>
+ Flex 2.5.39
 
 wget -P ~/Downloads/ https://sourceforge.net/projects/flex/files/flex-2.5.39.tar.bz2
 tar -xvjf ~/Downloads/flex-2.5.39.tar.bz2 -C ~/Downloads/
@@ -286,98 +302,109 @@ cd ~/Downloads/flex-2.5.39/
 ./configure
 make
 sudo make install
-
-<div class="codebox">flex --version
+<div class="codebox">
+flex --version
 </div>
 
-<br/> Graphviz
+<br/>
+ Graphviz
 
 wget -P ~/Downloads/ http://www.graphviz.org/pub/graphviz/stable/SOURCES/graphviz-2.28.0.tar.gz
 tar -xvzf ~/Downloads/graphviz-2.28.0.tar.gz -C ~/Downloads/
 cd ~/Downloads/graphviz-2.28.0/
 ./configure
 make
-
-<div class="codebox">sudo make install 
+<div class="codebox">
+sudo make install 
 </div>
 
-<br/> COLIN2
+<br/>
+ COLIN2
 
 git clone git@gitlab.com:human-machine-teaming/planning/colin2.git ~/dev/colin2/
 cd ~/dev/colin2/
 ./run-cmake-release
-
-<div class="codebox">./build-release
+<div class="codebox">
+./build-release
 </div>
 
-<br/> POPF2
+<br/>
+ POPF2
 
 git clone https://github.com/aldukeman/popf2.git ~/dev/popf2/
 cd ~/dev/popf2/
 ./build
-
-<div class="codebox">sed -i 's\, "-b"\\g' ~/dev/popf2/plan
+<div class="codebox">
+sed -i 's\, "-b"\\g' ~/dev/popf2/plan
 </div>
 
-<br/> ITSAT
+<br/>
+ ITSAT
 
 git clone git@gitlab.com:human-machine-teaming/planning/itsat.git ~/dev/itsat/
 cd ~/dev/itsat/
-
-<div class="codebox">./build
+<div class="codebox">
+./build
 </div>
 
-<br/> TFD
+<br/>
+ TFD
 
 git clone git@gitlab.com:human-machine-teaming/planning/tfd.git ~/dev/tfd/
 cd ~/dev/tfd/
-
-<div class="codebox">./build
+<div class="codebox">
+./build
 </div>
-
-<br/> YAHSP2
-
-<br/> git clone https://github.com/aldukeman/yahsp2.git ~/dev/yahsp2/
-
-<br/> cd ~/dev/yahsp2/
 
 <br/>
+ YAHSP2
 
-<div class="codebox"> ./build
-</div>
+<br/>
+ git clone https://github.com/aldukeman/yahsp2.git ~/dev/yahsp2/
 
-<br/> CPT
+<br/>
+ cd ~/dev/yahsp2/
+
+<br/>
+ ./build
+
+
+<br/>
+ CPT
 
 wget -P ~/Downloads/ http://www.cril.univ-artois.fr/~vidal/cpt/cpt-1.0.tar.gz
 tar -xvzf ~/Downloads/cpt-1.0.tar.gz -C ~/Downloads/
 rm -Rf ~/Downloads/cpt-1.0.tar.gz
 cd ~/Downloads/cpt-1.0/
-
-<div class="codebox">./build fast
+<div class="codebox">
+./build fast
 </div>
 
-<br/> Z3
+<br/>
+ Z3
 
 git clone https://github.com/Z3Prover/z3 ~/dev/z3/
 cd ~/dev/z3/
 python scripts/mk_make.py
 cd build
 make
-
-<div class="codebox">sudo make install
+<div class="codebox">
+sudo make install
 </div>
 
-<br/> Piranha
+<br/>
+ Piranha
 
 git clone https://github.com/bluescarni/piranha ~/dev/piranha/
 mkdir ~/dev/piranha/build/
 cd ~/dev/piranha/build/
 cmake ../
-
-<div class="codebox">sudo make install
+<div class="codebox">
+sudo make install
 </div>
 
-<br/> SMTPlan+
+<br/>
+ SMTPlan+
 
 git clone https://github.com/KCL-Planning/SMTPlan.git ~/dev/SMTPlan/
 sed -i '15i\set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wno-deprecated-declarations")' ~/dev/SMTPlan/SMTPlan/CMakeLists.txt
@@ -385,89 +412,99 @@ cd ~/dev/SMTPlan/SMTPlan/
 mkdir build
 cd build
 cmake ..
-
-<div class="codebox">make
+<div class="codebox">
+make
 </div>
 
-<br/> APPL
+<br/>
+ APPL
 
 wget -P ~/Downloads/ http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/uploads/Main/appl-0.96.tar.gz
 tar -xvzf ~/Downloads/appl-0.96.tar.gz -C ~/dev/
 rm -f ~/Downloads/appl-0.96.tar.gz
 mv -f ~/dev/appl-0.96 ~/dev/appl
 cd ~/dev/appl/src/
-
-<div class="codebox">make
+<div class="codebox">
+make
 </div>
 
-<br/> RDDL
+<br/>
+ RDDL
 
 git clone https://github.com/ssanner/rddlsim.git ~/dev/rddlsim/
 cd ~/dev/rddlsim/
 sudo chmod +x compile
-
-<div class="codebox">./compile
+<div class="codebox">
+./compile
 </div>
 
-<br/> PROST Install and Config
+<br/>
+ PROST Install and Config
 
 hg clone https://gilbertoamarcon@bitbucket.org/tkeller/prost ~/dev/prost/
 cd ~/dev/prost/src/search
 make
 cd ~/dev/prost/src/rddl_parser
 make
-
-<div class="codebox">ln -s ~/dev/rddlsim/ ~/dev/prost/testbed/rddlsim
+<div class="codebox">
+ln -s ~/dev/rddlsim/ ~/dev/prost/testbed/rddlsim
 </div>
 
-<br/> Sample domains
+<br/>
+ Sample domains
 
-
-<div class="codebox">git clone https://github.com/gilbertoamarcon/domains.git ~/dev/domains/
+<div class="codebox">
+git clone https://github.com/gilbertoamarcon/domains.git ~/dev/domains/
 </div>
 
-<br/> Planning Domains
+<br/>
+ Planning Domains
 
-
-<div class="codebox">git clone https://github.com/aldukeman/planning-domains.git ~/dev/planning-domains/
+<div class="codebox">
+git clone https://github.com/aldukeman/planning-domains.git ~/dev/planning-domains/
 </div>
 
-<br/> Val
+<br/>
+ Val
 
 git clone https://antondukeman.com/gitlab/aldukeman/val.git ~/dev/val/
 cd ~/dev/val/
 cmake .
-
-<div class="codebox">make
+<div class="codebox">
+make
 </div>
 
-<br/> Fast Forward
+<br/>
+ Fast Forward
 
 wget -P ~/Downloads/ https://fai.cs.uni-saarland.de/hoffmann/ff/FF-v2.3.tgz
 tar -xvzf ~/Downloads/FF-v2.3.tgz -C ~/Downloads/
 cd ~/Downloads/FF-v2.3
-
-<div class="codebox">make
+<div class="codebox">
+make
 </div>
 
-<br/> Fast Downward
+<br/>
+ Fast Downward
 
 hg clone http://hg.fast-downward.org ~/dev/fd/
 cd ~/dev/fd/
 ./build.py
-
-<div class="codebox">cp ${TOOLS}plan ~/dev/fd/
+<div class="codebox">
+cp ${TOOLS}plan ~/dev/fd/
 </div>
 
-<br/> Cleaning up and rebooting
+<br/>
+ Cleaning up and rebooting
 
 rm -Rf ~/Downloads/*
 sudo apt-get --yes autoremove
-
-<div class="codebox">sudo reboot
+<div class="codebox">
+sudo reboot
 </div>
 
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 

@@ -115,96 +115,102 @@
 				<article>
 
 
-<br/>#
 
-<div class="codebox"> VAL PDF
-</div>
+<h2> VAL PDF</h2>
 
-<br/> Generate plan PDF report.
+<br/>
+ Generate plan PDF report.
 
 <br/>
 
 
-<br/> Usage:
 
-<br/> ./val-report.sh problem-dir objects-to-track
+<br/>
+ Usage:
 
-<br/> Ex: ./val-report.sh ~/dev/domains/pddl/box rover
+<br/>
+ ./val-report.sh problem-dir objects-to-track
+
+<br/>
+ Ex: ./val-report.sh ~/dev/domains/pddl/box rover
 
 <br/>
 
 
-<br/> Parameters
 
+<br/>
+ Parameters
 
-<div class="codebox">FONT_SIZE=10
+<div class="codebox">
+FONT_SIZE=10
 </div>
 
-<br/> Input Argument Renaming
+<br/>
+ Input Argument Renaming
 
 pdir=$1
-
-<div class="codebox">obj=$2
+<div class="codebox">
+obj=$2
 </div>
 
-<br/> Backing up present working directory
+<br/>
+ Backing up present working directory
 
-
-<div class="codebox">hdir=$(pwd)
+<div class="codebox">
+hdir=$(pwd)
 </div>
 
-<br/> Go the the problem directory
+<br/>
+ Go the the problem directory
 
-
-<div class="codebox">cd $pdir
+<div class="codebox">
+cd $pdir
 </div>
 
-
-<div class="codebox">if [ -e domain.pddl ] && [ -e problem.pddl ] && [ -e solution ] && [ $(cat solution | wc -l) -gt 0 ]; then
-</div>
+if [ -e domain.pddl ] && [ -e problem.pddl ] && [ -e solution ] && [ $(cat solution | wc -l) -gt 0 ]; then
 
 	# Cleanup
 	rm report* > /dev/null 2>&1
-
-<div class="codebox">	rm empty_prob.pddl > /dev/null 2>&1
+<div class="codebox">
+	rm empty_prob.pddl > /dev/null 2>&1
 </div>
 
 	# Generate the report
 	${HOME}/dev/val/validate -o $obj -o -f report -l domain.pddl problem.pddl solution
 	sed -i '/\\\documentclass/a \\\usepackage[maxfloats=100]{morefloats}' report.tex
 	sed -i 's/\\documentclass\[a4paper,[0-9]*pt\]/\\documentclass[a4paper,'$FONT_SIZE'pt]/g' report.tex
-
-<div class="codebox">	sed -i 's/[0-9]\+\.*[0-9]*e-[0-9]\+/0/g' report.tex
+<div class="codebox">
+	sed -i 's/[0-9]\+\.*[0-9]*e-[0-9]\+/0/g' report.tex
 </div>
 
 	# PDF Generation
-
-<div class="codebox">	pdflatex report.tex > /dev/null 2>&1
+<div class="codebox">
+	pdflatex report.tex > /dev/null 2>&1
 </div>
 
 	# Opening PDF
-
-<div class="codebox">	# evince report.pdf > /dev/null 2>&1 &
+<div class="codebox">
+	# evince report.pdf > /dev/null 2>&1 &
 </div>
 
 	# Cleanup
 	rm report.aux
 	rm report.log
-
-<div class="codebox">	rm report.tex
+<div class="codebox">
+	rm report.tex
 </div>
 
+fi
 
-<div class="codebox">fi
+<br/>
+ Back to original working directory
+
+<div class="codebox">
+cd $hdir
 </div>
 
-<br/> Back to original working directory
-
-
-<div class="codebox">cd $hdir
-</div>
-
-<br/><a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/val-report.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/val-report.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
 
