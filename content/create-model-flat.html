@@ -117,20 +117,20 @@
 
 
 <h2> Create Bazebo Flat</h2>
-<br/>
+
  Create a flat gazebo model
 
 
-<br/>
+
  Usage:
 
-<br/>
+
  Place the texture on the same directory as the script, then:
 
-<br/>
+
  ./create-model-flat.sh model-name texture w l texture-scale-w texture-scale-l
 
-<br/>
+
 
 
 
@@ -141,7 +141,7 @@ mkdir ~/.gazebo/models/$1/materials/scripts
 mkdir ~/.gazebo/models/$1/materials/textures
 </div>
 
-<br/>
+
  model.config 
 
 <div class="codebox">
@@ -155,7 +155,7 @@ cat > ~/.gazebo/models/$1/model.config <<- EOM
 EOM
 </div>
 
-<br/>
+
  model.sdf
 
 <div class="codebox">
@@ -203,7 +203,7 @@ cat > ~/.gazebo/models/$1/model.sdf <<- EOM
 EOM
 </div>
 
-<br/>
+
  script.material
 
 cat > ~/.gazebo/models/$1/materials/scripts/script.material <<- EOM
@@ -228,14 +228,14 @@ material $1
 EOM
 </div>
 
-<br/>
+
  Texture
 
 <div class="codebox">
 cp $2 ~/.gazebo/models/$1/materials/textures/
 </div>
 
-<br/>
+
  script.material
 
 <div class="codebox">
@@ -248,7 +248,7 @@ cat <<- EOM
 EOM
 </div>
 
-<br/>
+
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-model-flat.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>

@@ -117,31 +117,31 @@
 
 
 <h2> ROS Jackal </h2>
-<br/>
+
  This scrip covers launching basic operations for jackal
 
-<br/>
+
  
 
 
 
 <h2> Navigation</h2>
 
-<br/>
+
  Launch jackal world in Gazebo
 
 <div class="codebox">
 roslaunch jackal_gazebo jackal_world.launch config:=front_laser world_name:=$(rospack find testbed)/worlds/arena.world
 </div>
 
-<br/>
+
  Launch map navigation
 
 <div class="codebox">
 roslaunch jackal_navigation amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml
 </div>
 
-<br/>
+
  Launch Rviz for localization
 
 <div class="codebox">
@@ -151,35 +151,35 @@ roslaunch jackal_viz view_robot.launch config:=localization
 
 <h2> Mapping</h2>
 
-<br/>
+
  Launch jackal world in Gazebo
 
 <div class="codebox">
 roslaunch jackal_gazebo jackal_world.launch config:=front_laser world_name:=$(rospack find testbed)/worlds/arena.world
 </div>
 
-<br/>
+
  Launch gmaping
 
 <div class="codebox">
 roslaunch jackal_navigation gmapping_demo.launch
 </div>
 
-<br/>
+
  Launch Rviz for mapping
 
 <div class="codebox">
 roslaunch jackal_viz view_robot.launch config:=gmapping
 </div>
 
-<br/>
+
  Saving map
 
 <div class="codebox">
 rosrun map_server map_saver -f ~/Documents/map
 </div>
 
-<br/>
+
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-jackal.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>

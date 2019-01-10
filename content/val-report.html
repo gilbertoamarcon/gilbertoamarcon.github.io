@@ -118,34 +118,34 @@
 
 <h2> VAL PDF</h2>
 
-<br/>
+
  Generate plan PDF report.
 
-<br/>
 
 
 
-<br/>
+
+
  Usage:
 
-<br/>
+
  ./val-report.sh problem-dir objects-to-track
 
-<br/>
+
  Ex: ./val-report.sh ~/dev/domains/pddl/box rover
 
-<br/>
 
 
 
-<br/>
+
+
  Parameters
 
 <div class="codebox">
 FONT_SIZE=10
 </div>
 
-<br/>
+
  Input Argument Renaming
 
 <div class="codebox">
@@ -153,14 +153,14 @@ pdir=$1
 obj=$2
 </div>
 
-<br/>
+
  Backing up present working directory
 
 <div class="codebox">
 hdir=$(pwd)
 </div>
 
-<br/>
+
  Go the the problem directory
 
 <div class="codebox">
@@ -202,14 +202,14 @@ if [ -e domain.pddl ] && [ -e problem.pddl ] && [ -e solution ] && [ $(cat solut
 
 fi
 
-<br/>
+
  Back to original working directory
 
 <div class="codebox">
 cd $hdir
 </div>
 
-<br/>
+
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/val-report.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>

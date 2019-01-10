@@ -118,24 +118,24 @@
 
 <h2> Update Repo Website</h2>
 
-<br/>
+
  Usage:
 
-<br/>
+
  ./update-website.sh version-name
 
-<br/>
 
 
 
-<br/>
+
+
  Backing up present working directory
 
 <div class="codebox">
 hdir=$(pwd)
 </div>
 
-<br/>
+
  Compiling website
 
 <div class="codebox">
@@ -143,14 +143,14 @@ cd $TOOLS
 ./website.sh
 </div>
 
-<br/>
+
  Committing repos
 
 <div class="codebox">
 ./commit.sh "$1"
 </div>
 
-<br/>
+
  Committing website
 
 <div class="codebox">
@@ -158,14 +158,14 @@ cd ~/dev/gilbertoamarcon.github.io/
 ./commit.sh "$1"
 </div>
 
-<br/>
+
  Back to original working directory
 
 <div class="codebox">
 cd $hdir
 </div>
 
-<br/>
+
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/update-website.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>

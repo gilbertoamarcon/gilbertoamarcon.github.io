@@ -117,17 +117,17 @@
 
 <h2> View Overleaf Paper Offline</h2>
 
-<br/>
+
  Provide the link to the Overleaf project as a command line argument:
 
-<br/>
+
  ./view-paper.sh https://www.overleaf.com/11526189qqdhvsmwyytc#/43580908/
 
-<br/>
 
 
 
-<br/>
+
+
  Parsing input: Project URL to get Project ID
 
 <div class="codebox">
@@ -136,63 +136,63 @@ IFS='/#' read -ra tokens <<< "$url"
 projid=${tokens[3]}
 </div>
 
-<br/>
+
  Local repository directory
 
 <div class="codebox">
 lrepo=${HOME}/over/$projid
 </div>
 
-<br/>
+
  Remote BIB URL
 
 <div class="codebox">
 rbib='http://www.citeulike.org/bibtex/user/marcondg?do_username_prefix=0&key_type=4&incl_amazon=1&clean_urls=1&smart_wrap=1&q=&fieldmap=abstract:'
 </div>
 
-<br/>
+
  Aux bib
 
 <div class="codebox">
 abib=/tmp/bib.bib
 </div>
 
-<br/>
+
  Local bib
 
 <div class="codebox">
 lbib=$lrepo/bib.bib
 </div>
 
-<br/>
+
  Remote PDF URL
 
 <div class="codebox">
 rpdf=https://v1.overleaf.com/docs/$projid/pdf.pdf
 </div>
 
-<br/>
+
  Aux PDF
 
 <div class="codebox">
 apdf=/tmp/pdf_.pdf
 </div>
 
-<br/>
+
  Local PDF
 
 <div class="codebox">
 lpdf=/tmp/pdf.pdf
 </div>
 
-<br/>
+
  Getting firefox up
 
 <div class="codebox">
 firefox $url > /dev/null 2>&1 &
 </div>
 
-<br/>
+
  Getting Local PDF
 
 <div class="codebox">
@@ -205,7 +205,7 @@ done
 echo 'PDF fetched.'
 </div>
 
-<br/>
+
  Go to repo, pull
 
 <div class="codebox">
@@ -214,7 +214,7 @@ rm -Rf $lrepo > /dev/null 2>&1
 git clone https://git.overleaf.com/$projid $lrepo/ > /dev/null 2>&1
 </div>
 
-<br/>
+
  Getting sublime up
 
 <div class="codebox">
@@ -222,14 +222,14 @@ subl $lrepo/*.tex
 subl $lbib
 </div>
 
-<br/>
+
  Getting evince up
 
 <div class="codebox">
 evince $lpdf > /dev/null 2>&1 &
 </div>
 
-<br/>
+
   Infinite loop
 
 <div class="codebox">
@@ -285,7 +285,7 @@ while true; do
 	sleep 1
 </div>
 
-done#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>
+done#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/view-paper.sh target=_blank>Follow this link for the raw script.</a>
 				<article/>
 
 			</div>

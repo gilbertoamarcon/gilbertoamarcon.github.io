@@ -118,28 +118,28 @@
 
 <h2> PiCam Remote Video </h2>
 
-<br/>
+
  PC:
 
-<br/>
+
  nc -l 5001 | mplayer -fps 24 -cache 1024 -
 
 
-<br/>
+
  Pi:
 
-<br/>
+
  raspivid -t 999999 -w 1280 -h 720 -fps 20 -o - | nc 192.168.178.22 5001
 
 
-<br/>
+
  Run this from the teleoping computer.
 
 <div class="codebox">
 nc -l 5001 | mplayer -fps 24 -cache 1024 -
 </div>
 
-<br/>
+
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/remote-video.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>

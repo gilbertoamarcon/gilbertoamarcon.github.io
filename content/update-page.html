@@ -118,14 +118,14 @@
 
 <h2> SSH Login</h2>
 
-<br/>
+
  Here are some basic SSH commands that save me up a lot of time.
 
-<br/>
 
 
 
-<br/>
+
+
  SSH login to remote server
 
 <div class="codebox">
@@ -135,7 +135,7 @@ bib_file=$local_path/bib/bib.bib
 </div>
 
 wget -O $bib_file 'http://www.citeulike.org/bibtex/user/marcondg/tag/mine?do_username_prefix=0&key_type=4&incl_amazon=1&clean_urls=0&smart_wrap=1&q='
-<br/>
+
  sed -i 's/url = /url_Paper = /g' $bib_file
 
 
@@ -144,7 +144,7 @@ scp -r $local_path/* $remote_path
 </div>
 
 
-<br/>
+
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/update-page.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>

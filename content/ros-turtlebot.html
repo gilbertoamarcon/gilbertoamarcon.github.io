@@ -118,38 +118,38 @@
 
 <h2> ROS Turtlebot</h2>
 
-<br/>
+
  This scrip covers launching basic operations for turtlebot in ROS Indigo.
 
-<br/>
+
 
 
 
 
 <h2> Navigation</h2>
 
-<br/>
+
  Launch turtlebot world in Gazebo
 
 <div class="codebox">
 roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find testbed)/worlds/arena.world
 </div>
 
-<br/>
+
  Launch map navigation
 
 <div class="codebox">
 roslaunch turtlebot_gazebo amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml
 </div>
 
-<br/>
+
  Rviz
 
 <div class="codebox">
 roslaunch turtlebot_rviz_launchers view_navigation.launch
 </div>
 
-<br/>
+
  Alvar
 
 <div class="codebox">
@@ -159,35 +159,35 @@ roslaunch testbed alvar.launch
 
 <h2> Mapping</h2>
 
-<br/>
+
  Launch turtlebot world in Gazebo
 
 <div class="codebox">
 roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find testbed)/worlds/arena.world
 </div>
 
-<br/>
+
  Launch maping
 
 <div class="codebox">
 roslaunch turtlebot_gazebo gmapping_demo.launch
 </div>
 
-<br/>
+
  Rviz
 
 <div class="codebox">
 roslaunch turtlebot_rviz_launchers view_navigation.launch
 </div>
 
-<br/>
+
  Teleop
 
 <div class="codebox">
 roslaunch turtlebot_teleop ps3_teleop.launch
 </div>
 
-<br/>
+
  Saving map
 
 <div class="codebox">
@@ -197,7 +197,7 @@ rosrun map_server map_saver -f ~/Documents/map
 
 <h2> Real Turtlebot</h2>
 
-<br/>
+
  Launch these on the turtle:
 
 <div class="codebox">
@@ -208,7 +208,7 @@ roslaunch turtlebot_bringup 3dsensor.launch
 
 
 
-<br/>
+
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-turtlebot.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>

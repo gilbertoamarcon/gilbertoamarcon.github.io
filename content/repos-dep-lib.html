@@ -118,14 +118,14 @@
 
 <h2> Repos Dependencies</h2>
 
-<br/>
+
  This script will install and configure all repos dependencies.
 
-<br/>
 
 
 
-<br/>
+
+
  Cmake install/upgrade (3.8.0):
 
 <div class="codebox">
@@ -139,14 +139,14 @@ sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 -
 cmake --version
 </div>
 
-<br/>
+
  Upgrade to gcc/g++ 5.4.0 (5.4.0):
 
 <div class="codebox">
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
 </div>
 
-<br/>
+
  Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
 
 <div class="codebox">
@@ -154,14 +154,14 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 </div>
 
-<br/>
+
  Boost 1.64
 
 <div class="codebox">
 ./boost.sh
 </div>
 
-<br/>
+
  ANTLR
 
 <div class="codebox">
@@ -169,7 +169,7 @@ wget -P ~/Downloads/ http://www.antlr.org/download/antlr-4.5.3-complete.jar
 sudo mv ~/Downloads/antlr-4.5.3-complete.jar /usr/local/lib/antlr-4.5.3-complete.jar
 </div>
 
-<br/>
+
  Proto
 
 <div class="codebox">
@@ -183,35 +183,35 @@ sudo make install
 sudo ldconfig # refresh shared library cache.
 </div>
 
-<br/>
+
  GDSL (for yahsp2)
 
-<br/>
+
  wget -P ~/Downloads/ http://download.gna.org/gdsl/gdsl-1.8.tar.gz
 
-<br/>
+
  tar -xvzf ~/Downloads/gdsl-1.8.tar.gz -C ~/Downloads/
 
-<br/>
+
  cd ~/Downloads/gdsl-1.8/
 
-<br/>
+
  ./configure
 
-<br/>
+
  make
 
-<br/>
+
  sudo make install
 
-<br/>
+
  make clean
 
-<br/>
+
  make distclean
 
 
-<br/>
+
  Flex 2.5.39
 
 <div class="codebox">
@@ -224,7 +224,7 @@ sudo make install
 flex --version
 </div>
 
-<br/>
+
  Graphviz
 
 <div class="codebox">
@@ -236,11 +236,11 @@ make
 sudo make install 
 </div>
 
-<br/>
+
  Cleanup
 
 rm -Rf ~/Downloads/*
-<br/>
+
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep-lib.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>

@@ -118,24 +118,24 @@
 
 <h2> ROS Erratic</h2>
 
-<br/>
+
  This scrip covers launching basic operations for erratic in ROS Indigo.
 
-<br/>
+
 
 
 
 
 <h2> Real Erratic</h2>
 
-<br/>
+
  SSH into the erratic (password: robotics2017):
 
 <div class="codebox">
 ssh tank@tank.engr.oregonstate.edu
 </div>
 
-<br/>
+
  Launch these on the erratic:
 
 <div class="codebox">
@@ -144,42 +144,42 @@ roslaunch hokuyo_node hokuyo_test.launch
 rosrun hokuyo_node hokuyo_node
 </div>
 
-<br/>
+
  Record scan and odom:
 
 <div class="codebox">
 rosbag record -j scan odom tf
 </div>
 
-<br/>
+
  Run roscore
 
 <div class="codebox">
 roscore
 </div>
 
-<br/>
+
  Set the sim time param
 
 <div class="codebox">
 rosparam set use_sim_time true
 </div>
 
-<br/>
+
  Start gmapping:
 
 <div class="codebox">
 rosrun gmapping slam_gmapping base_frame:=base_footprint
 </div>
 
-<br/>
+
  Play the bag:
 
 <div class="codebox">
 rosbag play --clock -l 2017-05-10-19-03-41.bag
 </div>
 
-<br/>
+
  Save the map:
 
 <div class="codebox">
@@ -188,7 +188,7 @@ rosrun map_server map_saver -f map.pgm
 
 
 
-<br/>
+
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-erratic.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>

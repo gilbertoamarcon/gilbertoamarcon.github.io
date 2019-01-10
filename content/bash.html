@@ -118,66 +118,66 @@
 
 <h2> Basic Bash </h2>
 
-<br/>
+
  Here are some basic terminal commands that save me up a lot of time. 
 
-<br/>
+
 
 
 
 
 <h2> File management </h2>
 
-<br/>
+
  Remove all but macthing this
 
 <div class="codebox">
 rm !(*macpddl)
 </div>
 
-<br/>
+
  Write to file
 
 <div class="codebox">
 printf "when there will be old man old now old.\n" >> filename
 </div>
 
-<br/>
+
  Overwrite to file
 
 <div class="codebox">
 printf "when there will be old man old now old.\n" > filename
 </div>
 
-<br/>
+
  Duplicate file
 
 <div class="codebox">
 < filename tee filename{01..20}
 </div>
 
-<br/>
+
  Show content of multiple files
 
 <div class="codebox">
 cat filename*
 </div>
 
-<br/>
+
  Remove multiple files
 
 <div class="codebox">
 rm filename*
 </div>
 
-<br/>
+
  Downloading file to specific location 
 
 <div class="codebox">
 wget https://raw.githubusercontent.com/gilbertoamarcon/tools/master/terminal.sh -P ~/Downloads/
 </div>
 
-<br/>
+
  Create/Update all links in directory to point to a specific file
 
 <div class="codebox">
@@ -185,7 +185,7 @@ find . -type l -exec ln -sf ../../domain.macpddl {} ';'
 find . -type f -name 'domain.macpddl' -exec ln -sf ../../domain.macpddl {} ';'
 </div>
 
-<br/>
+
  Rename with regex
 
 <div class="codebox">
@@ -198,14 +198,14 @@ rename 's/^p(\d)_c(\d\d)$/P0$1C$2/s' *
 
 <h2> History</h2>
 
-<br/>
+
  Show command history
 
 <div class="codebox">
 history
 </div>
 
-<br/>
+
  Execute previous command from history
 
 <div class="codebox">
@@ -215,21 +215,21 @@ history
 
 <h2> Tar Balls</h2>
 
-<br/>
+
  Creating tar ball
 
 <div class="codebox">
 tar -cvzf tarball.tar.gz mobile/*
 </div>
 
-<br/>
+
  Extracting tar ball
 
 <div class="codebox">
 tar -xvzf tarball.tar.gz
 </div>
 
-<br/>
+
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/bash.sh target=_blank>Follow this link for the raw script.</a>
 
 				<article/>
