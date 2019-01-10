@@ -136,28 +136,24 @@
 <br/>
  Backing up present working directory
 
-<div class="codebox">
-hdir=$(pwd)
+<div class="codebox">hdir=$(pwd)
 </div>
 
 git clone https://github.com/gilbertoamarcon/testbed.git ~/Downloads/testbed
 ./create-ws.sh mobile
 ./create-package.sh mobile testbed
-<div class="codebox">
-cp -Rf ~/Downloads/testbed ~/ros-ws/mobile/src/
+<div class="codebox">cp -Rf ~/Downloads/testbed ~/ros-ws/mobile/src/
 </div>
 
 mkdir -p ~/.gazebo/models/
 cd ~/ros-ws/mobile/src/testbed/models/
-<div class="codebox">
-./create-models.sh
+<div class="codebox">./create-models.sh
 </div>
 
 <br/>
  Back to original working directory
 
-<div class="codebox">
-cd $hdir
+<div class="codebox">cd $hdir
 </div>
 
 <br/>

@@ -137,8 +137,7 @@
 mkdir ~/.gazebo/models/$1/
 mkdir ~/.gazebo/models/$1/materials/
 mkdir ~/.gazebo/models/$1/materials/scripts
-<div class="codebox">
-mkdir ~/.gazebo/models/$1/materials/textures
+<div class="codebox">mkdir ~/.gazebo/models/$1/materials/textures
 </div>
 
 <br/>
@@ -151,8 +150,7 @@ cat > ~/.gazebo/models/$1/model.config <<- EOM
     <version>1.0</version>
     <sdf version="1.4">model.sdf</sdf>
 </model>
-<div class="codebox">
-EOM
+<div class="codebox">EOM
 </div>
 
 <br/>
@@ -199,8 +197,7 @@ cat > ~/.gazebo/models/$1/model.sdf <<- EOM
         </link>
     </model>
 </sdf>
-<div class="codebox">
-EOM
+<div class="codebox">EOM
 </div>
 
 <br/>
@@ -224,15 +221,13 @@ material $1
                 }
         }
 }
-<div class="codebox">
-EOM
+<div class="codebox">EOM
 </div>
 
 <br/>
  Texture
 
-<div class="codebox">
-cp $2 ~/.gazebo/models/$1/materials/textures/
+<div class="codebox">cp $2 ~/.gazebo/models/$1/materials/textures/
 </div>
 
 <br/>
@@ -244,8 +239,7 @@ cat <<- EOM
         <uri>model://$1</uri>
     </include>
 </model>
-<div class="codebox">
-EOM
+<div class="codebox">EOM
 </div>
 
 <br/>

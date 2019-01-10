@@ -131,8 +131,7 @@
 <br/>
  SSH into the erratic (password: robotics2017):
 
-<div class="codebox">
-ssh tank@tank.engr.oregonstate.edu
+<div class="codebox">ssh tank@tank.engr.oregonstate.edu
 </div>
 
 <br/>
@@ -140,50 +139,43 @@ ssh tank@tank.engr.oregonstate.edu
 
 roslaunch erratic_player erratic_base.launch
 roslaunch hokuyo_node hokuyo_test.launch
-<div class="codebox">
-rosrun hokuyo_node hokuyo_node
+<div class="codebox">rosrun hokuyo_node hokuyo_node
 </div>
 
 <br/>
  Record scan and odom:
 
-<div class="codebox">
-rosbag record -j scan odom tf
+<div class="codebox">rosbag record -j scan odom tf
 </div>
 
 <br/>
  Run roscore
 
-<div class="codebox">
-roscore
+<div class="codebox">roscore
 </div>
 
 <br/>
  Set the sim time param
 
-<div class="codebox">
-rosparam set use_sim_time true
+<div class="codebox">rosparam set use_sim_time true
 </div>
 
 <br/>
  Start gmapping:
 
-<div class="codebox">
-rosrun gmapping slam_gmapping base_frame:=base_footprint
+<div class="codebox">rosrun gmapping slam_gmapping base_frame:=base_footprint
 </div>
 
 <br/>
  Play the bag:
 
-<div class="codebox">
-rosbag play --clock -l 2017-05-10-19-03-41.bag
+<div class="codebox">rosbag play --clock -l 2017-05-10-19-03-41.bag
 </div>
 
 <br/>
  Save the map:
 
-<div class="codebox">
-rosrun map_server map_saver -f map.pgm
+<div class="codebox">rosrun map_server map_saver -f map.pgm
 </div>
 
 

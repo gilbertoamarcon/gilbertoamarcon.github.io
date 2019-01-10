@@ -127,16 +127,14 @@
 
 ~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR10T1.xml
 ~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR20T2.xml
-<div class="codebox">
-~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR20T2.xml -o /home/gil/Downloads suf
+<div class="codebox">~/dev/icifhar/bin/icifhar -p ~/dev/icifhar/resources/testInstances/problemR20T2.xml -o /home/gil/Downloads suf
 </div>
 
 
 <h2> i-MAPC</h2>
 
 cd ~/dev/imapc/
-<div class="codebox">
-./scripts/rp_cf_plan.sh resources/testing/blocksworld_p10_c1
+<div class="codebox">./scripts/rp_cf_plan.sh resources/testing/blocksworld_p10_c1
 </div>
 
 
@@ -145,8 +143,7 @@ cd ~/dev/imapc/
 <br/>
  Try solving an example problem. Type the command:
 
-<div class="codebox">
-./pomdpsol ../examples/POMDPX/Tiger.pomdpx
+<div class="codebox">./pomdpsol ../examples/POMDPX/Tiger.pomdpx
 </div>
 
 <br/>
@@ -156,8 +153,7 @@ cd ~/dev/imapc/
 <br/>
  Try simulating a policy. Type the command:
 
-<div class="codebox">
-./pomdpsim --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
+<div class="codebox">./pomdpsim --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
 </div>
 
 <br/>
@@ -167,8 +163,7 @@ cd ~/dev/imapc/
 <br/>
  Try evaluating a policy. Type the command:
 
-<div class="codebox">
-./pomdpeval --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
+<div class="codebox">./pomdpeval --simLen 100 --simNum 1000 --policy-file out.policy ../examples/POMDPX/Tiger.pomdpx
 </div>
 
 <br/>
@@ -178,8 +173,7 @@ cd ~/dev/imapc/
 <br/>
  Try generating a graphical representation of a policy . Type the command:
 
-<div class="codebox">
-./polgraph --policy-file out.policy --policy-graph tiger.dot ../examples/POMDPX/Tiger.pomdpx
+<div class="codebox">./polgraph --policy-file out.policy --policy-graph tiger.dot ../examples/POMDPX/Tiger.pomdpx
 </div>
 
 <br/>
@@ -189,8 +183,7 @@ cd ~/dev/imapc/
 <br/>
  Try converting a POMDP file to POMDPX file format:
 
-<div class="codebox">
-./pomdpconvert ../examples/POMDP/Tiger.pomdp
+<div class="codebox">./pomdpconvert ../examples/POMDP/Tiger.pomdp
 </div>
 
 <br/>
@@ -202,8 +195,7 @@ cd ~/dev/imapc/
 
 cd ~/dev/rddlsim/
 cat ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl > ~/dev/domains/rddl/simple.rddl
-<div class="codebox">
-./run rddl.viz.RDDL2Graph ~/dev/domains/rddl/simple.rddl simple_ins
+<div class="codebox">./run rddl.viz.RDDL2Graph ~/dev/domains/rddl/simple.rddl simple_ins
 </div>
 
 
@@ -215,8 +207,7 @@ cat ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl 
 cd ~/dev/prost/testbed/
 ./run-server benchmarks/ippc2011
 cd ~/dev/prost/testbed/
-<div class="codebox">
-./plan.py benchmarks/ippc-all/rddl/elevators_mdp.rddl benchmarks/ippc-all/rddl/elevators_inst_mdp__1.rddl "IPPC2014"
+<div class="codebox">./plan.py benchmarks/ippc-all/rddl/elevators_mdp.rddl benchmarks/ippc-all/rddl/elevators_inst_mdp__1.rddl "IPPC2014"
 </div>
 
 <br/>
@@ -225,8 +216,7 @@ cd ~/dev/prost/testbed/
 cd ~/dev/prost/testbed/
 ./run-server ~/dev/domains/rddl
 cd ~/dev/prost/testbed/
-<div class="codebox">
-./plan.py ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl "IPPC2014"
+<div class="codebox">./plan.py ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl "IPPC2014"
 </div>
 
 
@@ -234,8 +224,7 @@ cd ~/dev/prost/testbed/
 
 ./pomdpsol ~/dev/domains/pomdpx/simple_xdp.pomdpx
 ./pomdpsol ~/dev/domains/pomdpx/simple_mdp.pomdpx
-<div class="codebox">
-./pomdpsol ~/dev/domains/pomdpx/simple_pomdp.pomdpx
+<div class="codebox">./pomdpsol ~/dev/domains/pomdpx/simple_pomdp.pomdpx
 </div>
 
 <br/>

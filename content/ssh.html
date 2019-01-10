@@ -129,15 +129,13 @@
  SSH login to remote server
 
 ssh -l marcondg shell.onid.oregonstate.edu
-<div class="codebox">
-ssh -l marcondg access.engr.oregonstate.edu
+<div class="codebox">ssh -l marcondg access.engr.oregonstate.edu
 </div>
 
 <br/>
  SSH login to remote server with graphics
 
-<div class="codebox">
-ssh -X -l marcondg access.engr.oregonstate.edu
+<div class="codebox">ssh -X -l marcondg access.engr.oregonstate.edu
 </div>
 
 
@@ -147,30 +145,26 @@ ssh -X -l marcondg access.engr.oregonstate.edu
  Copying a file from local to host
 
 scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@shell.onid.oregonstate.edu:public_html/
-<div class="codebox">
-scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@access.engr.oregonstate.edu:public_html/
+<div class="codebox">scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@access.engr.oregonstate.edu:public_html/
 </div>
 
 <br/>
  Copying a file from host to local
 
-<div class="codebox">
-scp marcondg@access.engr.oregonstate.edu:public_html/index.html ~/Dropbox/Apps/Pancake.io/ 
+<div class="codebox">scp marcondg@access.engr.oregonstate.edu:public_html/index.html ~/Dropbox/Apps/Pancake.io/ 
 </div>
 
 <br/>
  Copying an entire folder
 
 scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@shell.onid.oregonstate.edu:public_html/
-<div class="codebox">
-scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@access.engr.oregonstate.edu:public_html/
+<div class="codebox">scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@access.engr.oregonstate.edu:public_html/
 </div>
 
 <br/>
  Set up execute and read permissions on all files on all folders recursivelly
 
-<div class="codebox">
-chmod -R +xr *
+<div class="codebox">chmod -R +xr *
 </div>
 
 
@@ -180,16 +174,14 @@ chmod -R +xr *
  Remote server
 
 mkdir ~/eng/
-<div class="codebox">
-sshfs marcondg@access.engr.oregonstate.edu: ~/eng/
+<div class="codebox">sshfs marcondg@access.engr.oregonstate.edu: ~/eng/
 </div>
 
 <br/>
  Raspberry Pi
 
 mkdir ~/pi/
-<div class="codebox">
-sshfs pi@rasp: ~/pi/
+<div class="codebox">sshfs pi@rasp: ~/pi/
 </div>
 
 
@@ -198,23 +190,20 @@ sshfs pi@rasp: ~/pi/
 <br/>
  Use this to create your key. Hit ENTER for every prompt.
 
-<div class="codebox">
-ssh-keygen -t rsa
+<div class="codebox">ssh-keygen -t rsa
 </div>
 
 <br/>
  Create a .ssh directory on the remote server user home folder
 
-<div class="codebox">
-ssh marcondg@shell.onid.oregonstate.edu mkdir -p ~/.ssh
+<div class="codebox">ssh marcondg@shell.onid.oregonstate.edu mkdir -p ~/.ssh
 </div>
 
 <br/>
  Copy your key to the remote server .ssh folder
 
 cat ~/.ssh/id_rsa.pub | ssh marcondg@shell.onid.oregonstate.edu 'cat >> ~/.ssh/authorized_keys'
-<div class="codebox">
-cat ~/.ssh/id_rsa.pub | ssh aadi1@aadi1 'cat >> ~/.ssh/authorized_keys'
+<div class="codebox">cat ~/.ssh/id_rsa.pub | ssh aadi1@aadi1 'cat >> ~/.ssh/authorized_keys'
 </div>
 
 <br/>
@@ -223,8 +212,7 @@ cat ~/.ssh/id_rsa.pub | ssh aadi1@aadi1 'cat >> ~/.ssh/authorized_keys'
 
 
 <h2> TEACH class path</h2>
-<div class="codebox">
-cd /nfs/farm/classes/eecs/spring2017/cs325/handin
+<div class="codebox">cd /nfs/farm/classes/eecs/spring2017/cs325/handin
 </div>
 
 <br/>
@@ -232,8 +220,7 @@ cd /nfs/farm/classes/eecs/spring2017/cs325/handin
 
 ssh pi@rasp '~/mobile/bin/driver'
 ssh pi@rasp '~/mobile/cam_server.sh'
-<div class="codebox">
-ssh pi@rasp '~/mobile/teleop.sh'
+<div class="codebox">ssh pi@rasp '~/mobile/teleop.sh'
 </div>
 
 <br/>

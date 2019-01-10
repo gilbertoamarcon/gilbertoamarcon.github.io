@@ -128,80 +128,69 @@
 <br/>
  Setup your sources.lis
 
-<div class="codebox">
-sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+<div class="codebox">sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 </div>
 
 <br/>
  Set up your keys
 
-<div class="codebox">
-sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
+<div class="codebox">sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
 </div>
 
 <br/>
  Key
 
-<div class="codebox">
-wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
+<div class="codebox">wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 </div>
 
 <br/>
  First, make sure your Debian package index is up-to-date:
 
-<div class="codebox">
-sudo apt-get --yes update
+<div class="codebox">sudo apt-get --yes update
 </div>
 
 <br/>
  Desktop-Full Install: (Recommended)
 
-<div class="codebox">
-sudo apt-get --yes install ros-indigo-desktop-full
+<div class="codebox">sudo apt-get --yes install ros-indigo-desktop-full
 </div>
 
 <br/>
  Initialize rosdep
 
 sudo rosdep init
-<div class="codebox">
-rosdep update
+<div class="codebox">rosdep update
 </div>
 
 <br/>
  Environment setup
 
 printf "\n# ROS:\nsource /opt/ros/indigo/setup.bash\n" >> ~/.bashrc
-<div class="codebox">
-source ~/.bashrc
+<div class="codebox">source ~/.bashrc
 </div>
 
 <br/>
  Getting rosinstall
 
-<div class="codebox">
-sudo apt-get --yes install python-rosinstall
+<div class="codebox">sudo apt-get --yes install python-rosinstall
 </div>
 
 <br/>
  Changing ROS ownership
 
-<div class="codebox">
-sudo chown -R $USER ~/.ros
+<div class="codebox">sudo chown -R $USER ~/.ros
 </div>
 
 <br/>
  geographic-msgs
 
-<div class="codebox">
-sudo apt-get --yes install ros-indigo-geographic-msgs
+<div class="codebox">sudo apt-get --yes install ros-indigo-geographic-msgs
 </div>
 
 <br/>
  Keyboard twist
 
-<div class="codebox">
-sudo apt-get --yes install ros-indigo-teleop-twist-keyboard
+<div class="codebox">sudo apt-get --yes install ros-indigo-teleop-twist-keyboard
 </div>
 
 <br/>
@@ -217,15 +206,13 @@ sudo apt-get --yes install ros-indigo-teleop-twist-keyboard
 sudo apt-get --yes install ros-indigo-turtlebot-*
 sudo sed -ie 's/amcl.launch.xml/amcl\/amcl.launch.xml/g' /opt/ros/indigo/share/turtlebot_stage/launch/turtlebot_in_stage.launch
 sudo sed -ie 's/amcl.launch.xml/amcl\/amcl.launch.xml/g' /opt/ros/indigo/share/turtlebot_gazebo/launch/amcl_demo.launch
-<div class="codebox">
-sudo sed -ie 's/gmapping.launch.xml/gmapping\/gmapping.launch.xml/g' /opt/ros/indigo/share/turtlebot_gazebo/launch/gmapping_demo.launch
+<div class="codebox">sudo sed -ie 's/gmapping.launch.xml/gmapping\/gmapping.launch.xml/g' /opt/ros/indigo/share/turtlebot_gazebo/launch/gmapping_demo.launch
 </div>
 
 <br/>
  JACKAL
 
-<div class="codebox">
-sudo apt-get --yes install ros-indigo-jackal-simulator ros-indigo-jackal-desktop ros-indigo-jackal-navigation
+<div class="codebox">sudo apt-get --yes install ros-indigo-jackal-simulator ros-indigo-jackal-desktop ros-indigo-jackal-navigation
 </div>
 
 <br/>
@@ -267,8 +254,7 @@ sudo apt-get --yes install ros-indigo-jackal-simulator ros-indigo-jackal-desktop
  ALVAR fiducial marker tool
 
 sudo apt-get --yes install ros-indigo-ar-track-alvar* imagemagick
-<div class="codebox">
-sudo apt-get --yes install python-empy
+<div class="codebox">sudo apt-get --yes install python-empy
 </div>
 
 <br/>

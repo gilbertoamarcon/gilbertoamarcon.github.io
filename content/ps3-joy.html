@@ -119,8 +119,7 @@ sudo apt-key adv --yes --keyserver keyserver.ubuntu.com --recv-keys 736E4F0B
 sudo apt-get --yes update
 sudo apt-get --yes install qtsixa
 sudo apt-get --yes install sixad
-<div class="codebox">
-sudo systemctl disable sixad
+<div class="codebox">sudo systemctl disable sixad
 </div>
 
 <br/>
@@ -143,8 +142,7 @@ sudo systemctl disable sixad
 <br/>
  Button config:
 
-<div class="codebox">
-echo 'ATTRS{name}=="PLAYSTATION*", ENV{DEVNAME}=="/dev/input/event*", ENV{ID_MODEL}="PS3Controller", SYMLINK+="input/dualshock3"'
+<div class="codebox">echo 'ATTRS{name}=="PLAYSTATION*", ENV{DEVNAME}=="/dev/input/event*", ENV{ID_MODEL}="PS3Controller", SYMLINK+="input/dualshock3"'
 </div>
 
 <br/>

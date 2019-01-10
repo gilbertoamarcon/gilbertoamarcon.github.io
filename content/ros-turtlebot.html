@@ -131,29 +131,25 @@
 <br/>
  Launch turtlebot world in Gazebo
 
-<div class="codebox">
-roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find testbed)/worlds/arena.world
+<div class="codebox">roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find testbed)/worlds/arena.world
 </div>
 
 <br/>
  Launch map navigation
 
-<div class="codebox">
-roslaunch turtlebot_gazebo amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml
+<div class="codebox">roslaunch turtlebot_gazebo amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml
 </div>
 
 <br/>
  Rviz
 
-<div class="codebox">
-roslaunch turtlebot_rviz_launchers view_navigation.launch
+<div class="codebox">roslaunch turtlebot_rviz_launchers view_navigation.launch
 </div>
 
 <br/>
  Alvar
 
-<div class="codebox">
-roslaunch testbed alvar.launch
+<div class="codebox">roslaunch testbed alvar.launch
 </div>
 
 
@@ -162,36 +158,31 @@ roslaunch testbed alvar.launch
 <br/>
  Launch turtlebot world in Gazebo
 
-<div class="codebox">
-roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find testbed)/worlds/arena.world
+<div class="codebox">roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find testbed)/worlds/arena.world
 </div>
 
 <br/>
  Launch maping
 
-<div class="codebox">
-roslaunch turtlebot_gazebo gmapping_demo.launch
+<div class="codebox">roslaunch turtlebot_gazebo gmapping_demo.launch
 </div>
 
 <br/>
  Rviz
 
-<div class="codebox">
-roslaunch turtlebot_rviz_launchers view_navigation.launch
+<div class="codebox">roslaunch turtlebot_rviz_launchers view_navigation.launch
 </div>
 
 <br/>
  Teleop
 
-<div class="codebox">
-roslaunch turtlebot_teleop ps3_teleop.launch
+<div class="codebox">roslaunch turtlebot_teleop ps3_teleop.launch
 </div>
 
 <br/>
  Saving map
 
-<div class="codebox">
-rosrun map_server map_saver -f ~/Documents/map
+<div class="codebox">rosrun map_server map_saver -f ~/Documents/map
 </div>
 
 
@@ -202,8 +193,7 @@ rosrun map_server map_saver -f ~/Documents/map
 
 roslaunch turtlebot_bringup minimal.launch
 roslaunch turtlebot_navigation amcl_demo.launch map_file:=/home/blood/box_maps/empty/map.yaml
-<div class="codebox">
-roslaunch turtlebot_bringup 3dsensor.launch
+<div class="codebox">roslaunch turtlebot_bringup 3dsensor.launch
 </div>
 
 

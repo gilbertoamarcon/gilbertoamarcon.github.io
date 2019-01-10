@@ -131,8 +131,7 @@
 sudo add-apt-repository ppa:george-edison55/cmake-3.x -y
 sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 sudo add-apt-repository ppa:webupd8team/java -y
-<div class="codebox">
-sudo apt-get --yes update
+<div class="codebox">sudo apt-get --yes update
 </div>
 
 <br/>
@@ -191,8 +190,7 @@ sudo apt-get --yes install texlive-full
 sudo apt-get --yes install unzip
 sudo apt-get --yes install linux-libc-dev
 sudo apt-get --yes upgrade cmake
-<div class="codebox">
-sudo pip install svgwrite
+<div class="codebox">sudo pip install svgwrite
 </div>
 
 <br/>
@@ -212,23 +210,20 @@ cd ~/Downloads/cmake-3.8.0
 make
 sudo make install
 sudo update-alternatives --install /usr/bin/cmake cmake /usr/local/bin/cmake 1 --force
-<div class="codebox">
-cmake --version
+<div class="codebox">cmake --version
 </div>
 
 <br/>
  Upgrade to gcc/g++ 5.4.0 (5.4.0):
 
-<div class="codebox">
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
+<div class="codebox">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
 </div>
 
 <br/>
  Add a backup version of gcc/g++ (sudo update-alternatives --config gcc)
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.8
-<div class="codebox">
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+<div class="codebox">sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-6
 </div>
 
 <br/>
@@ -239,16 +234,14 @@ tar -xzvf ~/Downloads/boost_1_64_0.tar.gz -C ~/Downloads/
 cd ~/Downloads/boost_1_64_0/
 ./bootstrap.sh --prefix=/usr
 sudo ./b2 install
-<div class="codebox">
-cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
+<div class="codebox">cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
 </div>
 
 <br/>
  ANTLR
 
 wget -P ~/Downloads/ http://www.antlr.org/download/antlr-4.5.3-complete.jar
-<div class="codebox">
-sudo mv ~/Downloads/antlr-4.5.3-complete.jar /usr/local/lib/antlr-4.5.3-complete.jar
+<div class="codebox">sudo mv ~/Downloads/antlr-4.5.3-complete.jar /usr/local/lib/antlr-4.5.3-complete.jar
 </div>
 
 <br/>
@@ -261,8 +254,7 @@ cd ~/Downloads/protobuf-3.0.0/
 ./configure
 make
 sudo make install
-<div class="codebox">
-sudo ldconfig # refresh shared library cache.
+<div class="codebox">sudo ldconfig # refresh shared library cache.
 </div>
 
 <br/>
@@ -302,8 +294,7 @@ cd ~/Downloads/flex-2.5.39/
 ./configure
 make
 sudo make install
-<div class="codebox">
-flex --version
+<div class="codebox">flex --version
 </div>
 
 <br/>
@@ -314,8 +305,7 @@ tar -xvzf ~/Downloads/graphviz-2.28.0.tar.gz -C ~/Downloads/
 cd ~/Downloads/graphviz-2.28.0/
 ./configure
 make
-<div class="codebox">
-sudo make install 
+<div class="codebox">sudo make install 
 </div>
 
 <br/>
@@ -324,8 +314,7 @@ sudo make install
 git clone git@gitlab.com:human-machine-teaming/planning/colin2.git ~/dev/colin2/
 cd ~/dev/colin2/
 ./run-cmake-release
-<div class="codebox">
-./build-release
+<div class="codebox">./build-release
 </div>
 
 <br/>
@@ -334,8 +323,7 @@ cd ~/dev/colin2/
 git clone https://github.com/aldukeman/popf2.git ~/dev/popf2/
 cd ~/dev/popf2/
 ./build
-<div class="codebox">
-sed -i 's\, "-b"\\g' ~/dev/popf2/plan
+<div class="codebox">sed -i 's\, "-b"\\g' ~/dev/popf2/plan
 </div>
 
 <br/>
@@ -343,8 +331,7 @@ sed -i 's\, "-b"\\g' ~/dev/popf2/plan
 
 git clone git@gitlab.com:human-machine-teaming/planning/itsat.git ~/dev/itsat/
 cd ~/dev/itsat/
-<div class="codebox">
-./build
+<div class="codebox">./build
 </div>
 
 <br/>
@@ -352,8 +339,7 @@ cd ~/dev/itsat/
 
 git clone git@gitlab.com:human-machine-teaming/planning/tfd.git ~/dev/tfd/
 cd ~/dev/tfd/
-<div class="codebox">
-./build
+<div class="codebox">./build
 </div>
 
 <br/>
@@ -376,8 +362,7 @@ wget -P ~/Downloads/ http://www.cril.univ-artois.fr/~vidal/cpt/cpt-1.0.tar.gz
 tar -xvzf ~/Downloads/cpt-1.0.tar.gz -C ~/Downloads/
 rm -Rf ~/Downloads/cpt-1.0.tar.gz
 cd ~/Downloads/cpt-1.0/
-<div class="codebox">
-./build fast
+<div class="codebox">./build fast
 </div>
 
 <br/>
@@ -388,8 +373,7 @@ cd ~/dev/z3/
 python scripts/mk_make.py
 cd build
 make
-<div class="codebox">
-sudo make install
+<div class="codebox">sudo make install
 </div>
 
 <br/>
@@ -399,8 +383,7 @@ git clone https://github.com/bluescarni/piranha ~/dev/piranha/
 mkdir ~/dev/piranha/build/
 cd ~/dev/piranha/build/
 cmake ../
-<div class="codebox">
-sudo make install
+<div class="codebox">sudo make install
 </div>
 
 <br/>
@@ -412,8 +395,7 @@ cd ~/dev/SMTPlan/SMTPlan/
 mkdir build
 cd build
 cmake ..
-<div class="codebox">
-make
+<div class="codebox">make
 </div>
 
 <br/>
@@ -424,8 +406,7 @@ tar -xvzf ~/Downloads/appl-0.96.tar.gz -C ~/dev/
 rm -f ~/Downloads/appl-0.96.tar.gz
 mv -f ~/dev/appl-0.96 ~/dev/appl
 cd ~/dev/appl/src/
-<div class="codebox">
-make
+<div class="codebox">make
 </div>
 
 <br/>
@@ -434,8 +415,7 @@ make
 git clone https://github.com/ssanner/rddlsim.git ~/dev/rddlsim/
 cd ~/dev/rddlsim/
 sudo chmod +x compile
-<div class="codebox">
-./compile
+<div class="codebox">./compile
 </div>
 
 <br/>
@@ -446,22 +426,19 @@ cd ~/dev/prost/src/search
 make
 cd ~/dev/prost/src/rddl_parser
 make
-<div class="codebox">
-ln -s ~/dev/rddlsim/ ~/dev/prost/testbed/rddlsim
+<div class="codebox">ln -s ~/dev/rddlsim/ ~/dev/prost/testbed/rddlsim
 </div>
 
 <br/>
  Sample domains
 
-<div class="codebox">
-git clone https://github.com/gilbertoamarcon/domains.git ~/dev/domains/
+<div class="codebox">git clone https://github.com/gilbertoamarcon/domains.git ~/dev/domains/
 </div>
 
 <br/>
  Planning Domains
 
-<div class="codebox">
-git clone https://github.com/aldukeman/planning-domains.git ~/dev/planning-domains/
+<div class="codebox">git clone https://github.com/aldukeman/planning-domains.git ~/dev/planning-domains/
 </div>
 
 <br/>
@@ -470,8 +447,7 @@ git clone https://github.com/aldukeman/planning-domains.git ~/dev/planning-domai
 git clone https://antondukeman.com/gitlab/aldukeman/val.git ~/dev/val/
 cd ~/dev/val/
 cmake .
-<div class="codebox">
-make
+<div class="codebox">make
 </div>
 
 <br/>
@@ -480,8 +456,7 @@ make
 wget -P ~/Downloads/ https://fai.cs.uni-saarland.de/hoffmann/ff/FF-v2.3.tgz
 tar -xvzf ~/Downloads/FF-v2.3.tgz -C ~/Downloads/
 cd ~/Downloads/FF-v2.3
-<div class="codebox">
-make
+<div class="codebox">make
 </div>
 
 <br/>
@@ -490,8 +465,7 @@ make
 hg clone http://hg.fast-downward.org ~/dev/fd/
 cd ~/dev/fd/
 ./build.py
-<div class="codebox">
-cp ${TOOLS}plan ~/dev/fd/
+<div class="codebox">cp ${TOOLS}plan ~/dev/fd/
 </div>
 
 <br/>
@@ -499,8 +473,7 @@ cp ${TOOLS}plan ~/dev/fd/
 
 rm -Rf ~/Downloads/*
 sudo apt-get --yes autoremove
-<div class="codebox">
-sudo reboot
+<div class="codebox">sudo reboot
 </div>
 
 <br/>

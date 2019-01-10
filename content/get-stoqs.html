@@ -127,8 +127,7 @@
 <br/>
  Backing up present working directory
 
-<div class="codebox">
-hdir=$(pwd)
+<div class="codebox">hdir=$(pwd)
 </div>
 
 sdir=~/Vagrants/stoqsvm
@@ -137,8 +136,7 @@ sdir=~/Vagrants/stoqsvm
  Vagrant
 
 wget -P ~/Downloads/ https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
-<div class="codebox">
-sudo dpkg -i ~/Downloads/vagrant_2.0.1_x86_64.deb
+<div class="codebox">sudo dpkg -i ~/Downloads/vagrant_2.0.1_x86_64.deb
 </div>
 
 <br/>
@@ -151,8 +149,7 @@ curl "https://raw.githubusercontent.com/stoqs/stoqs/master/provision.sh" -o prov
 vagrant plugin install vagrant-vbguest
 vagrant up --provider virtualbox
 cd $hdir
-<div class="codebox">
-exit 0
+<div class="codebox">exit 0
 </div>
 
 <br/>
@@ -162,8 +159,7 @@ cd ~/Vagrants/stoqsvm/
 vagrant ssh -- -X   # Wait for [vagrant@localhost ~]$ prompt
 cd ~/dev/stoqsgit && source venv-stoqs/bin/activate
 export DATABASE_URL=postgis://stoqsadm:CHANGEME@127.0.0.1:5432/stoqs
-<div class="codebox">
-./test.sh CHANGEME
+<div class="codebox">./test.sh CHANGEME
 </div>
 
 <br/>
@@ -173,11 +169,10 @@ cd ~/Vagrants/stoqsvm/
 vagrant ssh -- -X   # Wait for [vagrant@localhost ~]$ prompt
 cd ~/dev/stoqsgit && source venv-stoqs/bin/activate
 export DATABASE_URL=postgis://stoqsadm:CHANGEME@127.0.0.1:5432/stoqs
-<div class="codebox">
-stoqs/manage.py runserver 0.0.0.0:8000 --settings=config.settings.local
+<div class="codebox">stoqs/manage.py runserver 0.0.0.0:8000 --settings=config.settings.local
 </div>
 
-http://localhost:8000#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>
+http://localhost:8000#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>
 				<article/>
 
 			</div>

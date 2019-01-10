@@ -130,22 +130,19 @@
 <br/>
  Launch jackal world in Gazebo
 
-<div class="codebox">
-roslaunch jackal_gazebo jackal_world.launch config:=front_laser world_name:=$(rospack find testbed)/worlds/arena.world
+<div class="codebox">roslaunch jackal_gazebo jackal_world.launch config:=front_laser world_name:=$(rospack find testbed)/worlds/arena.world
 </div>
 
 <br/>
  Launch map navigation
 
-<div class="codebox">
-roslaunch jackal_navigation amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml
+<div class="codebox">roslaunch jackal_navigation amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml
 </div>
 
 <br/>
  Launch Rviz for localization
 
-<div class="codebox">
-roslaunch jackal_viz view_robot.launch config:=localization
+<div class="codebox">roslaunch jackal_viz view_robot.launch config:=localization
 </div>
 
 
@@ -154,29 +151,25 @@ roslaunch jackal_viz view_robot.launch config:=localization
 <br/>
  Launch jackal world in Gazebo
 
-<div class="codebox">
-roslaunch jackal_gazebo jackal_world.launch config:=front_laser world_name:=$(rospack find testbed)/worlds/arena.world
+<div class="codebox">roslaunch jackal_gazebo jackal_world.launch config:=front_laser world_name:=$(rospack find testbed)/worlds/arena.world
 </div>
 
 <br/>
  Launch gmaping
 
-<div class="codebox">
-roslaunch jackal_navigation gmapping_demo.launch
+<div class="codebox">roslaunch jackal_navigation gmapping_demo.launch
 </div>
 
 <br/>
  Launch Rviz for mapping
 
-<div class="codebox">
-roslaunch jackal_viz view_robot.launch config:=gmapping
+<div class="codebox">roslaunch jackal_viz view_robot.launch config:=gmapping
 </div>
 
 <br/>
  Saving map
 
-<div class="codebox">
-rosrun map_server map_saver -f ~/Documents/map
+<div class="codebox">rosrun map_server map_saver -f ~/Documents/map
 </div>
 
 <br/>

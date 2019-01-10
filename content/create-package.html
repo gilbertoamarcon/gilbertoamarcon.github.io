@@ -131,15 +131,13 @@
 wsname=$1
 paname=$2
 shift
-<div class="codebox">
-shift
+<div class="codebox">shift
 </div>
 
 <br/>
  Backing up present working directory
 
-<div class="codebox">
-hdir=$(pwd)
+<div class="codebox">hdir=$(pwd)
 </div>
 
 <br/>
@@ -150,15 +148,13 @@ cd ~/ros-ws/$wsname/src/
 echo catkin_create_pkg $paname rospy "$@"
 catkin_create_pkg $paname rospy "$@"
 source ~/ros-ws/$wsname/devel/setup.bash
-<div class="codebox">
-source ~/.bashrc
+<div class="codebox">source ~/.bashrc
 </div>
 
 <br/>
  Back to original working directory
 
-<div class="codebox">
-cd $hdir
+<div class="codebox">cd $hdir
 </div>
 
 <br/>

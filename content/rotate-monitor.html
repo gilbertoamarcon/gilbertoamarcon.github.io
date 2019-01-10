@@ -130,22 +130,19 @@
 <br/>
  Monitor ID
 
-<div class="codebox">
-m=$1
+<div class="codebox">m=$1
 </div>
 
 <br/>
  Orientation: left right inverted normal
 
-<div class="codebox">
-o=$2
+<div class="codebox">o=$2
 </div>
 
 <br/>
  Getting Monitor List
 
-<div class="codebox">
-monitors=($(xrandr -q | grep '\bconnected\b' | while read -r l; do echo "$l" | awk '{print $1;}'; done))
+<div class="codebox">monitors=($(xrandr -q | grep '\bconnected\b' | while read -r l; do echo "$l" | awk '{print $1;}'; done))
 </div>
 
 <br/>
