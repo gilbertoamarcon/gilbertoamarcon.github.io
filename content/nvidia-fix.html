@@ -48,12 +48,14 @@
 						<li><a href=get-stoqs.html class=menu_button>STOQS Setup						</a></li>
 						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
 						<li><a href=gplib.html class=menu_button>						</a></li>
+						<li><a href=kernel-update.html class=menu_button>						</a></li>
 						<li><a href=kernel-wifi.html class=menu_button>						</a></li>
 						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
 						<li><a href=madp.html class=menu_button>MADP						</a></li>
 						<li><a href=mdpsim.html class=menu_button>						</a></li>
 						<li><a href=mendeley.html class=menu_button>						</a></li>
 						<li><a href=nvidia-fix.html class=menu_button>Nvidia Drivers Fix						</a></li>
+						<li><a href=nvidia-setup.html class=menu_button>Nvidia Drivers						</a></li>
 						<li><a href=pdf-chop.html class=menu_button>PDF Chop						</a></li>
 						<li><a href=personal-page.html class=menu_button>Update Personal Page Website						</a></li>
 						<li><a href=pi-backup.html class=menu_button>Raspberry Pi Backup						</a></li>
@@ -131,9 +133,9 @@ sudo service lightdm stop
 sudo apt-get purge nvidia-*
 sudo apt-get autoremove
 sudo apt-get clean
-sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo add-apt-repository ppa:graphics-drivers/ppa -y
 sudo apt-get update
-sudo apt-get install nvidia-375
+sudo apt-get install nvidia-415
 <div class="codebox">sudo reboot
 </div>
 

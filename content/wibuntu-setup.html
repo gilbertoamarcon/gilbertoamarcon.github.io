@@ -48,12 +48,14 @@
 						<li><a href=get-stoqs.html class=menu_button>STOQS Setup						</a></li>
 						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
 						<li><a href=gplib.html class=menu_button>						</a></li>
+						<li><a href=kernel-update.html class=menu_button>						</a></li>
 						<li><a href=kernel-wifi.html class=menu_button>						</a></li>
 						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
 						<li><a href=madp.html class=menu_button>MADP						</a></li>
 						<li><a href=mdpsim.html class=menu_button>						</a></li>
 						<li><a href=mendeley.html class=menu_button>						</a></li>
 						<li><a href=nvidia-fix.html class=menu_button>Nvidia Drivers Fix						</a></li>
+						<li><a href=nvidia-setup.html class=menu_button>Nvidia Drivers						</a></li>
 						<li><a href=pdf-chop.html class=menu_button>PDF Chop						</a></li>
 						<li><a href=personal-page.html class=menu_button>Update Personal Page Website						</a></li>
 						<li><a href=pi-backup.html class=menu_button>Raspberry Pi Backup						</a></li>
@@ -114,7 +116,7 @@
 
 				<article>
 
-	
+
 <br/>
  Updates/Upgrades
 
@@ -138,25 +140,21 @@ git config --global user.email "gilbertoamarcon@gmail.com"
 <div class="codebox">git config --global user.name "Gilberto Marcon"
 </div>
 
-printf "\n# TOOLS:\nexport TOOLS='/mnt/c/Users/Gilberto\ Antonio/Dropbox/Docs/tools/'\n" >> ${HOME}/.bashrc
+printf "\n# TOOLS:\nexport TOOLS='/mnt/c/Users/gilbe/Dropbox/Docs/tools/'\n" >> ${HOME}/.bashrc
 
-<div class="codebox">cp sublime-text-3/* /mnt/c/Users/Gilberto\ Antonio/AppData/Roaming/Sublime\ Text\ 3/Packages/User/
+<div class="codebox">cp sublime-text-3/* /mnt/c/Users/gilbe/AppData/Roaming/Sublime\ Text\ 3/Packages/User/
 </div>
 
 printf "\n# Sublime:\nalias subl=subl.exe\n" >> ${HOME}/.bashrc
 
 sudo ln -s /mnt/c/Program\ Files/Sublime\ Text\ 3/subl.exe /usr/bin/
  
-ln -s /mnt/c/Users/Gilberto\ Antonio/Desktop/ ${HOME}/
-ln -s /mnt/c/Users/Gilberto\ Antonio/Dropbox/ ${HOME}/
-ln -s /mnt/c/Users/Gilberto\ Antonio/Documents/ ${HOME}/
-ln -s /mnt/c/Users/Gilberto\ Antonio/Downloads/ ${HOME}/
-<br/>
- ln -s /mnt/c/Users/gilbe/Dropbox/OSU/research/sea/unity ${HOME}/
-
-<br/>
- ln -s /mnt/c/Users/Gilberto\ Antonio/Dropbox/OSU/research/sea/unity ${HOME}/
-
+ln -s /mnt/c/Users/gilbe/Desktop/ ${HOME}/
+ln -s /mnt/c/Users/gilbe/Dropbox/ ${HOME}/
+ln -s /mnt/c/Users/gilbe/Documents/ ${HOME}/
+ln -s /mnt/c/Users/gilbe/Downloads/ ${HOME}/
+<div class="codebox">ln -s /mnt/c/Users/gilbe/Dropbox/OSU/research/sea/unity ${HOME}/
+</div>
 
 <br/>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/wibuntu-setup.sh target=_blank>Follow this link for the raw script.</a>
