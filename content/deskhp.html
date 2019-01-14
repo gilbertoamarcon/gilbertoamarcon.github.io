@@ -20,7 +20,7 @@
 				<div id="menu">
 					<ul>
 
-						<li><a href=apt-gets.html class=menu_button>						</a></li>
+						<li><a href=apt-gets.html class=menu_button>Common packages						</a></li>
 						<li><a href=atom.html class=menu_button>						</a></li>
 						<li><a href=backup-sublime.html class=menu_button>						</a></li>
 						<li><a href=bash.html class=menu_button>Basic Bash 						</a></li>
@@ -57,11 +57,13 @@
 						<li><a href=nvidia-fix.html class=menu_button>Nvidia Drivers Fix						</a></li>
 						<li><a href=nvidia-setup.html class=menu_button>Nvidia Drivers						</a></li>
 						<li><a href=pdf-chop.html class=menu_button>PDF Chop						</a></li>
+						<li><a href=personal.html class=menu_button>Personal						</a></li>
 						<li><a href=personal-page.html class=menu_button>Update Personal Page Website						</a></li>
 						<li><a href=pi-backup.html class=menu_button>Raspberry Pi Backup						</a></li>
 						<li><a href=pi-cam-client.html class=menu_button>Rasp Cam Client						</a></li>
 						<li><a href=pi-cam-server.html class=menu_button>Rasp Cam Server						</a></li>
 						<li><a href=pi-cam-server-setup.html class=menu_button>Rasp Cam Server Setup						</a></li>
+						<li><a href=planning.html class=menu_button>Planning						</a></li>
 						<li><a href=printer-graf.html class=menu_button>Printer Graf 						</a></li>
 						<li><a href=prost.html class=menu_button>						</a></li>
 						<li><a href=ps3-joy.html class=menu_button>						</a></li>
@@ -140,6 +142,12 @@
 </div>
 
 <br/>
+ Personal apt-get upgrades
+
+<div class="codebox">./personal.sh
+</div>
+
+<br/>
  Git config
 
 git config --global user.email "gilbertoamarcon@gmail.com"
@@ -150,8 +158,8 @@ git config --global user.email "gilbertoamarcon@gmail.com"
  Terminator
 
 sudo apt-get --yes install terminator
-sudo cp -Rf terminator ~/.config/
-<div class="codebox">sudo chmod +x ~/.config/terminator/
+sudo cp -Rf terminator ${HOME}/.config/
+<div class="codebox">sudo chmod +x ${HOME}/.config/terminator/
 </div>
 
 <br/>
@@ -182,7 +190,7 @@ sudo cp -Rf terminator ~/.config/
 <br/>
  Color Terminal
 
-<div class="codebox">sed -i '/force_color_prompt=yes/s/^#//g' ~/.bashrc
+<div class="codebox">sed -i '/force_color_prompt=yes/s/^#//g' ${HOME}/.bashrc
 </div>
 
 <br/>
@@ -192,17 +200,10 @@ sudo cp -Rf terminator ~/.config/
 </div>
 
 <br/>
- # Eclipse
-
-<br/>
- sudo ./eclipse.sh
-
-
-<br/>
  Website
 
 <br/>
- git clone git@github.com:gilbertoamarcon/gilbertoamarcon.github.io.git ~/dev/gilbertoamarcon.github.io
+ git clone git@github.com:gilbertoamarcon/gilbertoamarcon.github.io.git ${HOME}/dev/gilbertoamarcon.github.io
 
 
 <br/>
@@ -214,7 +215,7 @@ sudo cp -Rf terminator ~/.config/
 <br/>
  Removing Examples folder
 
-<div class="codebox">rm -Rf ~/examples.desktop
+<div class="codebox">rm -Rf ${HOME}/examples.desktop
 </div>
 
 <br/>

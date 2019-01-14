@@ -119,24 +119,77 @@
 
 				<article>
 
-run_main(){
-	echo "Start"
-	./main s
-	echo "End"
-}
-rm main
-gcc main.c -o main -O0
-<br/>
- ulimit -v 1024
+
+
+<h2> Planning</h2>
 
 <br/>
- ulimit -v 10485760
+ Setting up the planning environment
 
-ulimit -t 3
-run_main
-echo ${PIPESTATUS[0]}
-proccess=$SECONDS
-echo "Exit: $proccess s"#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>#<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/run.sh target=_blank>Follow this link for the raw script.</a>
+<br/>
+
+
+
+<br/>
+ Common pre-compiled libraries setup
+
+sudo apt-get -y install python-pip
+sudo -H pip install --upgrade pip
+sudo -H pip install graphviz==0.10.1
+sudo -H pip install lark==0.0.4
+sudo -H pip install lark_parser==0.6.5
+sudo -H pip install matplotlib==1.5.1
+sudo -H pip install networkx==2.2
+sudo -H pip install numpy==1.15.4
+sudo -H pip install oyaml==0.7
+sudo -H pip install pandas==0.23.4
+sudo -H pip install yattag==1.10.1
+sudo apt-get -y install graphviz
+sudo apt-get -y install maven
+sudo apt-get -y install yaml-cpp
+sudo apt-get -y install qt5-default
+sudo apt-get -y install dvipng
+sudo apt-get -y install texlive
+sudo apt-get -y install texlive-full
+sudo apt-get -y install texlive-latex-extra
+<div class="codebox">sudo apt-get -y install texlive-fonts-recommended 
+</div>
+
+
+<br/>
+ Dev directory
+
+<div class="codebox">mkdir -p ${HOME}/dev/
+</div>
+
+<br/>
+ Core repositories
+
+git clone git@gitlab.com:human-machine-teaming/planning/cfmatup.git ${HOME}/dev/cfmatup
+git clone git@gitlab.com:human-machine-teaming/planning/apl-mapl.git ${HOME}/dev/apl-mapl
+git clone git@gitlab.com:human-machine-teaming/planning/mapl-problems.git ${HOME}/dev/mapl-problems
+git clone git@gitlab.com:human-machine-teaming/planning/mapl-results.git ${HOME}/dev/mapl-results
+git clone git@gitlab.com:human-machine-teaming/planning/mapl-results.git ${HOME}/dev/mapl-gen
+<div class="codebox">mkdir -p ${HOME}/dev/cfmatup/sandbox
+</div>
+
+<br/>
+ Actuplan setup
+
+git clone git@gitlab.com:human-machine-teaming/planning/actuplan-dev.git 
+cd ${HOME}/dev/actuplan-dev
+<div class="codebox">./scripts/setup.sh
+</div>
+
+<br/>
+ i-CiFHaR setup
+
+git clone git@gitlab.com:human-machine-teaming/planning/icifhar.git ${HOME}/dev/icifhar
+cd ${HOME}/dev/icifhar
+./scripts/setup.sh
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/planning.sh target=_blank>Follow this link for the raw script.</a>
+
 				<article/>
 
 			</div>
