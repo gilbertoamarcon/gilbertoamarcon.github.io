@@ -121,50 +121,33 @@
 
 
 
-<h2> Create a ROS Package</h2>
-
+<h2>Create a ROS Package</h2>
+Usage:
 <br/>
- Usage:
-
-<br/>
- ./create-package.sh workspace-name package-name
-
+./create-package.sh workspace-name package-name
 <br/>
 
-
-
-wsname=$1
+<br/>
+<div class="codebox">wsname=$1
 paname=$2
 shift
-<div class="codebox">shift
-</div>
-
+shift</div>
+Backing up present working directory
 <br/>
- Backing up present working directory
-
-<div class="codebox">hdir=$(pwd)
-</div>
-
+<div class="codebox">hdir=$(pwd)</div>
+Package creation
 <br/>
- Package creation
-
-printf "Creating package at: \\n$HOME/ros-ws/$wsname/src/\\n"
+<div class="codebox">printf "Creating package at: \\n$HOME/ros-ws/$wsname/src/\\n"
 cd ~/ros-ws/$wsname/src/
 echo catkin_create_pkg $paname rospy "$@"
 catkin_create_pkg $paname rospy "$@"
 source ~/ros-ws/$wsname/devel/setup.bash
-<div class="codebox">source ~/.bashrc
-</div>
-
+source ~/.bashrc</div>
+Back to original working directory
 <br/>
- Back to original working directory
-
-<div class="codebox">cd $hdir
-</div>
-
-<br/>
+<div class="codebox">cd $hdir</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-package.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

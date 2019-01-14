@@ -121,19 +121,14 @@
 
 
 
-<h2> Planning</h2>
-
-<br/>
- Setting up the planning environment
-
+<h2>Planning</h2>
+Setting up the planning environment
 <br/>
 
-
-
 <br/>
- Common pre-compiled libraries setup
-
-sudo apt-get -y install python-pip
+Common pre-compiled libraries setup
+<br/>
+<div class="codebox">sudo apt-get -y install python-pip
 sudo -H pip install --upgrade pip
 sudo -H pip install graphviz==0.10.1
 sudo -H pip install lark==0.0.4
@@ -152,44 +147,30 @@ sudo apt-get -y install dvipng
 sudo apt-get -y install texlive
 sudo apt-get -y install texlive-full
 sudo apt-get -y install texlive-latex-extra
-<div class="codebox">sudo apt-get -y install texlive-fonts-recommended 
-</div>
-
-
+sudo apt-get -y install texlive-fonts-recommended </div>
+Dev directory
 <br/>
- Dev directory
-
-<div class="codebox">mkdir -p ${HOME}/dev/
-</div>
-
+<div class="codebox">mkdir -p ${HOME}/dev/</div>
+Core repositories
 <br/>
- Core repositories
-
-git clone git@gitlab.com:human-machine-teaming/planning/cfmatup.git ${HOME}/dev/cfmatup
+<div class="codebox">git clone git@gitlab.com:human-machine-teaming/planning/cfmatup.git ${HOME}/dev/cfmatup
 git clone git@gitlab.com:human-machine-teaming/planning/apl-mapl.git ${HOME}/dev/apl-mapl
 git clone git@gitlab.com:human-machine-teaming/planning/mapl-problems.git ${HOME}/dev/mapl-problems
 git clone git@gitlab.com:human-machine-teaming/planning/mapl-results.git ${HOME}/dev/mapl-results
 git clone git@gitlab.com:human-machine-teaming/planning/mapl-results.git ${HOME}/dev/mapl-gen
-<div class="codebox">mkdir -p ${HOME}/dev/cfmatup/sandbox
-</div>
-
+mkdir -p ${HOME}/dev/cfmatup/sandbox</div>
+Actuplan setup
 <br/>
- Actuplan setup
-
-git clone git@gitlab.com:human-machine-teaming/planning/actuplan-dev.git 
+<div class="codebox">git clone git@gitlab.com:human-machine-teaming/planning/actuplan-dev.git 
 cd ${HOME}/dev/actuplan-dev
-<div class="codebox">./scripts/setup.sh
-</div>
-
+./scripts/setup.sh</div>
+i-CiFHaR setup
 <br/>
- i-CiFHaR setup
-
-git clone git@gitlab.com:human-machine-teaming/planning/icifhar.git ${HOME}/dev/icifhar
+<div class="codebox">git clone git@gitlab.com:human-machine-teaming/planning/icifhar.git ${HOME}/dev/icifhar
 cd ${HOME}/dev/icifhar
-./scripts/setup.sh
-<br/>
+./scripts/setup.sh</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/planning.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

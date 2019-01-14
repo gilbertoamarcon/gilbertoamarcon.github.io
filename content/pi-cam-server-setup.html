@@ -121,16 +121,12 @@
 
 
 
-<h2> Rasp Cam Server Setup</h2>
-
-<br/>
- This Script will setup the Raspberry Pi Camera Server
-
+<h2>Rasp Cam Server Setup</h2>
+This Script will setup the Raspberry Pi Camera Server
 <br/>
 
-
-
-curl http://www.linux-projects.org/listing/uv4l_repo/lrkey.asc | sudo apt-key add -
+<br/>
+<div class="codebox">curl http://www.linux-projects.org/listing/uv4l_repo/lrkey.asc | sudo apt-key add -
 sudo nano /etc/apt/sources.list
 deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/ jessie main
 sudo apt-get update
@@ -143,9 +139,7 @@ uv4l --help --driver raspicam --driver-help
 uv4l --driver raspicam --auto-video_nr --width 640 --height 480 --encoding jpeg
 dd if=/dev/video0 of=snapshot.jpeg bs=11M count=1
 sudo apt-get install uv4l-server uv4l-uvc uv4l-xscreen uv4l-mjpegstream uv4l-dummy uv4l-raspidisp
-<div class="codebox">sudo apt-get install uv4l-webrtc
-</div>
-
+sudo apt-get install uv4l-webrtc
 sudo apt-get install cmake
 sudo apt-get install liblivemedia-dev liblog4cpp5-dev
 wget http://www.live555.com/liveMedia/public/live555-latest.tar.gz -O - | tar xvzf -
@@ -156,10 +150,9 @@ git clone https://github.com/mpromonet/v4l2rtspserver.git
 cd v4l2rtspserver
 cmake . && make
 cd ~/v4l2rtspserver
-./v4l2rtspserver -W 320 -H 240 -F 5 -P 8554 /dev/video0
-<br/>
+./v4l2rtspserver -W 320 -H 240 -F 5 -P 8554 /dev/video0</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/pi-cam-server-setup.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

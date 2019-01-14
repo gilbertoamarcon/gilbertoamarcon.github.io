@@ -121,116 +121,68 @@
 
 
 
-<h2> SSH Login</h2>
-
-<br/>
- Here are some basic SSH commands that save me up a lot of time.
-
+<h2>SSH Login</h2>
+Here are some basic SSH commands that save me up a lot of time.
 <br/>
 
-
-
 <br/>
- SSH login to remote server
-
-ssh -l marcondg shell.onid.oregonstate.edu
-<div class="codebox">ssh -l marcondg access.engr.oregonstate.edu
-</div>
-
+SSH login to remote server
 <br/>
- SSH login to remote server with graphics
-
-<div class="codebox">ssh -X -l marcondg access.engr.oregonstate.edu
-</div>
-
-
-<h2> File Copy</h2>
-
+<div class="codebox">ssh -l marcondg shell.onid.oregonstate.edu
+ssh -l marcondg access.engr.oregonstate.edu</div>
+SSH login to remote server with graphics
 <br/>
- Copying a file from local to host
+<div class="codebox">ssh -X -l marcondg access.engr.oregonstate.edu</div>
 
-scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@shell.onid.oregonstate.edu:public_html/
-<div class="codebox">scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@access.engr.oregonstate.edu:public_html/
-</div>
-
+<h2>File Copy</h2>
+Copying a file from local to host
 <br/>
- Copying a file from host to local
-
-<div class="codebox">scp marcondg@access.engr.oregonstate.edu:public_html/index.html ~/Dropbox/Apps/Pancake.io/ 
-</div>
-
+<div class="codebox">scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@shell.onid.oregonstate.edu:public_html/
+scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@access.engr.oregonstate.edu:public_html/</div>
+Copying a file from host to local
 <br/>
- Copying an entire folder
-
-scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@shell.onid.oregonstate.edu:public_html/
-<div class="codebox">scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@access.engr.oregonstate.edu:public_html/
-</div>
-
+<div class="codebox">scp marcondg@access.engr.oregonstate.edu:public_html/index.html ~/Dropbox/Apps/Pancake.io/ </div>
+Copying an entire folder
 <br/>
- Set up execute and read permissions on all files on all folders recursivelly
-
-<div class="codebox">chmod -R +xr *
-</div>
-
-
-<h2> Remote folder Mount</h2>
-
+<div class="codebox">scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@shell.onid.oregonstate.edu:public_html/
+scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@access.engr.oregonstate.edu:public_html/</div>
+Set up execute and read permissions on all files on all folders recursivelly
 <br/>
- Remote server
+<div class="codebox">chmod -R +xr *</div>
 
-mkdir ~/eng/
-<div class="codebox">sshfs marcondg@access.engr.oregonstate.edu: ~/eng/
-</div>
-
+<h2>Remote folder Mount</h2>
+Remote server
 <br/>
- Raspberry Pi
-
-mkdir ~/pi/
-<div class="codebox">sshfs pi@rasp: ~/pi/
-</div>
-
-
-<h2> SSH login without password</h2>
-
+<div class="codebox">mkdir ~/eng/
+sshfs marcondg@access.engr.oregonstate.edu: ~/eng/</div>
+Raspberry Pi
 <br/>
- Use this to create your key. Hit ENTER for every prompt.
+<div class="codebox">mkdir ~/pi/
+sshfs pi@rasp: ~/pi/</div>
 
-<div class="codebox">ssh-keygen -t rsa
-</div>
-
+<h2>SSH login without password</h2>
+Use this to create your key. Hit ENTER for every prompt.
 <br/>
- Create a .ssh directory on the remote server user home folder
-
-<div class="codebox">ssh marcondg@shell.onid.oregonstate.edu mkdir -p ~/.ssh
-</div>
-
+<div class="codebox">ssh-keygen -t rsa</div>
+Create a .ssh directory on the remote server user home folder
 <br/>
- Copy your key to the remote server .ssh folder
-
-cat ~/.ssh/id_rsa.pub | ssh marcondg@shell.onid.oregonstate.edu 'cat >> ~/.ssh/authorized_keys'
-<div class="codebox">cat ~/.ssh/id_rsa.pub | ssh aadi1@aadi1 'cat >> ~/.ssh/authorized_keys'
-</div>
-
+<div class="codebox">ssh marcondg@shell.onid.oregonstate.edu mkdir -p ~/.ssh</div>
+Copy your key to the remote server .ssh folder
 <br/>
- Now you can SSH login without typing the password.
-
-
-
-<h2> TEACH class path</h2>
-<div class="codebox">cd /nfs/farm/classes/eecs/spring2017/cs325/handin
-</div>
-
+<div class="codebox">cat ~/.ssh/id_rsa.pub | ssh marcondg@shell.onid.oregonstate.edu 'cat >> ~/.ssh/authorized_keys'
+cat ~/.ssh/id_rsa.pub | ssh aadi1@aadi1 'cat >> ~/.ssh/authorized_keys'</div>
+Now you can SSH login without typing the password.
 <br/>
- Sending terminal commands over SSH withough actual login examples:
 
-ssh pi@rasp '~/mobile/bin/driver'
+<h2>TEACH class path</h2>
+<div class="codebox">cd /nfs/farm/classes/eecs/spring2017/cs325/handin</div>
+Sending terminal commands over SSH withough actual login examples:
+<br/>
+<div class="codebox">ssh pi@rasp '~/mobile/bin/driver'
 ssh pi@rasp '~/mobile/cam_server.sh'
-<div class="codebox">ssh pi@rasp '~/mobile/teleop.sh'
-</div>
-
-<br/>
+ssh pi@rasp '~/mobile/teleop.sh'</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ssh.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

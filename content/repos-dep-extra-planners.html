@@ -121,153 +121,104 @@
 
 
 
-<h2> Repos Dependencies</h2>
-
-<br/>
- This script will install and configure all repos dependencies.
-
+<h2>Repos Dependencies</h2>
+This script will install and configure all repos dependencies.
 <br/>
 
-
-
 <br/>
- YAHSP2
-
+YAHSP2
 <br/>
- git clone https://github.com/aldukeman/yahsp2.git ${HOME}/dev/yahsp2/
-
+git clone https://github.com/aldukeman/yahsp2.git ${HOME}/dev/yahsp2/
 <br/>
- cd ${HOME}/dev/yahsp2/
-
+cd ${HOME}/dev/yahsp2/
 <br/>
- ./build
-
-
+./build
 <br/>
- CPT
-
-wget -P ${HOME}/Downloads/ http://www.cril.univ-artois.fr/${HOME}vidal/cpt/cpt-1.0.tar.gz
+CPT
+<br/>
+<div class="codebox">wget -P ${HOME}/Downloads/ http://www.cril.univ-artois.fr/${HOME}vidal/cpt/cpt-1.0.tar.gz
 tar -xvzf ${HOME}/Downloads/cpt-1.0.tar.gz -C ${HOME}/Downloads/
 rm -Rf ${HOME}/Downloads/cpt-1.0.tar.gz
 cd ${HOME}/Downloads/cpt-1.0/
-<div class="codebox">./build fast
-</div>
-
+./build fast</div>
+Z3
 <br/>
- Z3
-
-git clone https://github.com/Z3Prover/z3 ${HOME}/dev/z3/
+<div class="codebox">git clone https://github.com/Z3Prover/z3 ${HOME}/dev/z3/
 cd ${HOME}/dev/z3/
 python scripts/mk_make.py
 cd build
 make
-<div class="codebox">sudo make install
-</div>
-
+sudo make install</div>
+Piranha
 <br/>
- Piranha
-
-git clone https://github.com/bluescarni/piranha ${HOME}/dev/piranha/
+<div class="codebox">git clone https://github.com/bluescarni/piranha ${HOME}/dev/piranha/
 mkdir ${HOME}/dev/piranha/build/
 cd ${HOME}/dev/piranha/build/
 cmake ../
-<div class="codebox">sudo make install
-</div>
-
+sudo make install</div>
+SMTPlan+
 <br/>
- SMTPlan+
-
-git clone https://github.com/KCL-Planning/SMTPlan.git ${HOME}/dev/SMTPlan/
+<div class="codebox">git clone https://github.com/KCL-Planning/SMTPlan.git ${HOME}/dev/SMTPlan/
 sed -i '15i\set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wno-deprecated-declarations")' ${HOME}/dev/SMTPlan/SMTPlan/CMakeLists.txt
 cd ${HOME}/dev/SMTPlan/SMTPlan/
 mkdir build
 cd build
 cmake ..
-<div class="codebox">make
-</div>
-
+make</div>
+APPL
 <br/>
- APPL
-
-wget -P ${HOME}/Downloads/ http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/uploads/Main/appl-0.96.tar.gz
+<div class="codebox">wget -P ${HOME}/Downloads/ http://bigbird.comp.nus.edu.sg/pmwiki/farm/appl/uploads/Main/appl-0.96.tar.gz
 tar -xvzf ${HOME}/Downloads/appl-0.96.tar.gz -C ${HOME}/dev/
 rm -f ${HOME}/Downloads/appl-0.96.tar.gz
 mv -f ${HOME}/dev/appl-0.96 ${HOME}/dev/appl
 cd ${HOME}/dev/appl/src/
-<div class="codebox">make
-</div>
-
+make</div>
+SPUDD
 <br/>
- SPUDD
-
-git clone git@gitlab.com:human-machine-teaming/spudd.git ${HOME}/dev/spudd/
+<div class="codebox">git clone git@gitlab.com:human-machine-teaming/spudd.git ${HOME}/dev/spudd/
 cd ${HOME}/dev/spudd/
-<div class="codebox">./build.sh
-</div>
-
+./build.sh</div>
+RDDL
 <br/>
- RDDL
-
-git clone https://github.com/ssanner/rddlsim.git ${HOME}/dev/rddlsim/
+<div class="codebox">git clone https://github.com/ssanner/rddlsim.git ${HOME}/dev/rddlsim/
 cd ${HOME}/dev/rddlsim/
 sudo chmod +x compile
-<div class="codebox">./compile
-</div>
-
+./compile</div>
+Buddy
 <br/>
- Buddy
-
-wget -P ${HOME}/Downloads/ https://downloads.sourceforge.net/project/buddy/buddy/BuDDy%202.4/buddy-2.4.tar.gz
+<div class="codebox">wget -P ${HOME}/Downloads/ https://downloads.sourceforge.net/project/buddy/buddy/BuDDy%202.4/buddy-2.4.tar.gz
 tar -xvzf ${HOME}/Downloads/buddy-2.4.tar.gz -C ${HOME}/Downloads/
 cd ${HOME}/Downloads/buddy-2.4/
 ./configure --prefix=/
 make
 sudo make install
 cd ${HOME}
-<div class="codebox">rm -Rf ${HOME}/Downloads/buddy-2.4*
-</div>
-
+rm -Rf ${HOME}/Downloads/buddy-2.4*</div>
+PROST Install and Config
 <br/>
- PROST Install and Config
-
-<div class="codebox">./prost.sh
-</div>
-
+<div class="codebox">./prost.sh</div>
+Glutton
 <br/>
- Glutton
-
-git clone git@gitlab.com:human-machine-teaming/g-pack.git ${HOME}/dev/g-pack/
+<div class="codebox">git clone git@gitlab.com:human-machine-teaming/g-pack.git ${HOME}/dev/g-pack/
 cd ${HOME}/dev/g-pack/
-<div class="codebox">make
-</div>
-
+make</div>
+Fast Forward
 <br/>
- Fast Forward
-
-wget -P ${HOME}/Downloads/ https://fai.cs.uni-saarland.de/hoffmann/ff/FF-v2.3.tgz
+<div class="codebox">wget -P ${HOME}/Downloads/ https://fai.cs.uni-saarland.de/hoffmann/ff/FF-v2.3.tgz
 tar -xvzf ${HOME}/Downloads/FF-v2.3.tgz -C ${HOME}/Downloads/
 cd ${HOME}/Downloads/FF-v2.3
-<div class="codebox">make
-</div>
-
+make</div>
+Fast Downward
 <br/>
- Fast Downward
-
-hg clone http://hg.fast-downward.org ${HOME}/dev/fd/
+<div class="codebox">hg clone http://hg.fast-downward.org ${HOME}/dev/fd/
 cd ${HOME}/dev/fd/
 ./build.py
-<div class="codebox">cp ${TOOLS}plan ${HOME}/dev/fd/
-</div>
-
+cp ${TOOLS}plan ${HOME}/dev/fd/</div>
+Cleanup
 <br/>
- Cleanup
-
-<div class="codebox">rm -Rf ${HOME}/Downloads/*
-</div>
-
-<br/>
+<div class="codebox">rm -Rf ${HOME}/Downloads/*</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/repos-dep-extra-planners.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

@@ -121,92 +121,55 @@
 
 
 
-<h2> VAL PDF</h2>
-
-<br/>
- Generate plan PDF report.
-
+<h2>VAL PDF</h2>
+Generate plan PDF report.
 <br/>
 
-
-
 <br/>
- Usage:
-
+Usage:
 <br/>
- ./val-report.sh problem-dir objects-to-track
-
+./val-report.sh problem-dir objects-to-track
 <br/>
- Ex: ./val-report.sh ~/dev/domains/pddl/box rover
-
+Ex: ./val-report.sh ~/dev/domains/pddl/box rover
 <br/>
 
-
-
 <br/>
- Parameters
-
-<div class="codebox">FONT_SIZE=10
-</div>
-
+Parameters
 <br/>
- Input Argument Renaming
-
-pdir=$1
-<div class="codebox">obj=$2
-</div>
-
+<div class="codebox">FONT_SIZE=10</div>
+Input Argument Renaming
 <br/>
- Backing up present working directory
-
-<div class="codebox">hdir=$(pwd)
-</div>
-
+<div class="codebox">pdir=$1
+obj=$2</div>
+Backing up present working directory
 <br/>
- Go the the problem directory
-
+<div class="codebox">hdir=$(pwd)</div>
+Go the the problem directory
+<br/>
 <div class="codebox">cd $pdir
-</div>
-
 if [ -e domain.pddl ] && [ -e problem.pddl ] && [ -e solution ] && [ $(cat solution | wc -l) -gt 0 ]; then
-
 	# Cleanup
 	rm report* > /dev/null 2>&1
-<div class="codebox">	rm empty_prob.pddl > /dev/null 2>&1
-</div>
-
+	rm empty_prob.pddl > /dev/null 2>&1
 	# Generate the report
 	${HOME}/dev/val/validate -o $obj -o -f report -l domain.pddl problem.pddl solution
 	sed -i '/\\\documentclass/a \\\usepackage[maxfloats=100]{morefloats}' report.tex
 	sed -i 's/\\documentclass\[a4paper,[0-9]*pt\]/\\documentclass[a4paper,'$FONT_SIZE'pt]/g' report.tex
-<div class="codebox">	sed -i 's/[0-9]\+\.*[0-9]*e-[0-9]\+/0/g' report.tex
-</div>
-
+	sed -i 's/[0-9]\+\.*[0-9]*e-[0-9]\+/0/g' report.tex
 	# PDF Generation
-<div class="codebox">	pdflatex report.tex > /dev/null 2>&1
-</div>
-
+	pdflatex report.tex > /dev/null 2>&1
 	# Opening PDF
-<div class="codebox">	# evince report.pdf > /dev/null 2>&1 &
-</div>
-
+	# evince report.pdf > /dev/null 2>&1 &
 	# Cleanup
 	rm report.aux
 	rm report.log
-<div class="codebox">	rm report.tex
-</div>
-
-fi
-
+	rm report.tex
+fi</div>
+Back to original working directory
 <br/>
- Back to original working directory
-
-<div class="codebox">cd $hdir
-</div>
-
-<br/>
+<div class="codebox">cd $hdir</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/val-report.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

@@ -121,73 +121,41 @@
 
 
 
-<h2> ROS Erratic</h2>
-
-<br/>
- This scrip covers launching basic operations for erratic in ROS Indigo.
-
+<h2>ROS Erratic</h2>
+This scrip covers launching basic operations for erratic in ROS Indigo.
 <br/>
 
-
-
-
-<h2> Real Erratic</h2>
-
 <br/>
- SSH into the erratic (password: robotics2017):
 
-<div class="codebox">ssh tank@tank.engr.oregonstate.edu
-</div>
-
+<h2>Real Erratic</h2>
+SSH into the erratic (password: robotics2017):
 <br/>
- Launch these on the erratic:
-
-roslaunch erratic_player erratic_base.launch
+<div class="codebox">ssh tank@tank.engr.oregonstate.edu</div>
+Launch these on the erratic:
+<br/>
+<div class="codebox">roslaunch erratic_player erratic_base.launch
 roslaunch hokuyo_node hokuyo_test.launch
-<div class="codebox">rosrun hokuyo_node hokuyo_node
-</div>
-
+rosrun hokuyo_node hokuyo_node</div>
+Record scan and odom:
 <br/>
- Record scan and odom:
-
-<div class="codebox">rosbag record -j scan odom tf
-</div>
-
+<div class="codebox">rosbag record -j scan odom tf</div>
+Run roscore
 <br/>
- Run roscore
-
-<div class="codebox">roscore
-</div>
-
+<div class="codebox">roscore</div>
+Set the sim time param
 <br/>
- Set the sim time param
-
-<div class="codebox">rosparam set use_sim_time true
-</div>
-
+<div class="codebox">rosparam set use_sim_time true</div>
+Start gmapping:
 <br/>
- Start gmapping:
-
-<div class="codebox">rosrun gmapping slam_gmapping base_frame:=base_footprint
-</div>
-
+<div class="codebox">rosrun gmapping slam_gmapping base_frame:=base_footprint</div>
+Play the bag:
 <br/>
- Play the bag:
-
-<div class="codebox">rosbag play --clock -l 2017-05-10-19-03-41.bag
-</div>
-
+<div class="codebox">rosbag play --clock -l 2017-05-10-19-03-41.bag</div>
+Save the map:
 <br/>
- Save the map:
-
-<div class="codebox">rosrun map_server map_saver -f map.pgm
-</div>
-
-
-
-<br/>
+<div class="codebox">rosrun map_server map_saver -f map.pgm</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-erratic.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

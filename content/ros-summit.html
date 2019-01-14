@@ -121,83 +121,48 @@
 
 
 
-<h2> ROS Summit </h2>
+<h2>ROS Summit </h2>
+This scrip covers launching basic operations for summit
 <br/>
- This scrip covers launching basic operations for summit
-
-<br/>
- 
-
-
-
-<h2> Navigation</h2>
-<br/>
- NOT WORKING YET
 
 <br/>
 
-
+<h2>Navigation</h2>
+NOT WORKING YET
+<br/>
 
 <br/>
- Launch summit world in Gazebo
-
-<div class="codebox">roslaunch summit_xl_gazebo summit_xl.launch world_name:=$(rospack find testbed)/worlds/arena.world
-</div>
-
+Launch summit world in Gazebo
 <br/>
- Launch map navigation
-
-<div class="codebox">roslaunch testbed amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml
-</div>
-
+<div class="codebox">roslaunch summit_xl_gazebo summit_xl.launch world_name:=$(rospack find testbed)/worlds/arena.world</div>
+Launch map navigation
 <br/>
- Launch Rviz for localization
-
-<div class="codebox">roslaunch testbed view_robot.launch config:=mapping
-</div>
-
+<div class="codebox">roslaunch testbed amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml</div>
+Launch Rviz for localization
 <br/>
- Alvar
-
-<div class="codebox">roslaunch testbed alvar.launch
-</div>
-
-
-<h2> Mapping</h2>
-
+<div class="codebox">roslaunch testbed view_robot.launch config:=mapping</div>
+Alvar
 <br/>
- Launch summit world in Gazebo
+<div class="codebox">roslaunch testbed alvar.launch</div>
 
-<div class="codebox">roslaunch summit_xl_gazebo summit_xl.launch world_name:=$(rospack find testbed)/worlds/arena.world
-</div>
-
+<h2>Mapping</h2>
+Launch summit world in Gazebo
 <br/>
- Launch maping
-
-<div class="codebox">roslaunch testbed mapping.launch
-</div>
-
+<div class="codebox">roslaunch summit_xl_gazebo summit_xl.launch world_name:=$(rospack find testbed)/worlds/arena.world</div>
+Launch maping
 <br/>
- Launch Rviz for mapping
-
-<div class="codebox">roslaunch testbed view_robot.launch config:=mapping
-</div>
-
+<div class="codebox">roslaunch testbed mapping.launch</div>
+Launch Rviz for mapping
 <br/>
- Saving map
-
-<div class="codebox">rosrun map_server map_saver -f ~/Documents/map
-</div>
-
-
-<h2> Real Robot</h2>
-
-<div class="codebox">ssh summit@192.168.0.200
-</div>
-
+<div class="codebox">roslaunch testbed view_robot.launch config:=mapping</div>
+Saving map
 <br/>
+<div class="codebox">rosrun map_server map_saver -f ~/Documents/map</div>
+
+<h2>Real Robot</h2>
+<div class="codebox">ssh summit@192.168.0.200</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-summit.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

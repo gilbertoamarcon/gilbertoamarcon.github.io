@@ -120,69 +120,48 @@
 				<article>
 
 
-dev=${HOME}/dev/ChatScript
+<div class="codebox">dev=${HOME}/dev/ChatScript
 dest=$dev/RAWDATA/
-<div class="codebox">bots=${HOME}/Dropbox/OSU/Classes/ROB599/chatbot
-</div>
-
+bots=${HOME}/Dropbox/OSU/Classes/ROB599/chatbot
 rm -Rf $dev
 git clone https://github.com/bwilcox-1234/ChatScript.git $dev/
-<div class="codebox">chmod a+x $dev/BINARIES/LinuxChatScript64
-</div>
-
+chmod a+x $dev/BINARIES/LinuxChatScript64</div>
+Copying bots
 <br/>
- Copying bots
-
-ln -s $bots/WALDO $dest
+<div class="codebox">ln -s $bots/WALDO $dest
 ln -s $bots/THERAPIST $dest
 ln -s $bots/FRIDGE $dest
 ln -s $bots/CARE $dest
 ln -s $bots/filesWaldo.txt $dest
 ln -s $bots/filesTherapist.txt $dest
 ln -s $bots/filesFridge.txt $dest
-<div class="codebox">ln -s $bots/filesCare.txt $dest
-</div>
-
+ln -s $bots/filesCare.txt $dest
 cd $dev/BINARIES
-<div class="codebox">./LinuxChatScript64
-</div>
+./LinuxChatScript64</div>
+:build Waldo
+<br/>
 
 <br/>
- :build Waldo
-
+:build Therapist
 <br/>
- 
-
+:build Fridge
 <br/>
- :build Therapist
-
+:build Care
 <br/>
- :build Fridge
-
+: > Had to do some preseentation and I have social anxiety.
 <br/>
- :build Care
-
+Therapist:  I am sorry, I dont know the answer to this.
 <br/>
- : > Had to do some preseentation and I have social anxiety.
-
+: > Hi I am trying to buy a fridge.
 <br/>
- Therapist:  I am sorry, I dont know the answer to this.
-
+FRIDGE:  Hello, how can I help you?
 <br/>
- : > Hi I am trying to buy a fridge.
-
+: > How are you doing today?
 <br/>
- FRIDGE:  Hello, how can I help you?
-
-<br/>
- : > How are you doing today?
-
-<br/>
- CARE:  Hello. I am so glad to talk to you!
-
+CARE:  Hello. I am so glad to talk to you!
 <br/>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/chatbot.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

@@ -119,53 +119,37 @@
 
 				<article>
 
+sudo apt-get --yes install linux-headers-4.19.14
 <br/>
- sudo apt-get --yes install linux-headers-4.19.14
-
-files="
+<div class="codebox">files="
 linux-headers-4.19.14-041914_4.19.14-041914.201901100338_all.deb
 linux-headers-4.19.14-041914-generic_4.19.14-041914.201901100338_amd64.deb
 linux-modules-4.19.14-041914-generic_4.19.14-041914.201901100338_amd64.deb
-linux-image-unsigned-4.19.14-041914-generic_4.19.14-041914.201901100338_amd64.deb
+linux-image-unsigned-4.19.14-041914-generic_4.19.14-041914.201901100338_amd64.deb</div>
 "
-
+Kernel dependencies
 <br/>
- Kernel dependencies
-
-sudo apt-get --yes install libelf-dev
+<div class="codebox">sudo apt-get --yes install libelf-dev
 wget -P ${HOME}/Downloads/ http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb
 sudo dpkg -i ${HOME}/Downloads/libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb
-<div class="codebox">rm ${HOME}/Downloads/libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb
-</div>
-
+rm ${HOME}/Downloads/libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb</div>
+Downloading files
 <br/>
- Downloading files
-
-for file in $files; do
+<div class="codebox">for file in $files; do
 	wget -P ${HOME}/Downloads/ https://kernel.ubuntu.com/~kernel-ppa/mainline/v4.19.14/$file
-<div class="codebox">done
-</div>
-
+done</div>
+Installing files
 <br/>
- Installing files
-
-<div class="codebox">sudo dpkg -i ${HOME}/Downloads/*.deb
-</div>
-
+<div class="codebox">sudo dpkg -i ${HOME}/Downloads/*.deb</div>
+Removing files
 <br/>
- Removing files
-
-for file in $files; do
+<div class="codebox">for file in $files; do
 	rm ${HOME}/Downloads/$file
-<div class="codebox">done
-</div>
-
-
+done
 sudo update-grub
-sudo reboot
-<br/>
+sudo reboot</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/kernel-update.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

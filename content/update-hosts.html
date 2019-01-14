@@ -121,26 +121,17 @@
 
 
 
-<h2> Update Hosts</h2>
-
+<h2>Update Hosts</h2>
+Usage: ./update-hosts.sh file
 <br/>
- Usage: ./update-hosts.sh file
-
+Ex: ./update-hosts.sh robotics
 <br/>
- Ex: ./update-hosts.sh robotics
-
-
-hosts_file=$1
-<div class="codebox">local_host=$(hostname)
-</div>
-
+<div class="codebox">hosts_file=$1
+local_host=$(hostname)
 sudo cp hosts/$hosts_file /etc/hosts
-<div class="codebox">sudo sed -i "2i 127.0.0.1	$local_host" /etc/hosts
-</div>
-
-<br/>
+sudo sed -i "2i 127.0.0.1	$local_host" /etc/hosts</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/update-hosts.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

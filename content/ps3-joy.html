@@ -120,43 +120,29 @@
 				<article>
 
 sudo add-apt-repository --yes "deb http://ppa.launchpad.net/falk-t-j/qtsixa/ubuntu vivid main"
-sudo apt-key adv --yes --keyserver keyserver.ubuntu.com --recv-keys 736E4F0B
+<div class="codebox">sudo apt-key adv --yes --keyserver keyserver.ubuntu.com --recv-keys 736E4F0B
 sudo apt-get --yes update
 sudo apt-get --yes install qtsixa
 sudo apt-get --yes install sixad
-<div class="codebox">sudo systemctl disable sixad
-</div>
-
+sudo systemctl disable sixad</div>
+Connect with USB, then run:
 <br/>
- Connect with USB, then run:
-
+sudo sixpair
 <br/>
- sudo sixpair
-
-
+Disconnect sixaxis from USB, then run:
 <br/>
- Disconnect sixaxis from USB, then run:
-
+sudo sixad -s
 <br/>
- sudo sixad -s
-
+Then press PS button to connect over bluetooth
 <br/>
- Then press PS button to connect over bluetooth
-
-
+Button config:
 <br/>
- Button config:
-
-<div class="codebox">echo 'ATTRS{name}=="PLAYSTATION*", ENV{DEVNAME}=="/dev/input/event*", ENV{ID_MODEL}="PS3Controller", SYMLINK+="input/dualshock3"'
-</div>
-
+<div class="codebox">echo 'ATTRS{name}=="PLAYSTATION*", ENV{DEVNAME}=="/dev/input/event*", ENV{ID_MODEL}="PS3Controller", SYMLINK+="input/dualshock3"'</div>
+Start at system boot:
 <br/>
- Start at system boot:
-
-sudo sixad --boot-yes
-<br/>
+<div class="codebox">sudo sixad --boot-yes</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ps3-joy.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

@@ -121,49 +121,32 @@
 
 
 
-<h2> Get Testbed Package</h2>
-<br/>
- Configure the testbed package
-
+<h2>Get Testbed Package</h2>
+Configure the testbed package
 <br/>
 
-
 <br/>
- Usage:
-
+Usage:
 <br/>
- ./get-testbed.sh
-
+./get-testbed.sh
 <br/>
 
-
-
 <br/>
- Backing up present working directory
-
+Backing up present working directory
+<br/>
 <div class="codebox">hdir=$(pwd)
-</div>
-
 git clone https://github.com/gilbertoamarcon/testbed.git ~/Downloads/testbed
 ./create-ws.sh mobile
 ./create-package.sh mobile testbed
-<div class="codebox">cp -Rf ~/Downloads/testbed ~/ros-ws/mobile/src/
-</div>
-
+cp -Rf ~/Downloads/testbed ~/ros-ws/mobile/src/
 mkdir -p ~/.gazebo/models/
 cd ~/ros-ws/mobile/src/testbed/models/
-<div class="codebox">./create-models.sh
-</div>
-
+./create-models.sh</div>
+Back to original working directory
 <br/>
- Back to original working directory
-
-<div class="codebox">cd $hdir
-</div>
-
-<br/>
+<div class="codebox">cd $hdir</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-testbed.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

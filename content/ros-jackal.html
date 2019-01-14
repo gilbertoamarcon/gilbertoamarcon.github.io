@@ -121,65 +121,38 @@
 
 
 
-<h2> ROS Jackal </h2>
+<h2>ROS Jackal </h2>
+This scrip covers launching basic operations for jackal
 <br/>
- This scrip covers launching basic operations for jackal
-
-<br/>
- 
-
-
-
-<h2> Navigation</h2>
 
 <br/>
- Launch jackal world in Gazebo
 
-<div class="codebox">roslaunch jackal_gazebo jackal_world.launch config:=front_laser world_name:=$(rospack find testbed)/worlds/arena.world
-</div>
-
+<h2>Navigation</h2>
+Launch jackal world in Gazebo
 <br/>
- Launch map navigation
-
-<div class="codebox">roslaunch jackal_navigation amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml
-</div>
-
+<div class="codebox">roslaunch jackal_gazebo jackal_world.launch config:=front_laser world_name:=$(rospack find testbed)/worlds/arena.world</div>
+Launch map navigation
 <br/>
- Launch Rviz for localization
-
-<div class="codebox">roslaunch jackal_viz view_robot.launch config:=localization
-</div>
-
-
-<h2> Mapping</h2>
-
+<div class="codebox">roslaunch jackal_navigation amcl_demo.launch map_file:=$(rospack find testbed)/maps/arena.yaml</div>
+Launch Rviz for localization
 <br/>
- Launch jackal world in Gazebo
+<div class="codebox">roslaunch jackal_viz view_robot.launch config:=localization</div>
 
-<div class="codebox">roslaunch jackal_gazebo jackal_world.launch config:=front_laser world_name:=$(rospack find testbed)/worlds/arena.world
-</div>
-
+<h2>Mapping</h2>
+Launch jackal world in Gazebo
 <br/>
- Launch gmaping
-
-<div class="codebox">roslaunch jackal_navigation gmapping_demo.launch
-</div>
-
+<div class="codebox">roslaunch jackal_gazebo jackal_world.launch config:=front_laser world_name:=$(rospack find testbed)/worlds/arena.world</div>
+Launch gmaping
 <br/>
- Launch Rviz for mapping
-
-<div class="codebox">roslaunch jackal_viz view_robot.launch config:=gmapping
-</div>
-
+<div class="codebox">roslaunch jackal_navigation gmapping_demo.launch</div>
+Launch Rviz for mapping
 <br/>
- Saving map
-
-<div class="codebox">rosrun map_server map_saver -f ~/Documents/map
-</div>
-
+<div class="codebox">roslaunch jackal_viz view_robot.launch config:=gmapping</div>
+Saving map
 <br/>
+<div class="codebox">rosrun map_server map_saver -f ~/Documents/map</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-jackal.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

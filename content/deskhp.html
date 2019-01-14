@@ -120,147 +120,82 @@
 				<article>
 
 
-<h2> Basic Desktop Setup</h2>
-
-<br/>
- This script sets up all the apps and basic configs for my Desktop.
-
+<h2>Basic Desktop Setup</h2>
+This script sets up all the apps and basic configs for my Desktop.
 <br/>
 
-
-
 <br/>
- Backing up present working directory
-
-<div class="codebox">hdir=$(pwd)
-</div>
-
+Backing up present working directory
 <br/>
- Updates/Upgrades
-
-<div class="codebox">./apt-gets.sh
-</div>
-
+<div class="codebox">hdir=$(pwd)</div>
+Updates/Upgrades
 <br/>
- Personal apt-get upgrades
-
-<div class="codebox">./personal.sh
-</div>
-
+<div class="codebox">./apt-gets.sh</div>
+Personal apt-get upgrades
 <br/>
- Git config
-
-git config --global user.email "gilbertoamarcon@gmail.com"
-<div class="codebox">git config --global user.name "Gilberto Marcon"	
-</div>
-
+<div class="codebox">./personal.sh</div>
+Git config
 <br/>
- Terminator
-
-sudo apt-get --yes install terminator
+<div class="codebox">git config --global user.email "gilbertoamarcon@gmail.com"
+git config --global user.name "Gilberto Marcon"	</div>
+Terminator
+<br/>
+<div class="codebox">sudo apt-get --yes install terminator
 sudo cp -Rf terminator ${HOME}/.config/
-<div class="codebox">sudo chmod +x ${HOME}/.config/terminator/
-</div>
-
+sudo chmod +x ${HOME}/.config/terminator/</div>
+Sublime
 <br/>
- Sublime
-
-<div class="codebox">./sublime.sh
-</div>
-
+<div class="codebox">./sublime.sh</div>
+Atom
 <br/>
- Atom
-
-<div class="codebox">./atom.sh
-</div>
-
+<div class="codebox">./atom.sh</div>
+Mendeley
 <br/>
- Mendeley
-
-<div class="codebox">./mendeley.sh
-</div>
-
+<div class="codebox">./mendeley.sh</div>
+# Chrome
 <br/>
- # Chrome
-
+./chrome.sh
 <br/>
- ./chrome.sh
-
-
+Color Terminal
 <br/>
- Color Terminal
-
-<div class="codebox">sed -i '/force_color_prompt=yes/s/^#//g' ${HOME}/.bashrc
-</div>
-
+<div class="codebox">sed -i '/force_color_prompt=yes/s/^#//g' ${HOME}/.bashrc</div>
+Calc
 <br/>
- Calc
-
-<div class="codebox">./calc.sh
-</div>
-
+<div class="codebox">./calc.sh</div>
+Website
 <br/>
- Website
-
+git clone git@github.com:gilbertoamarcon/gilbertoamarcon.github.io.git ${HOME}/dev/gilbertoamarcon.github.io
 <br/>
- git clone git@github.com:gilbertoamarcon/gilbertoamarcon.github.io.git ${HOME}/dev/gilbertoamarcon.github.io
-
-
+Cleaning up
 <br/>
- Cleaning up
-
-<div class="codebox">sudo apt-get --yes autoremove
-</div>
-
+<div class="codebox">sudo apt-get --yes autoremove</div>
+Removing Examples folder
 <br/>
- Removing Examples folder
-
-<div class="codebox">rm -Rf ${HOME}/examples.desktop
-</div>
-
+<div class="codebox">rm -Rf ${HOME}/examples.desktop</div>
+Move sidebar to the bottom
 <br/>
- Move sidebar to the bottom
-
-<div class="codebox">gsettings set com.canonical.Unity.Launcher launcher-position Bottom
-</div>
-
+<div class="codebox">gsettings set com.canonical.Unity.Launcher launcher-position Bottom</div>
+SSH to robots
 <br/>
- SSH to robots
-
-<div class="codebox">sudo ufw allow 22
-</div>
-
+<div class="codebox">sudo ufw allow 22</div>
+Nvidia drivers
 <br/>
- Nvidia drivers
-
-<div class="codebox">./nvidia-setup.sh
-</div>
-
+<div class="codebox">./nvidia-setup.sh</div>
+Restarting the machine
 <br/>
- Restarting the machine
-
-<div class="codebox">sudo reboot
-</div>
-
+<div class="codebox">sudo reboot</div>
+Manual stuff:
 <br/>
- Manual stuff:
-
+Config power sleep and screen
 <br/>
- Config power sleep and screen
-
+Config files icon list view
 <br/>
- Config files icon list view
-
+Config grub
 <br/>
- Config grub
-
-<br/>
- Config proprietary video drivers
-
-
+Config proprietary video drivers
 <br/>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/deskhp.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>

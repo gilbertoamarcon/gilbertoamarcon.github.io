@@ -121,47 +121,34 @@
 
 
 
-<h2> Create Bazebo Flat</h2>
+<h2>Create Bazebo Flat</h2>
+Create a flat gazebo model
 <br/>
- Create a flat gazebo model
-
-
+Usage:
 <br/>
- Usage:
-
+Place the texture on the same directory as the script, then:
 <br/>
- Place the texture on the same directory as the script, then:
-
-<br/>
- ./create-model-flat.sh model-name texture w l texture-scale-w texture-scale-l
-
+./create-model-flat.sh model-name texture w l texture-scale-w texture-scale-l
 <br/>
 
-
-
-mkdir ~/.gazebo/models/$1/
+<br/>
+<div class="codebox">mkdir ~/.gazebo/models/$1/
 mkdir ~/.gazebo/models/$1/materials/
 mkdir ~/.gazebo/models/$1/materials/scripts
-<div class="codebox">mkdir ~/.gazebo/models/$1/materials/textures
-</div>
-
+mkdir ~/.gazebo/models/$1/materials/textures</div>
+model.config 
 <br/>
- model.config 
-
-cat > ~/.gazebo/models/$1/model.config <<- EOM
+<div class="codebox">cat > ~/.gazebo/models/$1/model.config <<- EOM
 <?xml version="1.0"?>
 <model>
     <name>$1</name>
     <version>1.0</version>
     <sdf version="1.4">model.sdf</sdf>
 </model>
-<div class="codebox">EOM
-</div>
-
+EOM</div>
+model.sdf
 <br/>
- model.sdf
-
-cat > ~/.gazebo/models/$1/model.sdf <<- EOM
+<div class="codebox">cat > ~/.gazebo/models/$1/model.sdf <<- EOM
 <?xml version="1.0" ?>
 <sdf version="1.4">
     <model name="$1">
@@ -202,16 +189,13 @@ cat > ~/.gazebo/models/$1/model.sdf <<- EOM
         </link>
     </model>
 </sdf>
-<div class="codebox">EOM
-</div>
-
+EOM</div>
+script.material
 <br/>
- script.material
-
-cat > ~/.gazebo/models/$1/materials/scripts/script.material <<- EOM
-material $1
+<div class="codebox">cat > ~/.gazebo/models/$1/materials/scripts/script.material <<- EOM
+material $1</div>
 {
-        receive_shadows on
+<div class="codebox">        receive_shadows on
         technique
         {
                 pass
@@ -224,32 +208,23 @@ material $1
                                 scale $5 $6
                         }
                 }
-        }
+        }</div>
 }
-<div class="codebox">EOM
-</div>
-
+<div class="codebox">EOM</div>
+Texture
 <br/>
- Texture
-
-<div class="codebox">cp $2 ~/.gazebo/models/$1/materials/textures/
-</div>
-
+<div class="codebox">cp $2 ~/.gazebo/models/$1/materials/textures/</div>
+script.material
 <br/>
- script.material
-
-cat <<- EOM
+<div class="codebox">cat <<- EOM
 <model name='$1'>
     <include>
         <uri>model://$1</uri>
     </include>
 </model>
-<div class="codebox">EOM
-</div>
-
-<br/>
+EOM</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-model-flat.sh target=_blank>Follow this link for the raw script.</a>
-
+<br/>
 				<article/>
 
 			</div>
