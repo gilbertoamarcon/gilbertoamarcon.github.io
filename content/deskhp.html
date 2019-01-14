@@ -139,16 +139,6 @@ sudo chmod +x ${HOME}/.config/terminator/</div>
 Sublime
 <br/>
 <div class="codebox">./sublime.sh</div>
-Atom
-<br/>
-<div class="codebox">./atom.sh</div>
-Mendeley
-<br/>
-<div class="codebox">./mendeley.sh</div>
-# Chrome
-<br/>
-./chrome.sh
-<br/>
 Color Terminal
 <br/>
 <div class="codebox">sed -i '/force_color_prompt=yes/s/^#//g' ${HOME}/.bashrc</div>
@@ -157,8 +147,7 @@ Calc
 <div class="codebox">./calc.sh</div>
 Website
 <br/>
-git clone git@github.com:gilbertoamarcon/gilbertoamarcon.github.io.git ${HOME}/dev/gilbertoamarcon.github.io
-<br/>
+<div class="codebox">git clone git@github.com:gilbertoamarcon/gilbertoamarcon.github.io.git ${HOME}/dev/gilbertoamarcon.github.io</div>
 Cleaning up
 <br/>
 <div class="codebox">sudo apt-get --yes autoremove</div>
@@ -167,7 +156,8 @@ Removing Examples folder
 <div class="codebox">rm -Rf ${HOME}/examples.desktop</div>
 Move sidebar to the bottom
 <br/>
-<div class="codebox">gsettings set com.canonical.Unity.Launcher launcher-position Bottom</div>
+gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+<br/>
 SSH to robots
 <br/>
 <div class="codebox">sudo ufw allow 22</div>
