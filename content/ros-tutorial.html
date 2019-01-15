@@ -116,30 +116,71 @@
 
 
 
-<h2>FFMPEG </h2>
-FFMPEG video processing
+<h2>ROS Tutorial: Jackal </h2>
+This tutorial guides you through the basic operations for the Jackal robot.
+<br/>
+Jackal is a four-wheeled offroad mobile robot that has excelent support in ROS. 
+<br/>
+The default Jackal model in ROS commes with a 360 lidar, which is much better than the turtlebot kinect, so we are going to focus on Jackal for learning basic ROS. 
 <br/>
 
 <br/>
-Decoding video
+
+<h2>Mapping</h2>
+We will use 4 terminal windows in this tutorial. 
 <br/>
-<div class="codebox">ffmpeg -i $1 -c:v libx265 -crf 28 -c:a aac -b:a 128k $2</div>
-Screen capture
+Please go ahead and have all of them open.
 <br/>
-<div class="codebox">ffmpeg -f x11grab -s $(xdpyinfo | awk '/dimensions/{print $2}') -r 60 -i :0.0 -qscale 0 -vcodec huffyuv ${HOME}/raw.avi</div>
-Changing video packaging format
+You can use terminator to make your life easier. 
 <br/>
-<div class="codebox">ffmpeg -i ${HOME}/raw.avi ${HOME}/video.mp4</div>
-Cropping a time subset and changing video packaging format
+1: On the first terminnal window, launch the jackal world in Gazebo:
 <br/>
-<div class="codebox">ffmpeg -ss 00:00:02 -t 00:00:03 -i ${HOME}/raw.avi ${HOME}/video.mp4</div>
-Cropping a time subset, scaling video, and converting to animated GIF 
+<div class="codebox">roslaunch jackal_gazebo jackal_world.launch config:=front_laser</div>
+2: Wait until Gazebo is fully launched. On the second terminnal window, launch the jackal gmaping demo:
 <br/>
-<div class="codebox">ffmpeg -ss 00:00:01 -t 00:00:05 -i raw.avi  -vf scale=320:-1 out.gif</div>
-Sequence of still images to video
+<div class="codebox">roslaunch jackal_navigation gmapping_demo.launch</div>
+3: Wait until gmaping is fully launched. On the third terminnal window, launch Rviz for visualization:
 <br/>
-<div class="codebox">ffmpeg -framerate 5 -pattern_type glob -i $1/"p-*.png" $2 -y</div>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ffmpeg.sh target=_blank>Follow this link for the raw script.</a>
+<div class="codebox">roslaunch jackal_viz view_robot.launch config:=gmapping</div>
+4: In Rviz, you will see a circle and arrows around the roobot. 
+<br/>
+Use the mouse to click and drag those elements and make to robot move.
+<br/>
+While the robot moves in Rviz, see it is also moving in Gazebo.
+<br/>
+Note in Rviz that a map is being created.
+<br/>
+5: In Rviz, on the top menu you will se a button named "2D Nav Goal". Click it.
+<br/>
+Now, click and drag on the main window, where the map is. 
+<br/>
+This will assign a goal position to the robot. 
+<br/>
+Note how the robot will autonomously drive to that location.
+<br/>
+6. Use to following command on the fourth terminal window to same to current map to the disk:
+<br/>
+<div class="codebox">rosrun map_server map_saver -f ${HOME}/Documents/map</div>
+7. Quit all processes running across all terminals and repeat the whole process again. 
+<br/>
+Try a get a nice map of the world and store it on file.
+<br/>
+
+<h2>Navigation</h2>
+Now we are going to use the map you created to navigate.
+<br/>
+1. Launch jackal world in Gazebo:
+<br/>
+<div class="codebox">roslaunch jackal_gazebo jackal_world.launch config:=front_laser</div>
+2. Launch map navigation and point to the map you created:
+<br/>
+<div class="codebox">roslaunch jackal_navigation amcl_demo.launch map_file:=${HOME}/Documents/map.yaml</div>
+3. Launch Rviz for localization: 
+<br/>
+<div class="codebox">roslaunch jackal_viz view_robot.launch config:=localization</div>
+4. In Rviz, use the "2D Nav Goal" button again to tell the robot to go to various places in the map,
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-tutorial.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>
 
