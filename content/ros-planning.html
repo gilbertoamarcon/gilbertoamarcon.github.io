@@ -115,23 +115,34 @@
 
 
 
-<h2>jstest</h2>
-Setup:
+<h2>ROS Planning Laptop Setup</h2>
+This script sets up a default working environemnt for ROS planning.
 <br/>
-<div class="codebox">sudo apt-get -y install libpng-dev
-sudo apt-get -y install libslang2-dev
-sudo apt-get -y install libcaca-dev
-sudo apt-get -y install libncurses5-dev
-sudo apt-get -y install libsdl2-dev
-sudo apt-get -y install libsdl1.2-dev
-git clone git@gitlab.com:grumbel/sdl-jstest.git ${HOME}/dev/sdl-jstest
-cd ${HOME}/dev/sdl-jstest/
-mkdir build
-cd build
-cmake ..
-make
-sudo make install</div>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/sdl-jstest.sh target=_blank>Follow this link for the raw script.</a>
+
+<br/>
+Please flash your computer with Ubuntu 16.04.5 Desktop (64-bit), which can be downloaded through the link:
+<br/>
+<div class="codebox">http://releases.ubuntu.com/16.04/ubuntu-16.04.5-desktop-amd64.iso</div>
+Update your machine and install basic dependencies using the following guide (run the script version instead of manually copyig each command):
+<br/>
+<div class="codebox">https://gilbertoamarcon.github.io/content/apt-gets.html</div>
+Setup ROS on your machine (run the script version instead of manually copyig each command):
+<br/>
+<div class="codebox">https://gilbertoamarcon.github.io/content/ros-kinetic.html</div>
+Allow color-highlighting on your terminal to facilitate debugging:
+<br/>
+<div class="codebox">sed -i '/force_color_prompt=yes/s/^#//g' ${HOME}/.bashrc</div>
+Configure your git identity on your machine:
+<br/>
+<div class="codebox">git config --global user.email "<your git email>"
+git config --global user.name "<your name"	</div>
+Alternativelly setup the Sublime text editor:
+<br/>
+<div class="codebox">https://gilbertoamarcon.github.io/content/sublime.html</div>
+Seetup the planning software (we will get to this later, you do not have to run this just yet):
+<br/>
+<div class="codebox">https://gilbertoamarcon.github.io/content/planning.html</div>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-planning.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>
 
