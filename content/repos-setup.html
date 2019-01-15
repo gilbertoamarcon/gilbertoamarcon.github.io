@@ -130,7 +130,7 @@ qmake
 make</div>
 Adding the lib folder to $LD_LIBRARY_PATH:
 <br/>
-<div class="codebox">printf "\n# i-CiFHaR:\nexport LD_LIBRARY_PATH=~/dev/icifhar/lib\n" >> ~/.bashrc</div>
+<div class="codebox">printf "\n# i-CiFHaR:\nexport LD_LIBRARY_PATH=~/dev/icifhar/lib:$LD_LIBRARY_PATH\n" >> ${HOME}/.bashrc</div>
 
 <h2>MACPDDL</h2>
 <div class="codebox">rm -Rf ~/dev/macpddl > /dev/null 2>&1
