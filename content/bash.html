@@ -122,6 +122,95 @@ Here are some basic terminal commands that save me up a lot of time.
 
 <br/>
 
+<h2>Basics</h2>
+Change directory: with no arguments, will take you to your home directory:
+<br/>
+<div class="codebox">cd </div>
+The tilde is a short for your home directory:
+<br/>
+<div class="codebox">cd ~</div>
+The HOME variable is an environment variable that also points to your home directory:
+<br/>
+<div class="codebox">cd ${HOME}</div>
+Using an environment variable to change to a directory:
+<br/>
+<div class="codebox">cd ${HOME}/Documents</div>
+You can use echo to print:
+<br/>
+<div class="codebox">echo Hello</div>
+Note how he value of environment variables are evaluated and printed:
+<br/>
+<div class="codebox">echo ${HOME}/Documents</div>
+You can also unfold a number range:
+<br/>
+<div class="codebox">echo {1..6}</div>
+And mix that to get numeric naming:
+<br/>
+<div class="codebox">echo file_{1..6}.txt</div>
+You can use touch to create files:
+<br/>
+<div class="codebox">touch file_{1..6}.txt</div>
+You can use ls to show the files:
+<br/>
+<div class="codebox">ls</div>
+The -l argument shows in list format:
+<br/>
+<div class="codebox">ls -l</div>
+You can copy files with cp:
+<br/>
+<div class="codebox">cp file_1.txt new_file.txt</div>
+You can move or rename files with  mv:
+<br/>
+<div class="codebox">mv file_1.txt new_file.txt</div>
+You can make directories with mkdir:
+<br/>
+<div class="codebox">mkdir aux</div>
+You can make nested directories using the -p argument:
+<br/>
+<div class="codebox">mkdir -p nested/directories/here</div>
+You can copy directories and their contents using -Rf:
+<br/>
+<div class="codebox">cp -Rf nested copied_dir</div>
+You can move and rename directories and their contents using -f:
+<br/>
+<div class="codebox">mv -f nested renamed_dir</div>
+You print to a file by using redirection:
+<br/>
+<div class="codebox">echo Hello > my_file</div>
+You print the contents of a file by using cat:
+<br/>
+<div class="codebox">cat my_file</div>
+You append contents to a file:
+<br/>
+<div class="codebox">echo Hello >> my_file</div>
+And you can overwrite to a file:
+<br/>
+<div class="codebox">echo overwrite > my_file</div>
+You can use grep to search inside files:
+<br/>
+<div class="codebox">grep -rn Hello</div>
+You can see the history of commands you typed:
+<br/>
+<div class="codebox">history</div>
+You can search through your command history using grep:
+<br/>
+<div class="codebox">history | grep echo</div>
+You can print your command history to a file:
+<br/>
+<div class="codebox">history > ${HOME}/my_command_history</div>
+You can count the number of lines of a file:
+<br/>
+<div class="codebox">cat ${HOME}/my_command_history | wc -l</div>
+You can print your current directory:
+<br/>
+<div class="codebox">pwd</div>
+You can edit a file using a GUI app:
+<br/>
+<div class="codebox">gedit ${HOME}/my_command_history</div>
+You can use the * as a wild card, and remove all files in a directory:
+<br/>
+<div class="codebox">rm  *</div>
+
 <h2>File management </h2>
 Remove all but macthing this
 <br/>
