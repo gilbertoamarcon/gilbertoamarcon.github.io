@@ -127,7 +127,7 @@ The default Jackal model in ROS commes with a 360 lidar, which is much better th
 <br/>
 
 <h2>Mapping</h2>
-We will use 4 terminal windows in this tutorial. 
+We will use four terminal windows in this tutorial. 
 <br/>
 Please go ahead and have all of them open.
 <br/>
@@ -158,12 +158,12 @@ This will assign a goal position to the robot.
 <br/>
 Note how the robot will autonomously drive to that location.
 <br/>
-6. Use to following command on the fourth terminal window to same to current map to the disk:
+6. Use to following command on the fourth terminal window to save to current map to the disk:
 <br/>
 <div class="codebox">rosrun map_server map_saver -f ${HOME}/Documents/map</div>
 7. Quit all processes running across all terminals and repeat the whole process again. 
 <br/>
-Try a get a nice map of the world and store it on file.
+Try to produce a nice map of the world and store it on file.
 <br/>
 
 <h2>Navigation</h2>
@@ -178,7 +178,13 @@ Now we are going to use the map you created to navigate.
 3. Launch Rviz for localization: 
 <br/>
 <div class="codebox">roslaunch jackal_viz view_robot.launch config:=localization</div>
-4. In Rviz, use the "2D Nav Goal" button again to tell the robot to go to various places in the map,
+4. In Rviz, note how the robot position can be initialized at an incorrect location.
+<br/>
+To fix that, use the "2D Pose Estimate" button again to give the robot a better initial position estimate in the map,
+<br/>
+5. In Rviz, use the "2D Nav Goal" button again to tell the robot to go to various places in the map,
+<br/>
+As the robot moves around, you will see that the localization accuracy will improve.
 <br/>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-tutorial.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
