@@ -117,16 +117,91 @@
 
 
 
-<h2>Atom</h2>
-The Atom Editor
+<h2>ROS Tutorial: Workspaces </h2>
+Workspaces, packages, and Worlds 
 <br/>
 
 <br/>
-<div class="codebox">curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
-sudo apt-get update
-sudo apt-get install atom</div>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/atom.sh target=_blank>Follow this link for the raw script.</a>
+Download the workspace creation script:
+<br/>
+<div class="codebox">https://gilbertoamarcon.github.io/content/create-ws.html</div>
+Create a workspace called "ws":
+<br/>
+<div class="codebox">./create-ws.sh ws</div>
+Source the bashrc to update environment variables:
+<br/>
+<div class="codebox">source ${HOME}/.bashrc</div>
+Use roscd to go to your workspace root directory.
+<br/>
+That's a good way to check if your worspace was created correctly. 
+<br/>
+<div class="codebox">roscd</div>
+If it all works, you will be taken to the following directory:
+<br/>
+<div class="codebox">~/ros-ws/ws/devel</div>
+Download the package creation script:
+<br/>
+<div class="codebox">https://gilbertoamarcon.github.io/content/create-package.html</div>
+Create a package named my_package inside your workspace:
+<br/>
+<div class="codebox">./create-package.sh ws my_package</div>
+Go to your package root directory:
+<br/>
+<div class="codebox">roscd my_package</div>
+This is where all the files related to your package will reside.
+<br/>
+Now, go to your workspace root:
+<br/>
+<div class="codebox">roscd</div>
+And go to the the src dirctory of your workspace:
+<br/>
+<div class="codebox">cd ../src/</div>
+Take a look at the contants of the src dir:
+<br/>
+<div class="codebox">ls -l</div>
+Your package is there. 
+<br/>
+Now, let's put there a package from a git repository:
+<br/>
+<div class="codebox">git clone git@github.com:gilbertoamarcon/testbed.git</div>
+Now we have two packages there:
+<br/>
+<div class="codebox">ls -l</div>
+Source the bashrc to update environment variables:
+<br/>
+<div class="codebox">source ${HOME}/.bashrc</div>
+Go to your package root directory:
+<br/>
+<div class="codebox">roscd testbed/</div>
+This is an example package that I made a while back. We wil not use most of its contents, but it servers as an example of a custom made package.
+<br/>
+<div class="codebox">ls -l</div>
+Type the following, and tap TAB a few times to see all the available executable code in this package:
+<br/>
+<div class="codebox">rosrun testbed</div>
+Go to the models' directory of the testbed package:
+<br/>
+<div class="codebox">roscd testbed/models</div>
+Run the following script to automatically create some object models:
+<br/>
+<div class="codebox">./create-models.sh</div>
+The models are used in our arena world.
+<br/>
+Go to the worlds' directory of the package:
+<br/>
+<div class="codebox">roscd testbed/worlds/</div>
+Take a look at the arena.world:
+<br/>
+<div class="codebox">cat arena.world</div>
+Now we have the arena.world configured. 
+<br/>
+See how the following command points to the arena.world:
+<br/>
+<div class="codebox">echo $(rospack find testbed)/worlds/arena.world</div>
+Now, use the following guide to map and navifgate the arena world:
+<br/>
+<div class="codebox">https://gilbertoamarcon.github.io/content/ros-jackal.html</div>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-ws-packages-worlds.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>
 
