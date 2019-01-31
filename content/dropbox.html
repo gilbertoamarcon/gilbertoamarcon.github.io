@@ -119,21 +119,32 @@
 
 
 
-<h2>SSH Login</h2>
-Here are some basic SSH commands that save me up a lot of time.
+<h2>Dropbox Headless </h2>
+Setting up Dropbox Headless to auto start
 <br/>
 
 <br/>
-SSH login to remote server
-<br/>
-<div class="codebox">local_path="${HOME}/Dropbox/Apps/Pancake.io"
-remote_path="marcondg@shell.onid.oregonstate.edu:public_html/"
-bib_file=$local_path/bib/bib.bib
-wget -O $bib_file 'http://www.citeulike.org/bibtex/user/marcondg/tag/mine?do_username_prefix=0&key_type=4&incl_amazon=1&clean_urls=0&smart_wrap=1&q='</div>
-sed -i 's/url = /url_Paper = /g' $bib_file
-<br/>
-<div class="codebox">scp -r $local_path/* $remote_path</div>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/update-page.sh target=_blank>Follow this link for the raw script.</a>
+<div class="codebox">sudo sh -c "echo '[Unit]
+Description=Dropbox Service
+After=network.target
+[Service]
+ExecStart=/bin/sh -c '/usr/bin/dropbox start'
+ExecStop=/bin/sh -c '/usr/bin/dropbox stop'
+PIDFile=${HOME}/.dropbox/dropbox.pid
+User=gilberto
+Group=sudo
+Type=forking
+Restart=on-failure
+RestartSec=5
+StartLimitInterval=60s
+StartLimitBurst=3
+[Install]
+WantedBy=multi-user.target' > /etc/systemd/system/dropbox.service"
+sudo systemctl daemon-reload
+sudo systemctl enable dropbox
+sudo systemctl start dropbox
+sudo systemctl status dropbox</div>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/dropbox.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>
 

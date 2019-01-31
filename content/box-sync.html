@@ -119,21 +119,20 @@
 
 
 
-<h2>SSH Login</h2>
-Here are some basic SSH commands that save me up a lot of time.
+<h2>Box-Sync</h2>
+A Box client
 <br/>
 
 <br/>
-SSH login to remote server
-<br/>
-<div class="codebox">local_path="${HOME}/Dropbox/Apps/Pancake.io"
-remote_path="marcondg@shell.onid.oregonstate.edu:public_html/"
-bib_file=$local_path/bib/bib.bib
-wget -O $bib_file 'http://www.citeulike.org/bibtex/user/marcondg/tag/mine?do_username_prefix=0&key_type=4&incl_amazon=1&clean_urls=0&smart_wrap=1&q='</div>
-sed -i 's/url = /url_Paper = /g' $bib_file
-<br/>
-<div class="codebox">scp -r $local_path/* $remote_path</div>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/update-page.sh target=_blank>Follow this link for the raw script.</a>
+<div class="codebox">mkdir -p ${HOME}/box
+mkdir -p ${HOME}/.davfs2/
+sudo sh -c 'echo "use_locks 0" >> /etc/davfs2/davfs2.conf'
+sudo sh -c 'echo "https://dav.box.com/dav ${HOME}/box davfs rw,user,noauto 0 0" >> /etc/fstab'
+echo 'https://dav.box.com/dav marcondg@oregonstate.edu "sd65SD*&#sd76sdSD^%ASD"' > ${HOME}/.davfs2/secrets
+chmod 600 ${HOME}/.davfs2/secrets
+sudo usermod -a -G davfs2 $(whoami)
+su -l $(whoami)</div>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/box-sync.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>
 
