@@ -20,6 +20,7 @@
 				<div id="menu">
 					<ul>
 
+						<li><a href=aliases.html class=menu_button>Aliases						</a></li>
 						<li><a href=apt-gets.html class=menu_button>Common packages						</a></li>
 						<li><a href=atom.html class=menu_button>Atom						</a></li>
 						<li><a href=backup-sublime.html class=menu_button>Backup Sublime						</a></li>
@@ -46,8 +47,11 @@
 						<li><a href=geotiff.html class=menu_button>Geotiff						</a></li>
 						<li><a href=get-citeulike.html class=menu_button>Get Citeulike						</a></li>
 						<li><a href=get-madp.html class=menu_button>MADP Setup						</a></li>
+						<li><a href=get-opengm.html class=menu_button>OpenGM Setup						</a></li>
 						<li><a href=get-stoqs.html class=menu_button>STOQS Setup						</a></li>
 						<li><a href=get-testbed.html class=menu_button>Get Testbed Package						</a></li>
+						<li><a href=ipa.html class=menu_button>						</a></li>
+						<li><a href=js-mouse.html class=menu_button>JS mouse fix 						</a></li>
 						<li><a href=kernel-update.html class=menu_button>Kernel update						</a></li>
 						<li><a href=kernel-wifi.html class=menu_button>Kernel Wifi						</a></li>
 						<li><a href=links.html class=menu_button>Desktop Links						</a></li>
@@ -96,6 +100,7 @@
 						<li><a href=run-voobly.html class=menu_button>Voobly						</a></li>
 						<li><a href=samba-share.html class=menu_button>Samba						</a></li>
 						<li><a href=sdl-jstest.html class=menu_button>jstest						</a></li>
+						<li><a href=setup-lsyncd.html class=menu_button>Setup lsyncd						</a></li>
 						<li><a href=ssh.html class=menu_button>SSH Login						</a></li>
 						<li><a href=sublime.html class=menu_button>Sublime 						</a></li>
 						<li><a href=update-hosts.html class=menu_button>Update Hosts						</a></li>
@@ -122,26 +127,30 @@
 <h2>Kernel update</h2>
 Updating the linux kernel
 <br/>
-sudo apt-get --yes install linux-headers-4.19.14
+sudo apt-get --yes install linux-headers-4.19.32
 <br/>
 
 <br/>
 <div class="codebox">files="
-linux-headers-4.19.14-041914_4.19.14-041914.201901100338_all.deb
-linux-headers-4.19.14-041914-generic_4.19.14-041914.201901100338_amd64.deb
-linux-modules-4.19.14-041914-generic_4.19.14-041914.201901100338_amd64.deb
-linux-image-unsigned-4.19.14-041914-generic_4.19.14-041914.201901100338_amd64.deb</div>
+linux-headers-4.19.32-041932_4.19.32-041932.201903271306_all.deb
+linux-headers-4.19.32-041932-generic_4.19.32-041932.201903271306_amd64.deb
+linux-modules-4.19.32-041932-generic_4.19.32-041932.201903271306_amd64.deb
+linux-image-unsigned-4.19.32-041932-generic_4.19.32-041932.201903271306_amd64.deb</div>
 "
-Kernel dependencies
+# Kernel dependencies
 <br/>
-<div class="codebox">sudo apt-get --yes install libelf-dev
+sudo apt-get --yes install libelf-dev
+<br/>
 wget -P ${HOME}/Downloads/ http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb
+<br/>
 sudo dpkg -i ${HOME}/Downloads/libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb
-rm ${HOME}/Downloads/libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb</div>
+<br/>
+rm ${HOME}/Downloads/libssl1.1_1.1.0g-2ubuntu4.3_amd64.deb
+<br/>
 Downloading files
 <br/>
 <div class="codebox">for file in $files; do
-	wget -P ${HOME}/Downloads/ https://kernel.ubuntu.com/~kernel-ppa/mainline/v4.19.14/$file
+	wget -P ${HOME}/Downloads/ https://kernel.ubuntu.com/~kernel-ppa/mainline/v4.19.32/$file
 done</div>
 Installing files
 <br/>

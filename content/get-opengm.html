@@ -123,45 +123,15 @@
 				<article>
 
 
-<h2>STOQS Setup</h2>
-This script sets up the Spatial Temporal Oceanographic Query System (STOQS).
+<h2>OpenGM Setup</h2>
+Install
 <br/>
-
-<br/>
-Backing up present working directory
-<br/>
-<div class="codebox">hdir=$(pwd)
-sdir=~/Vagrants/stoqsvm</div>
-Vagrant
-<br/>
-<div class="codebox">wget -P ~/Downloads/ https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
-sudo dpkg -i ~/Downloads/vagrant_2.0.1_x86_64.deb</div>
-Install takes about an hour
-<br/>
-<div class="codebox">mkdir -p $sdir
-cd $sdir
-curl "https://raw.githubusercontent.com/stoqs/stoqs/master/Vagrantfile" -o Vagrantfile
-curl "https://raw.githubusercontent.com/stoqs/stoqs/master/provision.sh" -o provision.sh
-vagrant plugin install vagrant-vbguest
-vagrant up --provider virtualbox
-cd $hdir
-exit 0</div>
-Login to test
-<br/>
-<div class="codebox">cd ~/Vagrants/stoqsvm/
-vagrant ssh -- -X   # Wait for [vagrant@localhost ~]$ prompt
-cd ~/dev/stoqsgit && source venv-stoqs/bin/activate
-export DATABASE_URL=postgis://stoqsadm:CHANGEME@127.0.0.1:5432/stoqs
-./test.sh CHANGEME</div>
-Start development server
-<br/>
-<div class="codebox">cd ~/Vagrants/stoqsvm/
-vagrant ssh -- -X   # Wait for [vagrant@localhost ~]$ prompt
-cd ~/dev/stoqsgit && source venv-stoqs/bin/activate
-export DATABASE_URL=postgis://stoqsadm:CHANGEME@127.0.0.1:5432/stoqs
-stoqs/manage.py runserver 0.0.0.0:8000 --settings=config.settings.local
-http://localhost:8000</div>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>
+<div class="codebox">git clone https://github.com/opengm/opengm.git $HOME/dev/opengm/
+cd $HOME/dev/opengm/
+cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr --build .
+make -j 8
+sudo make install</div>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-opengm.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>
 

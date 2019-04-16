@@ -123,45 +123,30 @@
 				<article>
 
 
-<h2>STOQS Setup</h2>
-This script sets up the Spatial Temporal Oceanographic Query System (STOQS).
-<br/>
 
+<h2>Setup lsyncd</h2>
+Usage: ./setup-lsyncd.sh  remote remote-dir local-dir
 <br/>
-Backing up present working directory
+Ex: ./setup-lsyncd.sh sas@server dev/sas-server/data/sas/ data/sas/
 <br/>
-<div class="codebox">hdir=$(pwd)
-sdir=~/Vagrants/stoqsvm</div>
-Vagrant
+<div class="codebox">remote=$1
+remote_dir=$2
+local_dir=$3
+local_host=$(hostname)
+local_user=$(whoami)
+known_hosts=-oStrictHostKeyChecking=no</div>
+Authorizing remote
 <br/>
-<div class="codebox">wget -P ~/Downloads/ https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
-sudo dpkg -i ~/Downloads/vagrant_2.0.1_x86_64.deb</div>
-Install takes about an hour
+<div class="codebox">remote_key=$(ssh $known_hosts $remote 'cat ~/.ssh/id_rsa.pub')
+echo $remote_key >> $HOME/.ssh/authorized_keys</div>
+Running daemon on remote
 <br/>
-<div class="codebox">mkdir -p $sdir
-cd $sdir
-curl "https://raw.githubusercontent.com/stoqs/stoqs/master/Vagrantfile" -o Vagrantfile
-curl "https://raw.githubusercontent.com/stoqs/stoqs/master/provision.sh" -o provision.sh
-vagrant plugin install vagrant-vbguest
-vagrant up --provider virtualbox
-cd $hdir
-exit 0</div>
-Login to test
+comm="lsyncd -nodaemon -rsync $remote_dir $local_user@$local_host:$local_dir"
 <br/>
-<div class="codebox">cd ~/Vagrants/stoqsvm/
-vagrant ssh -- -X   # Wait for [vagrant@localhost ~]$ prompt
-cd ~/dev/stoqsgit && source venv-stoqs/bin/activate
-export DATABASE_URL=postgis://stoqsadm:CHANGEME@127.0.0.1:5432/stoqs
-./test.sh CHANGEME</div>
-Start development server
-<br/>
-<div class="codebox">cd ~/Vagrants/stoqsvm/
-vagrant ssh -- -X   # Wait for [vagrant@localhost ~]$ prompt
-cd ~/dev/stoqsgit && source venv-stoqs/bin/activate
-export DATABASE_URL=postgis://stoqsadm:CHANGEME@127.0.0.1:5432/stoqs
-stoqs/manage.py runserver 0.0.0.0:8000 --settings=config.settings.local
-http://localhost:8000</div>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/get-stoqs.sh target=_blank>Follow this link for the raw script.</a>
+<div class="codebox">comm="lsyncd -rsync $remote_dir $local_user@$local_host:$local_dir"
+echo $comm
+ssh $known_hosts $remote $comm</div>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/setup-lsyncd.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>
 
