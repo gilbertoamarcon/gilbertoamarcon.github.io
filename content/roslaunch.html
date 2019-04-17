@@ -126,21 +126,49 @@
 
 
 
-<h2>Edimax Wireless Driver</h2>
-Wireless Driver Setup for the Edimax USB Dongle. 
+<h2>ROS Launch</h2>
+A quick tutorial into ROS launch.
 <br/>
 
 <br/>
-<div class="codebox">sudo apt install --yes git dkms
-git clone https://github.com/zebulon2/rtl8814au.git ${HOME}/dev/rtl8814au
-cd ${HOME}/dev/rtl8814au/
-sudo cp -R . /usr/src/rtl8814au-4.3.21
-sudo dkms build -m rtl8814au -v 4.3.21
-sudo dkms install -m rtl8814au -v 4.3.21</div>
-Removal:
+Please see below an example launch file below.
 <br/>
-<div class="codebox">sudo ./dkms-remove.sh</div>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/edimax.sh target=_blank>Follow this link for the raw script.</a>
+<div class="codebox"><launch>
+    <rosparam file="$(find glider_kayak_sim)/yaml/sim_params.yaml"/>
+    <param name="package_path" value="$(find glider_kayak_sim)"/>
+    <include file="$(find glider_kayak_sim)/launch/world_launch.launch"/>
+    <node name="wms_server" pkg="glider_kayak_sim" type="wms_server.py" output="screen"/>
+    <node name="ros_web_interface" pkg="glider_kayak_sim" type="ros_web_interface.py" output="log"/>
+</launch></div>
+Launch files can make your life easier when developing large projects in ROS.
+<br/>
+You can use launch files to launch multiple files at once and define global parameters.
+<br/>
+Note the rosparam tag:
+<br/>
+<div class="codebox"><rosparam file="$(find glider_kayak_sim)/yaml/sim_params.yaml"/></div>
+The rosparam tag loads an entire configuration YAML file and makes the YAML parameters available to the nodes you launch.
+<br/>
+Note the param tag:
+<br/>
+<div class="codebox"><param name="package_path" value="$(find glider_kayak_sim)"/></div>
+The param tag allows you to manually specify parameter values.
+<br/>
+The include file tag, below, includes an entire launch file, and allows you to establish a hierarchy of launch files and sub-launch files.
+<br/>
+<div class="codebox"><include file="$(find glider_kayak_sim)/launch/world_launch.launch"/></div>
+The node tag, below, launches a specific ROS node, a python script.
+<br/>
+<div class="codebox"><node name="wms_server" pkg="glider_kayak_sim" type="wms_server.py" output="screen"/></div>
+Inside the code of each ROS node, you can access the parameter values using rospy.get_param, as in the examples below:
+<br/>
+<div class="codebox">max_turn		= rospy.get_param("/kayak_max_turn",		0.10)
+max_abs_vel		= rospy.get_param("/kayak_max_abs_vel",		0.01)
+wpt_tol			= rospy.get_param("/kayak_wpt_tol",			0.01)
+control_const	= rospy.get_param("/kayak_control_const",	4.00)</div>
+Note how the second argument of rospy.get_param is the default value, used in case the parameter is not defined. 
+<br/>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/roslaunch.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>
 
