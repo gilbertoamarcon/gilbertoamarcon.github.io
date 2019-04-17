@@ -135,9 +135,6 @@ Cleaning up
 <br/>
 <div class="codebox">rm ~/dev/gilbertoamarcon.github.io/content/*.html
 rm *.html &gt; /dev/null 2&gt;&amp;1</div>
-Escaping HTML
-<br/>
-<div class="codebox">sed -i &#39;s/&amp;/\&amp;amp;/g; s/&lt;/\&amp;lt;/g; s/&gt;/\&amp;gt;/g; s/&quot;/\&amp;quot;/g; s/&#39;&quot;&#39;&quot;&#39;/\&amp;#39;/g&#39; *.sh</div>
 Adding raw link
 <br/>
 <div class="codebox">find . -name &quot;*.sh&quot; -type f -exec bash -c &#39;printf &quot;#&lt;a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/$(basename {}) target=_blank&gt;Follow this link for the raw script.&lt;/a&gt;&quot; &gt;&gt; {}&#39; \;</div>
@@ -152,6 +149,9 @@ Removing link line
 Renaming bash to HTML
 <br/>
 <div class="codebox">rename &#39;s/(.*).sh.html/$1.html/&#39; *.sh.html</div>
+Escaping HTML
+<br/>
+<div class="codebox">sed -i &#39;s/&amp;/\&amp;amp;/g; s/&lt;/\&amp;lt;/g; s/&gt;/\&amp;gt;/g; s/&quot;/\&amp;quot;/g; s/&#39;&quot;&#39;&quot;&#39;/\&amp;#39;/g&#39; *.html</div>
 Building menu
 <br/>
 <div class="codebox">echo &quot;&quot; &gt; website/_menu
@@ -182,7 +182,7 @@ Main page
 Cleaning up
 <br/>
 <div class="codebox">find . -name &quot;*.html&quot; -exec rm {} \;</div>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/website.sh target=_blank>Follow this link for the raw script.</a>
+&lt;a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/website.sh target=_blank&gt;Follow this link for the raw script.&lt;/a&gt;
 <br/>
 				<article/>
 
