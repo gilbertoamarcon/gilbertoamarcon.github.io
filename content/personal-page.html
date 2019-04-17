@@ -135,8 +135,8 @@ Usage:
 <br/>
 <div class="codebox">loc=${HOME}/Dropbox/Apps/Pancake.io/
 dest=marcondg@shell.onid.oregonstate.edu:public_html/
-$(wget -O ${loc}bib/bib.bib http://www.citeulike.org/bibtex/user/marcondg/tag/mine?do_username_prefix=0&key_type=4&incl_amazon=0&clean_urls=0&smart_wrap=0&q=)
-sed -i 's/\\\~{}/~/g' ${loc}bib/bib.bib
+$(wget -O ${loc}bib/bib.bib http://www.citeulike.org/bibtex/user/marcondg/tag/mine?do_username_prefix=0&amp;key_type=4&amp;incl_amazon=0&amp;clean_urls=0&amp;smart_wrap=0&amp;q=)
+sed -i &#39;s/\\\~{}/~/g&#39; ${loc}bib/bib.bib
 scp -r $loc/* $dest</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/personal-page.sh target=_blank>Follow this link for the raw script.</a>
 <br/>

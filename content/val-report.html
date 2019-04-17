@@ -152,19 +152,19 @@ Backing up present working directory
 Go the the problem directory
 <br/>
 <div class="codebox">cd $pdir
-if [ -e domain.pddl ] && [ -e problem.pddl ] && [ -e solution ] && [ $(cat solution | wc -l) -gt 0 ]; then
+if [ -e domain.pddl ] &amp;&amp; [ -e problem.pddl ] &amp;&amp; [ -e solution ] &amp;&amp; [ $(cat solution | wc -l) -gt 0 ]; then
 	# Cleanup
-	rm report* > /dev/null 2>&1
-	rm empty_prob.pddl > /dev/null 2>&1
+	rm report* &gt; /dev/null 2&gt;&amp;1
+	rm empty_prob.pddl &gt; /dev/null 2&gt;&amp;1
 	# Generate the report
 	${HOME}/dev/val/validate -o $obj -o -f report -l domain.pddl problem.pddl solution
-	sed -i '/\\\documentclass/a \\\usepackage[maxfloats=100]{morefloats}' report.tex
-	sed -i 's/\\documentclass\[a4paper,[0-9]*pt\]/\\documentclass[a4paper,'$FONT_SIZE'pt]/g' report.tex
-	sed -i 's/[0-9]\+\.*[0-9]*e-[0-9]\+/0/g' report.tex
+	sed -i &#39;/\\\documentclass/a \\\usepackage[maxfloats=100]{morefloats}&#39; report.tex
+	sed -i &#39;s/\\documentclass\[a4paper,[0-9]*pt\]/\\documentclass[a4paper,&#39;$FONT_SIZE&#39;pt]/g&#39; report.tex
+	sed -i &#39;s/[0-9]\+\.*[0-9]*e-[0-9]\+/0/g&#39; report.tex
 	# PDF Generation
-	pdflatex report.tex > /dev/null 2>&1
+	pdflatex report.tex &gt; /dev/null 2&gt;&amp;1
 	# Opening PDF
-	# evince report.pdf > /dev/null 2>&1 &
+	# evince report.pdf &gt; /dev/null 2&gt;&amp;1 &amp;
 	# Cleanup
 	rm report.aux
 	rm report.log

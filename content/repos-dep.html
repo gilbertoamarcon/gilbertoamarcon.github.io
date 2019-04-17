@@ -219,7 +219,7 @@ tar -xzvf ~/Downloads/boost_1_64_0.tar.gz -C ~/Downloads/
 cd ~/Downloads/boost_1_64_0/
 ./bootstrap.sh --prefix=/usr
 sudo ./b2 install
-cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"</div>
+cat /usr/include/boost/version.hpp | grep &quot;BOOST_LIB_VERSION&quot;</div>
 ANTLR
 <br/>
 <div class="codebox">wget -P ~/Downloads/ http://www.antlr.org/download/antlr-4.5.3-complete.jar
@@ -280,7 +280,7 @@ POPF2
 <div class="codebox">git clone https://github.com/aldukeman/popf2.git ~/dev/popf2/
 cd ~/dev/popf2/
 ./build
-sed -i 's\, "-b"\\g' ~/dev/popf2/plan</div>
+sed -i &#39;s\, &quot;-b&quot;\\g&#39; ~/dev/popf2/plan</div>
 ITSAT
 <br/>
 <div class="codebox">git clone git@gitlab.com:human-machine-teaming/planning/itsat.git ~/dev/itsat/
@@ -324,7 +324,7 @@ sudo make install</div>
 SMTPlan+
 <br/>
 <div class="codebox">git clone https://github.com/KCL-Planning/SMTPlan.git ~/dev/SMTPlan/
-sed -i '15i\set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread -Wno-deprecated-declarations")' ~/dev/SMTPlan/SMTPlan/CMakeLists.txt
+sed -i &#39;15i\set(CMAKE_CXX_FLAGS &quot;${CMAKE_CXX_FLAGS} -pthread -Wno-deprecated-declarations&quot;)&#39; ~/dev/SMTPlan/SMTPlan/CMakeLists.txt
 cd ~/dev/SMTPlan/SMTPlan/
 mkdir build
 cd build

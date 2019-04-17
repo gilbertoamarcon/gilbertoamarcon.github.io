@@ -174,8 +174,8 @@ Create a .ssh directory on the remote server user home folder
 <div class="codebox">ssh marcondg@shell.onid.oregonstate.edu mkdir -p ~/.ssh</div>
 Copy your key to the remote server .ssh folder
 <br/>
-<div class="codebox">cat ~/.ssh/id_rsa.pub | ssh marcondg@shell.onid.oregonstate.edu 'cat >> ~/.ssh/authorized_keys'
-cat ~/.ssh/id_rsa.pub | ssh aadi1@aadi1 'cat >> ~/.ssh/authorized_keys'</div>
+<div class="codebox">cat ~/.ssh/id_rsa.pub | ssh marcondg@shell.onid.oregonstate.edu &#39;cat &gt;&gt; ~/.ssh/authorized_keys&#39;
+cat ~/.ssh/id_rsa.pub | ssh aadi1@aadi1 &#39;cat &gt;&gt; ~/.ssh/authorized_keys&#39;</div>
 Now you can SSH login without typing the password.
 <br/>
 
@@ -183,9 +183,9 @@ Now you can SSH login without typing the password.
 <div class="codebox">cd /nfs/farm/classes/eecs/spring2017/cs325/handin</div>
 Sending terminal commands over SSH withough actual login examples:
 <br/>
-<div class="codebox">ssh pi@rasp '~/mobile/bin/driver'
-ssh pi@rasp '~/mobile/cam_server.sh'
-ssh pi@rasp '~/mobile/teleop.sh'</div>
+<div class="codebox">ssh pi@rasp &#39;~/mobile/bin/driver&#39;
+ssh pi@rasp &#39;~/mobile/cam_server.sh&#39;
+ssh pi@rasp &#39;~/mobile/teleop.sh&#39;</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ssh.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>

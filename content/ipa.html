@@ -129,15 +129,15 @@ IPA Fix
 <div class="codebox">sudo apt-get -y install libdlib*
 sudo apt-get -y install libopengm-*
 ./get-opengm.sh
-sudo sed -i '17s/^/#/' /usr/lib/cmake/dlib/dlib-none.cmake
+sudo sed -i &#39;17s/^/#/&#39; /usr/lib/cmake/dlib/dlib-none.cmake
 for f in $(ls /usr/lib/cmake/dlib/); do sudo cp /usr/lib/cmake/dlib/$f /usr/lib/cmake/dlib/lib$f; done
 roscd 
-find src/ipa_room_segmentation/ -type f | xargs sed -i 's/libdlib\//dlib\//g'
+find src/ipa_room_segmentation/ -type f | xargs sed -i &#39;s/libdlib\//dlib\//g&#39;
 catkin_make
-echo 'libdlib_DIR:PATH=/usr/lib/cmake/dlib/' >> build/CMakeCache.txt
-echo 'opengm_DIR:PATH=/usr/lib/cmake/opengm/' >> build/CMakeCache.txt
-sed -i 's/libdlib_DIR.*/libdlib_DIR\:PATH\=\/usr\/lib\/cmake\/dlib\//g' build/CMakeCache.txt
-sed -i 's/opengm_DIR.*/opengm_DIR\:PATH\=\/usr\/lib\/cmake\/opengm\//g' build/CMakeCache.txt
+echo &#39;libdlib_DIR:PATH=/usr/lib/cmake/dlib/&#39; &gt;&gt; build/CMakeCache.txt
+echo &#39;opengm_DIR:PATH=/usr/lib/cmake/opengm/&#39; &gt;&gt; build/CMakeCache.txt
+sed -i &#39;s/libdlib_DIR.*/libdlib_DIR\:PATH\=\/usr\/lib\/cmake\/dlib\//g&#39; build/CMakeCache.txt
+sed -i &#39;s/opengm_DIR.*/opengm_DIR\:PATH\=\/usr\/lib\/cmake\/opengm\//g&#39; build/CMakeCache.txt
 catkin_make</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ipa.sh target=_blank>Follow this link for the raw script.</a>
 <br/>

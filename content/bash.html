@@ -186,16 +186,16 @@ You can move and rename directories and their contents using -f:
 <div class="codebox">mv -f nested renamed_dir</div>
 You print to a file by using redirection:
 <br/>
-<div class="codebox">echo Hello > my_file</div>
+<div class="codebox">echo Hello &gt; my_file</div>
 You print the contents of a file by using cat:
 <br/>
 <div class="codebox">cat my_file</div>
 You append contents to a file:
 <br/>
-<div class="codebox">echo Hello >> my_file</div>
+<div class="codebox">echo Hello &gt;&gt; my_file</div>
 And you can overwrite to a file:
 <br/>
-<div class="codebox">echo overwrite > my_file</div>
+<div class="codebox">echo overwrite &gt; my_file</div>
 You can use grep to search inside files:
 <br/>
 <div class="codebox">grep -rn Hello</div>
@@ -207,7 +207,7 @@ You can search through your command history using grep:
 <div class="codebox">history | grep echo</div>
 You can print your command history to a file:
 <br/>
-<div class="codebox">history > ${HOME}/my_command_history</div>
+<div class="codebox">history &gt; ${HOME}/my_command_history</div>
 You can count the number of lines of a file:
 <br/>
 <div class="codebox">cat ${HOME}/my_command_history | wc -l</div>
@@ -227,13 +227,13 @@ Remove all but macthing this
 <div class="codebox">rm !(*macpddl)</div>
 Write to file
 <br/>
-<div class="codebox">printf "when there will be old man old now old.\n" >> filename</div>
+<div class="codebox">printf &quot;when there will be old man old now old.\n&quot; &gt;&gt; filename</div>
 Overwrite to file
 <br/>
-<div class="codebox">printf "when there will be old man old now old.\n" > filename</div>
+<div class="codebox">printf &quot;when there will be old man old now old.\n&quot; &gt; filename</div>
 Duplicate file
 <br/>
-<div class="codebox">< filename tee filename{01..20}</div>
+<div class="codebox">&lt; filename tee filename{01..20}</div>
 Show content of multiple files
 <br/>
 <div class="codebox">cat filename*</div>
@@ -245,14 +245,14 @@ Downloading file to specific location
 <div class="codebox">wget https://raw.githubusercontent.com/gilbertoamarcon/tools/master/terminal.sh -P ~/Downloads/</div>
 Create/Update all links in directory to point to a specific file
 <br/>
-<div class="codebox">find . -type l -exec ln -sf ../../domain.macpddl {} ';'
-find . -type f -name 'domain.macpddl' -exec ln -sf ../../domain.macpddl {} ';'</div>
+<div class="codebox">find . -type l -exec ln -sf ../../domain.macpddl {} &#39;;&#39;
+find . -type f -name &#39;domain.macpddl&#39; -exec ln -sf ../../domain.macpddl {} &#39;;&#39;</div>
 Rename with regex
 <br/>
-<div class="codebox">rename -n 's/^p(\d+)_s2_c(\d+)/P$1C$2/s' *
-rename 's/^p(\d)_c(\d)$/P0$1C0$2/s' *
-rename 's/^p(\d\d)_c(\d)$/P$1C0$2/s' *
-rename 's/^p(\d)_c(\d\d)$/P0$1C$2/s' *</div>
+<div class="codebox">rename -n &#39;s/^p(\d+)_s2_c(\d+)/P$1C$2/s&#39; *
+rename &#39;s/^p(\d)_c(\d)$/P0$1C0$2/s&#39; *
+rename &#39;s/^p(\d\d)_c(\d)$/P$1C0$2/s&#39; *
+rename &#39;s/^p(\d)_c(\d\d)$/P0$1C$2/s&#39; *</div>
 
 <h2>History</h2>
 Show command history

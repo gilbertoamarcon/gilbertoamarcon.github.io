@@ -137,7 +137,7 @@ cd ${HOME}/Downloads/gdal-2.3.0/
 ./configure
 make -j 8
 sudo make install
-printf "\n# GDAL environment variables\nexport LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH" >> ${HOME}/.bashrc
+printf &quot;\n# GDAL environment variables\nexport LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH&quot; &gt;&gt; ${HOME}/.bashrc
 source ${HOME}/.bashrc
 rm -Rf ${HOME}/Downloads/gdal-2.3.0*</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/gdal.sh target=_blank>Follow this link for the raw script.</a>

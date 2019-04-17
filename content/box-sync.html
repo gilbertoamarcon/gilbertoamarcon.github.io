@@ -133,9 +133,9 @@ A Box client
 <br/>
 <div class="codebox">mkdir -p ${HOME}/box
 mkdir -p ${HOME}/.davfs2/
-sudo sh -c 'echo "use_locks 0" >> /etc/davfs2/davfs2.conf'
-sudo sh -c 'echo "https://dav.box.com/dav ${HOME}/box davfs rw,user,noauto 0 0" >> /etc/fstab'
-echo 'https://dav.box.com/dav marcondg@oregonstate.edu "sd65SD*&#sd76sdSD^%ASD"' > ${HOME}/.davfs2/secrets
+sudo sh -c &#39;echo &quot;use_locks 0&quot; &gt;&gt; /etc/davfs2/davfs2.conf&#39;
+sudo sh -c &#39;echo &quot;https://dav.box.com/dav ${HOME}/box davfs rw,user,noauto 0 0&quot; &gt;&gt; /etc/fstab&#39;
+echo &#39;https://dav.box.com/dav marcondg@oregonstate.edu &quot;sd65SD*&amp;#sd76sdSD^%ASD&quot;&#39; &gt; ${HOME}/.davfs2/secrets
 chmod 600 ${HOME}/.davfs2/secrets
 sudo usermod -a -G davfs2 $(whoami)
 su -l $(whoami)</div>

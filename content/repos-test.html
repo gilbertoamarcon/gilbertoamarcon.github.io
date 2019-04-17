@@ -143,7 +143,7 @@ This script will test all repos and all their dependencies.
 Try solving an example problem. Type the command:
 <br/>
 <div class="codebox">./pomdpsol ../examples/POMDPX/Tiger.pomdpx</div>
-The generated policy is written to "out.policy" by default.
+The generated policy is written to &quot;out.policy&quot; by default.
 <br/>
 Try simulating a policy. Type the command:
 <br/>
@@ -158,7 +158,7 @@ The evaluation results are written to the console.
 Try generating a graphical representation of a policy . Type the command:
 <br/>
 <div class="codebox">./polgraph --policy-file out.policy --policy-graph tiger.dot ../examples/POMDPX/Tiger.pomdpx</div>
-The generated graph is written to "tiger.dot". You can view the output "tiger.dot" using Graphviz (http://www.graphviz.org/).  A pdf file generated from "tiger.dot" is in "../examples/POMDPX/tiger.pdf".
+The generated graph is written to &quot;tiger.dot&quot;. You can view the output &quot;tiger.dot&quot; using Graphviz (http://www.graphviz.org/).  A pdf file generated from &quot;tiger.dot&quot; is in &quot;../examples/POMDPX/tiger.pdf&quot;.
 <br/>
 Try converting a POMDP file to POMDPX file format:
 <br/>
@@ -168,7 +168,7 @@ The generated POMDPX file is in the same directory as the POMDP model file.
 
 <h2>RDDL</h2>
 <div class="codebox">cd ~/dev/rddlsim/
-cat ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl > ~/dev/domains/rddl/simple.rddl
+cat ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl &gt; ~/dev/domains/rddl/simple.rddl
 ./run rddl.viz.RDDL2Graph ~/dev/domains/rddl/simple.rddl simple_ins</div>
 
 <h2>PROST</h2>
@@ -177,13 +177,13 @@ Testing 1
 <div class="codebox">cd ~/dev/prost/testbed/
 ./run-server benchmarks/ippc2011
 cd ~/dev/prost/testbed/
-./plan.py benchmarks/ippc-all/rddl/elevators_mdp.rddl benchmarks/ippc-all/rddl/elevators_inst_mdp__1.rddl "IPPC2014"</div>
+./plan.py benchmarks/ippc-all/rddl/elevators_mdp.rddl benchmarks/ippc-all/rddl/elevators_inst_mdp__1.rddl &quot;IPPC2014&quot;</div>
 Testing 2
 <br/>
 <div class="codebox">cd ~/dev/prost/testbed/
 ./run-server ~/dev/domains/rddl
 cd ~/dev/prost/testbed/
-./plan.py ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl "IPPC2014"</div>
+./plan.py ~/dev/domains/rddl/rddl/simple.rddl ~/dev/domains/rddl/rddl/simple_ins.rddl &quot;IPPC2014&quot;</div>
 
 <h2>APPL</h2>
 <div class="codebox">./pomdpsol ~/dev/domains/pomdpx/simple_xdp.pomdpx

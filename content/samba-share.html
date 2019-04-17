@@ -129,7 +129,7 @@
 <h2>Samba</h2>
 Setup Samba shared directory with Windows machines
 <br/>
-Usage: ./samba-share.sh <username> <dir_path>
+Usage: ./samba-share.sh &lt;username&gt; &lt;dir_path&gt;
 <br/>
 Ex: ./samba-share.sh sas ${HOME}/sea
 <br/>
@@ -138,7 +138,7 @@ dir_path=$2
 sudo apt-get --yes install samba
 sudo adduser --shell /bin/false $username
 sudo smbpasswd -a $username
-sudo sh -c "echo '[sea]\npath = $dir_path\navailable = yes\nvalid users = $username\nread only = no\nbrowsable = yes\npublic = yes\nwritable = yes\n' >> /etc/samba/smb.conf"
+sudo sh -c &quot;echo &#39;[sea]\npath = $dir_path\navailable = yes\nvalid users = $username\nread only = no\nbrowsable = yes\npublic = yes\nwritable = yes\n&#39; &gt;&gt; /etc/samba/smb.conf&quot;
 sudo service smbd restart</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/samba-share.sh target=_blank>Follow this link for the raw script.</a>
 <br/>

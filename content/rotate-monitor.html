@@ -140,7 +140,7 @@ Orientation: left right inverted normal
 <div class="codebox">o=$2</div>
 Getting Monitor List
 <br/>
-<div class="codebox">monitors=($(xrandr -q | grep '\bconnected\b' | while read -r l; do echo "$l" | awk '{print $1;}'; done))</div>
+<div class="codebox">monitors=($(xrandr -q | grep &#39;\bconnected\b&#39; | while read -r l; do echo &quot;$l&quot; | awk &#39;{print $1;}&#39;; done))</div>
 Applying Rotation
 <br/>
 <div class="codebox">xrandr --output ${monitors[$m]} --rotate $o</div>

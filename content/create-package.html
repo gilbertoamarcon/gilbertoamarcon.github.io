@@ -142,10 +142,10 @@ Backing up present working directory
 <div class="codebox">hdir=$(pwd)</div>
 Package creation
 <br/>
-<div class="codebox">printf "Creating package at: \\n$HOME/ros-ws/$wsname/src/\\n"
+<div class="codebox">printf &quot;Creating package at: \\n$HOME/ros-ws/$wsname/src/\\n&quot;
 cd ~/ros-ws/$wsname/src/
-echo catkin_create_pkg $paname rospy "$@"
-catkin_create_pkg $paname rospy "$@"
+echo catkin_create_pkg $paname rospy &quot;$@&quot;
+catkin_create_pkg $paname rospy &quot;$@&quot;
 source ~/ros-ws/$wsname/devel/setup.bash
 source ~/.bashrc</div>
 Back to original working directory

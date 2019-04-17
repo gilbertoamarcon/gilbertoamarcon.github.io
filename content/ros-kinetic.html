@@ -133,7 +133,7 @@ This script will setup ROS kinetic and a few packages that I use on a fresh Ubun
 <br/>
 Setup your sources.lis
 <br/>
-<div class="codebox">sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'</div>
+<div class="codebox">sudo sh -c &#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</div>
 Set up your keys
 <br/>
 <div class="codebox">sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116</div>
@@ -152,7 +152,7 @@ Initialize rosdep
 rosdep update</div>
 Environment setup
 <br/>
-<div class="codebox">printf "\n# ROS:\nsource /opt/ros/kinetic/setup.bash\n" >> ${HOME}/.bashrc
+<div class="codebox">printf &quot;\n# ROS:\nsource /opt/ros/kinetic/setup.bash\n&quot; &gt;&gt; ${HOME}/.bashrc
 source ${HOME}/.bashrc</div>
 Getting rosinstall
 <br/>
@@ -184,9 +184,9 @@ Summit xl
 <div class="codebox">sudo apt-get -y install ros-kinetic-summit-xl-common</div>
 sudo apt-get -y install ros-kinetic-summit-xl-sim
 <br/>
-sudo sed -ie 's/pad_teleop/summit_xl_control/g' /opt/ros/kinetic/share/summit_xl_pad/launch/summit_xl_pad.launch
+sudo sed -ie &#39;s/pad_teleop/summit_xl_control/g&#39; /opt/ros/kinetic/share/summit_xl_pad/launch/summit_xl_pad.launch
 <br/>
-<div class="codebox">printf "export ROS_MASTER_URI=http://127.0.0.1:11311/\n" >> ${HOME}/.bashrc
+<div class="codebox">printf &quot;export ROS_MASTER_URI=http://127.0.0.1:11311/\n&quot; &gt;&gt; ${HOME}/.bashrc
 source ${HOME}/.bashrc</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-kinetic.sh target=_blank>Follow this link for the raw script.</a>
 <br/>

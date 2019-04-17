@@ -145,59 +145,59 @@ mkdir ~/.gazebo/models/$1/materials/scripts
 mkdir ~/.gazebo/models/$1/materials/textures</div>
 model.config 
 <br/>
-<div class="codebox">cat > ~/.gazebo/models/$1/model.config <<- EOM
-<?xml version="1.0"?>
-<model>
-    <name>$1</name>
-    <version>1.0</version>
-    <sdf version="1.4">model.sdf</sdf>
-</model>
+<div class="codebox">cat &gt; ~/.gazebo/models/$1/model.config &lt;&lt;- EOM
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;model&gt;
+    &lt;name&gt;$1&lt;/name&gt;
+    &lt;version&gt;1.0&lt;/version&gt;
+    &lt;sdf version=&quot;1.4&quot;&gt;model.sdf&lt;/sdf&gt;
+&lt;/model&gt;
 EOM</div>
 model.sdf
 <br/>
-<div class="codebox">cat > ~/.gazebo/models/$1/model.sdf <<- EOM
-<?xml version="1.0" ?>
-<sdf version="1.4">
-    <model name="$1">
-        <static>$6</static>
-        <link name="link">
-            <collision name="collision">
-                <geometry>
-                    <box>
-                        <size>$3 $4 $5</size>
-                    </box>
-                </geometry>
-                <surface>
-                    <friction>
-                        <ode>
-                            <mu>1</mu>
-                            <mu2>1</mu2>
-                        </ode>
-                    </friction>
-                </surface>
-            </collision>
-            <visual name="visual">
-                <cast_shadows>1</cast_shadows>
-                <geometry>
-                    <box>
-                        <size>$3 $4 $5</size>
-                    </box>
-                </geometry>
-                <material>
-                    <script>
-                        <uri>model://$1/materials/scripts</uri>
-                        <uri>model://$1/materials/textures</uri>
-                        <name>$1</name>
-                    </script>
-                </material>
-            </visual>
-        </link>
-    </model>
-</sdf>
+<div class="codebox">cat &gt; ~/.gazebo/models/$1/model.sdf &lt;&lt;- EOM
+&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;sdf version=&quot;1.4&quot;&gt;
+    &lt;model name=&quot;$1&quot;&gt;
+        &lt;static&gt;$6&lt;/static&gt;
+        &lt;link name=&quot;link&quot;&gt;
+            &lt;collision name=&quot;collision&quot;&gt;
+                &lt;geometry&gt;
+                    &lt;box&gt;
+                        &lt;size&gt;$3 $4 $5&lt;/size&gt;
+                    &lt;/box&gt;
+                &lt;/geometry&gt;
+                &lt;surface&gt;
+                    &lt;friction&gt;
+                        &lt;ode&gt;
+                            &lt;mu&gt;1&lt;/mu&gt;
+                            &lt;mu2&gt;1&lt;/mu2&gt;
+                        &lt;/ode&gt;
+                    &lt;/friction&gt;
+                &lt;/surface&gt;
+            &lt;/collision&gt;
+            &lt;visual name=&quot;visual&quot;&gt;
+                &lt;cast_shadows&gt;1&lt;/cast_shadows&gt;
+                &lt;geometry&gt;
+                    &lt;box&gt;
+                        &lt;size&gt;$3 $4 $5&lt;/size&gt;
+                    &lt;/box&gt;
+                &lt;/geometry&gt;
+                &lt;material&gt;
+                    &lt;script&gt;
+                        &lt;uri&gt;model://$1/materials/scripts&lt;/uri&gt;
+                        &lt;uri&gt;model://$1/materials/textures&lt;/uri&gt;
+                        &lt;name&gt;$1&lt;/name&gt;
+                    &lt;/script&gt;
+                &lt;/material&gt;
+            &lt;/visual&gt;
+        &lt;/link&gt;
+    &lt;/model&gt;
+&lt;/sdf&gt;
 EOM</div>
 script.material
 <br/>
-<div class="codebox">cat > ~/.gazebo/models/$1/materials/scripts/script.material <<- EOM
+<div class="codebox">cat &gt; ~/.gazebo/models/$1/materials/scripts/script.material &lt;&lt;- EOM
 material $1</div>
 {
 <div class="codebox">        receive_shadows on
@@ -221,13 +221,13 @@ Texture
 <div class="codebox">cp $2 ~/.gazebo/models/$1/materials/textures/</div>
 script.material
 <br/>
-<div class="codebox">cat <<- EOM
-<model name='$1'>
-    <include>
-        <uri>model://$1</uri>
-    </include>
-    <pose>0 0 0 0 0 0</pose>
-</model>
+<div class="codebox">cat &lt;&lt;- EOM
+&lt;model name=&#39;$1&#39;&gt;
+    &lt;include&gt;
+        &lt;uri&gt;model://$1&lt;/uri&gt;
+    &lt;/include&gt;
+    &lt;pose&gt;0 0 0 0 0 0&lt;/pose&gt;
+&lt;/model&gt;
 EOM</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/create-model-box.sh target=_blank>Follow this link for the raw script.</a>
 <br/>

@@ -131,7 +131,7 @@ Setting up Dropbox Headless to auto start
 <br/>
 
 <br/>
-<div class="codebox">sudo sh -c "echo '[Unit]
+<div class="codebox">sudo sh -c &quot;echo &#39;[Unit]
 Description=Dropbox Service
 After=network.target
 [Service]
@@ -146,7 +146,7 @@ RestartSec=5
 StartLimitInterval=60
 StartLimitBurst=3
 [Install]
-WantedBy=multi-user.target' > /etc/systemd/system/dropbox.service"
+WantedBy=multi-user.target&#39; &gt; /etc/systemd/system/dropbox.service&quot;
 systemctl daemon-reload
 systemctl enable dropbox
 systemctl start dropbox

@@ -139,13 +139,13 @@ local_user=$(whoami)
 known_hosts=-oStrictHostKeyChecking=no</div>
 Authorizing remote
 <br/>
-<div class="codebox">remote_key=$(ssh $known_hosts $remote 'cat ~/.ssh/id_rsa.pub')
-echo $remote_key >> $HOME/.ssh/authorized_keys</div>
+<div class="codebox">remote_key=$(ssh $known_hosts $remote &#39;cat ~/.ssh/id_rsa.pub&#39;)
+echo $remote_key &gt;&gt; $HOME/.ssh/authorized_keys</div>
 Running daemon on remote
 <br/>
-comm="lsyncd -nodaemon -rsync $remote_dir $local_user@$local_host:$local_dir"
+comm=&quot;lsyncd -nodaemon -rsync $remote_dir $local_user@$local_host:$local_dir&quot;
 <br/>
-<div class="codebox">comm="lsyncd -rsync $remote_dir $local_user@$local_host:$local_dir"
+<div class="codebox">comm=&quot;lsyncd -rsync $remote_dir $local_user@$local_host:$local_dir&quot;
 echo $comm
 ssh $known_hosts $remote $comm</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/setup-lsyncd.sh target=_blank>Follow this link for the raw script.</a>

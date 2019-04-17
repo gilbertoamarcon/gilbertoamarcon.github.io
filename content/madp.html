@@ -133,7 +133,7 @@ MADP setup
 <br/>
 MADP
 <br/>
-<div class="codebox">rm -Rf ${HOME}/dev/madp > /dev/null 2>&1
+<div class="codebox">rm -Rf ${HOME}/dev/madp &gt; /dev/null 2&gt;&amp;1
 git clone git@github.com:gilbertoamarcon/MADP.git ${HOME}/dev/madp
 cd ${HOME}/dev/madp/
 mkdir -p results/GMAA/DecTiger
@@ -142,7 +142,7 @@ sh autogen.sh
 ./configure
 make
 make htmldoc
-rm -Rf ${HOME}/.madp > /dev/null 2>&1
+rm -Rf ${HOME}/.madp &gt; /dev/null 2&gt;&amp;1
 mkdir ${HOME}/.madp
 cd ${HOME}/.madp
 ln -s ${HOME}/dev/madp/problems

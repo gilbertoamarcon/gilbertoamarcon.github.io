@@ -140,7 +140,7 @@ Restore:
 <div class="codebox">sudo dd bs=4M if=raspbian.img of=/dev/sdb</div>
 Backup using Gzip to save up space:
 <br/>
-<div class="codebox">sudo dd bs=4M if=/dev/sdb | gzip > rasbian.img.gz</div>
+<div class="codebox">sudo dd bs=4M if=/dev/sdb | gzip &gt; rasbian.img.gz</div>
 Restore using Gzip:
 <br/>
 <div class="codebox">gunzip --stdout rasbian.img.gz | sudo dd bs=4M of=/dev/sdb</div>

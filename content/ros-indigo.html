@@ -133,7 +133,7 @@ This script will setup ROS Indigo and a few packages that I use on a fresh Ubunt
 <br/>
 Setup your sources.lis
 <br/>
-<div class="codebox">sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'</div>
+<div class="codebox">sudo sh -c &#39;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&#39;</div>
 Set up your keys
 <br/>
 <div class="codebox">sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116</div>
@@ -152,7 +152,7 @@ Initialize rosdep
 rosdep update</div>
 Environment setup
 <br/>
-<div class="codebox">printf "\n# ROS:\nsource /opt/ros/indigo/setup.bash\n" >> ~/.bashrc
+<div class="codebox">printf &quot;\n# ROS:\nsource /opt/ros/indigo/setup.bash\n&quot; &gt;&gt; ~/.bashrc
 source ~/.bashrc</div>
 Getting rosinstall
 <br/>
@@ -173,9 +173,9 @@ sudo apt-get --yes install ros-indigo-rocon*
 Turtlebot
 <br/>
 <div class="codebox">sudo apt-get --yes install ros-indigo-turtlebot-*
-sudo sed -ie 's/amcl.launch.xml/amcl\/amcl.launch.xml/g' /opt/ros/indigo/share/turtlebot_stage/launch/turtlebot_in_stage.launch
-sudo sed -ie 's/amcl.launch.xml/amcl\/amcl.launch.xml/g' /opt/ros/indigo/share/turtlebot_gazebo/launch/amcl_demo.launch
-sudo sed -ie 's/gmapping.launch.xml/gmapping\/gmapping.launch.xml/g' /opt/ros/indigo/share/turtlebot_gazebo/launch/gmapping_demo.launch</div>
+sudo sed -ie &#39;s/amcl.launch.xml/amcl\/amcl.launch.xml/g&#39; /opt/ros/indigo/share/turtlebot_stage/launch/turtlebot_in_stage.launch
+sudo sed -ie &#39;s/amcl.launch.xml/amcl\/amcl.launch.xml/g&#39; /opt/ros/indigo/share/turtlebot_gazebo/launch/amcl_demo.launch
+sudo sed -ie &#39;s/gmapping.launch.xml/gmapping\/gmapping.launch.xml/g&#39; /opt/ros/indigo/share/turtlebot_gazebo/launch/gmapping_demo.launch</div>
 JACKAL
 <br/>
 <div class="codebox">sudo apt-get --yes install ros-indigo-jackal-simulator ros-indigo-jackal-desktop ros-indigo-jackal-navigation</div>
@@ -211,7 +211,7 @@ sudo apt-get --yes install ros-indigo-summit-xl-common
 <br/>
 sudo apt-get --yes install ros-indigo-summit-xl-sim
 <br/>
-sudo sed -ie 's/pad_teleop/summit_xl_control/g' /opt/ros/indigo/share/summit_xl_pad/launch/summit_xl_pad.launch
+sudo sed -ie &#39;s/pad_teleop/summit_xl_control/g&#39; /opt/ros/indigo/share/summit_xl_pad/launch/summit_xl_pad.launch
 <br/>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ros-indigo.sh target=_blank>Follow this link for the raw script.</a>
 <br/>

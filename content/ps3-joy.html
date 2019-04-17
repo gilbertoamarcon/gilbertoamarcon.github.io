@@ -131,7 +131,7 @@ Pairing a PS3 gamepad via Bluetooth
 <br/>
 
 <br/>
-<div class="codebox">sudo add-apt-repository --yes "deb http://ppa.launchpad.net/falk-t-j/qtsixa/ubuntu vivid main"
+<div class="codebox">sudo add-apt-repository --yes &quot;deb http://ppa.launchpad.net/falk-t-j/qtsixa/ubuntu vivid main&quot;
 sudo apt-key adv --yes --keyserver keyserver.ubuntu.com --recv-keys 736E4F0B
 sudo apt-get --yes update
 sudo apt-get --yes install qtsixa
@@ -147,7 +147,7 @@ Then press PS button to connect over bluetooth
 <br/>
 Button config:
 <br/>
-<div class="codebox">echo 'ATTRS{name}=="PLAYSTATION*", ENV{DEVNAME}=="/dev/input/event*", ENV{ID_MODEL}="PS3Controller", SYMLINK+="input/dualshock3"'</div>
+<div class="codebox">echo &#39;ATTRS{name}==&quot;PLAYSTATION*&quot;, ENV{DEVNAME}==&quot;/dev/input/event*&quot;, ENV{ID_MODEL}=&quot;PS3Controller&quot;, SYMLINK+=&quot;input/dualshock3&quot;&#39;</div>
 Start at system boot:
 <br/>
 <div class="codebox">sudo sixad --boot-yes</div>

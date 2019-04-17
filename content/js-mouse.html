@@ -131,26 +131,26 @@ Prevents the gamepad from controlling the mouse pointer
 <br/>
 
 <br/>
-<div class="codebox">printf "
-Section \"InputClass\"
-    Identifier \"joystick catchall\" 
-    MatchIsJoystick \"on\"
-    MatchDevicePath \"/dev/input/js*\"
-    Driver \"joystick\"
-    Option \"StartKeysEnabled\" \"False\"       #Disable mouse
-    Option \"StartMouseEnabled\" \"False\"      #support
+<div class="codebox">printf &quot;
+Section \&quot;InputClass\&quot;
+    Identifier \&quot;joystick catchall\&quot; 
+    MatchIsJoystick \&quot;on\&quot;
+    MatchDevicePath \&quot;/dev/input/js*\&quot;
+    Driver \&quot;joystick\&quot;
+    Option \&quot;StartKeysEnabled\&quot; \&quot;False\&quot;       #Disable mouse
+    Option \&quot;StartMouseEnabled\&quot; \&quot;False\&quot;      #support
 EndSection
-Section \"InputClass\"
-    Identifier \"joystick catchall\" 
-    MatchIsJoystick \"on\"
-    MatchDevicePath \"/dev/input/event*\"
-    Driver \"joystick\"
-    Option \"StartKeysEnabled\" \"False\"       #Disable mouse
-    Option \"StartMouseEnabled\" \"False\"      #support
+Section \&quot;InputClass\&quot;
+    Identifier \&quot;joystick catchall\&quot; 
+    MatchIsJoystick \&quot;on\&quot;
+    MatchDevicePath \&quot;/dev/input/event*\&quot;
+    Driver \&quot;joystick\&quot;
+    Option \&quot;StartKeysEnabled\&quot; \&quot;False\&quot;       #Disable mouse
+    Option \&quot;StartMouseEnabled\&quot; \&quot;False\&quot;      #support
 EndSection
-" | sudo tee /usr/share/X11/xorg.conf.d/50-joystick.conf
+&quot; | sudo tee /usr/share/X11/xorg.conf.d/50-joystick.conf
 sudo cp 51-these-are-not-joysticks.rules /etc/udev/rules.d/
-sudo udevadm control --reload-rules && udevadm trigger</div>
+sudo udevadm control --reload-rules &amp;&amp; udevadm trigger</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/js-mouse.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>

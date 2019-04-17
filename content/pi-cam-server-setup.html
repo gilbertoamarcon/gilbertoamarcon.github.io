@@ -153,7 +153,7 @@ cd live
 sudo make CPPFLAGS=-DALLOW_RTSP_SERVER_PORT_REUSE=1 install
 git clone https://github.com/mpromonet/v4l2rtspserver.git
 cd v4l2rtspserver
-cmake . && make
+cmake . &amp;&amp; make
 cd ~/v4l2rtspserver
 ./v4l2rtspserver -W 320 -H 240 -F 5 -P 8554 /dev/video0</div>
 <a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/pi-cam-server-setup.sh target=_blank>Follow this link for the raw script.</a>
