@@ -129,67 +129,22 @@
 
 
 
-<h2>SSH Login</h2>
-Here are some basic SSH commands that save me up a lot of time.
+<h2>JabRef </h2>
+Setting up the JabRef ref manager
 <br/>
 
 <br/>
-SSH login to remote server
+<div class="codebox">version=4.3.1
+filename=JabRef-${version}.jar
+wget -P $HOME/Downloads/ &quot;https://download.fosshub.com/Protected/expiretime=1555858967;badurl=aHR0cHM6Ly93d3cuZm9zc2h1Yi5jb20vSmFiUmVmLmh0bWw=/b7ba2359a10fc13d85509b576c51ba2433f4acadcf808a7577430d73a4184ad6/5b856554f9ee5a5c3e979ebd/5b8565aef9ee5a5c3e979eca/$filename&quot;
+sudo mv $HOME/Downloads/$filename /usr/bin/jabref.jar
+printf &quot;</div>
+JabRef
 <br/>
-<div class="codebox">ssh -l marcondg shell.onid.oregonstate.edu
-ssh -l marcondg access.engr.oregonstate.edu</div>
-SSH login to remote server with graphics
-<br/>
-<div class="codebox">ssh -X -l marcondg access.engr.oregonstate.edu</div>
-
-<h2>File Copy</h2>
-Copying a file from local to host
-<br/>
-<div class="codebox">scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@shell.onid.oregonstate.edu:public_html/
-scp ~/Dropbox/Apps/Pancake.io/index.html marcondg@access.engr.oregonstate.edu:public_html/</div>
-Copying a file from host to local
-<br/>
-<div class="codebox">scp marcondg@access.engr.oregonstate.edu:public_html/index.html ~/Dropbox/Apps/Pancake.io/ </div>
-Copying an entire folder
-<br/>
-<div class="codebox">scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@shell.onid.oregonstate.edu:public_html/
-scp -r ~/Dropbox/Apps/Pancake.io/* marcondg@access.engr.oregonstate.edu:public_html/</div>
-Set up execute and read permissions on all files on all folders recursivelly
-<br/>
-<div class="codebox">chmod -R +xr *</div>
-
-<h2>Remote folder Mount</h2>
-Remote server
-<br/>
-<div class="codebox">mkdir ~/eng/
-sshfs marcondg@access.engr.oregonstate.edu: ~/eng/</div>
-Raspberry Pi
-<br/>
-<div class="codebox">mkdir ~/pi/
-sshfs pi@rasp: ~/pi/</div>
-
-<h2>SSH login without password</h2>
-Use this to create your key. Hit ENTER for every prompt.
-<br/>
-<div class="codebox">ssh-keygen -t rsa</div>
-Create a .ssh directory on the remote server user home folder
-<br/>
-<div class="codebox">ssh marcondg@shell.onid.oregonstate.edu mkdir -p ~/.ssh</div>
-Copy your key to the remote server .ssh folder
-<br/>
-<div class="codebox">cat ~/.ssh/id_rsa.pub | ssh marcondg@shell.onid.oregonstate.edu &#39;cat &gt;&gt; ~/.ssh/authorized_keys&#39;
-cat ~/.ssh/id_rsa.pub | ssh aadi1@aadi1 &#39;cat &gt;&gt; ~/.ssh/authorized_keys&#39;</div>
-Now you can SSH login without typing the password.
-<br/>
-
-<h2>TEACH class path</h2>
-<div class="codebox">cd /nfs/farm/classes/eecs/spring2017/cs325/handin</div>
-Sending terminal commands over SSH withough actual login examples:
-<br/>
-<div class="codebox">ssh pi@rasp &#39;~/mobile/bin/driver&#39;
-ssh pi@rasp &#39;~/mobile/cam_server.sh&#39;
-ssh pi@rasp &#39;~/mobile/teleop.sh&#39;</div>
-<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/ssh.sh target=_blank>Follow this link for the raw script.</a>
+<div class="codebox">alias jabref=&#39;java -jar /usr/bin/jabref.jar&#39;
+&quot; &gt;&gt; $HOME/.bashrc
+source ${HOME}/.bashrc</div>
+<a href=https://raw.githubusercontent.com/gilbertoamarcon/tools/master/jabref.sh target=_blank>Follow this link for the raw script.</a>
 <br/>
 				<article/>
 
